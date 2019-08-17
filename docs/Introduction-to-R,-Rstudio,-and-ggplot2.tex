@@ -142,29 +142,56 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\chapter{Prerequisites}\label{prerequisites}
+\chapter{R}\label{r}
 
-This is a \emph{sample} book written in \textbf{Markdown}. You can use
-anything that Pandoc's Markdown supports, e.g., a math equation
-\(a^2 + b^2 = c^2\).
+\section{Why R?}\label{why-r}
 
-The \textbf{bookdown} package \citep{xie2015} can be installed from CRAN
-or Github:
+\begin{itemize}
+\tightlist
+\item
+  R is a \textbf{free} open source software.
+\item
+  R is a language designed especially for \textbf{statistical analysis}.
+  Many statistical methods are first implemented in R.
+\item
+  R provides many tools for publication-quality \textbf{data
+  visualization} (e.g., \texttt{ggplot2}).
+\item
+  R provides many tools for \textbf{data processing (or data wrangling)}
+  (e.g., \texttt{dplyr}, \texttt{tidyr}). Data come from diverse sources
+  these days (e.g., microarray, EEG, fMRI, eyetrackers, facebook,
+  twitter, many sensors, \ldots{} ).
+\end{itemize}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{install.packages}\NormalTok{(}\StringTok{"bookdown"}\NormalTok{)}
-\CommentTok{# or the development version}
-\CommentTok{# devtools::install_github("rstudio/bookdown")}
-\end{Highlighting}
-\end{Shaded}
+\section{Installing R}\label{installing-r}
 
-Remember each Rmd file contains one and only one chapter, and a chapter
-is defined by the first-level heading \texttt{\#}.
+\begin{itemize}
+\item
+  You can download and install \textbf{a base distribution and packages
+  (base R)} from the official R webiste:
+  \url{https://www.r-project.org}.
+\item
+  About 14,000 packages \textbf{extend} the base R
+\end{itemize}
 
-To compile this example to PDF, you need XeLaTeX. You are recommended to
-install TinyTeX (which includes XeLaTeX):
-\url{https://yihui.name/tinytex/}.
+\section{Installing RStudio}\label{installing-rstudio}
+
+\begin{itemize}
+\item
+  RStudio is an integrated development environment (IDE) for R.
+\item
+  You can download and install the RStudio from the RStudio website:
+  \url{https://www.rstudio.com}.
+\end{itemize}
+
+\section{Cheat Sheets for R}\label{cheat-sheets-for-r}
+
+\begin{itemize}
+\tightlist
+\item
+  RStudio provides cheat sheets for R:
+  \url{https://www.rstudio.com/resources/cheatsheets/}.
+\end{itemize}
 
 \chapter{Introduction}\label{intro}
 
