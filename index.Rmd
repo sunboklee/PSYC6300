@@ -12,25 +12,30 @@ link-citations: yes
 description: "This is an introduction to R, Rstudio, and ggplot2"
 ---
 
-# Prerequisites
+# R 
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$.
+## Why R? 
+* R is a **free** open source software.
+* R is a language designed especially for **statistical analysis**. Many statistical methods are first implemented in R. 
+* R provides many tools for publication-quality **data visualization** (e.g., `ggplot2`).
+* R provides many tools for **data processing (or data wrangling)** (e.g., `dplyr`, `tidyr`). Data come from diverse sources these days (e.g., microarray, EEG, fMRI, eyetrackers, facebook, twitter, many sensors, ... ).
 
-The **bookdown** package [@xie2015] can be installed from CRAN or Github:
 
-```{r eval=FALSE}
-install.packages("bookdown")
-# or the development version
-# devtools::install_github("rstudio/bookdown")
-```
+## Installing R
 
-Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
+* You can download and install **a base distribution and packages (base R)** from the official R webiste: The R Project for Statistical Computing ([https://www.r-project.org](https://www.r-project.org))
 
-To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
+* About 14,000 packages **extend** the base R
 
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```
+## Installing RStudio
+
+* RStudio is an integrated development environment (IDE) for R. 
+
+* You can download and install the RStudio from the RStudio website: [https://www.rstudio.com](https://www.rstudio.com). 
+
+## Cheat Sheets for R
+
+* RStudio provides cheat sheets for R: [https://www.rstudio.com/resources/cheatsheets/](https://www.rstudio.com/resources/cheatsheets/). 
+
+
+

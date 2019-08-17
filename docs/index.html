@@ -103,7 +103,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="./">A Minimal Book Example</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> R</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#why-r"><i class="fa fa-check"></i><b>1.1</b> Why R?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#installing-r"><i class="fa fa-check"></i><b>1.2</b> Installing R</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#installing-rstudio"><i class="fa fa-check"></i><b>1.3</b> Installing RStudio</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#cheat-sheets-for-r"><i class="fa fa-check"></i><b>1.4</b> Cheat Sheets for R</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
 <li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
 <li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
@@ -138,21 +143,37 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p class="author"><em>Sunbok Lee</em></p>
 <p class="date"><em>2019-08-17</em></p>
 </div>
-<div id="prerequisites" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
-<p>This is a <em>sample</em> book written in <strong>Markdown</strong>. You can use anything that Pandoc’s Markdown supports, e.g., a math equation <span class="math inline">\(a^2 + b^2 = c^2\)</span>.</p>
-<p>The <strong>bookdown</strong> package <span class="citation">(Xie <a href="#ref-xie2015">2015</a>)</span> can be installed from CRAN or Github:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>)
-<span class="co"># or the development version</span>
-<span class="co"># devtools::install_github(&quot;rstudio/bookdown&quot;)</span></code></pre></div>
-<p>Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading <code>#</code>.</p>
-<p>To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.name/tinytex/" class="uri">https://yihui.name/tinytex/</a>.</p>
-
+<div id="r" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> R</h1>
+<div id="why-r" class="section level2">
+<h2><span class="header-section-number">1.1</span> Why R?</h2>
+<ul>
+<li>R is a <strong>free</strong> open source software.</li>
+<li>R is a language designed especially for <strong>statistical analysis</strong>. Many statistical methods are first implemented in R.</li>
+<li>R provides many tools for publication-quality <strong>data visualization</strong> (e.g., <code>ggplot2</code>).</li>
+<li>R provides many tools for <strong>data processing (or data wrangling)</strong> (e.g., <code>dplyr</code>, <code>tidyr</code>). Data come from diverse sources these days (e.g., microarray, EEG, fMRI, eyetrackers, facebook, twitter, many sensors, … ).</li>
+</ul>
 </div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-xie2015">
-<p>Xie, Yihui. 2015. <em>Dynamic Documents with R and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.name/knitr/" class="uri">http://yihui.name/knitr/</a>.</p>
+<div id="installing-r" class="section level2">
+<h2><span class="header-section-number">1.2</span> Installing R</h2>
+<ul>
+<li><p>You can download and install <strong>a base distribution and packages (base R)</strong> from the official R webiste: The R Project for Statistical Computing (<a href="https://www.r-project.org" class="uri">https://www.r-project.org</a>)</p></li>
+<li><p>About 14,000 packages <strong>extend</strong> the base R</p></li>
+</ul>
+</div>
+<div id="installing-rstudio" class="section level2">
+<h2><span class="header-section-number">1.3</span> Installing RStudio</h2>
+<ul>
+<li><p>RStudio is an integrated development environment (IDE) for R.</p></li>
+<li><p>You can download and install the RStudio from the RStudio website: <a href="https://www.rstudio.com" class="uri">https://www.rstudio.com</a>.</p></li>
+</ul>
+</div>
+<div id="cheat-sheets-for-r" class="section level2">
+<h2><span class="header-section-number">1.4</span> Cheat Sheets for R</h2>
+<ul>
+<li>RStudio provides cheat sheets for R: <a href="https://www.rstudio.com/resources/cheatsheets/" class="uri">https://www.rstudio.com/resources/cheatsheets/</a>.</li>
+</ul>
+
 </div>
 </div>
             </section>
@@ -206,19 +227,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
