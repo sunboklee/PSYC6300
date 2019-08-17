@@ -1,15 +1,15 @@
 --- 
-title: "A Minimal Book Example"
-author: "Yihui Xie"
+title: "R, Rstudio, and ggplot2"
+author: "Sunbok Lee"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
-bibliography: [book.bib, packages.bib]
+#bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: rstudio/bookdown-demo
-description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+#github-repo: rstudio/bookdown-demo
+description: "This is an introduction to R, Rstudio, and ggplot2"
 ---
 
 # Prerequisites

@@ -1,4 +1,4 @@
-book_filename: "bookdown-demo"
+book_filename: "Introduction to R, Rstudio, and ggplot2"
 language:
   ui:
     chapter_name: "Chapter "
