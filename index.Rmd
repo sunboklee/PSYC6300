@@ -29,13 +29,22 @@ description: "This is an introduction to R, Rstudio, and ggplot2"
 
 ## Installing RStudio
 
-* RStudio is an integrated development environment (IDE) for R. 
+* RStudio is an **integrated development environment (IDE)** for R. 
 
 * You can download and install the RStudio from the RStudio website: [https://www.rstudio.com](https://www.rstudio.com). 
+
+* A short tour to the RStudio IDE: [https://www.rstudio.com/products/rstudio/](https://www.rstudio.com/products/rstudio/). 
 
 ## Cheat Sheets for R
 
 * RStudio provides cheat sheets for R: [https://www.rstudio.com/resources/cheatsheets/](https://www.rstudio.com/resources/cheatsheets/). 
 
+## R topics covered in this course
 
+* Base R
+* tidyverse 
+    * The `tidyverse` package was developed for more efficient data science in R. In the `tidyverse` package, the `dplyr`, `tidyr`, `ggplot2`, and `purrr` packages provide many useful functions for efficient data transformation, data tidying, data visualization, and iteration, respectively.
+    * Useful free R books: [https://bookdown.org](https://bookdown.org). R for Data Science [@Wickham] is a useful resource for the `tidyverse` package. 
+  
+  
 
