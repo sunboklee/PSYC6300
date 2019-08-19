@@ -295,7 +295,7 @@ ggplot(Oxboys, aes(age, height, group = Subject)) + geom_line() + geom_smooth(ae
 
 ```{r}
 # facet is also useful for visualizing longitudinal data
-ggplot(Oxboys, aes(age, height, group = Subject)) + geom_line() + facet_wrap(~Subject)
+ggplot(Oxboys, aes(age, height)) + geom_line() + facet_wrap(~Subject)
 ```
 
 ## Themes

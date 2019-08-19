@@ -124,7 +124,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-08-18}
+    \date{2019-08-19}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -887,7 +887,7 @@ short)}{Statistical transformations (stats for short)}}\label{statistical-transf
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# facet is also useful for visualizing longitudinal data}
-\KeywordTok{ggplot}\NormalTok{(Oxboys, }\KeywordTok{aes}\NormalTok{(age, height, }\DataTypeTok{group =} \NormalTok{Subject)) +}\StringTok{ }\KeywordTok{geom_line}\NormalTok{() +}\StringTok{ }\KeywordTok{facet_wrap}\NormalTok{(~Subject)}
+\KeywordTok{ggplot}\NormalTok{(Oxboys, }\KeywordTok{aes}\NormalTok{(age, height)) +}\StringTok{ }\KeywordTok{geom_line}\NormalTok{() +}\StringTok{ }\KeywordTok{facet_wrap}\NormalTok{(~Subject)}
 \end{Highlighting}
 \end{Shaded}
 

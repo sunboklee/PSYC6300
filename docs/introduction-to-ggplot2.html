@@ -24,7 +24,7 @@
 <meta name="author" content="Sunbok Lee" />
 
 
-<meta name="date" content="2019-08-18" />
+<meta name="date" content="2019-08-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -470,7 +470,7 @@ s +<span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">po
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># facet is also useful for visualizing longitudinal data</span>
-<span class="kw">ggplot</span>(Oxboys, <span class="kw">aes</span>(age, height, <span class="dt">group =</span> Subject)) +<span class="st"> </span><span class="kw">geom_line</span>() +<span class="st"> </span><span class="kw">facet_wrap</span>(~Subject)</code></pre></div>
+<span class="kw">ggplot</span>(Oxboys, <span class="kw">aes</span>(age, height)) +<span class="st"> </span><span class="kw">geom_line</span>() +<span class="st"> </span><span class="kw">facet_wrap</span>(~Subject)</code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
 </div>
 <div id="themes" class="section level2">
