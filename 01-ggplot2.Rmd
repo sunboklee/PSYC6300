@@ -35,7 +35,7 @@ suppressMessages(library(tidyverse))
 
 ## Data
 
-* "The **data** that you want to visualise and a set of **aesthetic mappings** describing how **variables in the data** are mapped to **aesthetic attributes** that you can perceive." [@ggplot2]
+* "The **data** are what you want to visualise and a set of **aesthetic mappings** describe how **variables in the data** are mapped to **aesthetic attributes** that you can perceive." [@ggplot2]
 
 ```{r}
 # diamonds is a built-in data in ggplot2
