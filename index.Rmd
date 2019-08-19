@@ -19,13 +19,14 @@ description: "This is an introduction to R, Rstudio, and ggplot2"
 * R is a language designed especially for **statistical analysis**. Many statistical methods are first implemented in R. 
 * R provides many tools for publication-quality **data visualization** (e.g., `ggplot2`).
 * R provides many tools for **data processing (or data wrangling)** (e.g., `dplyr`, `tidyr`). Data come from diverse sources these days (e.g., microarray, EEG, fMRI, eyetrackers, facebook, twitter, many sensors, ... ).
-
+    * e.g., JSON is a popular file format for data exchange: [https://en.wikipedia.org/wiki/JSON](https://en.wikipedia.org/wiki/JSON)
+    * e.g., Biometric research: [IMotions](https://imotions.com/?creative=287840870074&keyword=imotions&matchtype=p&network=g&device=c&gclid=EAIaIQobChMI3pas5oOO5AIVlBx9Ch28hwboEAAYASAAEgJlUfD_BwE)
 
 ## Installing R
 
 * You can download and install **a base distribution and packages (base R)** from the official R webiste: [https://www.r-project.org](https://www.r-project.org).
 
-* About 14,000 packages **extend** the base R: [https://cran.r-project.org/web/packages/available_packages_by_name.html](https://cran.r-project.org/web/packages/available_packages_by_name.html)
+* About 14,000 packages **extend** the base R. R packages are **collections of functions and data sets** developed by the R community. They increase the power of R by improving existing base R functionalities. A list of R packages are available here:[https://cran.r-project.org/web/packages/available_packages_by_name.html](https://cran.r-project.org/web/packages/available_packages_by_name.html)
 
 ## Installing RStudio
 
@@ -38,6 +39,10 @@ description: "This is an introduction to R, Rstudio, and ggplot2"
 ## Cheat Sheets for R
 
 * RStudio provides cheat sheets for R: [https://www.rstudio.com/resources/cheatsheets/](https://www.rstudio.com/resources/cheatsheets/). 
+
+## Rmarkdown files
+
+* Rmarkdown files for this materials can be downloaded here: [https://github.com/sunboklee/PSYC6300](https://github.com/sunboklee/PSYC6300)
 
 ## R topics covered in this course
 
