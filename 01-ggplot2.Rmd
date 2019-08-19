@@ -68,7 +68,7 @@ ggplot(data = diamonds, aes(x = carat, y = price)) + geom_point() + geom_smooth(
 
 
 
-## Activity 
+## Exercise 
 
 * typing `mtcars` in your console will display the content of the `mtcars` dataset. How can we display the help document for the `mtcars` data?
 
@@ -99,12 +99,12 @@ ggplot(data = diamonds, aes(x = carat, y = price)) + geom_point(color = "blue")
 
 
 
-## Activity 
+## Exercise 
 
 * `mpg` is similar to `mtcars` but is a built-in tibble in `ggplot2`. 1) Plot `hwy` (mile per gallon: y axis) against `displ` (engine displancement: x axis), 2) Given the plot from 1), map the `class` variable to color, shape, alpha, and size aesthetics. 
 
 
-* Explain what happens? 
+* Explain what happens. 
 
 ```{r}
 ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color=drv)) + geom_point() + geom_smooth(method="lm")
@@ -131,6 +131,48 @@ x    |y    |color
 * In the previous table, computers don't know how to display colors based on 4, 6, ... Computers need a a hexadecimal code for colors such as `FF6C91`. The mapping from the data to the final values that computers can use to display aesthetics is called a scale. 
 
 * "The scales map values in the data space to values in an aesthetic space, whether it be colour, or size, or shape. Scales draw a legend or axes, which provide an inverse mapping to make it possible to read the original data values from the graph." [@ggplot2]
+
+* `scale_x_continuous()` and `scale_y_continuous()` are the default scales for continuous x and y aesthetics: [https://ggplot2.tidyverse.org/reference/scale_continuous.html](https://ggplot2.tidyverse.org/reference/scale_continuous.html). 
+
+```{r}
+p1 <- ggplot(mpg, aes(displ, hwy)) + geom_point()
+p1
+```
+
+
+```{r}
+# change the axis labels
+p1 + scale_x_continuous("Engine displacement (L)") +
+  scale_y_continuous("Highway MPG")
+```
+
+
+```{r}
+# also use the short-cut labs()
+p1 + labs(x = "Engine displacement (L)", y = "Highway MPG")
+```
+
+
+```{r}
+# modify the axis limits
+p1 + scale_x_continuous(limits = c(2, 6))
+```
+
+```{r}
+# use the short hand functions `xlim()` and `ylim()`
+p1 + xlim(2, 6)
+```
+
+```{r}
+#  choose where the ticks appear
+p1 + scale_x_continuous(breaks = c(2, 4, 6))
+```
+
+```{r}
+#  choose your own labels
+p1 + scale_x_continuous(breaks = c(2, 4, 6), label = c("two", "four", "six"))
+```
+
 
 ```{r}
 ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color=drv)) + geom_point() + geom_smooth(method="lm") + labs(title ="MPG vs Engine size", x = "Engine size", y = "MPG")
@@ -207,7 +249,7 @@ ggplot(data = diamonds, aes(x = carat)) + geom_histogram() + facet_grid(. ~ colo
 ```
 
 
-## Activity
+## Exercise
 
 * Using `mpg` data, plot `hwy` (y) vs `cty` (x). 
 
@@ -218,11 +260,57 @@ ggplot(data = diamonds, aes(x = carat)) + geom_histogram() + facet_grid(. ~ colo
 * facet into rows using `cyl` and columns using `year`
 
 
+## Grouping
+
+* "In many situations, you want to **separate your data into groups**, but render them in the same way. When looking at the data in aggregate you want to be able to distinguish individual subjects, but not identify them. This is common in **longitudinal studies** with many subjects, where the plots are often descriptively called spaghetti plots." [@ggplot2]
+
+* `Oxboys` is a dataset in the `nlme` package. `Oxboys` includes the height of a selection of boys from Oxford, England versus a standardized age.
+
+```{r}
+library(nlme)
+```
+
+```{r}
+# age = a numeric vector giving the standardized age 
+head(Oxboys)
+```
+
+```{r}
+ggplot(Oxboys, aes(age, height)) + geom_line()
+```
+
+```{r}
+ggplot(Oxboys, aes(age, height, group = Subject)) + geom_line()
+```
+
+```{r}
+# In many cases, this is not what we want
+ggplot(Oxboys, aes(age, height, group = Subject)) + geom_line() + geom_smooth()
+```
+
+```{r}
+# group = 1 override the default grouping 
+ggplot(Oxboys, aes(age, height, group = Subject)) + geom_line() + geom_smooth(aes(group = 1))
+```
+
+```{r}
+# facet is also useful for visualizing longitudinal data
+ggplot(Oxboys, aes(age, height, group = Subject)) + geom_line() + facet_wrap(~Subject)
+```
+
 ## Themes
+
+"Themes are a powerful way to **customize** the non-data components of your plots: i.e. titles, labels, fonts, background, gridlines, and legends." More details are available at [https://ggplot2.tidyverse.org/reference/theme.html](https://ggplot2.tidyverse.org/reference/theme.html)
 
 ```{r}
 ggplot(mpg, aes(x = hwy, y = cty)) + geom_point() 
 ```
+
+
+```{r}
+ggplot(mpg, aes(x = hwy, y = cty)) + geom_point() + theme(panel.background = element_rect(fill = "white", colour = "grey50"))
+```
+
 
 ```{r}
 ggplot(mpg, aes(x = hwy, y = cty)) + geom_point() + theme_classic()
@@ -236,5 +324,8 @@ ggplot(mpg, aes(x = hwy, y = cty)) + geom_point() + theme_classic()
 ggsave("mtcars.pdf")
 ```
 
+## More resources
 
-
+* `ggplot2` Reference: [https://ggplot2.tidyverse.org/reference/index.html](https://ggplot2.tidyverse.org/reference/index.html)
+* Many R galleries (e.g., [https://www.r-graph-gallery.com](https://www.r-graph-gallery.com))
+* Google

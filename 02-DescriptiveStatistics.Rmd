@@ -1,0 +1,179 @@
+# Descriptive Statistics
+
+## R functions for descriptive statistics
+
+
+```{r}
+# compute mean
+# we use $ to access `price` variable in the `diamonds` dataset 
+mean(diamonds$price)
+```
+
+```{r}
+# compute median
+median(diamonds$price)
+```
+
+
+```{r}
+# compute variance
+var(diamonds$price)
+```
+
+```{r}
+# compute standard deviation
+sd(diamonds$price)
+```
+
+```{r}
+# summary of a data frame
+summary(diamonds)
+```
+
+## qplot()
+
+`qplot()`, short for **quick plot** is a function in the `ggplot2` package. qplot makes it easy to produce complex plots, often requiring several lines of code using other plotting systems, **in one line**.  
+
+## Scatterplots
+
+```{r}
+ggplot(data = mpg, aes(x = displ, y = hwy)) + geom_point()
+```
+
+```{r}
+qplot(displ, hwy, data = mpg)
+```
+
+```{r}
+ggplot(data = mpg, aes(x = displ, y = hwy, color = class)) + geom_point()
+```
+
+```{r}
+qplot(displ, hwy, data = mpg, color = class)
+```
+
+
+```{r}
+ggplot(data = mpg, aes(x = displ, y = hwy, color = class, shape = drv)) + geom_point()
+```
+
+```{r}
+qplot(displ, hwy, data = mpg, color = class, shape = drv)
+```
+
+
+```{r}
+ggplot(data = mpg, aes(x = displ, y = hwy)) + geom_point() + geom_smooth(method = "lm")
+```
+
+```{r}
+qplot(displ, hwy, data = mpg, geom = c("point", "smooth")) 
+```
+
+## Histogram
+
+```{r}
+ggplot(data = diamonds, aes(x = carat)) + geom_histogram()
+```
+
+```{r}
+qplot(carat, data = diamonds, geom = "histogram")
+```
+
+```{r}
+ggplot(data = diamonds, aes(x = carat)) + geom_histogram(binwidth = 0.05) + xlim(c(0,3))
+```
+
+
+```{r}
+qplot(carat, data = diamonds, geom = "histogram", binwidth = 0.05, xlim = c(0,3))
+```
+
+```{r}
+ggplot(data = mpg, aes(x = hwy, fill = drv)) + geom_histogram() 
+```
+
+
+```{r}
+qplot(hwy, data = mpg, geom = "histogram", fill = drv)
+```
+
+
+## Density plots
+
+
+```{r}
+ggplot(data = diamonds, aes(x = carat, color = color)) + geom_density() 
+```
+
+
+```{r}
+qplot(carat, data = diamonds, geom = "density", color = color)
+```
+
+
+
+## Barplots
+
+```{r}
+ggplot(data = diamonds, aes(x = clarity)) + geom_bar() 
+```
+
+
+```{r}
+qplot(clarity, data = diamonds, geom = "bar")
+```
+
+
+```{r}
+ggplot(data = diamonds, aes(x = clarity, fill = cut)) + geom_bar() 
+```
+
+
+```{r}
+qplot(clarity, data = diamonds, geom = "bar", fill = cut)
+```
+
+
+## Boxplots
+
+```{r}
+ggplot(data = diamonds, aes(y = price)) + geom_boxplot() 
+```
+
+```{r}
+qplot(y = price, data = diamonds, geom = "boxplot")
+```
+
+```{r}
+ggplot(data = diamonds, aes(x = cut, y = price)) + geom_boxplot() 
+```
+
+## Faceting
+
+```{r}
+ggplot(data = diamonds, aes(x = carat, y = price)) + geom_point() + facet_grid(cut ~ color)
+```
+
+```{r}
+qplot(carat, price, data = diamonds, facets = cut ~ color)
+```
+
+
+## The `corrplot` Package
+
+* [https://cran.r-project.org/web/packages/corrplot/vignettes/corrplot-intro.html](https://cran.r-project.org/web/packages/corrplot/vignettes/corrplot-intro.html)
+* "The corrplot package is a graphical display of a **correlation matrix**, confidence interval. It also contains some algorithms to do matrix reordering. In addition, corrplot is good at details, including choosing color, text labels, color labels, layout, etc."
+
+```{r}
+library(corrplot)
+```
+
+```{r}
+corrplot.mixed(cor(mtcars))
+```
+
+
+
+
+

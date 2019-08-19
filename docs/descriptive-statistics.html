@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Descriptive Statistics | R, Rstudio, and ggplot2</title>
+  <meta name="description" content="This is an introduction to R, Rstudio, and ggplot2" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Descriptive Statistics | R, Rstudio, and ggplot2" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is an introduction to R, Rstudio, and ggplot2" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Descriptive Statistics | R, Rstudio, and ggplot2" />
+  
+  <meta name="twitter:description" content="This is an introduction to R, Rstudio, and ggplot2" />
+  
+
+<meta name="author" content="Sunbok Lee" />
+
+
+<meta name="date" content="2019-08-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction-to-ggplot2.html">
+<link rel="next" href="exercise-3.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> R</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#why-r"><i class="fa fa-check"></i><b>1.1</b> Why R?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#installing-r"><i class="fa fa-check"></i><b>1.2</b> Installing R</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#installing-rstudio"><i class="fa fa-check"></i><b>1.3</b> Installing RStudio</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#cheat-sheets-for-r"><i class="fa fa-check"></i><b>1.4</b> Cheat Sheets for R</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#r-topics-covered-in-this-course"><i class="fa fa-check"></i><b>1.5</b> R topics covered in this course</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html"><i class="fa fa-check"></i><b>2</b> Introduction to <code>ggplot2</code></a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#what-is-ggplot2"><i class="fa fa-check"></i><b>2.1</b> What is <code>ggplot2</code></a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#data"><i class="fa fa-check"></i><b>2.2</b> Data</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#geometric-objects-geoms"><i class="fa fa-check"></i><b>2.3</b> Geometric objects (<strong>geoms</strong>)</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#exercise"><i class="fa fa-check"></i><b>2.4</b> Exercise</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#aesthetic-mappings"><i class="fa fa-check"></i><b>2.5</b> Aesthetic mappings</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#exercise-1"><i class="fa fa-check"></i><b>2.6</b> Exercise</a></li>
+<li class="chapter" data-level="2.7" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#scales"><i class="fa fa-check"></i><b>2.7</b> Scales</a></li>
+<li class="chapter" data-level="2.8" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#statistical-transformations-stats-for-short"><i class="fa fa-check"></i><b>2.8</b> Statistical transformations (<strong>stats</strong> for short)</a></li>
+<li class="chapter" data-level="2.9" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#a-faceting"><i class="fa fa-check"></i><b>2.9</b> A faceting</a></li>
+<li class="chapter" data-level="2.10" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#exercise-2"><i class="fa fa-check"></i><b>2.10</b> Exercise</a></li>
+<li class="chapter" data-level="2.11" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#grouping"><i class="fa fa-check"></i><b>2.11</b> Grouping</a></li>
+<li class="chapter" data-level="2.12" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#themes"><i class="fa fa-check"></i><b>2.12</b> Themes</a></li>
+<li class="chapter" data-level="2.13" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#save-a-ggplot"><i class="fa fa-check"></i><b>2.13</b> Save a ggplot</a></li>
+<li class="chapter" data-level="2.14" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#more-resources"><i class="fa fa-check"></i><b>2.14</b> More resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>3</b> Descriptive Statistics</a><ul>
+<li class="chapter" data-level="3.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#r-functions-for-descriptive-statistics"><i class="fa fa-check"></i><b>3.1</b> R functions for descriptive statistics</a></li>
+<li class="chapter" data-level="3.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#qplot"><i class="fa fa-check"></i><b>3.2</b> qplot()</a></li>
+<li class="chapter" data-level="3.3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#scatterplots"><i class="fa fa-check"></i><b>3.3</b> Scatterplots</a></li>
+<li class="chapter" data-level="3.4" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#histogram"><i class="fa fa-check"></i><b>3.4</b> Histogram</a></li>
+<li class="chapter" data-level="3.5" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#density-plots"><i class="fa fa-check"></i><b>3.5</b> Density plots</a></li>
+<li class="chapter" data-level="3.6" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#barplots"><i class="fa fa-check"></i><b>3.6</b> Barplots</a></li>
+<li class="chapter" data-level="3.7" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#boxplots"><i class="fa fa-check"></i><b>3.7</b> Boxplots</a></li>
+<li class="chapter" data-level="3.8" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#faceting"><i class="fa fa-check"></i><b>3.8</b> Faceting</a></li>
+<li class="chapter" data-level="3.9" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#the-corrplot-package"><i class="fa fa-check"></i><b>3.9</b> The <code>corrplot</code> Package</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="exercise-3.html"><a href="exercise-3.html"><i class="fa fa-check"></i><b>4</b> Exercise</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R, Rstudio, and ggplot2</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="descriptive-statistics" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Descriptive Statistics</h1>
+<div id="r-functions-for-descriptive-statistics" class="section level2">
+<h2><span class="header-section-number">3.1</span> R functions for descriptive statistics</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># compute mean</span>
+<span class="co"># we use $ to access `price` variable in the `diamonds` dataset </span>
+<span class="kw">mean</span>(diamonds$price)</code></pre></div>
+<pre><code>## [1] 3932.8</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># compute median</span>
+<span class="kw">median</span>(diamonds$price)</code></pre></div>
+<pre><code>## [1] 2401</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># compute variance</span>
+<span class="kw">var</span>(diamonds$price)</code></pre></div>
+<pre><code>## [1] 15915629</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># compute standard deviation</span>
+<span class="kw">sd</span>(diamonds$price)</code></pre></div>
+<pre><code>## [1] 3989.44</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># summary of a data frame</span>
+<span class="kw">summary</span>(diamonds)</code></pre></div>
+<pre><code>##      carat               cut        color        clarity     
+##  Min.   :0.2000   Fair     : 1610   D: 6775   SI1    :13065  
+##  1st Qu.:0.4000   Good     : 4906   E: 9797   VS2    :12258  
+##  Median :0.7000   Very Good:12082   F: 9542   SI2    : 9194  
+##  Mean   :0.7979   Premium  :13791   G:11292   VS1    : 8171  
+##  3rd Qu.:1.0400   Ideal    :21551   H: 8304   VVS2   : 5066  
+##  Max.   :5.0100                     I: 5422   VVS1   : 3655  
+##                                     J: 2808   (Other): 2531  
+##      depth           table           price             x         
+##  Min.   :43.00   Min.   :43.00   Min.   :  326   Min.   : 0.000  
+##  1st Qu.:61.00   1st Qu.:56.00   1st Qu.:  950   1st Qu.: 4.710  
+##  Median :61.80   Median :57.00   Median : 2401   Median : 5.700  
+##  Mean   :61.75   Mean   :57.46   Mean   : 3933   Mean   : 5.731  
+##  3rd Qu.:62.50   3rd Qu.:59.00   3rd Qu.: 5324   3rd Qu.: 6.540  
+##  Max.   :79.00   Max.   :95.00   Max.   :18823   Max.   :10.740  
+##                                                                  
+##        y                z         
+##  Min.   : 0.000   Min.   : 0.000  
+##  1st Qu.: 4.720   1st Qu.: 2.910  
+##  Median : 5.710   Median : 3.530  
+##  Mean   : 5.735   Mean   : 3.539  
+##  3rd Qu.: 6.540   3rd Qu.: 4.040  
+##  Max.   :58.900   Max.   :31.800  
+## </code></pre>
+</div>
+<div id="qplot" class="section level2">
+<h2><span class="header-section-number">3.2</span> qplot()</h2>
+<p><code>qplot()</code>, short for <strong>quick plot</strong> is a function in the <code>ggplot2</code> package. qplot makes it easy to produce complex plots, often requiring several lines of code using other plotting systems, <strong>in one line</strong>.</p>
+</div>
+<div id="scatterplots" class="section level2">
+<h2><span class="header-section-number">3.3</span> Scatterplots</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) +<span class="st"> </span><span class="kw">geom_point</span>()</code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(displ, hwy, <span class="dt">data =</span> mpg)</code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color =</span> class)) +<span class="st"> </span><span class="kw">geom_point</span>()</code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(displ, hwy, <span class="dt">data =</span> mpg, <span class="dt">color =</span> class)</code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color =</span> class, <span class="dt">shape =</span> drv)) +<span class="st"> </span><span class="kw">geom_point</span>()</code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(displ, hwy, <span class="dt">data =</span> mpg, <span class="dt">color =</span> class, <span class="dt">shape =</span> drv)</code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(displ, hwy, <span class="dt">data =</span> mpg, <span class="dt">geom =</span> <span class="kw">c</span>(<span class="st">&quot;point&quot;</span>, <span class="st">&quot;smooth&quot;</span>)) </code></pre></div>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
+</div>
+<div id="histogram" class="section level2">
+<h2><span class="header-section-number">3.4</span> Histogram</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat)) +<span class="st"> </span><span class="kw">geom_histogram</span>()</code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;histogram&quot;</span>)</code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat)) +<span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">0.05</span>) +<span class="st"> </span><span class="kw">xlim</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span>))</code></pre></div>
+<pre><code>## Warning: Removed 32 rows containing non-finite values (stat_bin).</code></pre>
+<pre><code>## Warning: Removed 2 rows containing missing values (geom_bar).</code></pre>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;histogram&quot;</span>, <span class="dt">binwidth =</span> <span class="fl">0.05</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span>))</code></pre></div>
+<pre><code>## Warning: Removed 32 rows containing non-finite values (stat_bin).</code></pre>
+<pre><code>## Warning: Removed 2 rows containing missing values (geom_bar).</code></pre>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> hwy, <span class="dt">fill =</span> drv)) +<span class="st"> </span><span class="kw">geom_histogram</span>() </code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(hwy, <span class="dt">data =</span> mpg, <span class="dt">geom =</span> <span class="st">&quot;histogram&quot;</span>, <span class="dt">fill =</span> drv)</code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
+</div>
+<div id="density-plots" class="section level2">
+<h2><span class="header-section-number">3.5</span> Density plots</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat, <span class="dt">color =</span> color)) +<span class="st"> </span><span class="kw">geom_density</span>() </code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;density&quot;</span>, <span class="dt">color =</span> color)</code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
+</div>
+<div id="barplots" class="section level2">
+<h2><span class="header-section-number">3.6</span> Barplots</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> clarity)) +<span class="st"> </span><span class="kw">geom_bar</span>() </code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(clarity, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;bar&quot;</span>)</code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> clarity, <span class="dt">fill =</span> cut)) +<span class="st"> </span><span class="kw">geom_bar</span>() </code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-62-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(clarity, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;bar&quot;</span>, <span class="dt">fill =</span> cut)</code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
+</div>
+<div id="boxplots" class="section level2">
+<h2><span class="header-section-number">3.7</span> Boxplots</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">y =</span> price)) +<span class="st"> </span><span class="kw">geom_boxplot</span>() </code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-64-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(<span class="dt">y =</span> price, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;boxplot&quot;</span>)</code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> cut, <span class="dt">y =</span> price)) +<span class="st"> </span><span class="kw">geom_boxplot</span>() </code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-66-1.png" width="672" /></p>
+</div>
+<div id="faceting" class="section level2">
+<h2><span class="header-section-number">3.8</span> Faceting</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat, <span class="dt">y =</span> price)) +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">facet_grid</span>(cut ~<span class="st"> </span>color)</code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(carat, price, <span class="dt">data =</span> diamonds, <span class="dt">facets =</span> cut ~<span class="st"> </span>color)</code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
+</div>
+<div id="the-corrplot-package" class="section level2">
+<h2><span class="header-section-number">3.9</span> The <code>corrplot</code> Package</h2>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/corrplot/vignettes/corrplot-intro.html" class="uri">https://cran.r-project.org/web/packages/corrplot/vignettes/corrplot-intro.html</a></li>
+<li>“The corrplot package is a graphical display of a <strong>correlation matrix</strong>, confidence interval. It also contains some algorithms to do matrix reordering. In addition, corrplot is good at details, including choosing color, text labels, color labels, layout, etc.”</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(corrplot)</code></pre></div>
+<pre><code>## corrplot 0.84 loaded</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">corrplot.mixed</span>(<span class="kw">cor</span>(mtcars))</code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-70-1.png" width="672" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction-to-ggplot2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercise-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-DescriptiveStatistics.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Introduction to R, Rstudio, and ggplot2.pdf", "Introduction to R, Rstudio, and ggplot2.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
