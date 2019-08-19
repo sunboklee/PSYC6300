@@ -25,7 +25,7 @@ description: "This is an introduction to R, Rstudio, and ggplot2"
 
 * You can download and install **a base distribution and packages (base R)** from the official R webiste: [https://www.r-project.org](https://www.r-project.org).
 
-* About 14,000 packages **extend** the base R
+* About 14,000 packages **extend** the base R: [https://cran.r-project.org/web/packages/available_packages_by_name.html](https://cran.r-project.org/web/packages/available_packages_by_name.html)
 
 ## Installing RStudio
 
