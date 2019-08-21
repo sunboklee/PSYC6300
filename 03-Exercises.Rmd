@@ -9,7 +9,3 @@
 
  ![](practice2.png)
 
-* Excercise 3: Replicate the following density plot using the `mpg` dataset. You need an `alpha` aesthetic to make densities transparent. 
-
- ![](practice3.png)
-
