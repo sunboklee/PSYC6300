@@ -10,7 +10,8 @@
 
 ## Further reading
 
-* Wickham, H. (2014). Advanced R. Chapman and Hall/CRC ([http://adv-r.had.co.nz](http://adv-r.had.co.nz))
+* Wickham, H. (2014). Advanced R. Chapman and Hall/CRC 
+    * [http://adv-r.had.co.nz](http://adv-r.had.co.nz)
     * This is a nice book to read after you become comfortable in base R (not required in this course)
 
 ## Interaction with R
