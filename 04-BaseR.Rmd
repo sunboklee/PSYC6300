@@ -1,0 +1,691 @@
+# Base R
+
+## Topics
+
+* R Objects and Variables
+* Data Structure
+* Sub-Setting
+* Functions
+* Control Flow (if, for, while)
+
+## Further reading
+
+* Wickham, H. (2014). Advanced R. Chapman and Hall/CRC ([\textcolor{blue}{http://adv-r.had.co.nz}](http://adv-r.had.co.nz))
+    * This is a nice book to read after you become comfortable in base R (not required in this course)
+
+## Interaction with R
+
+- R Console: for easy interactive exploration of ideas
+- R Script file (.R): for sequence of R commands
+- R markdown (.Rmd): for reproducible and dynamic reports
+
+## R Objects and Variables
+
+- **Everything in R is stored as an object**, which is associated with a variable name. 
+- An object is a technical terminology defined in **Object Oriented Programming (OOP)**. (OOP is an important concept but not in this class)
+- A variable name can be assigned to an object using the **assignment operator**. 
+
+```{r}
+# store a number to a variable named `a`
+a <- 0.2
+```
+
+```{r}
+# print a
+a
+```
+
+```{r}
+# store a vector to a variable named `b`
+b <- c(1,4,9)
+```
+
+```{r}
+# print b
+b
+```
+
+```{r}
+z <- 5
+i <- (z * 2 + 45)/2
+i
+```
+
+- We can think of the assignment operation as “**evaluate** whatever is given on the **right side** of the operator, and assign (store) the result (an object of some type) of this evaluation in the variable whose name is given on the **left side**
+
+## Data Structure
+
+- R has **base data structures**.
+- Almost all other objects are built upon base data structures. 
+- R base data structures can be organized by their dimensionality: 
+
+Dimension     |Homogeneous    |Heterogeneous
+-----|-----|-----
+1D  |Atomic vector  |List
+2D  |Matrix   |Data frame
+nD  |Array   |
+
+![](datastructure.png)
+
+## Vectors Come in Two Flavours
+
+-	Atomic vectors (homogeneous)
+    + All elements of an atomic vector **must be the same type**.
+    + There are **6 types** of an atomic vector 
+        + **Logical** (TRUE or FALSE), **integer**, **double**, and **character** (+ rarely used **complex** and **raw**)
+    + Atomic vectors are usually created with `c()`, short for combine: 
+        + `a <- c(TRUE, FALSE, T, F)`   # logical
+        + `a <- c(1L, 6L, 5L)`   # integer
+        + `a <- c(1, 2.5, 3.8)`   # double
+        + `a <- c("apple", "orange")`   # character
+
+- Lists (heterogeneous) 
+    + Lists are different from atomic vectors because their elements can be of any type. 
+    + List are created by `list()`
+    + `> x <- list(1:3, "a", c(TRUE, FALSE))`
+
+## A Vector Has Three Properties
+
+- **Type**: `typeof()` returns the type of an object. 
+```{r, echo=TRUE}
+typeof(c(1,2,3))
+```
+
+- **Length**: `length()` returns the number of elements in a vector
+```{r, echo=TRUE}
+length(c(1,2,3))
+```
+
+- **Attributes**: `attributes()` returns additional arbitrary metadata
+```{r, echo=TRUE}
+attributes(c(1,2,3))
+```
+
+## Attributes
+
+- All objects can have attributes to store **metadata** about the object. 
+- Attributes can be considered as a **named list**. 
+- Attributes can be accessed individually with `attr()` or all at once with `attributes()`. 
+- Names are attributes of a vector. You can name a vector in two ways: 
+
+```{r, echo=TRUE}
+a <- c(x=1,y=2,z=3)   # when creating
+names(a)
+```
+
+```{r, echo=TRUE}
+names(a) <- c("l", "m", "n")   # by modifying existing names
+a
+```
+
+```{r, echo=TRUE}
+attributes(a)    # names are attributes
+```
+
+```{r}
+attributes(mtcars)
+```
+
+
+## Type Coercion (Conversion)
+
+- All elements of a vector must belong to the same base data type. If that is not true, R will automatically **force** it by type coercion. 
+
+```{r, echo=TRUE}
+v <- c(4, 7, 23.5, 76.2, 80, "rrt")
+v
+```
+
+```{r}
+typeof(v)
+```
+
+
+- Functions can automatically convert data type. 
+
+```{r, echo=TRUE}
+sum(c(TRUE, FALSE, TRUE))
+```
+
+- You can **explicitly** convert data type with `as.character()`, `as.double()`, `as.integer()`, and `as.logical()`. 
+
+```{r, echo=TRUE}
+a <- c(1,2,3)
+a
+b <- as.character(a)
+b
+```
+
+## NA represents missing
+
+```{r, echo=TRUE}
+u <- c(4, 6, NA, 2)
+u
+```
+
+```{r}
+k <- c(TRUE, FALSE, FALSE, NA, TRUE)
+k
+```
+
+## Indexing a Vector
+
+- You can access a particular element of a vector through an **index** between **square brackets** or **indexing (subsetting) operator**.
+
+```{r}
+a <- c(1,2,3,4,5,6,7)
+```
+
+```{r}
+a[3]
+```
+
+```{r}
+a[c(1,3,5)]
+```
+
+```{r}
+# create a vector
+2:4
+```
+```{r}
+# same with a[c(2,3,4)]
+a[2:4]
+```
+
+## Factors
+- A factor is **a vector** that can contain **only predefined values**, and is used to store **categorical data**.
+- Factors are built on **integer vectors** using two attributes
+    + the **`class()`**, "factor", which make factors behave differently from regular integer vectors, and 
+    + the **`levels()`**, which set the set of predefined values that x might have taken. 
+
+```{r, echo=TRUE}
+x <- factor(c(1,2,2,1,1,2), levels = c(1,2), labels = c("male", "female"))
+```
+
+```{r}
+x
+```
+
+```{r, echo=TRUE}
+class(x)
+```
+```{r, echo=TRUE}
+levels(x)
+```
+```{r, echo=TRUE}
+# access an object's attributes.
+attributes(x)
+```
+
+```{r}
+# the factor x can only take a pre-defined value (or level): male or female
+# You can't assign values that are not in the levels
+x[1] <- "female"
+```
+
+```{r}
+x
+```
+
+
+## Matrices and Arrays
+
+- matrices and arrays are **implemented as vectors** with special attributes
+- Adding a **`dim()` attribute** to an atomic vector allows it to behave like a multi-dimensional array. 
+
+```{r}
+a <- 1:6
+```
+
+```{r}
+a
+```
+
+```{r}
+# Get or set specific attributes of an object.
+attr(a, "dim") <- c(3,2)
+```
+
+```{r}
+a
+```
+
+
+```{r, echo=TRUE}
+# by default, a matrix is filled by column
+a <- matrix(1:6, ncol=3, nrow=2)
+a
+```
+
+```{r}
+a <- matrix(1:6, ncol=3)
+a
+```
+
+```{r}
+# a matrix can be filled by row using `byrow = TRUE`
+a <- matrix(1:6, ncol=3, nrow=2, byrow = TRUE)
+a
+```
+
+
+```{r, echo=TRUE}
+attributes(a)
+```
+```{r, echo=TRUE}
+dim(a)
+```
+
+
+```{r, echo=TRUE}
+b <- array(1:12, c(2,3,2))
+b
+```
+```{r, echo=TRUE}
+dim(b)
+```
+
+
+-	`length()` generalises to `nrow()` and `ncol()` for matrices, and `dim()` for arrays.
+-	`names()` generalises to `rownames()` and `colnames()` for matrices, and `dimnames()`, a list of character vectors, for arrays.
+
+```{r, echo=TRUE}
+results <- matrix(c(10, 30, 40, 50, 43, 56, 21, 30), 2, 4, byrow = TRUE)
+colnames(results) <- c("1qrt", "2qrt", "3qrt", "4qrt")
+rownames(results) <- c("store1", "store2")
+results
+```
+
+
+
+## Data Frames
+
+- A data frame is a **list** of **equal-length vectors**. 
+- A data frame is the **most common way** of storing data in R. 
+
+```{r, echo=TRUE}
+df <- data.frame(x=1:3, y=c("a", "b", "c"))
+df
+```
+
+```{r, echo=TRUE}
+# display the internal structure of an R object
+str(df) 
+```
+
+- `data.frame()` converts strings into factors by default. 
+    - This default setting can cause serious problems in some cases. 
+    - `stringAsFactors = FALSE` suppresses this default setting. 
+    - Using `str()` to check data types is always a good practice. 
+
+
+```{r, echo=TRUE}
+df <- data.frame(x=1:3, y=c("a", "b", "c"), stringsAsFactors = FALSE)
+```
+
+```{r, echo=TRUE}
+str(df) # display the internal structure of an R object
+```
+
+
+## Operators
+
+* Arithmetic Operators
+
+|Operator	|Description |
+|---------|------------|
+|+        |addition    |
+|-        |subtraction |
+|*        |multiplication|
+|/        |division|
+|^ or **  |exponentiation|
+
+
+* Logical Operators
+
+|Operator	|Description |
+|---------|------------|
+| <       |less than    |
+| <=       |less than or equal to |
+|>        |greater than|
+|>=       |greater than equal to|
+|==  |exactly equal to|
+|!=  |not equal to|
+|!x  |Not x|
+|x\|y  |x OR y|
+|x&Y  |x AND y|
+
+```{r}
+1 == 2
+```
+```{r}
+"a" != "b"
+```
+
+
+```{r}
+(1 == 2) | ("a" != "b")
+```
+
+```{r}
+(1 == 2) & ("a" != "b")
+```
+
+
+## Subsetting a Vector
+
+- Subsetting allows us to access the subset of an R object. 
+- Subsetting (indexing) operator `[ ]` is used to subset a vector. 
+- **Positive integers** return elements at the specified positions. 
+
+```{r, echo=TRUE}
+x <- c(2.1, 4.2, 3.3, 5.4)
+x[c(3,1)]
+```
+
+- **Negative integers** omit elements at the specified positions:
+
+```{r, echo=TRUE}
+x[-c(3,1)]
+```
+
+
+- **Logical vectors** select elements where the corresponding logical value is TRUE. This is probably the **most useful** type of subsetting because you write the expression that creates the logical vector. 
+
+```{r, echo=TRUE}
+x[c(TRUE, TRUE, FALSE, FALSE)]
+```
+
+
+```{r, echo=TRUE}
+x > 3
+```
+```{r, echo=TRUE}
+# This is called a logical indexing, which is a very powerful tool.
+x[x > 3]   
+```
+
+
+## Subsetting a List
+
+- Subsetting a list works in the same way as subsetting an atomic vector. Using `[ ]` will always return a list; `[[ ]]` and `$` let you pull out the components of the list.
+
+```{r, echo=TRUE}
+my.lst <- list(stud.id=34453,      # creat a list
+               stud.name="John", 
+               stud.marks=c(14.3,12,15,19))
+```
+
+```{r, echo=TRUE}
+my.lst
+```
+
+```{r, echo=TRUE}
+# [ ] extracts a sub-list 
+my.lst[1]
+```
+
+```{r, echo=TRUE}
+typeof(my.lst[1])
+```
+
+```{r, echo=TRUE}
+# [[ ]] extracts the value of an individual element 
+my.lst[[1]]
+```
+
+```{r, echo=TRUE}
+typeof(my.lst[[1]])
+```
+
+
+```{r, echo=TRUE}
+# In the case of lists with named elements
+# $ extracts the value of an individual element 
+my.lst$stud.id
+```
+
+```{r}
+typeof(my.lst$stud.id)
+```
+
+## Subsetting a Matrix and Array
+
+- You can supply 1d index for each dimension. 
+
+```{r, echo=TRUE}
+a <- matrix(1:9, nrow = 3)
+colnames(a) <- c("A", "B", "C")
+a
+```
+
+```{r, echo=TRUE}
+a[c(TRUE, FALSE, TRUE), c("B", "A")]
+```
+
+```{r, echo=TRUE}
+a[1, c(2,3)]
+```
+
+```{r, echo=TRUE}
+# If you omit any dimension, you obtain full columns or rows
+a[2,]
+```
+
+```{r, echo=TRUE}
+a[,3]
+```
+
+
+```{r, echo=TRUE}
+a
+```
+
+```{r}
+a > 3
+```
+
+
+```{r, echo=TRUE}
+a[a>3] <- NA
+a
+```
+
+
+## Exercise
+
+* `mtcars` is a fuel economy dataset. Subset the `mtcars` dataset such that you only keep `mpg`, `cyl`, and `gear` variables with 6 cylinders. 
+
+* Subset the `mtcars` dataset such that you only keep `mpg`, `cyl`, `disp`, `hp`, `dart`, `wt`, `qsec`, and `am` variables with 4 or 6 cylinders. 
+
+* Subset the `mtcars` dataset such that you only keep `mpg`, `cyl`, `disp`, `hp`, `dart`, `wt`, `qsec`, and `am` variables with 4 or 6 cylinders, and `mpg` larger than 20.  
+
+
+## Combine Matrices by Columns or Rows
+
+```{r, echo=TRUE}
+# combine by columns
+cbind(a,a)   
+```
+
+```{r, echo=TRUE}
+# combine by rows
+rbind(a,a)   
+```
+
+## Names of the Columns and Rows of Matrices
+
+```{r, echo=TRUE}
+colnames(a) 
+```
+
+```{r, echo=TRUE}
+rownames(a) <- c("D", "E", "F")
+```
+
+```{r, echo=TRUE}
+rownames(a)
+```
+
+## Functions 
+
+- R functions are a special type of **R object** designed to carry out **some operation**. 
+- R functions, like mathematical functions, are applied to some set of **arguments** and produce a **result**. 
+- **output = function_name(argument)**
+- In R, both the arguments that we provide when we call the function and the result of the function execution are **R objects** whose type will depend on the function. 
+- R functions range from simple objects implementing some standard **calculation**, e.g. calculating the square root of a number, to more complex functions that can obtain some **model** of a dataset, e.g. a neural network. 
+
+## An Example of Functions
+
+```{r, echo=TRUE}
+# call (execute or run) the mean() function
+mean(c(1,2,3,4))    
+```
+
+```{r, echo=TRUE}
+# a will store the object returned by the mean()
+a <- mean(c(1,2,3,4))   
+```
+
+
+```{r, echo=TRUE}
+# mean() will not work with NA
+mean(c(1,2,NA,4))     
+```
+
+```{r, echo=TRUE}
+# When na.rm = TRUE, NA will be removed before computation
+mean(c(1,2,NA,4), na.rm = TRUE)    
+```
+
+
+## User-Defined Functions
+
+- We can write our own functions easily 
+- function.name <- function(arg1, arg2, arg3){body}
+
+```{r, echo=TRUE}
+# Define se() function that calculate the standard error
+se <- function(x) {
+  v <- var(x)
+  n <- length(x)
+  return(sqrt(v/n))
+}
+```
+
+```{r, echo=TRUE}
+mySample <- rnorm(n=100, mean=20, sd=4)
+se(mySample)
+```
+
+## Exercise
+
+The follow code will generate two numeric vectors randomly sampled from N(0,1) and N(3,2). 
+
+```{r}
+x1 <- rnorm(100, mean=0, sd=1)  # generate 100 random numbers from Normal(0,1)
+x2 <- rnorm(100, mean=3, sd=2)  # generate 100 random numbers from Normal(3,2)
+```
+
+Write your own function that returns (simplified) Cohen's d = $\frac{mean(x_2)-mean(x_1)}{sd(x_1)}$. Specifically, your function should get the above two vectors x1 and x2 as function arguments and return d. For fun, let's use your own name as the name of this function. Check whether your function actually work by running `your_name(x1,x2)`. 
+
+
+## Some Comments on Functions
+
+- Functions are **a fundamental building block** of R. 
+- We can creat our own functions, but we usually use functions made by others. 
+- Packages are **a collection of functions** made by others. 
+- In many cases, our job is to build a **pipeline** of data flow by connecting many available functions. 
+- To do that, we have to handle the input objects (argument) and output objects (returned objects) of functions, which requires knowledge about **data structure** (e.g., creating, subsetting). 
+
+## Vectorization of Functions
+
+- One of the most powerful aspects of R is the vectorization of functions. 
+- Many R functions can be applied to a vector of values producing an **equal-sized vector of results**. 
+
+```{r, echo=TRUE}
+v <- c(4, 7, 23.5, 76.2, 80)
+sqrt(v)
+```
+
+```{r, echo=TRUE}
+# R uses a "recycling rule" by repeating the shorter vector
+v1 <- c(4,5,6,7)
+v2 <- c(10,2)
+v1+v2
+```
+
+## Generating Sequences
+
+```{r, echo=TRUE}
+# creating a vector containing integers between 1 and 10
+1:10 
+```
+```{r, echo=TRUE}
+5:0
+```
+
+```{r, echo=TRUE}
+seq(from=1, to=3, by=0.5)
+```
+
+```{r, echo=TRUE}
+# rep() replicates each term in formula
+rep(5,3)
+```
+
+```{r, echo=TRUE}
+rep(1:2, 3)
+```
+
+```{r, echo=TRUE}
+rep(1:2, each=3)
+```
+
+
+```{r, echo=TRUE}
+# gl() generates sequences involving factors
+# gl(k,n), k = the number of levels, 
+# n = the number of repetitions.
+gl(5,3)
+```
+
+
+## Control Flow (if-else)
+
+- Control flow = the order in which individual statement are executed (or evaluated)
+- Selection
+    + **if** (condition) expression: If the condition is `TRUE`, the expression gets executed. 
+    + **if** (condition) expression1 **else** expression2: The `else` part is only executed if the condition if `FALSE`. 
+```{r, echo=TRUE}
+x <- -5
+if (x>0) {
+  print("Positive number")
+} else {
+  print("Negative number")
+}
+```
+
+## Control Flow (for)
+
+- **for (value in sequence) {statements}**
+- `for loop` allows us to **repeat (loop)** through the elements in a vector and run the code inside the block within curly brackets. 
+```{r, echo=TRUE}
+for (i in 1:3) {
+  print(i^2)
+}
+```
+
+## Control Flow (for)
+```{r, echo=TRUE}
+# count the number of even numbers
+x <- c(2,5,3,9,8,11,6)
+count <- 0
+for (val in x) {
+  if(val %% 2 == 0)  count = count+1
+}
+print(count)
+```
+
+

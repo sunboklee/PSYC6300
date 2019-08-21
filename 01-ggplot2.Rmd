@@ -179,6 +179,29 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color=drv)) + geom_point() 
 ```
 
 
+
+```{r}
+# Create your own discrete scale
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color=drv)) + geom_point() + geom_smooth(method="lm") + labs(title ="MPG vs Engine size", x = "Engine size", y = "MPG") + scale_colour_manual(name = "Drive", values = c("lightpink", "darkseagreen", "lightblue"))
+```
+
+
+
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color=cty)) + geom_point() 
+```
+
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color=cty)) + geom_point() + scale_colour_gradient(name = "City MPG", low = "red", high = "blue")
+```
+
+
+* For more details about scales, see [https://ggplot2.tidyverse.org/reference/](https://ggplot2.tidyverse.org/reference/). 
+
+* Colors in R: [http://www.sthda.com/english/wiki/colors-in-r](http://www.sthda.com/english/wiki/colors-in-r)
+
+
+
 ## Statistical transformations (**stats** for short)
 
 ```{r}

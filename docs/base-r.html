@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Base R | R, Rstudio, and ggplot2</title>
+  <meta name="description" content="This is an introduction to R, Rstudio, and ggplot2" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Base R | R, Rstudio, and ggplot2" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is an introduction to R, Rstudio, and ggplot2" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Base R | R, Rstudio, and ggplot2" />
+  
+  <meta name="twitter:description" content="This is an introduction to R, Rstudio, and ggplot2" />
+  
+
+<meta name="author" content="Sunbok Lee" />
+
+
+<meta name="date" content="2019-08-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="exercise-3.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> R</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#why-r"><i class="fa fa-check"></i><b>1.1</b> Why R?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#installing-r"><i class="fa fa-check"></i><b>1.2</b> Installing R</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#installing-rstudio"><i class="fa fa-check"></i><b>1.3</b> Installing RStudio</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#cheat-sheets-for-r"><i class="fa fa-check"></i><b>1.4</b> Cheat Sheets for R</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#rmarkdown-files"><i class="fa fa-check"></i><b>1.5</b> Rmarkdown files</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#r-topics-covered-in-this-course"><i class="fa fa-check"></i><b>1.6</b> R topics covered in this course</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html"><i class="fa fa-check"></i><b>2</b> Introduction to <code>ggplot2</code></a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#what-is-ggplot2"><i class="fa fa-check"></i><b>2.1</b> What is <code>ggplot2</code></a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#data"><i class="fa fa-check"></i><b>2.2</b> Data</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#geometric-objects-geoms"><i class="fa fa-check"></i><b>2.3</b> Geometric objects (<strong>geoms</strong>)</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#exercise"><i class="fa fa-check"></i><b>2.4</b> Exercise</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#aesthetic-mappings"><i class="fa fa-check"></i><b>2.5</b> Aesthetic mappings</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#exercise-1"><i class="fa fa-check"></i><b>2.6</b> Exercise</a></li>
+<li class="chapter" data-level="2.7" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#scales"><i class="fa fa-check"></i><b>2.7</b> Scales</a></li>
+<li class="chapter" data-level="2.8" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#statistical-transformations-stats-for-short"><i class="fa fa-check"></i><b>2.8</b> Statistical transformations (<strong>stats</strong> for short)</a></li>
+<li class="chapter" data-level="2.9" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#a-faceting"><i class="fa fa-check"></i><b>2.9</b> A faceting</a></li>
+<li class="chapter" data-level="2.10" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#exercise-2"><i class="fa fa-check"></i><b>2.10</b> Exercise</a></li>
+<li class="chapter" data-level="2.11" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#grouping"><i class="fa fa-check"></i><b>2.11</b> Grouping</a></li>
+<li class="chapter" data-level="2.12" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#themes"><i class="fa fa-check"></i><b>2.12</b> Themes</a></li>
+<li class="chapter" data-level="2.13" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#save-a-ggplot"><i class="fa fa-check"></i><b>2.13</b> Save a ggplot</a></li>
+<li class="chapter" data-level="2.14" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#more-resources"><i class="fa fa-check"></i><b>2.14</b> More resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>3</b> Descriptive Statistics</a><ul>
+<li class="chapter" data-level="3.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#r-functions-for-descriptive-statistics"><i class="fa fa-check"></i><b>3.1</b> R functions for descriptive statistics</a></li>
+<li class="chapter" data-level="3.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#qplot"><i class="fa fa-check"></i><b>3.2</b> qplot()</a></li>
+<li class="chapter" data-level="3.3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#scatterplots"><i class="fa fa-check"></i><b>3.3</b> Scatterplots</a></li>
+<li class="chapter" data-level="3.4" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#histogram"><i class="fa fa-check"></i><b>3.4</b> Histogram</a></li>
+<li class="chapter" data-level="3.5" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#density-plots"><i class="fa fa-check"></i><b>3.5</b> Density plots</a></li>
+<li class="chapter" data-level="3.6" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#barplots"><i class="fa fa-check"></i><b>3.6</b> Barplots</a></li>
+<li class="chapter" data-level="3.7" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#boxplots"><i class="fa fa-check"></i><b>3.7</b> Boxplots</a></li>
+<li class="chapter" data-level="3.8" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#faceting"><i class="fa fa-check"></i><b>3.8</b> Faceting</a></li>
+<li class="chapter" data-level="3.9" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#the-corrplot-package"><i class="fa fa-check"></i><b>3.9</b> The <code>corrplot</code> Package</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="exercise-3.html"><a href="exercise-3.html"><i class="fa fa-check"></i><b>4</b> Exercise</a></li>
+<li class="chapter" data-level="5" data-path="base-r.html"><a href="base-r.html"><i class="fa fa-check"></i><b>5</b> Base R</a><ul>
+<li class="chapter" data-level="5.1" data-path="base-r.html"><a href="base-r.html#topics"><i class="fa fa-check"></i><b>5.1</b> Topics</a></li>
+<li class="chapter" data-level="5.2" data-path="base-r.html"><a href="base-r.html#further-reading"><i class="fa fa-check"></i><b>5.2</b> Further reading</a></li>
+<li class="chapter" data-level="5.3" data-path="base-r.html"><a href="base-r.html#interaction-with-r"><i class="fa fa-check"></i><b>5.3</b> Interaction with R</a></li>
+<li class="chapter" data-level="5.4" data-path="base-r.html"><a href="base-r.html#r-objects-and-variables"><i class="fa fa-check"></i><b>5.4</b> R Objects and Variables</a></li>
+<li class="chapter" data-level="5.5" data-path="base-r.html"><a href="base-r.html#data-structure"><i class="fa fa-check"></i><b>5.5</b> Data Structure</a></li>
+<li class="chapter" data-level="5.6" data-path="base-r.html"><a href="base-r.html#vectors-come-in-two-flavours"><i class="fa fa-check"></i><b>5.6</b> Vectors Come in Two Flavours</a></li>
+<li class="chapter" data-level="5.7" data-path="base-r.html"><a href="base-r.html#a-vector-has-three-properties"><i class="fa fa-check"></i><b>5.7</b> A Vector Has Three Properties</a></li>
+<li class="chapter" data-level="5.8" data-path="base-r.html"><a href="base-r.html#attributes"><i class="fa fa-check"></i><b>5.8</b> Attributes</a></li>
+<li class="chapter" data-level="5.9" data-path="base-r.html"><a href="base-r.html#type-coercion-conversion"><i class="fa fa-check"></i><b>5.9</b> Type Coercion (Conversion)</a></li>
+<li class="chapter" data-level="5.10" data-path="base-r.html"><a href="base-r.html#na-represents-missing"><i class="fa fa-check"></i><b>5.10</b> NA represents missing</a></li>
+<li class="chapter" data-level="5.11" data-path="base-r.html"><a href="base-r.html#indexing-a-vector"><i class="fa fa-check"></i><b>5.11</b> Indexing a Vector</a></li>
+<li class="chapter" data-level="5.12" data-path="base-r.html"><a href="base-r.html#factors"><i class="fa fa-check"></i><b>5.12</b> Factors</a></li>
+<li class="chapter" data-level="5.13" data-path="base-r.html"><a href="base-r.html#matrices-and-arrays"><i class="fa fa-check"></i><b>5.13</b> Matrices and Arrays</a></li>
+<li class="chapter" data-level="5.14" data-path="base-r.html"><a href="base-r.html#data-frames"><i class="fa fa-check"></i><b>5.14</b> Data Frames</a></li>
+<li class="chapter" data-level="5.15" data-path="base-r.html"><a href="base-r.html#operators"><i class="fa fa-check"></i><b>5.15</b> Operators</a></li>
+<li class="chapter" data-level="5.16" data-path="base-r.html"><a href="base-r.html#subsetting-a-vector"><i class="fa fa-check"></i><b>5.16</b> Subsetting a Vector</a></li>
+<li class="chapter" data-level="5.17" data-path="base-r.html"><a href="base-r.html#subsetting-a-list"><i class="fa fa-check"></i><b>5.17</b> Subsetting a List</a></li>
+<li class="chapter" data-level="5.18" data-path="base-r.html"><a href="base-r.html#subsetting-a-matrix-and-array"><i class="fa fa-check"></i><b>5.18</b> Subsetting a Matrix and Array</a></li>
+<li class="chapter" data-level="5.19" data-path="base-r.html"><a href="base-r.html#exercise-4"><i class="fa fa-check"></i><b>5.19</b> Exercise</a></li>
+<li class="chapter" data-level="5.20" data-path="base-r.html"><a href="base-r.html#combine-matrices-by-columns-or-rows"><i class="fa fa-check"></i><b>5.20</b> Combine Matrices by Columns or Rows</a></li>
+<li class="chapter" data-level="5.21" data-path="base-r.html"><a href="base-r.html#names-of-the-columns-and-rows-of-matrices"><i class="fa fa-check"></i><b>5.21</b> Names of the Columns and Rows of Matrices</a></li>
+<li class="chapter" data-level="5.22" data-path="base-r.html"><a href="base-r.html#functions"><i class="fa fa-check"></i><b>5.22</b> Functions</a></li>
+<li class="chapter" data-level="5.23" data-path="base-r.html"><a href="base-r.html#an-example-of-functions"><i class="fa fa-check"></i><b>5.23</b> An Example of Functions</a></li>
+<li class="chapter" data-level="5.24" data-path="base-r.html"><a href="base-r.html#user-defined-functions"><i class="fa fa-check"></i><b>5.24</b> User-Defined Functions</a></li>
+<li class="chapter" data-level="5.25" data-path="base-r.html"><a href="base-r.html#exercise-5"><i class="fa fa-check"></i><b>5.25</b> Exercise</a></li>
+<li class="chapter" data-level="5.26" data-path="base-r.html"><a href="base-r.html#some-comments-on-functions"><i class="fa fa-check"></i><b>5.26</b> Some Comments on Functions</a></li>
+<li class="chapter" data-level="5.27" data-path="base-r.html"><a href="base-r.html#vectorization-of-functions"><i class="fa fa-check"></i><b>5.27</b> Vectorization of Functions</a></li>
+<li class="chapter" data-level="5.28" data-path="base-r.html"><a href="base-r.html#generating-sequences"><i class="fa fa-check"></i><b>5.28</b> Generating Sequences</a></li>
+<li class="chapter" data-level="5.29" data-path="base-r.html"><a href="base-r.html#control-flow-if-else"><i class="fa fa-check"></i><b>5.29</b> Control Flow (if-else)</a></li>
+<li class="chapter" data-level="5.30" data-path="base-r.html"><a href="base-r.html#control-flow-for"><i class="fa fa-check"></i><b>5.30</b> Control Flow (for)</a></li>
+<li class="chapter" data-level="5.31" data-path="base-r.html"><a href="base-r.html#control-flow-for-1"><i class="fa fa-check"></i><b>5.31</b> Control Flow (for)</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R, Rstudio, and ggplot2</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="base-r" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Base R</h1>
+<div id="topics" class="section level2">
+<h2><span class="header-section-number">5.1</span> Topics</h2>
+<ul>
+<li>R Objects and Variables</li>
+<li>Data Structure</li>
+<li>Sub-Setting</li>
+<li>Functions</li>
+<li>Control Flow (if, for, while)</li>
+</ul>
+</div>
+<div id="further-reading" class="section level2">
+<h2><span class="header-section-number">5.2</span> Further reading</h2>
+<ul>
+<li>Wickham, H. (2014). Advanced R. Chapman and Hall/CRC (<a href="http://adv-r.had.co.nz"></a>)
+<ul>
+<li>This is a nice book to read after you become comfortable in base R (not required in this course)</li>
+</ul></li>
+</ul>
+</div>
+<div id="interaction-with-r" class="section level2">
+<h2><span class="header-section-number">5.3</span> Interaction with R</h2>
+<ul>
+<li>R Console: for easy interactive exploration of ideas</li>
+<li>R Script file (.R): for sequence of R commands</li>
+<li>R markdown (.Rmd): for reproducible and dynamic reports</li>
+</ul>
+</div>
+<div id="r-objects-and-variables" class="section level2">
+<h2><span class="header-section-number">5.4</span> R Objects and Variables</h2>
+<ul>
+<li><strong>Everything in R is stored as an object</strong>, which is associated with a variable name.</li>
+<li>An object is a technical terminology defined in <strong>Object Oriented Programming (OOP)</strong>. (OOP is an important concept but not in this class)</li>
+<li>A variable name can be assigned to an object using the <strong>assignment operator</strong>.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># store a number to a variable named `a`</span>
+a &lt;-<span class="st"> </span><span class="fl">0.2</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># print a</span>
+a</code></pre></div>
+<pre><code>## [1] 0.2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># store a vector to a variable named `b`</span>
+b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">9</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># print b</span>
+b</code></pre></div>
+<pre><code>## [1] 1 4 9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">z &lt;-<span class="st"> </span><span class="dv">5</span>
+i &lt;-<span class="st"> </span>(z *<span class="st"> </span><span class="dv">2</span> +<span class="st"> </span><span class="dv">45</span>)/<span class="dv">2</span>
+i</code></pre></div>
+<pre><code>## [1] 27.5</code></pre>
+<ul>
+<li>We can think of the assignment operation as “<strong>evaluate</strong> whatever is given on the <strong>right side</strong> of the operator, and assign (store) the result (an object of some type) of this evaluation in the variable whose name is given on the <strong>left side</strong></li>
+</ul>
+</div>
+<div id="data-structure" class="section level2">
+<h2><span class="header-section-number">5.5</span> Data Structure</h2>
+<ul>
+<li>R has <strong>base data structures</strong>.</li>
+<li>Almost all other objects are built upon base data structures.</li>
+<li>R base data structures can be organized by their dimensionality:</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Dimension</th>
+<th>Homogeneous</th>
+<th>Heterogeneous</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1D</td>
+<td>Atomic vector</td>
+<td>List</td>
+</tr>
+<tr class="even">
+<td>2D</td>
+<td>Matrix</td>
+<td>Data frame</td>
+</tr>
+<tr class="odd">
+<td>nD</td>
+<td>Array</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="figure">
+<img src="datastructure.png" />
+
+</div>
+</div>
+<div id="vectors-come-in-two-flavours" class="section level2">
+<h2><span class="header-section-number">5.6</span> Vectors Come in Two Flavours</h2>
+<ul>
+<li>Atomic vectors (homogeneous)
+<ul>
+<li>All elements of an atomic vector <strong>must be the same type</strong>.</li>
+<li>There are <strong>6 types</strong> of an atomic vector
+<ul>
+<li><strong>Logical</strong> (TRUE or FALSE), <strong>integer</strong>, <strong>double</strong>, and <strong>character</strong> (+ rarely used <strong>complex</strong> and <strong>raw</strong>)</li>
+</ul></li>
+<li>Atomic vectors are usually created with <code>c()</code>, short for combine:
+<ul>
+<li><code>a &lt;- c(TRUE, FALSE, T, F)</code> # logical</li>
+<li><code>a &lt;- c(1L, 6L, 5L)</code> # integer</li>
+<li><code>a &lt;- c(1, 2.5, 3.8)</code> # double</li>
+<li><code>a &lt;- c(&quot;apple&quot;, &quot;orange&quot;)</code> # character</li>
+</ul></li>
+</ul></li>
+<li>Lists (heterogeneous)
+<ul>
+<li>Lists are different from atomic vectors because their elements can be of any type.</li>
+<li>List are created by <code>list()</code></li>
+<li><code>&gt; x &lt;- list(1:3, &quot;a&quot;, c(TRUE, FALSE))</code></li>
+</ul></li>
+</ul>
+</div>
+<div id="a-vector-has-three-properties" class="section level2">
+<h2><span class="header-section-number">5.7</span> A Vector Has Three Properties</h2>
+<ul>
+<li><strong>Type</strong>: <code>typeof()</code> returns the type of an object.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</code></pre></div>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<ul>
+<li><strong>Length</strong>: <code>length()</code> returns the number of elements in a vector</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<ul>
+<li><strong>Attributes</strong>: <code>attributes()</code> returns additional arbitrary metadata</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attributes</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</code></pre></div>
+<pre><code>## NULL</code></pre>
+</div>
+<div id="attributes" class="section level2">
+<h2><span class="header-section-number">5.8</span> Attributes</h2>
+<ul>
+<li>All objects can have attributes to store <strong>metadata</strong> about the object.</li>
+<li>Attributes can be considered as a <strong>named list</strong>.</li>
+<li>Attributes can be accessed individually with <code>attr()</code> or all at once with <code>attributes()</code>.</li>
+<li>Names are attributes of a vector. You can name a vector in two ways:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">x=</span><span class="dv">1</span>,<span class="dt">y=</span><span class="dv">2</span>,<span class="dt">z=</span><span class="dv">3</span>)   <span class="co"># when creating</span>
+<span class="kw">names</span>(a)</code></pre></div>
+<pre><code>## [1] &quot;x&quot; &quot;y&quot; &quot;z&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(a) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;l&quot;</span>, <span class="st">&quot;m&quot;</span>, <span class="st">&quot;n&quot;</span>)   <span class="co"># by modifying existing names</span>
+a</code></pre></div>
+<pre><code>## l m n 
+## 1 2 3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attributes</span>(a)    <span class="co"># names are attributes</span></code></pre></div>
+<pre><code>## $names
+## [1] &quot;l&quot; &quot;m&quot; &quot;n&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attributes</span>(mtcars)</code></pre></div>
+<pre><code>## $names
+##  [1] &quot;mpg&quot;  &quot;cyl&quot;  &quot;disp&quot; &quot;hp&quot;   &quot;drat&quot; &quot;wt&quot;   &quot;qsec&quot; &quot;vs&quot;   &quot;am&quot;   &quot;gear&quot;
+## [11] &quot;carb&quot;
+## 
+## $row.names
+##  [1] &quot;Mazda RX4&quot;           &quot;Mazda RX4 Wag&quot;       &quot;Datsun 710&quot;         
+##  [4] &quot;Hornet 4 Drive&quot;      &quot;Hornet Sportabout&quot;   &quot;Valiant&quot;            
+##  [7] &quot;Duster 360&quot;          &quot;Merc 240D&quot;           &quot;Merc 230&quot;           
+## [10] &quot;Merc 280&quot;            &quot;Merc 280C&quot;           &quot;Merc 450SE&quot;         
+## [13] &quot;Merc 450SL&quot;          &quot;Merc 450SLC&quot;         &quot;Cadillac Fleetwood&quot; 
+## [16] &quot;Lincoln Continental&quot; &quot;Chrysler Imperial&quot;   &quot;Fiat 128&quot;           
+## [19] &quot;Honda Civic&quot;         &quot;Toyota Corolla&quot;      &quot;Toyota Corona&quot;      
+## [22] &quot;Dodge Challenger&quot;    &quot;AMC Javelin&quot;         &quot;Camaro Z28&quot;         
+## [25] &quot;Pontiac Firebird&quot;    &quot;Fiat X1-9&quot;           &quot;Porsche 914-2&quot;      
+## [28] &quot;Lotus Europa&quot;        &quot;Ford Pantera L&quot;      &quot;Ferrari Dino&quot;       
+## [31] &quot;Maserati Bora&quot;       &quot;Volvo 142E&quot;         
+## 
+## $class
+## [1] &quot;data.frame&quot;</code></pre>
+</div>
+<div id="type-coercion-conversion" class="section level2">
+<h2><span class="header-section-number">5.9</span> Type Coercion (Conversion)</h2>
+<ul>
+<li>All elements of a vector must belong to the same base data type. If that is not true, R will automatically <strong>force</strong> it by type coercion.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">v &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">7</span>, <span class="fl">23.5</span>, <span class="fl">76.2</span>, <span class="dv">80</span>, <span class="st">&quot;rrt&quot;</span>)
+v</code></pre></div>
+<pre><code>## [1] &quot;4&quot;    &quot;7&quot;    &quot;23.5&quot; &quot;76.2&quot; &quot;80&quot;   &quot;rrt&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(v)</code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<ul>
+<li>Functions can automatically convert data type.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>))</code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<ul>
+<li>You can <strong>explicitly</strong> convert data type with <code>as.character()</code>, <code>as.double()</code>, <code>as.integer()</code>, and <code>as.logical()</code>.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)
+a</code></pre></div>
+<pre><code>## [1] 1 2 3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b &lt;-<span class="st"> </span><span class="kw">as.character</span>(a)
+b</code></pre></div>
+<pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot;</code></pre>
+</div>
+<div id="na-represents-missing" class="section level2">
+<h2><span class="header-section-number">5.10</span> NA represents missing</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">u &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="ot">NA</span>, <span class="dv">2</span>)
+u</code></pre></div>
+<pre><code>## [1]  4  6 NA  2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">k &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">NA</span>, <span class="ot">TRUE</span>)
+k</code></pre></div>
+<pre><code>## [1]  TRUE FALSE FALSE    NA  TRUE</code></pre>
+</div>
+<div id="indexing-a-vector" class="section level2">
+<h2><span class="header-section-number">5.11</span> Indexing a Vector</h2>
+<ul>
+<li>You can access a particular element of a vector through an <strong>index</strong> between <strong>square brackets</strong> or <strong>indexing (subsetting) operator</strong>.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a[<span class="dv">3</span>]</code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>)]</code></pre></div>
+<pre><code>## [1] 1 3 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># create a vector</span>
+<span class="dv">2</span>:<span class="dv">4</span></code></pre></div>
+<pre><code>## [1] 2 3 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># same with a[c(2,3,4)]</span>
+a[<span class="dv">2</span>:<span class="dv">4</span>]</code></pre></div>
+<pre><code>## [1] 2 3 4</code></pre>
+</div>
+<div id="factors" class="section level2">
+<h2><span class="header-section-number">5.12</span> Factors</h2>
+<ul>
+<li>A factor is <strong>a vector</strong> that can contain <strong>only predefined values</strong>, and is used to store <strong>categorical data</strong>.</li>
+<li>Factors are built on <strong>integer vectors</strong> using two attributes
+<ul>
+<li>the <strong><code>class()</code></strong>, “factor”, which make factors behave differently from regular integer vectors, and</li>
+<li>the <strong><code>levels()</code></strong>, which set the set of predefined values that x might have taken.</li>
+</ul></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>), <span class="dt">levels =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x</code></pre></div>
+<pre><code>## [1] male   female female male   male   female
+## Levels: male female</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(x)</code></pre></div>
+<pre><code>## [1] &quot;factor&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">levels</span>(x)</code></pre></div>
+<pre><code>## [1] &quot;male&quot;   &quot;female&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># access an object&#39;s attributes.</span>
+<span class="kw">attributes</span>(x)</code></pre></div>
+<pre><code>## $levels
+## [1] &quot;male&quot;   &quot;female&quot;
+## 
+## $class
+## [1] &quot;factor&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># the factor x can only take a pre-defined value (or level): male or female</span>
+<span class="co"># You can&#39;t assign values that are not in the levels</span>
+x[<span class="dv">1</span>] &lt;-<span class="st"> &quot;female&quot;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x</code></pre></div>
+<pre><code>## [1] female female female male   male   female
+## Levels: male female</code></pre>
+</div>
+<div id="matrices-and-arrays" class="section level2">
+<h2><span class="header-section-number">5.13</span> Matrices and Arrays</h2>
+<ul>
+<li>matrices and arrays are <strong>implemented as vectors</strong> with special attributes</li>
+<li>Adding a <strong><code>dim()</code> attribute</strong> to an atomic vector allows it to behave like a multi-dimensional array.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="dv">6</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a</code></pre></div>
+<pre><code>## [1] 1 2 3 4 5 6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Get or set specific attributes of an object.</span>
+<span class="kw">attr</span>(a, <span class="st">&quot;dim&quot;</span>) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a</code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    1    4
+## [2,]    2    5
+## [3,]    3    6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># by default, a matrix is filled by column</span>
+a &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span>:<span class="dv">6</span>, <span class="dt">ncol=</span><span class="dv">3</span>, <span class="dt">nrow=</span><span class="dv">2</span>)
+a</code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span>:<span class="dv">6</span>, <span class="dt">ncol=</span><span class="dv">3</span>)
+a</code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># a matrix can be filled by row using `byrow = TRUE`</span>
+a &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span>:<span class="dv">6</span>, <span class="dt">ncol=</span><span class="dv">3</span>, <span class="dt">nrow=</span><span class="dv">2</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)
+a</code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attributes</span>(a)</code></pre></div>
+<pre><code>## $dim
+## [1] 2 3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(a)</code></pre></div>
+<pre><code>## [1] 2 3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b &lt;-<span class="st"> </span><span class="kw">array</span>(<span class="dv">1</span>:<span class="dv">12</span>, <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">2</span>))
+b</code></pre></div>
+<pre><code>## , , 1
+## 
+##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6
+## 
+## , , 2
+## 
+##      [,1] [,2] [,3]
+## [1,]    7    9   11
+## [2,]    8   10   12</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(b)</code></pre></div>
+<pre><code>## [1] 2 3 2</code></pre>
+<ul>
+<li><code>length()</code> generalises to <code>nrow()</code> and <code>ncol()</code> for matrices, and <code>dim()</code> for arrays.</li>
+<li><code>names()</code> generalises to <code>rownames()</code> and <code>colnames()</code> for matrices, and <code>dimnames()</code>, a list of character vectors, for arrays.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">results &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">43</span>, <span class="dv">56</span>, <span class="dv">21</span>, <span class="dv">30</span>), <span class="dv">2</span>, <span class="dv">4</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)
+<span class="kw">colnames</span>(results) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;1qrt&quot;</span>, <span class="st">&quot;2qrt&quot;</span>, <span class="st">&quot;3qrt&quot;</span>, <span class="st">&quot;4qrt&quot;</span>)
+<span class="kw">rownames</span>(results) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;store1&quot;</span>, <span class="st">&quot;store2&quot;</span>)
+results</code></pre></div>
+<pre><code>##        1qrt 2qrt 3qrt 4qrt
+## store1   10   30   40   50
+## store2   43   56   21   30</code></pre>
+</div>
+<div id="data-frames" class="section level2">
+<h2><span class="header-section-number">5.14</span> Data Frames</h2>
+<ul>
+<li>A data frame is a <strong>list</strong> of <strong>equal-length vectors</strong>.</li>
+<li>A data frame is the <strong>most common way</strong> of storing data in R.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x=</span><span class="dv">1</span>:<span class="dv">3</span>, <span class="dt">y=</span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>))
+df</code></pre></div>
+<pre><code>##   x y
+## 1 1 a
+## 2 2 b
+## 3 3 c</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># display the internal structure of an R object</span>
+<span class="kw">str</span>(df) </code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    3 obs. of  2 variables:
+##  $ x: int  1 2 3
+##  $ y: Factor w/ 3 levels &quot;a&quot;,&quot;b&quot;,&quot;c&quot;: 1 2 3</code></pre>
+<ul>
+<li><code>data.frame()</code> converts strings into factors by default.
+<ul>
+<li>This default setting can cause serious problems in some cases.</li>
+<li><code>stringAsFactors = FALSE</code> suppresses this default setting.</li>
+<li>Using <code>str()</code> to check data types is always a good practice.</li>
+</ul></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x=</span><span class="dv">1</span>:<span class="dv">3</span>, <span class="dt">y=</span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>), <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(df) <span class="co"># display the internal structure of an R object</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    3 obs. of  2 variables:
+##  $ x: int  1 2 3
+##  $ y: chr  &quot;a&quot; &quot;b&quot; &quot;c&quot;</code></pre>
+</div>
+<div id="operators" class="section level2">
+<h2><span class="header-section-number">5.15</span> Operators</h2>
+<ul>
+<li>Arithmetic Operators</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>+</td>
+<td>addition</td>
+</tr>
+<tr class="even">
+<td>-</td>
+<td>subtraction</td>
+</tr>
+<tr class="odd">
+<td>*</td>
+<td>multiplication</td>
+</tr>
+<tr class="even">
+<td>/</td>
+<td>division</td>
+</tr>
+<tr class="odd">
+<td>^ or **</td>
+<td>exponentiation</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Logical Operators</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;</td>
+<td>less than</td>
+</tr>
+<tr class="even">
+<td>&lt;=</td>
+<td>less than or equal to</td>
+</tr>
+<tr class="odd">
+<td>&gt;</td>
+<td>greater than</td>
+</tr>
+<tr class="even">
+<td>&gt;=</td>
+<td>greater than equal to</td>
+</tr>
+<tr class="odd">
+<td>==</td>
+<td>exactly equal to</td>
+</tr>
+<tr class="even">
+<td>!=</td>
+<td>not equal to</td>
+</tr>
+<tr class="odd">
+<td>!x</td>
+<td>Not x</td>
+</tr>
+<tr class="even">
+<td>x|y</td>
+<td>x OR y</td>
+</tr>
+<tr class="odd">
+<td>x&amp;Y</td>
+<td>x AND y</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> ==<span class="st"> </span><span class="dv">2</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="st">&quot;a&quot;</span> !=<span class="st"> &quot;b&quot;</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">1</span> ==<span class="st"> </span><span class="dv">2</span>) |<span class="st"> </span>(<span class="st">&quot;a&quot;</span> !=<span class="st"> &quot;b&quot;</span>)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">1</span> ==<span class="st"> </span><span class="dv">2</span>) &amp;<span class="st"> </span>(<span class="st">&quot;a&quot;</span> !=<span class="st"> &quot;b&quot;</span>)</code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+</div>
+<div id="subsetting-a-vector" class="section level2">
+<h2><span class="header-section-number">5.16</span> Subsetting a Vector</h2>
+<ul>
+<li>Subsetting allows us to access the subset of an R object.</li>
+<li>Subsetting (indexing) operator <code>[ ]</code> is used to subset a vector.</li>
+<li><strong>Positive integers</strong> return elements at the specified positions.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">2.1</span>, <span class="fl">4.2</span>, <span class="fl">3.3</span>, <span class="fl">5.4</span>)
+x[<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">1</span>)]</code></pre></div>
+<pre><code>## [1] 3.3 2.1</code></pre>
+<ul>
+<li><strong>Negative integers</strong> omit elements at the specified positions:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[-<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">1</span>)]</code></pre></div>
+<pre><code>## [1] 4.2 5.4</code></pre>
+<ul>
+<li><strong>Logical vectors</strong> select elements where the corresponding logical value is TRUE. This is probably the <strong>most useful</strong> type of subsetting because you write the expression that creates the logical vector.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>)]</code></pre></div>
+<pre><code>## [1] 2.1 4.2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &gt;<span class="st"> </span><span class="dv">3</span></code></pre></div>
+<pre><code>## [1] FALSE  TRUE  TRUE  TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># This is called a logical indexing, which is a very powerful tool.</span>
+x[x &gt;<span class="st"> </span><span class="dv">3</span>]   </code></pre></div>
+<pre><code>## [1] 4.2 3.3 5.4</code></pre>
+</div>
+<div id="subsetting-a-list" class="section level2">
+<h2><span class="header-section-number">5.17</span> Subsetting a List</h2>
+<ul>
+<li>Subsetting a list works in the same way as subsetting an atomic vector. Using <code>[ ]</code> will always return a list; <code>[[ ]]</code> and <code>$</code> let you pull out the components of the list.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my.lst &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">stud.id=</span><span class="dv">34453</span>,      <span class="co"># creat a list</span>
+               <span class="dt">stud.name=</span><span class="st">&quot;John&quot;</span>, 
+               <span class="dt">stud.marks=</span><span class="kw">c</span>(<span class="fl">14.3</span>,<span class="dv">12</span>,<span class="dv">15</span>,<span class="dv">19</span>))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my.lst</code></pre></div>
+<pre><code>## $stud.id
+## [1] 34453
+## 
+## $stud.name
+## [1] &quot;John&quot;
+## 
+## $stud.marks
+## [1] 14.3 12.0 15.0 19.0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># [ ] extracts a sub-list </span>
+my.lst[<span class="dv">1</span>]</code></pre></div>
+<pre><code>## $stud.id
+## [1] 34453</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(my.lst[<span class="dv">1</span>])</code></pre></div>
+<pre><code>## [1] &quot;list&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># [[ ]] extracts the value of an individual element </span>
+my.lst[[<span class="dv">1</span>]]</code></pre></div>
+<pre><code>## [1] 34453</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(my.lst[[<span class="dv">1</span>]])</code></pre></div>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># In the case of lists with named elements</span>
+<span class="co"># $ extracts the value of an individual element </span>
+my.lst$stud.id</code></pre></div>
+<pre><code>## [1] 34453</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(my.lst$stud.id)</code></pre></div>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+</div>
+<div id="subsetting-a-matrix-and-array" class="section level2">
+<h2><span class="header-section-number">5.18</span> Subsetting a Matrix and Array</h2>
+<ul>
+<li>You can supply 1d index for each dimension.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span>:<span class="dv">9</span>, <span class="dt">nrow =</span> <span class="dv">3</span>)
+<span class="kw">colnames</span>(a) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>)
+a</code></pre></div>
+<pre><code>##      A B C
+## [1,] 1 4 7
+## [2,] 2 5 8
+## [3,] 3 6 9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a[<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>), <span class="kw">c</span>(<span class="st">&quot;B&quot;</span>, <span class="st">&quot;A&quot;</span>)]</code></pre></div>
+<pre><code>##      B A
+## [1,] 4 1
+## [2,] 6 3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a[<span class="dv">1</span>, <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>)]</code></pre></div>
+<pre><code>## B C 
+## 4 7</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># If you omit any dimension, you obtain full columns or rows</span>
+a[<span class="dv">2</span>,]</code></pre></div>
+<pre><code>## A B C 
+## 2 5 8</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a[,<span class="dv">3</span>]</code></pre></div>
+<pre><code>## [1] 7 8 9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a</code></pre></div>
+<pre><code>##      A B C
+## [1,] 1 4 7
+## [2,] 2 5 8
+## [3,] 3 6 9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &gt;<span class="st"> </span><span class="dv">3</span></code></pre></div>
+<pre><code>##          A    B    C
+## [1,] FALSE TRUE TRUE
+## [2,] FALSE TRUE TRUE
+## [3,] FALSE TRUE TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a[a&gt;<span class="dv">3</span>] &lt;-<span class="st"> </span><span class="ot">NA</span>
+a</code></pre></div>
+<pre><code>##      A  B  C
+## [1,] 1 NA NA
+## [2,] 2 NA NA
+## [3,] 3 NA NA</code></pre>
+</div>
+<div id="exercise-4" class="section level2">
+<h2><span class="header-section-number">5.19</span> Exercise</h2>
+<ul>
+<li><p><code>mtcars</code> is a fuel economy dataset. Subset the <code>mtcars</code> dataset such that you only keep <code>mpg</code>, <code>cyl</code>, and <code>gear</code> variables with 6 cylinders.</p></li>
+<li><p>Subset the <code>mtcars</code> dataset such that you only keep <code>mpg</code>, <code>cyl</code>, <code>disp</code>, <code>hp</code>, <code>dart</code>, <code>wt</code>, <code>qsec</code>, and <code>am</code> variables with 4 or 6 cylinders.</p></li>
+<li><p>Subset the <code>mtcars</code> dataset such that you only keep <code>mpg</code>, <code>cyl</code>, <code>disp</code>, <code>hp</code>, <code>dart</code>, <code>wt</code>, <code>qsec</code>, and <code>am</code> variables with 4 or 6 cylinders, and <code>mpg</code> larger than 20.</p></li>
+</ul>
+</div>
+<div id="combine-matrices-by-columns-or-rows" class="section level2">
+<h2><span class="header-section-number">5.20</span> Combine Matrices by Columns or Rows</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># combine by columns</span>
+<span class="kw">cbind</span>(a,a)   </code></pre></div>
+<pre><code>##      A  B  C A  B  C
+## [1,] 1 NA NA 1 NA NA
+## [2,] 2 NA NA 2 NA NA
+## [3,] 3 NA NA 3 NA NA</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># combine by rows</span>
+<span class="kw">rbind</span>(a,a)   </code></pre></div>
+<pre><code>##      A  B  C
+## [1,] 1 NA NA
+## [2,] 2 NA NA
+## [3,] 3 NA NA
+## [4,] 1 NA NA
+## [5,] 2 NA NA
+## [6,] 3 NA NA</code></pre>
+</div>
+<div id="names-of-the-columns-and-rows-of-matrices" class="section level2">
+<h2><span class="header-section-number">5.21</span> Names of the Columns and Rows of Matrices</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colnames</span>(a) </code></pre></div>
+<pre><code>## [1] &quot;A&quot; &quot;B&quot; &quot;C&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rownames</span>(a) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;D&quot;</span>, <span class="st">&quot;E&quot;</span>, <span class="st">&quot;F&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rownames</span>(a)</code></pre></div>
+<pre><code>## [1] &quot;D&quot; &quot;E&quot; &quot;F&quot;</code></pre>
+</div>
+<div id="functions" class="section level2">
+<h2><span class="header-section-number">5.22</span> Functions</h2>
+<ul>
+<li>R functions are a special type of <strong>R object</strong> designed to carry out <strong>some operation</strong>.</li>
+<li>R functions, like mathematical functions, are applied to some set of <strong>arguments</strong> and produce a <strong>result</strong>.</li>
+<li><strong>output = function_name(argument)</strong></li>
+<li>In R, both the arguments that we provide when we call the function and the result of the function execution are <strong>R objects</strong> whose type will depend on the function.</li>
+<li>R functions range from simple objects implementing some standard <strong>calculation</strong>, e.g. calculating the square root of a number, to more complex functions that can obtain some <strong>model</strong> of a dataset, e.g. a neural network.</li>
+</ul>
+</div>
+<div id="an-example-of-functions" class="section level2">
+<h2><span class="header-section-number">5.23</span> An Example of Functions</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># call (execute or run) the mean() function</span>
+<span class="kw">mean</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>))    </code></pre></div>
+<pre><code>## [1] 2.5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># a will store the object returned by the mean()</span>
+a &lt;-<span class="st"> </span><span class="kw">mean</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>))   </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># mean() will not work with NA</span>
+<span class="kw">mean</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="ot">NA</span>,<span class="dv">4</span>))     </code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># When na.rm = TRUE, NA will be removed before computation</span>
+<span class="kw">mean</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="ot">NA</span>,<span class="dv">4</span>), <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)    </code></pre></div>
+<pre><code>## [1] 2.333333</code></pre>
+</div>
+<div id="user-defined-functions" class="section level2">
+<h2><span class="header-section-number">5.24</span> User-Defined Functions</h2>
+<ul>
+<li>We can write our own functions easily</li>
+<li>function.name &lt;- function(arg1, arg2, arg3){body}</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Define se() function that calculate the standard error</span>
+se &lt;-<span class="st"> </span>function(x) {
+  v &lt;-<span class="st"> </span><span class="kw">var</span>(x)
+  n &lt;-<span class="st"> </span><span class="kw">length</span>(x)
+  <span class="kw">return</span>(<span class="kw">sqrt</span>(v/n))
+}</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mySample &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n=</span><span class="dv">100</span>, <span class="dt">mean=</span><span class="dv">20</span>, <span class="dt">sd=</span><span class="dv">4</span>)
+<span class="kw">se</span>(mySample)</code></pre></div>
+<pre><code>## [1] 0.4146091</code></pre>
+</div>
+<div id="exercise-5" class="section level2">
+<h2><span class="header-section-number">5.25</span> Exercise</h2>
+<p>The follow code will generate two numeric vectors randomly sampled from N(0,1) and N(3,2).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x1 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>, <span class="dt">mean=</span><span class="dv">0</span>, <span class="dt">sd=</span><span class="dv">1</span>)  <span class="co"># generate 100 random numbers from Normal(0,1)</span>
+x2 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>, <span class="dt">mean=</span><span class="dv">3</span>, <span class="dt">sd=</span><span class="dv">2</span>)  <span class="co"># generate 100 random numbers from Normal(3,2)</span></code></pre></div>
+<p>Write your own function that returns (simplified) Cohen’s d = <span class="math inline">\(\frac{mean(x_2)-mean(x_1)}{sd(x_1)}\)</span>. Specifically, your function should get the above two vectors x1 and x2 as function arguments and return d. For fun, let’s use your own name as the name of this function. Check whether your function actually work by running <code>your_name(x1,x2)</code>.</p>
+</div>
+<div id="some-comments-on-functions" class="section level2">
+<h2><span class="header-section-number">5.26</span> Some Comments on Functions</h2>
+<ul>
+<li>Functions are <strong>a fundamental building block</strong> of R.</li>
+<li>We can creat our own functions, but we usually use functions made by others.</li>
+<li>Packages are <strong>a collection of functions</strong> made by others.</li>
+<li>In many cases, our job is to build a <strong>pipeline</strong> of data flow by connecting many available functions.</li>
+<li>To do that, we have to handle the input objects (argument) and output objects (returned objects) of functions, which requires knowledge about <strong>data structure</strong> (e.g., creating, subsetting).</li>
+</ul>
+</div>
+<div id="vectorization-of-functions" class="section level2">
+<h2><span class="header-section-number">5.27</span> Vectorization of Functions</h2>
+<ul>
+<li>One of the most powerful aspects of R is the vectorization of functions.</li>
+<li>Many R functions can be applied to a vector of values producing an <strong>equal-sized vector of results</strong>.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">v &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">7</span>, <span class="fl">23.5</span>, <span class="fl">76.2</span>, <span class="dv">80</span>)
+<span class="kw">sqrt</span>(v)</code></pre></div>
+<pre><code>## [1] 2.000000 2.645751 4.847680 8.729261 8.944272</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># R uses a &quot;recycling rule&quot; by repeating the shorter vector</span>
+v1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)
+v2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">2</span>)
+v1+v2</code></pre></div>
+<pre><code>## [1] 14  7 16  9</code></pre>
+</div>
+<div id="generating-sequences" class="section level2">
+<h2><span class="header-section-number">5.28</span> Generating Sequences</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># creating a vector containing integers between 1 and 10</span>
+<span class="dv">1</span>:<span class="dv">10</span> </code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span>:<span class="dv">0</span></code></pre></div>
+<pre><code>## [1] 5 4 3 2 1 0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">1</span>, <span class="dt">to=</span><span class="dv">3</span>, <span class="dt">by=</span><span class="fl">0.5</span>)</code></pre></div>
+<pre><code>## [1] 1.0 1.5 2.0 2.5 3.0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># rep() replicates each term in formula</span>
+<span class="kw">rep</span>(<span class="dv">5</span>,<span class="dv">3</span>)</code></pre></div>
+<pre><code>## [1] 5 5 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rep</span>(<span class="dv">1</span>:<span class="dv">2</span>, <span class="dv">3</span>)</code></pre></div>
+<pre><code>## [1] 1 2 1 2 1 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rep</span>(<span class="dv">1</span>:<span class="dv">2</span>, <span class="dt">each=</span><span class="dv">3</span>)</code></pre></div>
+<pre><code>## [1] 1 1 1 2 2 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># gl() generates sequences involving factors</span>
+<span class="co"># gl(k,n), k = the number of levels, </span>
+<span class="co"># n = the number of repetitions.</span>
+<span class="kw">gl</span>(<span class="dv">5</span>,<span class="dv">3</span>)</code></pre></div>
+<pre><code>##  [1] 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5
+## Levels: 1 2 3 4 5</code></pre>
+</div>
+<div id="control-flow-if-else" class="section level2">
+<h2><span class="header-section-number">5.29</span> Control Flow (if-else)</h2>
+<ul>
+<li>Control flow = the order in which individual statement are executed (or evaluated)</li>
+<li>Selection
+<ul>
+<li><strong>if</strong> (condition) expression: If the condition is <code>TRUE</code>, the expression gets executed.</li>
+<li><strong>if</strong> (condition) expression1 <strong>else</strong> expression2: The <code>else</code> part is only executed if the condition if <code>FALSE</code>.</li>
+</ul></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span>-<span class="dv">5</span>
+if (x&gt;<span class="dv">0</span>) {
+  <span class="kw">print</span>(<span class="st">&quot;Positive number&quot;</span>)
+} else {
+  <span class="kw">print</span>(<span class="st">&quot;Negative number&quot;</span>)
+}</code></pre></div>
+<pre><code>## [1] &quot;Negative number&quot;</code></pre>
+</div>
+<div id="control-flow-for" class="section level2">
+<h2><span class="header-section-number">5.30</span> Control Flow (for)</h2>
+<ul>
+<li><strong>for (value in sequence) {statements}</strong></li>
+<li><code>for loop</code> allows us to <strong>repeat (loop)</strong> through the elements in a vector and run the code inside the block within curly brackets.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">for (i in <span class="dv">1</span>:<span class="dv">3</span>) {
+  <span class="kw">print</span>(i^<span class="dv">2</span>)
+}</code></pre></div>
+<pre><code>## [1] 1
+## [1] 4
+## [1] 9</code></pre>
+</div>
+<div id="control-flow-for-1" class="section level2">
+<h2><span class="header-section-number">5.31</span> Control Flow (for)</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># count the number of even numbers</span>
+x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">11</span>,<span class="dv">6</span>)
+count &lt;-<span class="st"> </span><span class="dv">0</span>
+for (val in x) {
+  if(val %%<span class="st"> </span><span class="dv">2</span> ==<span class="st"> </span><span class="dv">0</span>)  count =<span class="st"> </span>count<span class="dv">+1</span>
+}
+<span class="kw">print</span>(count)</code></pre></div>
+<pre><code>## [1] 3</code></pre>
+
+<div id="refs" class="references">
+<div>
+<p>Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York.</p>
+</div>
+<div>
+<p>Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. 1st ed. O’Reilly Media, Inc.</p>
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="exercise-3.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-BaseR.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Introduction to R, Rstudio, and ggplot2.pdf", "Introduction to R, Rstudio, and ggplot2.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

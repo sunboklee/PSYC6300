@@ -124,7 +124,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-08-19}
+    \date{2019-08-20}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -625,6 +625,39 @@ x & y & color\tabularnewline
 
 \includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-18-1.pdf}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Create your own discrete scale}
+\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =} \NormalTok{mpg, }\DataTypeTok{mapping =} \KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =} \NormalTok{displ, }\DataTypeTok{y =} \NormalTok{hwy, }\DataTypeTok{color=}\NormalTok{drv)) +}\StringTok{ }\KeywordTok{geom_point}\NormalTok{() +}\StringTok{ }\KeywordTok{geom_smooth}\NormalTok{(}\DataTypeTok{method=}\StringTok{"lm"}\NormalTok{) +}\StringTok{ }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{title =}\StringTok{"MPG vs Engine size"}\NormalTok{, }\DataTypeTok{x =} \StringTok{"Engine size"}\NormalTok{, }\DataTypeTok{y =} \StringTok{"MPG"}\NormalTok{) +}\StringTok{ }\KeywordTok{scale_colour_manual}\NormalTok{(}\DataTypeTok{name =} \StringTok{"Drive"}\NormalTok{, }\DataTypeTok{values =} \KeywordTok{c}\NormalTok{(}\StringTok{"lightpink"}\NormalTok{, }\StringTok{"darkseagreen"}\NormalTok{, }\StringTok{"lightblue"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-19-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =} \NormalTok{mpg, }\DataTypeTok{mapping =} \KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =} \NormalTok{displ, }\DataTypeTok{y =} \NormalTok{hwy, }\DataTypeTok{color=}\NormalTok{cty)) +}\StringTok{ }\KeywordTok{geom_point}\NormalTok{() }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-20-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =} \NormalTok{mpg, }\DataTypeTok{mapping =} \KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =} \NormalTok{displ, }\DataTypeTok{y =} \NormalTok{hwy, }\DataTypeTok{color=}\NormalTok{cty)) +}\StringTok{ }\KeywordTok{geom_point}\NormalTok{() +}\StringTok{ }\KeywordTok{scale_colour_gradient}\NormalTok{(}\DataTypeTok{name =} \StringTok{"City MPG"}\NormalTok{, }\DataTypeTok{low =} \StringTok{"red"}\NormalTok{, }\DataTypeTok{high =} \StringTok{"blue"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-21-1.pdf}
+
+\begin{itemize}
+\item
+  For more details about scales, see
+  \url{https://ggplot2.tidyverse.org/reference/}.
+\item
+  Colors in R: \url{http://www.sthda.com/english/wiki/colors-in-r}
+\end{itemize}
+
 \section{\texorpdfstring{Statistical transformations (\textbf{stats} for
 short)}{Statistical transformations (stats for short)}}\label{statistical-transformations-stats-for-short}
 
@@ -640,7 +673,7 @@ short)}{Statistical transformations (stats for short)}}\label{statistical-transf
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 \end{verbatim}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-19-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-22-1.pdf}
 
 \begin{itemize}
 \item
@@ -689,7 +722,7 @@ short)}{Statistical transformations (stats for short)}}\label{statistical-transf
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-20-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-23-1.pdf}
 
 \begin{itemize}
 \item
@@ -718,7 +751,7 @@ short)}{Statistical transformations (stats for short)}}\label{statistical-transf
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-22-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-25-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -727,7 +760,7 @@ short)}{Statistical transformations (stats for short)}}\label{statistical-transf
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-23-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-26-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -736,7 +769,7 @@ short)}{Statistical transformations (stats for short)}}\label{statistical-transf
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-24-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-27-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -745,7 +778,7 @@ short)}{Statistical transformations (stats for short)}}\label{statistical-transf
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-25-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-28-1.pdf}
 
 \section{A faceting}\label{a-faceting}
 
@@ -774,7 +807,7 @@ short)}{Statistical transformations (stats for short)}}\label{statistical-transf
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 \end{verbatim}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-26-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-29-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -787,7 +820,7 @@ short)}{Statistical transformations (stats for short)}}\label{statistical-transf
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 \end{verbatim}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-27-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-30-1.pdf}
 
 \section{Exercise}\label{exercise-2}
 
@@ -848,7 +881,7 @@ short)}{Statistical transformations (stats for short)}}\label{statistical-transf
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-30-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-33-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -856,7 +889,7 @@ short)}{Statistical transformations (stats for short)}}\label{statistical-transf
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-31-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-34-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -869,7 +902,7 @@ short)}{Statistical transformations (stats for short)}}\label{statistical-transf
 ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
 \end{verbatim}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-32-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-35-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -882,7 +915,7 @@ short)}{Statistical transformations (stats for short)}}\label{statistical-transf
 ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
 \end{verbatim}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-33-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-36-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -891,7 +924,7 @@ short)}{Statistical transformations (stats for short)}}\label{statistical-transf
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-34-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-37-1.pdf}
 
 \section{Themes}\label{themes}
 
@@ -906,7 +939,7 @@ gridlines, and legends.'' More details are available at
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-35-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-38-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -914,7 +947,7 @@ gridlines, and legends.'' More details are available at
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-36-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-39-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -922,7 +955,7 @@ gridlines, and legends.'' More details are available at
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-37-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-40-1.pdf}
 
 \section{Save a ggplot}\label{save-a-ggplot}
 
@@ -1055,7 +1088,7 @@ often requiring several lines of code using other plotting systems,
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-44-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-47-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1063,7 +1096,7 @@ often requiring several lines of code using other plotting systems,
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-45-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-48-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1071,7 +1104,7 @@ often requiring several lines of code using other plotting systems,
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-46-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-49-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1079,7 +1112,7 @@ often requiring several lines of code using other plotting systems,
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-47-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-50-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1087,7 +1120,7 @@ often requiring several lines of code using other plotting systems,
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-48-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-51-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1095,7 +1128,7 @@ often requiring several lines of code using other plotting systems,
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-49-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-52-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1103,7 +1136,7 @@ often requiring several lines of code using other plotting systems,
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-50-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-53-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1115,7 +1148,7 @@ often requiring several lines of code using other plotting systems,
 ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
 \end{verbatim}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-51-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-54-1.pdf}
 
 \section{Histogram}\label{histogram}
 
@@ -1129,7 +1162,7 @@ often requiring several lines of code using other plotting systems,
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 \end{verbatim}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-52-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-55-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1141,7 +1174,7 @@ often requiring several lines of code using other plotting systems,
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 \end{verbatim}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-53-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-56-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1157,7 +1190,7 @@ often requiring several lines of code using other plotting systems,
 ## Warning: Removed 2 rows containing missing values (geom_bar).
 \end{verbatim}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-54-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-57-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1173,7 +1206,7 @@ often requiring several lines of code using other plotting systems,
 ## Warning: Removed 2 rows containing missing values (geom_bar).
 \end{verbatim}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-55-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-58-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1185,7 +1218,7 @@ often requiring several lines of code using other plotting systems,
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 \end{verbatim}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-56-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-59-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1197,7 +1230,7 @@ often requiring several lines of code using other plotting systems,
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 \end{verbatim}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-57-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-60-1.pdf}
 
 \section{Density plots}\label{density-plots}
 
@@ -1207,7 +1240,7 @@ often requiring several lines of code using other plotting systems,
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-58-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-61-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1215,7 +1248,7 @@ often requiring several lines of code using other plotting systems,
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-59-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-62-1.pdf}
 
 \section{Barplots}\label{barplots}
 
@@ -1225,7 +1258,7 @@ often requiring several lines of code using other plotting systems,
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-60-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-63-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1233,7 +1266,7 @@ often requiring several lines of code using other plotting systems,
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-61-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-64-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1241,7 +1274,7 @@ often requiring several lines of code using other plotting systems,
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-62-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-65-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1249,7 +1282,7 @@ often requiring several lines of code using other plotting systems,
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-63-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-66-1.pdf}
 
 \section{Boxplots}\label{boxplots}
 
@@ -1259,7 +1292,7 @@ often requiring several lines of code using other plotting systems,
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-64-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-67-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1267,7 +1300,7 @@ often requiring several lines of code using other plotting systems,
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-65-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-68-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1275,7 +1308,7 @@ often requiring several lines of code using other plotting systems,
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-66-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-69-1.pdf}
 
 \section{Faceting}\label{faceting}
 
@@ -1285,7 +1318,7 @@ often requiring several lines of code using other plotting systems,
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-67-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-70-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1293,7 +1326,7 @@ often requiring several lines of code using other plotting systems,
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-68-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-71-1.pdf}
 
 \section{\texorpdfstring{The \texttt{corrplot}
 Package}{The corrplot Package}}\label{the-corrplot-package}
@@ -1321,7 +1354,7 @@ Package}{The corrplot Package}}\label{the-corrplot-package}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-70-1.pdf}
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-73-1.pdf}
 
 \chapter{Exercise}\label{exercise-3}
 
@@ -1371,6 +1404,1614 @@ Package}{The corrplot Package}}\label{the-corrplot-package}
 \includegraphics{practice3.png}
 \caption{}
 \end{figure}
+
+\chapter{Base R}\label{base-r}
+
+\section{Topics}\label{topics}
+
+\begin{itemize}
+\tightlist
+\item
+  R Objects and Variables
+\item
+  Data Structure
+\item
+  Sub-Setting
+\item
+  Functions
+\item
+  Control Flow (if, for, while)
+\end{itemize}
+
+\section{Further reading}\label{further-reading}
+
+\begin{itemize}
+\tightlist
+\item
+  Wickham, H. (2014). Advanced R. Chapman and Hall/CRC
+  (\href{http://adv-r.had.co.nz}{\textcolor{blue}{http://adv-r.had.co.nz}})
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This is a nice book to read after you become comfortable in base R
+    (not required in this course)
+  \end{itemize}
+\end{itemize}
+
+\section{Interaction with R}\label{interaction-with-r}
+
+\begin{itemize}
+\tightlist
+\item
+  R Console: for easy interactive exploration of ideas
+\item
+  R Script file (.R): for sequence of R commands
+\item
+  R markdown (.Rmd): for reproducible and dynamic reports
+\end{itemize}
+
+\section{R Objects and Variables}\label{r-objects-and-variables}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Everything in R is stored as an object}, which is associated
+  with a variable name.
+\item
+  An object is a technical terminology defined in \textbf{Object
+  Oriented Programming (OOP)}. (OOP is an important concept but not in
+  this class)
+\item
+  A variable name can be assigned to an object using the
+  \textbf{assignment operator}.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# store a number to a variable named `a`}
+\NormalTok{a <-}\StringTok{ }\FloatTok{0.2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# print a}
+\NormalTok{a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# store a vector to a variable named `b`}
+\NormalTok{b <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{9}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# print b}
+\NormalTok{b}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 4 9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{z <-}\StringTok{ }\DecValTok{5}
+\NormalTok{i <-}\StringTok{ }\NormalTok{(z *}\StringTok{ }\DecValTok{2} \NormalTok{+}\StringTok{ }\DecValTok{45}\NormalTok{)/}\DecValTok{2}
+\NormalTok{i}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 27.5
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  We can think of the assignment operation as ``\textbf{evaluate}
+  whatever is given on the \textbf{right side} of the operator, and
+  assign (store) the result (an object of some type) of this evaluation
+  in the variable whose name is given on the \textbf{left side}
+\end{itemize}
+
+\section{Data Structure}\label{data-structure}
+
+\begin{itemize}
+\tightlist
+\item
+  R has \textbf{base data structures}.
+\item
+  Almost all other objects are built upon base data structures.
+\item
+  R base data structures can be organized by their dimensionality:
+\end{itemize}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+Dimension & Homogeneous & Heterogeneous\tabularnewline
+\midrule
+\endhead
+1D & Atomic vector & List\tabularnewline
+2D & Matrix & Data frame\tabularnewline
+nD & Array &\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{datastructure.png}
+\caption{}
+\end{figure}
+
+\section{Vectors Come in Two
+Flavours}\label{vectors-come-in-two-flavours}
+
+\begin{itemize}
+\tightlist
+\item
+  Atomic vectors (homogeneous)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    All elements of an atomic vector \textbf{must be the same type}.
+  \item
+    There are \textbf{6 types} of an atomic vector
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \textbf{Logical} (TRUE or FALSE), \textbf{integer},
+      \textbf{double}, and \textbf{character} (+ rarely used
+      \textbf{complex} and \textbf{raw})
+    \end{itemize}
+  \item
+    Atomic vectors are usually created with \texttt{c()}, short for
+    combine:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \texttt{a\ \textless{}-\ c(TRUE,\ FALSE,\ T,\ F)} \# logical
+    \item
+      \texttt{a\ \textless{}-\ c(1L,\ 6L,\ 5L)} \# integer
+    \item
+      \texttt{a\ \textless{}-\ c(1,\ 2.5,\ 3.8)} \# double
+    \item
+      \texttt{a\ \textless{}-\ c("apple",\ "orange")} \# character
+    \end{itemize}
+  \end{itemize}
+\item
+  Lists (heterogeneous)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Lists are different from atomic vectors because their elements can
+    be of any type.
+  \item
+    List are created by \texttt{list()}
+  \item
+    \texttt{\textgreater{}\ x\ \textless{}-\ list(1:3,\ "a",\ c(TRUE,\ FALSE))}
+  \end{itemize}
+\end{itemize}
+
+\section{A Vector Has Three
+Properties}\label{a-vector-has-three-properties}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Type}: \texttt{typeof()} returns the type of an object.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{typeof}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "double"
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Length}: \texttt{length()} returns the number of elements in a
+  vector
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{length}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Attributes}: \texttt{attributes()} returns additional
+  arbitrary metadata
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{attributes}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## NULL
+\end{verbatim}
+
+\section{Attributes}\label{attributes}
+
+\begin{itemize}
+\tightlist
+\item
+  All objects can have attributes to store \textbf{metadata} about the
+  object.
+\item
+  Attributes can be considered as a \textbf{named list}.
+\item
+  Attributes can be accessed individually with \texttt{attr()} or all at
+  once with \texttt{attributes()}.
+\item
+  Names are attributes of a vector. You can name a vector in two ways:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DataTypeTok{x=}\DecValTok{1}\NormalTok{,}\DataTypeTok{y=}\DecValTok{2}\NormalTok{,}\DataTypeTok{z=}\DecValTok{3}\NormalTok{)   }\CommentTok{# when creating}
+\KeywordTok{names}\NormalTok{(a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "x" "y" "z"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{names}\NormalTok{(a) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"l"}\NormalTok{, }\StringTok{"m"}\NormalTok{, }\StringTok{"n"}\NormalTok{)   }\CommentTok{# by modifying existing names}
+\NormalTok{a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## l m n 
+## 1 2 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{attributes}\NormalTok{(a)    }\CommentTok{# names are attributes}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $names
+## [1] "l" "m" "n"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{attributes}\NormalTok{(mtcars)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $names
+##  [1] "mpg"  "cyl"  "disp" "hp"   "drat" "wt"   "qsec" "vs"   "am"   "gear"
+## [11] "carb"
+## 
+## $row.names
+##  [1] "Mazda RX4"           "Mazda RX4 Wag"       "Datsun 710"         
+##  [4] "Hornet 4 Drive"      "Hornet Sportabout"   "Valiant"            
+##  [7] "Duster 360"          "Merc 240D"           "Merc 230"           
+## [10] "Merc 280"            "Merc 280C"           "Merc 450SE"         
+## [13] "Merc 450SL"          "Merc 450SLC"         "Cadillac Fleetwood" 
+## [16] "Lincoln Continental" "Chrysler Imperial"   "Fiat 128"           
+## [19] "Honda Civic"         "Toyota Corolla"      "Toyota Corona"      
+## [22] "Dodge Challenger"    "AMC Javelin"         "Camaro Z28"         
+## [25] "Pontiac Firebird"    "Fiat X1-9"           "Porsche 914-2"      
+## [28] "Lotus Europa"        "Ford Pantera L"      "Ferrari Dino"       
+## [31] "Maserati Bora"       "Volvo 142E"         
+## 
+## $class
+## [1] "data.frame"
+\end{verbatim}
+
+\section{Type Coercion (Conversion)}\label{type-coercion-conversion}
+
+\begin{itemize}
+\tightlist
+\item
+  All elements of a vector must belong to the same base data type. If
+  that is not true, R will automatically \textbf{force} it by type
+  coercion.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{7}\NormalTok{, }\FloatTok{23.5}\NormalTok{, }\FloatTok{76.2}\NormalTok{, }\DecValTok{80}\NormalTok{, }\StringTok{"rrt"}\NormalTok{)}
+\NormalTok{v}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "4"    "7"    "23.5" "76.2" "80"   "rrt"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{typeof}\NormalTok{(v)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Functions can automatically convert data type.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sum}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{, }\OtherTok{TRUE}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  You can \textbf{explicitly} convert data type with
+  \texttt{as.character()}, \texttt{as.double()}, \texttt{as.integer()},
+  and \texttt{as.logical()}.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{)}
+\NormalTok{a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{b <-}\StringTok{ }\KeywordTok{as.character}\NormalTok{(a)}
+\NormalTok{b}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "1" "2" "3"
+\end{verbatim}
+
+\section{NA represents missing}\label{na-represents-missing}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{u <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{6}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\DecValTok{2}\NormalTok{)}
+\NormalTok{u}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  4  6 NA  2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{k <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{, }\OtherTok{NA}\NormalTok{, }\OtherTok{TRUE}\NormalTok{)}
+\NormalTok{k}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  TRUE FALSE FALSE    NA  TRUE
+\end{verbatim}
+
+\section{Indexing a Vector}\label{indexing-a-vector}
+
+\begin{itemize}
+\tightlist
+\item
+  You can access a particular element of a vector through an
+  \textbf{index} between \textbf{square brackets} or \textbf{indexing
+  (subsetting) operator}.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a[}\DecValTok{3}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a[}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 3 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# create a vector}
+\DecValTok{2}\NormalTok{:}\DecValTok{4}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2 3 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# same with a[c(2,3,4)]}
+\NormalTok{a[}\DecValTok{2}\NormalTok{:}\DecValTok{4}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2 3 4
+\end{verbatim}
+
+\section{Factors}\label{factors}
+
+\begin{itemize}
+\tightlist
+\item
+  A factor is \textbf{a vector} that can contain \textbf{only predefined
+  values}, and is used to store \textbf{categorical data}.
+\item
+  Factors are built on \textbf{integer vectors} using two attributes
+
+  \begin{itemize}
+  \tightlist
+  \item
+    the \textbf{\texttt{class()}}, ``factor'', which make factors behave
+    differently from regular integer vectors, and
+  \item
+    the \textbf{\texttt{levels()}}, which set the set of predefined
+    values that x might have taken.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\KeywordTok{factor}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{), }\DataTypeTok{levels =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{), }\DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\StringTok{"male"}\NormalTok{, }\StringTok{"female"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] male   female female male   male   female
+## Levels: male female
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "factor"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{levels}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "male"   "female"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# access an object's attributes.}
+\KeywordTok{attributes}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $levels
+## [1] "male"   "female"
+## 
+## $class
+## [1] "factor"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# the factor x can only take a pre-defined value (or level): male or female}
+\CommentTok{# You can't assign values that are not in the levels}
+\NormalTok{x[}\DecValTok{1}\NormalTok{] <-}\StringTok{ "female"}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] female female female male   male   female
+## Levels: male female
+\end{verbatim}
+
+\section{Matrices and Arrays}\label{matrices-and-arrays}
+
+\begin{itemize}
+\tightlist
+\item
+  matrices and arrays are \textbf{implemented as vectors} with special
+  attributes
+\item
+  Adding a \textbf{\texttt{dim()} attribute} to an atomic vector allows
+  it to behave like a multi-dimensional array.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a <-}\StringTok{ }\DecValTok{1}\NormalTok{:}\DecValTok{6}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2 3 4 5 6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Get or set specific attributes of an object.}
+\KeywordTok{attr}\NormalTok{(a, }\StringTok{"dim"}\NormalTok{) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2]
+## [1,]    1    4
+## [2,]    2    5
+## [3,]    3    6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# by default, a matrix is filled by column}
+\NormalTok{a <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\DecValTok{1}\NormalTok{:}\DecValTok{6}\NormalTok{, }\DataTypeTok{ncol=}\DecValTok{3}\NormalTok{, }\DataTypeTok{nrow=}\DecValTok{2}\NormalTok{)}
+\NormalTok{a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\DecValTok{1}\NormalTok{:}\DecValTok{6}\NormalTok{, }\DataTypeTok{ncol=}\DecValTok{3}\NormalTok{)}
+\NormalTok{a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# a matrix can be filled by row using `byrow = TRUE`}
+\NormalTok{a <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\DecValTok{1}\NormalTok{:}\DecValTok{6}\NormalTok{, }\DataTypeTok{ncol=}\DecValTok{3}\NormalTok{, }\DataTypeTok{nrow=}\DecValTok{2}\NormalTok{, }\DataTypeTok{byrow =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{attributes}\NormalTok{(a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $dim
+## [1] 2 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{dim}\NormalTok{(a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{b <-}\StringTok{ }\KeywordTok{array}\NormalTok{(}\DecValTok{1}\NormalTok{:}\DecValTok{12}\NormalTok{, }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+\NormalTok{b}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## , , 1
+## 
+##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6
+## 
+## , , 2
+## 
+##      [,1] [,2] [,3]
+## [1,]    7    9   11
+## [2,]    8   10   12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{dim}\NormalTok{(b)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2 3 2
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{length()} generalises to \texttt{nrow()} and \texttt{ncol()}
+  for matrices, and \texttt{dim()} for arrays.
+\item
+  \texttt{names()} generalises to \texttt{rownames()} and
+  \texttt{colnames()} for matrices, and \texttt{dimnames()}, a list of
+  character vectors, for arrays.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{results <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{40}\NormalTok{, }\DecValTok{50}\NormalTok{, }\DecValTok{43}\NormalTok{, }\DecValTok{56}\NormalTok{, }\DecValTok{21}\NormalTok{, }\DecValTok{30}\NormalTok{), }\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DataTypeTok{byrow =} \OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{colnames}\NormalTok{(results) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"1qrt"}\NormalTok{, }\StringTok{"2qrt"}\NormalTok{, }\StringTok{"3qrt"}\NormalTok{, }\StringTok{"4qrt"}\NormalTok{)}
+\KeywordTok{rownames}\NormalTok{(results) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"store1"}\NormalTok{, }\StringTok{"store2"}\NormalTok{)}
+\NormalTok{results}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        1qrt 2qrt 3qrt 4qrt
+## store1   10   30   40   50
+## store2   43   56   21   30
+\end{verbatim}
+
+\section{Data Frames}\label{data-frames}
+
+\begin{itemize}
+\tightlist
+\item
+  A data frame is a \textbf{list} of \textbf{equal-length vectors}.
+\item
+  A data frame is the \textbf{most common way} of storing data in R.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{x=}\DecValTok{1}\NormalTok{:}\DecValTok{3}\NormalTok{, }\DataTypeTok{y=}\KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{))}
+\NormalTok{df}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   x y
+## 1 1 a
+## 2 2 b
+## 3 3 c
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# display the internal structure of an R object}
+\KeywordTok{str}\NormalTok{(df) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    3 obs. of  2 variables:
+##  $ x: int  1 2 3
+##  $ y: Factor w/ 3 levels "a","b","c": 1 2 3
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{data.frame()} converts strings into factors by default.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This default setting can cause serious problems in some cases.
+  \item
+    \texttt{stringAsFactors\ =\ FALSE} suppresses this default setting.
+  \item
+    Using \texttt{str()} to check data types is always a good practice.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{x=}\DecValTok{1}\NormalTok{:}\DecValTok{3}\NormalTok{, }\DataTypeTok{y=}\KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{), }\DataTypeTok{stringsAsFactors =} \OtherTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{str}\NormalTok{(df) }\CommentTok{# display the internal structure of an R object}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    3 obs. of  2 variables:
+##  $ x: int  1 2 3
+##  $ y: chr  "a" "b" "c"
+\end{verbatim}
+
+\section{Operators}\label{operators}
+
+\begin{itemize}
+\tightlist
+\item
+  Arithmetic Operators
+\end{itemize}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Operator & Description\tabularnewline
+\midrule
+\endhead
++ & addition\tabularnewline
+- & subtraction\tabularnewline
+* & multiplication\tabularnewline
+/ & division\tabularnewline
+\^{} or ** & exponentiation\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{itemize}
+\tightlist
+\item
+  Logical Operators
+\end{itemize}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Operator & Description\tabularnewline
+\midrule
+\endhead
+\textless{} & less than\tabularnewline
+\textless{}= & less than or equal to\tabularnewline
+\textgreater{} & greater than\tabularnewline
+\textgreater{}= & greater than equal to\tabularnewline
+== & exactly equal to\tabularnewline
+!= & not equal to\tabularnewline
+!x & Not x\tabularnewline
+x\textbar{}y & x OR y\tabularnewline
+x\&Y & x AND y\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \NormalTok{==}\StringTok{ }\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\StringTok{"a"} \NormalTok{!=}\StringTok{ "b"}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{1} \NormalTok{==}\StringTok{ }\DecValTok{2}\NormalTok{) |}\StringTok{ }\NormalTok{(}\StringTok{"a"} \NormalTok{!=}\StringTok{ "b"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{1} \NormalTok{==}\StringTok{ }\DecValTok{2}\NormalTok{) &}\StringTok{ }\NormalTok{(}\StringTok{"a"} \NormalTok{!=}\StringTok{ "b"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\section{Subsetting a Vector}\label{subsetting-a-vector}
+
+\begin{itemize}
+\tightlist
+\item
+  Subsetting allows us to access the subset of an R object.
+\item
+  Subsetting (indexing) operator \texttt{{[}\ {]}} is used to subset a
+  vector.
+\item
+  \textbf{Positive integers} return elements at the specified positions.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{2.1}\NormalTok{, }\FloatTok{4.2}\NormalTok{, }\FloatTok{3.3}\NormalTok{, }\FloatTok{5.4}\NormalTok{)}
+\NormalTok{x[}\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3.3 2.1
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Negative integers} omit elements at the specified positions:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x[-}\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4.2 5.4
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Logical vectors} select elements where the corresponding
+  logical value is TRUE. This is probably the \textbf{most useful} type
+  of subsetting because you write the expression that creates the
+  logical vector.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x[}\KeywordTok{c}\NormalTok{(}\OtherTok{TRUE}\NormalTok{, }\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2.1 4.2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x >}\StringTok{ }\DecValTok{3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE  TRUE  TRUE  TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# This is called a logical indexing, which is a very powerful tool.}
+\NormalTok{x[x >}\StringTok{ }\DecValTok{3}\NormalTok{]   }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4.2 3.3 5.4
+\end{verbatim}
+
+\section{Subsetting a List}\label{subsetting-a-list}
+
+\begin{itemize}
+\tightlist
+\item
+  Subsetting a list works in the same way as subsetting an atomic
+  vector. Using \texttt{{[}\ {]}} will always return a list;
+  \texttt{{[}{[}\ {]}{]}} and \texttt{\$} let you pull out the
+  components of the list.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my.lst <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DataTypeTok{stud.id=}\DecValTok{34453}\NormalTok{,      }\CommentTok{# creat a list}
+               \DataTypeTok{stud.name=}\StringTok{"John"}\NormalTok{, }
+               \DataTypeTok{stud.marks=}\KeywordTok{c}\NormalTok{(}\FloatTok{14.3}\NormalTok{,}\DecValTok{12}\NormalTok{,}\DecValTok{15}\NormalTok{,}\DecValTok{19}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{my.lst}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $stud.id
+## [1] 34453
+## 
+## $stud.name
+## [1] "John"
+## 
+## $stud.marks
+## [1] 14.3 12.0 15.0 19.0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# [ ] extracts a sub-list }
+\NormalTok{my.lst[}\DecValTok{1}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $stud.id
+## [1] 34453
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{typeof}\NormalTok{(my.lst[}\DecValTok{1}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "list"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# [[ ]] extracts the value of an individual element }
+\NormalTok{my.lst[[}\DecValTok{1}\NormalTok{]]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 34453
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{typeof}\NormalTok{(my.lst[[}\DecValTok{1}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "double"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# In the case of lists with named elements}
+\CommentTok{# $ extracts the value of an individual element }
+\NormalTok{my.lst$stud.id}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 34453
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{typeof}\NormalTok{(my.lst$stud.id)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "double"
+\end{verbatim}
+
+\section{Subsetting a Matrix and
+Array}\label{subsetting-a-matrix-and-array}
+
+\begin{itemize}
+\tightlist
+\item
+  You can supply 1d index for each dimension.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\DecValTok{1}\NormalTok{:}\DecValTok{9}\NormalTok{, }\DataTypeTok{nrow =} \DecValTok{3}\NormalTok{)}
+\KeywordTok{colnames}\NormalTok{(a) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"A"}\NormalTok{, }\StringTok{"B"}\NormalTok{, }\StringTok{"C"}\NormalTok{)}
+\NormalTok{a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      A B C
+## [1,] 1 4 7
+## [2,] 2 5 8
+## [3,] 3 6 9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a[}\KeywordTok{c}\NormalTok{(}\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{, }\OtherTok{TRUE}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\StringTok{"B"}\NormalTok{, }\StringTok{"A"}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      B A
+## [1,] 4 1
+## [2,] 6 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a[}\DecValTok{1}\NormalTok{, }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## B C 
+## 4 7
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# If you omit any dimension, you obtain full columns or rows}
+\NormalTok{a[}\DecValTok{2}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## A B C 
+## 2 5 8
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a[,}\DecValTok{3}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 7 8 9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      A B C
+## [1,] 1 4 7
+## [2,] 2 5 8
+## [3,] 3 6 9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a >}\StringTok{ }\DecValTok{3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##          A    B    C
+## [1,] FALSE TRUE TRUE
+## [2,] FALSE TRUE TRUE
+## [3,] FALSE TRUE TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a[a>}\DecValTok{3}\NormalTok{] <-}\StringTok{ }\OtherTok{NA}
+\NormalTok{a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      A  B  C
+## [1,] 1 NA NA
+## [2,] 2 NA NA
+## [3,] 3 NA NA
+\end{verbatim}
+
+\section{Exercise}\label{exercise-4}
+
+\begin{itemize}
+\item
+  \texttt{mtcars} is a fuel economy dataset. Subset the \texttt{mtcars}
+  dataset such that you only keep \texttt{mpg}, \texttt{cyl}, and
+  \texttt{gear} variables with 6 cylinders.
+\item
+  Subset the \texttt{mtcars} dataset such that you only keep
+  \texttt{mpg}, \texttt{cyl}, \texttt{disp}, \texttt{hp}, \texttt{dart},
+  \texttt{wt}, \texttt{qsec}, and \texttt{am} variables with 4 or 6
+  cylinders.
+\item
+  Subset the \texttt{mtcars} dataset such that you only keep
+  \texttt{mpg}, \texttt{cyl}, \texttt{disp}, \texttt{hp}, \texttt{dart},
+  \texttt{wt}, \texttt{qsec}, and \texttt{am} variables with 4 or 6
+  cylinders, and \texttt{mpg} larger than 20.
+\end{itemize}
+
+\section{Combine Matrices by Columns or
+Rows}\label{combine-matrices-by-columns-or-rows}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# combine by columns}
+\KeywordTok{cbind}\NormalTok{(a,a)   }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      A  B  C A  B  C
+## [1,] 1 NA NA 1 NA NA
+## [2,] 2 NA NA 2 NA NA
+## [3,] 3 NA NA 3 NA NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# combine by rows}
+\KeywordTok{rbind}\NormalTok{(a,a)   }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      A  B  C
+## [1,] 1 NA NA
+## [2,] 2 NA NA
+## [3,] 3 NA NA
+## [4,] 1 NA NA
+## [5,] 2 NA NA
+## [6,] 3 NA NA
+\end{verbatim}
+
+\section{Names of the Columns and Rows of
+Matrices}\label{names-of-the-columns-and-rows-of-matrices}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{colnames}\NormalTok{(a) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "A" "B" "C"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{rownames}\NormalTok{(a) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"D"}\NormalTok{, }\StringTok{"E"}\NormalTok{, }\StringTok{"F"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{rownames}\NormalTok{(a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "D" "E" "F"
+\end{verbatim}
+
+\section{Functions}\label{functions}
+
+\begin{itemize}
+\tightlist
+\item
+  R functions are a special type of \textbf{R object} designed to carry
+  out \textbf{some operation}.
+\item
+  R functions, like mathematical functions, are applied to some set of
+  \textbf{arguments} and produce a \textbf{result}.
+\item
+  \textbf{output = function\_name(argument)}
+\item
+  In R, both the arguments that we provide when we call the function and
+  the result of the function execution are \textbf{R objects} whose type
+  will depend on the function.
+\item
+  R functions range from simple objects implementing some standard
+  \textbf{calculation}, e.g.~calculating the square root of a number, to
+  more complex functions that can obtain some \textbf{model} of a
+  dataset, e.g.~a neural network.
+\end{itemize}
+
+\section{An Example of Functions}\label{an-example-of-functions}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# call (execute or run) the mean() function}
+\KeywordTok{mean}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{))    }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# a will store the object returned by the mean()}
+\NormalTok{a <-}\StringTok{ }\KeywordTok{mean}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{))   }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# mean() will not work with NA}
+\KeywordTok{mean}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\OtherTok{NA}\NormalTok{,}\DecValTok{4}\NormalTok{))     }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# When na.rm = TRUE, NA will be removed before computation}
+\KeywordTok{mean}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\OtherTok{NA}\NormalTok{,}\DecValTok{4}\NormalTok{), }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)    }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2.333333
+\end{verbatim}
+
+\section{User-Defined Functions}\label{user-defined-functions}
+
+\begin{itemize}
+\tightlist
+\item
+  We can write our own functions easily
+\item
+  function.name \textless{}- function(arg1, arg2, arg3)\{body\}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Define se() function that calculate the standard error}
+\NormalTok{se <-}\StringTok{ }\NormalTok{function(x) \{}
+  \NormalTok{v <-}\StringTok{ }\KeywordTok{var}\NormalTok{(x)}
+  \NormalTok{n <-}\StringTok{ }\KeywordTok{length}\NormalTok{(x)}
+  \KeywordTok{return}\NormalTok{(}\KeywordTok{sqrt}\NormalTok{(v/n))}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mySample <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DataTypeTok{n=}\DecValTok{100}\NormalTok{, }\DataTypeTok{mean=}\DecValTok{20}\NormalTok{, }\DataTypeTok{sd=}\DecValTok{4}\NormalTok{)}
+\KeywordTok{se}\NormalTok{(mySample)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.3687313
+\end{verbatim}
+
+\section{Exercise}\label{exercise-5}
+
+The follow code will generate two numeric vectors randomly sampled from
+N(0,1) and N(3,2).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x1 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{100}\NormalTok{, }\DataTypeTok{mean=}\DecValTok{0}\NormalTok{, }\DataTypeTok{sd=}\DecValTok{1}\NormalTok{)  }\CommentTok{# generate 100 random numbers from Normal(0,1)}
+\NormalTok{x2 <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(}\DecValTok{100}\NormalTok{, }\DataTypeTok{mean=}\DecValTok{3}\NormalTok{, }\DataTypeTok{sd=}\DecValTok{2}\NormalTok{)  }\CommentTok{# generate 100 random numbers from Normal(3,2)}
+\end{Highlighting}
+\end{Shaded}
+
+Write your own function that returns (simplified) Cohen's d =
+\(\frac{mean(x_2)-mean(x_1)}{sd(x_1)}\). Specifically, your function
+should get the above two vectors x1 and x2 as function arguments and
+return d. For fun, let's use your own name as the name of this function.
+Check whether your function actually work by running
+\texttt{your\_name(x1,x2)}.
+
+\section{Some Comments on Functions}\label{some-comments-on-functions}
+
+\begin{itemize}
+\tightlist
+\item
+  Functions are \textbf{a fundamental building block} of R.
+\item
+  We can creat our own functions, but we usually use functions made by
+  others.
+\item
+  Packages are \textbf{a collection of functions} made by others.
+\item
+  In many cases, our job is to build a \textbf{pipeline} of data flow by
+  connecting many available functions.
+\item
+  To do that, we have to handle the input objects (argument) and output
+  objects (returned objects) of functions, which requires knowledge
+  about \textbf{data structure} (e.g., creating, subsetting).
+\end{itemize}
+
+\section{Vectorization of Functions}\label{vectorization-of-functions}
+
+\begin{itemize}
+\tightlist
+\item
+  One of the most powerful aspects of R is the vectorization of
+  functions.
+\item
+  Many R functions can be applied to a vector of values producing an
+  \textbf{equal-sized vector of results}.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{7}\NormalTok{, }\FloatTok{23.5}\NormalTok{, }\FloatTok{76.2}\NormalTok{, }\DecValTok{80}\NormalTok{)}
+\KeywordTok{sqrt}\NormalTok{(v)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2.000000 2.645751 4.847680 8.729261 8.944272
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# R uses a "recycling rule" by repeating the shorter vector}
+\NormalTok{v1 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{)}
+\NormalTok{v2 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{2}\NormalTok{)}
+\NormalTok{v1+v2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 14  7 16  9
+\end{verbatim}
+
+\section{Generating Sequences}\label{generating-sequences}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# creating a vector containing integers between 1 and 10}
+\DecValTok{1}\NormalTok{:}\DecValTok{10} 
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1]  1  2  3  4  5  6  7  8  9 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{5}\NormalTok{:}\DecValTok{0}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5 4 3 2 1 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{seq}\NormalTok{(}\DataTypeTok{from=}\DecValTok{1}\NormalTok{, }\DataTypeTok{to=}\DecValTok{3}\NormalTok{, }\DataTypeTok{by=}\FloatTok{0.5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1.0 1.5 2.0 2.5 3.0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# rep() replicates each term in formula}
+\KeywordTok{rep}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5 5 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{rep}\NormalTok{(}\DecValTok{1}\NormalTok{:}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2 1 2 1 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{rep}\NormalTok{(}\DecValTok{1}\NormalTok{:}\DecValTok{2}\NormalTok{, }\DataTypeTok{each=}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 1 1 2 2 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# gl() generates sequences involving factors}
+\CommentTok{# gl(k,n), k = the number of levels, }
+\CommentTok{# n = the number of repetitions.}
+\KeywordTok{gl}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5
+## Levels: 1 2 3 4 5
+\end{verbatim}
+
+\section{Control Flow (if-else)}\label{control-flow-if-else}
+
+\begin{itemize}
+\tightlist
+\item
+  Control flow = the order in which individual statement are executed
+  (or evaluated)
+\item
+  Selection
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{if} (condition) expression: If the condition is
+    \texttt{TRUE}, the expression gets executed.
+  \item
+    \textbf{if} (condition) expression1 \textbf{else} expression2: The
+    \texttt{else} part is only executed if the condition if
+    \texttt{FALSE}.
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\NormalTok{-}\DecValTok{5}
+\NormalTok{if (x>}\DecValTok{0}\NormalTok{) \{}
+  \KeywordTok{print}\NormalTok{(}\StringTok{"Positive number"}\NormalTok{)}
+\NormalTok{\} else \{}
+  \KeywordTok{print}\NormalTok{(}\StringTok{"Negative number"}\NormalTok{)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Negative number"
+\end{verbatim}
+
+\section{Control Flow (for)}\label{control-flow-for}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{for (value in sequence) \{statements\}}
+\item
+  \texttt{for\ loop} allows us to \textbf{repeat (loop)} through the
+  elements in a vector and run the code inside the block within curly
+  brackets.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{for (i in }\DecValTok{1}\NormalTok{:}\DecValTok{3}\NormalTok{) \{}
+  \KeywordTok{print}\NormalTok{(i^}\DecValTok{2}\NormalTok{)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+## [1] 4
+## [1] 9
+\end{verbatim}
+
+\section{Control Flow (for)}\label{control-flow-for-1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# count the number of even numbers}
+\NormalTok{x <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{6}\NormalTok{)}
+\NormalTok{count <-}\StringTok{ }\DecValTok{0}
+\NormalTok{for (val in x) \{}
+  \NormalTok{if(val %%}\StringTok{ }\DecValTok{2} \NormalTok{==}\StringTok{ }\DecValTok{0}\NormalTok{)  count =}\StringTok{ }\NormalTok{count}\DecValTok{+1}
+\NormalTok{\}}
+\KeywordTok{print}\NormalTok{(count)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
 
 \bibliography{book.bib}
 
