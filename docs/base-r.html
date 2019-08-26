@@ -24,7 +24,7 @@
 <meta name="author" content="Sunbok Lee" />
 
 
-<meta name="date" content="2019-08-25" />
+<meta name="date" content="2019-08-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -446,49 +446,49 @@ c</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># rnorm(n, mean = 0, sd = 1) generates a vector of n random samples </span>
 <span class="co"># from a normal distribution with specific mean and sd. </span>
 <span class="kw">rnorm</span>(<span class="dv">100</span>)</code></pre></div>
-<pre><code>##   [1]  0.33760059 -0.14142030 -0.28558706 -1.83422531  0.04678454
-##   [6] -0.42237832  0.09092671  0.54076673  0.49414132  0.19433004
-##  [11] -0.26195963 -2.33148419  0.12895836 -1.71154304 -2.29815270
-##  [16] -0.02852800 -1.21885843 -1.47633677  1.41816731 -0.10594578
-##  [21] -1.68756770 -0.52725647 -1.50245612  1.13555234  0.70478160
-##  [26]  0.98916347 -0.10350017 -1.29603259  2.33289364 -0.78226345
-##  [31] -0.63788315  0.67217885 -0.87275706  0.20242142 -1.62530909
-##  [36] -1.86551435  1.45843565 -0.63219407  0.22574265 -1.90748147
-##  [41] -0.67185477 -0.11029494  0.47198369  0.51643723 -0.07301675
-##  [46]  0.97435074 -0.80539272 -0.68013727 -0.75932833  1.66637329
-##  [51]  0.20808594 -0.06865262  0.61764124 -0.45868094 -1.33652922
-##  [56] -1.02537210 -0.22605688 -0.94734502 -0.51656126 -1.27492667
-##  [61]  1.66370581 -1.06722775  0.90205905  1.32163320  0.50488881
-##  [66] -1.10860112 -1.12790663  0.50577976  0.18419761 -0.46981381
-##  [71] -1.36772752 -1.12947463  0.55911093 -1.32498246 -1.58267856
-##  [76] -0.61232570  1.39227675 -0.47520206  0.22966300  0.01437993
-##  [81] -1.22349949  0.88920245 -1.23937202  1.33903702  0.02146513
-##  [86]  0.46736175 -0.28020695  0.81612818  0.33200716 -0.65299857
-##  [91] -0.22163817  0.82639776 -0.14529059  0.07640067  0.22024541
-##  [96] -0.01919679  1.55752527  0.50379213 -0.53782513 -1.30565310</code></pre>
+<pre><code>##   [1] -1.236606176  0.037816745  0.194213637  0.838607652  0.028325243
+##   [6] -1.057223557 -1.137432519  0.829176268 -0.586868632  1.062023248
+##  [11]  0.934470520  0.959821547  1.539183757 -0.980135013  0.424079554
+##  [16] -0.457395750  1.327253814 -0.327786845  0.632630894 -1.011224265
+##  [21]  0.544187375  0.824258056  0.168463961 -0.193665500 -0.425847223
+##  [26]  1.689400071  2.183600762  0.320247693  1.385075509 -0.158358441
+##  [31] -1.060563475 -0.877348803  1.882048720  2.924492267  0.644429410
+##  [36] -0.636967145 -0.216119611  0.157610194 -1.415891021 -0.574407894
+##  [41] -1.925240342  1.162530824  2.017726401  1.529266595 -0.152780600
+##  [46]  1.042233429  1.585344746  0.384974043 -0.980683087 -1.177640411
+##  [51]  1.066264945  1.025830769  0.163152012  0.952333466  1.272402354
+##  [56]  2.504030596 -0.040429268  1.171324383 -2.312930325 -1.059010412
+##  [61]  1.045388027  1.478095894 -2.479280535 -0.007460936 -0.896522792
+##  [66]  0.518552069 -0.191962624  0.636873898  0.687595815 -0.586855821
+##  [71]  0.771436718  0.819033969 -0.784207088 -1.648586946  0.450696787
+##  [76] -2.766693951  1.167090433  0.575362432  0.494811054  0.906500974
+##  [81]  1.167417015 -0.080126576 -0.292802010  0.192085703 -0.089444890
+##  [86]  2.008180078  0.576261558 -0.620339455  1.178042937 -1.904432066
+##  [91] -1.696103724  0.047718057  0.016596422 -0.998370251  0.917019417
+##  [96]  2.505391063  0.501554677  2.153044850 -0.584157091  1.050636374</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(<span class="kw">rnorm</span>(<span class="dv">10000</span>))</code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-102-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># runif(n, min, max) generates a vector of n random samples </span>
 <span class="co"># from a uniform distribution whose limits are min and max. </span>
 <span class="kw">runif</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">1</span>)</code></pre></div>
-<pre><code>##   [1] 0.18909512 0.73306539 0.19890507 0.56334534 0.23996343 0.87857517
-##   [7] 0.59990317 0.28542410 0.48295437 0.72976725 0.21096852 0.48505685
-##  [13] 0.36306219 0.73728268 0.33868366 0.60690616 0.93819962 0.36978780
-##  [19] 0.93974560 0.14310909 0.10156290 0.59160644 0.14500985 0.44913154
-##  [25] 0.26193867 0.16227114 0.09257387 0.93796116 0.92165081 0.84001355
-##  [31] 0.05403981 0.90099734 0.41245713 0.63325263 0.31027484 0.15661161
-##  [37] 0.79565650 0.56414653 0.72195515 0.31975878 0.82893770 0.10827721
-##  [43] 0.94538222 0.02732790 0.28698416 0.90493729 0.74813311 0.68221999
-##  [49] 0.20462378 0.14863127 0.61003688 0.23636594 0.63373243 0.66649399
-##  [55] 0.33923452 0.31454352 0.88796554 0.12959418 0.25146632 0.15653286
-##  [61] 0.00284600 0.32594992 0.24794767 0.74266185 0.09320303 0.76426763
-##  [67] 0.05087525 0.23419436 0.61021027 0.75944898 0.84149282 0.30997512
-##  [73] 0.57519302 0.30298492 0.46484665 0.88623652 0.31559121 0.14429948
-##  [79] 0.03141769 0.81646037 0.95845745 0.57764526 0.76095144 0.04319775
-##  [85] 0.21476310 0.79867118 0.41556040 0.74546414 0.47011463 0.96656700
-##  [91] 0.15360554 0.06099842 0.70662881 0.64232145 0.39671330 0.99534023
-##  [97] 0.77881918 0.37381385 0.32967677 0.23608483</code></pre>
+<pre><code>##   [1] 0.13091916 0.83274564 0.32054851 0.40495342 0.63254620 0.82439617
+##   [7] 0.56596398 0.75134969 0.23156106 0.76955052 0.95238384 0.71718746
+##  [13] 0.44828815 0.62424699 0.49335183 0.13219966 0.13310372 0.07856665
+##  [19] 0.10033817 0.63028873 0.67146657 0.92942527 0.29953860 0.70919049
+##  [25] 0.71301824 0.25809145 0.72975450 0.20216349 0.42054374 0.13786687
+##  [31] 0.20537653 0.22759601 0.51598140 0.90987104 0.22415111 0.90628753
+##  [37] 0.12052989 0.03300982 0.87857273 0.06002110 0.30476010 0.11813998
+##  [43] 0.27891703 0.65053753 0.61467353 0.18094044 0.08371387 0.59742892
+##  [49] 0.36890026 0.02884705 0.99452785 0.16329273 0.50297698 0.30214224
+##  [55] 0.13695804 0.69936590 0.57538206 0.78671541 0.67142991 0.62049811
+##  [61] 0.54741939 0.78230797 0.09431528 0.89592208 0.71988589 0.71096348
+##  [67] 0.64251919 0.46598324 0.20884243 0.07030863 0.75723885 0.68925175
+##  [73] 0.40891608 0.45556623 0.06724023 0.75990350 0.52331339 0.42819664
+##  [79] 0.31470033 0.02556703 0.10062181 0.21492346 0.73369009 0.57579734
+##  [85] 0.23915758 0.28616510 0.97427967 0.61820759 0.79435342 0.97203822
+##  [91] 0.29003657 0.74806576 0.16673075 0.98415805 0.17847971 0.09149876
+##  [97] 0.20882785 0.66764480 0.91958921 0.70155522</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(<span class="kw">runif</span>(<span class="dv">10000</span>, <span class="dv">0</span>, <span class="dv">1</span>))</code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-104-1.png" width="672" /></p>
@@ -666,20 +666,137 @@ a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</sp
 <p><code>mtcars</code> is a dataframe about fuel economy of various cars. In the dataset, <code>mpg</code> represents miles per gallon. <code>mtcars$mpg</code> allows us to access the <code>mpg</code> variable in the <code>mtcars</code> dataframe.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span>mtcars$mpg</code></pre></div>
 <ul>
-<li><p>Calculate the length of the vector <code>a</code>.</p></li>
-<li><p>Calculate the mean of <code>a</code> using <code>sum()</code> and <code>length()</code> functions.</p></li>
-<li><p>Calculate the mean of <code>a</code> using <code>mean()</code> function.</p></li>
-<li><p>Calculate the variance of <code>a</code> using <code>sd()</code> function.</p></li>
-<li><p>Calculate the variance of <code>a</code> using <code>var()</code> function.</p></li>
-<li><p>Calculate the variance of <code>a</code> by directly calculating the following expression: <span class="math inline">\([(a_1 - \bar{a})^2 + (a_2 - \bar{a})^2 + ... (a_n - \bar{a})^2]/(n-1)\)</span>, where <span class="math inline">\(a = (a_1, a_2, ... , a_n)\)</span></p></li>
-<li><p>Standardize the vector <code>a</code>, i.e., <span class="math inline">\(z = \frac{x-\bar{x}}{sd(x)}\)</span>.</p></li>
-<li><p>Use <code>scale()</code> function to standardize <code>a</code> and compare the results with your manual calculation.</p></li>
-<li><p>Calculate the difference between the largest and smallest numbers in <code>a</code>.</p></li>
-<li><p>Normalize the vector <code>a</code>, i.e., <span class="math inline">\(n = \frac{(x-min(x))}{(max(x)-min(x))}\)</span>.</p></li>
-<li><p>Plot the histogram of <code>a</code> using <code>qplot()</code>.</p></li>
-<li><p>How many elements in <code>a</code> are larger than 20? (use <code>length()</code>)</p></li>
-<li><p>How many elements in <code>a</code> are larger than 20? (use <code>sum()</code>)</p></li>
+<li>Calculate the length of the vector <code>a</code>.</li>
 </ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(a)</code></pre></div>
+<pre><code>## [1] 32</code></pre>
+<ul>
+<li>Calculate the mean of <code>a</code> using <code>sum()</code> and <code>length()</code> functions.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(a)/<span class="kw">length</span>(a)</code></pre></div>
+<pre><code>## [1] 20.09062</code></pre>
+<ul>
+<li>Calculate the mean of <code>a</code> using <code>mean()</code> function.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(a)</code></pre></div>
+<pre><code>## [1] 20.09062</code></pre>
+<ul>
+<li>Calculate the variance of <code>a</code> using <code>sd()</code> function.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(a)^<span class="dv">2</span></code></pre></div>
+<pre><code>## [1] 36.3241</code></pre>
+<ul>
+<li>Calculate the variance of <code>a</code> using <code>var()</code> function.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(a)</code></pre></div>
+<pre><code>## [1] 36.3241</code></pre>
+<ul>
+<li>Calculate the variance of <code>a</code> by directly calculating the following expression: <span class="math inline">\([(a_1 - \bar{a})^2 + (a_2 - \bar{a})^2 + ... (a_n - \bar{a})^2]/(n-1) = \frac{\sum_{i=1}^{n}(a_i-\bar{a})^2}{n-1}\)</span>, where <span class="math inline">\(a = (a_1, a_2, ... , a_n)\)</span> and <span class="math inline">\(\bar{a} = mean(a)\)</span></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>((a-<span class="kw">mean</span>(a))^<span class="dv">2</span>)/(<span class="kw">length</span>(a)-<span class="dv">1</span>)</code></pre></div>
+<pre><code>## [1] 36.3241</code></pre>
+<ul>
+<li>Standardize the vector <code>a</code>, i.e., <span class="math inline">\(z = \frac{a-\bar{a}}{sd(a)}\)</span>.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(a-<span class="kw">mean</span>(a))/<span class="kw">sd</span>(a)</code></pre></div>
+<pre><code>##  [1]  0.15088482  0.15088482  0.44954345  0.21725341 -0.23073453
+##  [6] -0.33028740 -0.96078893  0.71501778  0.44954345 -0.14777380
+## [11] -0.38006384 -0.61235388 -0.46302456 -0.81145962 -1.60788262
+## [16] -1.60788262 -0.89442035  2.04238943  1.71054652  2.29127162
+## [21]  0.23384555 -0.76168319 -0.81145962 -1.12671039 -0.14777380
+## [26]  1.19619000  0.98049211  1.71054652 -0.71190675 -0.06481307
+## [31] -0.84464392  0.21725341</code></pre>
+<ul>
+<li>Use <code>scale()</code> function to standardize <code>a</code> and compare the results with your manual calculation.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># check the help document of scale() by typing ?scale for more details</span>
+<span class="kw">scale</span>(a)</code></pre></div>
+<pre><code>##              [,1]
+##  [1,]  0.15088482
+##  [2,]  0.15088482
+##  [3,]  0.44954345
+##  [4,]  0.21725341
+##  [5,] -0.23073453
+##  [6,] -0.33028740
+##  [7,] -0.96078893
+##  [8,]  0.71501778
+##  [9,]  0.44954345
+## [10,] -0.14777380
+## [11,] -0.38006384
+## [12,] -0.61235388
+## [13,] -0.46302456
+## [14,] -0.81145962
+## [15,] -1.60788262
+## [16,] -1.60788262
+## [17,] -0.89442035
+## [18,]  2.04238943
+## [19,]  1.71054652
+## [20,]  2.29127162
+## [21,]  0.23384555
+## [22,] -0.76168319
+## [23,] -0.81145962
+## [24,] -1.12671039
+## [25,] -0.14777380
+## [26,]  1.19619000
+## [27,]  0.98049211
+## [28,]  1.71054652
+## [29,] -0.71190675
+## [30,] -0.06481307
+## [31,] -0.84464392
+## [32,]  0.21725341
+## attr(,&quot;scaled:center&quot;)
+## [1] 20.09062
+## attr(,&quot;scaled:scale&quot;)
+## [1] 6.026948</code></pre>
+<ul>
+<li>Calculate the difference between the largest and smallest numbers in <code>a</code>.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">max</span>(a)-<span class="kw">min</span>(a)</code></pre></div>
+<pre><code>## [1] 23.5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># another solution</span>
+<span class="kw">diff</span>(<span class="kw">range</span>(a))</code></pre></div>
+<pre><code>## [1] 23.5</code></pre>
+<ul>
+<li>Normalize the vector <code>a</code>, i.e., <span class="math inline">\(n = \frac{(x-min(x))}{(max(x)-min(x))}\)</span>.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># your maximum value will be 1, and minimum value will be 0. </span>
+(a-<span class="kw">min</span>(a))/(<span class="kw">max</span>(a)-<span class="kw">min</span>(a))</code></pre></div>
+<pre><code>##  [1] 0.4510638 0.4510638 0.5276596 0.4680851 0.3531915 0.3276596 0.1659574
+##  [8] 0.5957447 0.5276596 0.3744681 0.3148936 0.2553191 0.2936170 0.2042553
+## [15] 0.0000000 0.0000000 0.1829787 0.9361702 0.8510638 1.0000000 0.4723404
+## [22] 0.2170213 0.2042553 0.1234043 0.3744681 0.7191489 0.6638298 0.8510638
+## [29] 0.2297872 0.3957447 0.1957447 0.4680851</code></pre>
+<ul>
+<li>Plot the histogram of <code>a</code> using <code>qplot()</code>.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(a)</code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-154-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># To set aesthetics, wrap in I()</span>
+<span class="kw">qplot</span>(a, <span class="dt">color =</span> <span class="kw">I</span>(<span class="st">&quot;red&quot;</span>), <span class="dt">fill =</span> <span class="kw">I</span>(<span class="st">&quot;blue&quot;</span>))</code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-155-1.png" width="672" /></p>
+<ul>
+<li>How many elements in <code>a</code> are larger than 20? (use <code>length()</code>)</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># creates a logical vector in which TRUE indicates the element that is larger than 20</span>
+a&gt;<span class="dv">20</span></code></pre></div>
+<pre><code>##  [1]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE
+## [12] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE
+## [23] FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># This is a logical indexing where the logical vector </span>
+<span class="co"># within the subsetting operator (i.e., []) will create a vector with elements larger than 20. </span>
+a[a&gt;<span class="dv">20</span>]</code></pre></div>
+<pre><code>##  [1] 21.0 21.0 22.8 21.4 24.4 22.8 32.4 30.4 33.9 21.5 27.3 26.0 30.4 21.4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(a[a&gt;<span class="dv">20</span>])</code></pre></div>
+<pre><code>## [1] 14</code></pre>
+<ul>
+<li>How many elements in <code>a</code> are larger than 20? (use <code>sum()</code>)</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># same result</span>
+<span class="co"># this happens because of &quot;vectorization&quot; and &quot;type conversion&quot;</span>
+<span class="kw">sum</span>(a&gt;<span class="dv">20</span>)</code></pre></div>
+<pre><code>## [1] 14</code></pre>
 <p><code>txhousing</code> is a tibble in <code>ggplot2</code> containing information about the housing market in Texas provided by the TAMU real estate center. In the dataset, <code>median</code> represents median sale price. <code>txhousing$median</code> allows us to access the <code>median</code> variable in the <code>txhousing</code> tibble (or dataframe).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b &lt;-<span class="st"> </span>txhousing$median</code></pre></div>
 <ul>
@@ -1065,7 +1182,7 @@ se &lt;-<span class="st"> </span>function(x) {
 }</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mySample &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n=</span><span class="dv">100</span>, <span class="dt">mean=</span><span class="dv">20</span>, <span class="dt">sd=</span><span class="dv">4</span>)
 <span class="kw">se</span>(mySample)</code></pre></div>
-<pre><code>## [1] 0.4150195</code></pre>
+<pre><code>## [1] 0.4142183</code></pre>
 </div>
 <div id="exercise-5" class="section level2">
 <h2><span class="header-section-number">5.25</span> Exercise</h2>
