@@ -24,7 +24,7 @@
 <meta name="author" content="Sunbok Lee" />
 
 
-<meta name="date" content="2019-08-21" />
+<meta name="date" content="2019-08-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -150,12 +150,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.8" data-path="base-r.html"><a href="base-r.html#attributes"><i class="fa fa-check"></i><b>5.8</b> Attributes</a></li>
 <li class="chapter" data-level="5.9" data-path="base-r.html"><a href="base-r.html#type-coercion-conversion"><i class="fa fa-check"></i><b>5.9</b> Type Coercion (Conversion)</a></li>
 <li class="chapter" data-level="5.10" data-path="base-r.html"><a href="base-r.html#na-represents-missing"><i class="fa fa-check"></i><b>5.10</b> NA represents missing</a></li>
-<li class="chapter" data-level="5.11" data-path="base-r.html"><a href="base-r.html#indexing-a-vector"><i class="fa fa-check"></i><b>5.11</b> Indexing a Vector</a></li>
-<li class="chapter" data-level="5.12" data-path="base-r.html"><a href="base-r.html#factors"><i class="fa fa-check"></i><b>5.12</b> Factors</a></li>
-<li class="chapter" data-level="5.13" data-path="base-r.html"><a href="base-r.html#matrices-and-arrays"><i class="fa fa-check"></i><b>5.13</b> Matrices and Arrays</a></li>
-<li class="chapter" data-level="5.14" data-path="base-r.html"><a href="base-r.html#data-frames"><i class="fa fa-check"></i><b>5.14</b> Data Frames</a></li>
-<li class="chapter" data-level="5.15" data-path="base-r.html"><a href="base-r.html#operators"><i class="fa fa-check"></i><b>5.15</b> Operators</a></li>
-<li class="chapter" data-level="5.16" data-path="base-r.html"><a href="base-r.html#subsetting-a-vector"><i class="fa fa-check"></i><b>5.16</b> Subsetting a Vector</a></li>
+<li class="chapter" data-level="5.11" data-path="base-r.html"><a href="base-r.html#useful-functions-for-a-vector"><i class="fa fa-check"></i><b>5.11</b> Useful Functions for a vector</a><ul>
+<li class="chapter" data-level="5.11.1" data-path="base-r.html"><a href="base-r.html#generate-a-vector"><i class="fa fa-check"></i><b>5.11.1</b> Generate a vector</a></li>
+<li class="chapter" data-level="5.11.2" data-path="base-r.html"><a href="base-r.html#indexing-or-subsetting-a-vector"><i class="fa fa-check"></i><b>5.11.2</b> Indexing or subsetting a Vector</a></li>
+<li class="chapter" data-level="5.11.3" data-path="base-r.html"><a href="base-r.html#arrange-a-vector"><i class="fa fa-check"></i><b>5.11.3</b> Arrange a vector</a></li>
+<li class="chapter" data-level="5.11.4" data-path="base-r.html"><a href="base-r.html#vectorization-of-functions"><i class="fa fa-check"></i><b>5.11.4</b> Vectorization of Functions</a></li>
+<li class="chapter" data-level="5.11.5" data-path="base-r.html"><a href="base-r.html#some-more-functions"><i class="fa fa-check"></i><b>5.11.5</b> Some more functions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.12" data-path="base-r.html"><a href="base-r.html#exercise-on-vectors"><i class="fa fa-check"></i><b>5.12</b> Exercise on vectors</a></li>
+<li class="chapter" data-level="5.13" data-path="base-r.html"><a href="base-r.html#factors"><i class="fa fa-check"></i><b>5.13</b> Factors</a></li>
+<li class="chapter" data-level="5.14" data-path="base-r.html"><a href="base-r.html#matrices-and-arrays"><i class="fa fa-check"></i><b>5.14</b> Matrices and Arrays</a></li>
+<li class="chapter" data-level="5.15" data-path="base-r.html"><a href="base-r.html#data-frames"><i class="fa fa-check"></i><b>5.15</b> Data Frames</a></li>
+<li class="chapter" data-level="5.16" data-path="base-r.html"><a href="base-r.html#operators"><i class="fa fa-check"></i><b>5.16</b> Operators</a></li>
 <li class="chapter" data-level="5.17" data-path="base-r.html"><a href="base-r.html#subsetting-a-list"><i class="fa fa-check"></i><b>5.17</b> Subsetting a List</a></li>
 <li class="chapter" data-level="5.18" data-path="base-r.html"><a href="base-r.html#subsetting-a-matrix-and-array"><i class="fa fa-check"></i><b>5.18</b> Subsetting a Matrix and Array</a></li>
 <li class="chapter" data-level="5.19" data-path="base-r.html"><a href="base-r.html#exercise-4"><i class="fa fa-check"></i><b>5.19</b> Exercise</a></li>
@@ -166,11 +172,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.24" data-path="base-r.html"><a href="base-r.html#user-defined-functions"><i class="fa fa-check"></i><b>5.24</b> User-Defined Functions</a></li>
 <li class="chapter" data-level="5.25" data-path="base-r.html"><a href="base-r.html#exercise-5"><i class="fa fa-check"></i><b>5.25</b> Exercise</a></li>
 <li class="chapter" data-level="5.26" data-path="base-r.html"><a href="base-r.html#some-comments-on-functions"><i class="fa fa-check"></i><b>5.26</b> Some Comments on Functions</a></li>
-<li class="chapter" data-level="5.27" data-path="base-r.html"><a href="base-r.html#vectorization-of-functions"><i class="fa fa-check"></i><b>5.27</b> Vectorization of Functions</a></li>
-<li class="chapter" data-level="5.28" data-path="base-r.html"><a href="base-r.html#generating-sequences"><i class="fa fa-check"></i><b>5.28</b> Generating Sequences</a></li>
-<li class="chapter" data-level="5.29" data-path="base-r.html"><a href="base-r.html#control-flow-if-else"><i class="fa fa-check"></i><b>5.29</b> Control Flow (if-else)</a></li>
-<li class="chapter" data-level="5.30" data-path="base-r.html"><a href="base-r.html#control-flow-for"><i class="fa fa-check"></i><b>5.30</b> Control Flow (for)</a></li>
-<li class="chapter" data-level="5.31" data-path="base-r.html"><a href="base-r.html#control-flow-for-1"><i class="fa fa-check"></i><b>5.31</b> Control Flow (for)</a></li>
+<li class="chapter" data-level="5.27" data-path="base-r.html"><a href="base-r.html#generating-sequences"><i class="fa fa-check"></i><b>5.27</b> Generating Sequences</a></li>
+<li class="chapter" data-level="5.28" data-path="base-r.html"><a href="base-r.html#control-flow-if-else"><i class="fa fa-check"></i><b>5.28</b> Control Flow (if-else)</a></li>
+<li class="chapter" data-level="5.29" data-path="base-r.html"><a href="base-r.html#control-flow-for"><i class="fa fa-check"></i><b>5.29</b> Control Flow (for)</a></li>
+<li class="chapter" data-level="5.30" data-path="base-r.html"><a href="base-r.html#control-flow-for-1"><i class="fa fa-check"></i><b>5.30</b> Control Flow (for)</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>

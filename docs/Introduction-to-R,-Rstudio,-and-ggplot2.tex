@@ -124,7 +124,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-08-21}
+    \date{2019-08-25}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -1393,6 +1393,12 @@ Package}{The corrplot Package}}\label{the-corrplot-package}
 
 \chapter{Base R}\label{base-r}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{suppressMessages}\NormalTok{(}\KeywordTok{library}\NormalTok{(tidyverse))}
+\end{Highlighting}
+\end{Shaded}
+
 \section{Topics}\label{topics}
 
 \begin{itemize}
@@ -1825,63 +1831,759 @@ Properties}\label{a-vector-has-three-properties}
 ## [1]  TRUE FALSE FALSE    NA  TRUE
 \end{verbatim}
 
-\section{Indexing a Vector}\label{indexing-a-vector}
+\section{Useful Functions for a
+vector}\label{useful-functions-for-a-vector}
+
+\subsection{Generate a vector}\label{generate-a-vector}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# we can manually type the element of a vector using c()}
+\NormalTok{a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{)}
+\NormalTok{a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2 3 4 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# c() also combine vectors}
+\NormalTok{a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{)}
+\NormalTok{b <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{)}
+\NormalTok{c <-}\StringTok{ }\KeywordTok{c}\NormalTok{(a, b)}
+\NormalTok{c}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2 3 4 5 6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# k:n generates a vector whose elements are the sequence of numbers from k to n}
+\DecValTok{1}\NormalTok{:}\DecValTok{10}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1]  1  2  3  4  5  6  7  8  9 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# seq() generates regular sequence}
+\CommentTok{# seq(from, to)}
+\KeywordTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1]  1  2  3  4  5  6  7  8  9 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# seq(from, to, by)}
+\KeywordTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 3 5 7 9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# rep(x, times) replicates the values in x multiple times}
+\CommentTok{# x can be a number or vector}
+\CommentTok{# replicates 1 5 times}
+\KeywordTok{rep}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 1 1 1 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# replicates c(1, 2) 5 times}
+\KeywordTok{rep}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{), }\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 1 2 1 2 1 2 1 2 1 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# each element of c(1,2) is repeated 5 times}
+\KeywordTok{rep}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{), }\DataTypeTok{each =} \DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] 1 1 1 1 1 2 2 2 2 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# rnorm(n, mean = 0, sd = 1) generates a vector of n random samples }
+\CommentTok{# from a normal distribution with specific mean and sd. }
+\KeywordTok{rnorm}\NormalTok{(}\DecValTok{100}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   [1] -0.54552588  1.49438989  0.22190135 -1.15878263 -0.26537566
+##   [6]  1.53778855  0.60345379  0.12037257  1.39563507  0.16051061
+##  [11] -0.54459037  0.24471338  0.05190155 -0.92375029  0.48289588
+##  [16] -1.60887049  0.08652177  0.60651535  1.00622102  0.18336828
+##  [21] -1.51086025  0.89118472 -0.89651223  1.07737346 -0.17874165
+##  [26] -1.72895910  0.57105610  0.87872904  1.13222549 -1.28984789
+##  [31] -1.75402360 -0.53782593  0.83120109  2.16536864 -0.15320789
+##  [36]  1.51876002 -1.70276695 -0.84768604 -0.40260162  0.32320193
+##  [41]  0.10597368 -2.39801443 -2.13270918  1.18351394  0.16757964
+##  [46] -0.53311526  0.70016044 -1.11243003 -0.37838523  1.06868796
+##  [51] -0.07343939  0.23283103 -1.22205621  1.66248052  0.07349496
+##  [56]  1.39947677  1.61429979  2.36750432 -1.04670965 -0.31504556
+##  [61]  1.36966563  0.10616796  1.40190701 -0.86078080 -1.95580390
+##  [66] -0.28428748  1.28396228  0.69638992  2.33187339  0.72938956
+##  [71] -0.03635305  0.11645746  0.16408538  1.91093137  0.13102193
+##  [76] -1.33310010 -0.70320613 -1.34915840  0.45020679 -0.15923086
+##  [81]  1.01618143 -1.09053215 -1.24350046 -0.34074159  2.36331647
+##  [86] -1.42057728 -0.55765786  0.37350417  1.43189918  0.63130154
+##  [91]  1.63310283 -0.10829304  1.50439794 -1.15734483  0.36673743
+##  [96] -0.08680396 -0.03650391 -0.93769305  1.15673774 -0.52574680
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{qplot}\NormalTok{(}\KeywordTok{rnorm}\NormalTok{(}\DecValTok{10000}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-102-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# runif(n, min, max) generates a vector of n random samples }
+\CommentTok{# from a uniform distribution whose limits are min and max. }
+\KeywordTok{runif}\NormalTok{(}\DecValTok{100}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   [1] 0.291702325 0.288265456 0.729637763 0.892501160 0.991075894
+##   [6] 0.140333656 0.404773195 0.006153709 0.107351041 0.376647986
+##  [11] 0.344100249 0.610523692 0.287946961 0.759771546 0.097030692
+##  [16] 0.863318269 0.835555679 0.057731853 0.947142984 0.179134057
+##  [21] 0.769071399 0.194907052 0.734373922 0.649010467 0.564453102
+##  [26] 0.439381964 0.033752665 0.652973680 0.165238692 0.438174116
+##  [31] 0.618491162 0.735009353 0.976096948 0.757498943 0.646336823
+##  [36] 0.613851423 0.718389079 0.606559846 0.968570557 0.790341374
+##  [41] 0.265875056 0.274895329 0.900149644 0.257416142 0.131500073
+##  [46] 0.829250267 0.121682189 0.296570389 0.310079926 0.410256803
+##  [51] 0.341568358 0.435842076 0.326763380 0.822366698 0.644414276
+##  [56] 0.070214916 0.261034553 0.806168658 0.807720459 0.107610323
+##  [61] 0.893220446 0.699174227 0.060524985 0.470434304 0.761822623
+##  [66] 0.227231200 0.992085050 0.214343456 0.261971707 0.037640198
+##  [71] 0.488584477 0.889697124 0.128793233 0.851784665 0.627015006
+##  [76] 0.374354713 0.102351033 0.697735450 0.310270372 0.729266180
+##  [81] 0.099715171 0.207204424 0.585132955 0.527520527 0.940508201
+##  [86] 0.341991092 0.165045372 0.946911833 0.007184102 0.190517963
+##  [91] 0.045475135 0.753932113 0.749611202 0.058592784 0.537452460
+##  [96] 0.437306890 0.365223754 0.005131749 0.235477563 0.941780152
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{qplot}\NormalTok{(}\KeywordTok{runif}\NormalTok{(}\DecValTok{10000}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\includegraphics{Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-104-1.pdf}
+
+\subsection{Indexing or subsetting a
+Vector}\label{indexing-or-subsetting-a-vector}
 
 \begin{itemize}
-\tightlist
 \item
   You can access a particular element of a vector through an
   \textbf{index} between \textbf{square brackets} or \textbf{indexing
   (subsetting) operator}.
+\item
+  \textbf{Positive integers} return elements at the specified positions.
 \end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{)}
+\NormalTok{x <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{)}
+\NormalTok{x[}\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4 2
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Negative integers} omit elements at the specified positions:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x[-}\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3 5 6 7
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Logical vectors} select elements where the corresponding
+  logical value is TRUE. This \textbf{logical indexing} is very useful
+  because we can subset a vector or dataframe based on conditions.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x[}\KeywordTok{c}\NormalTok{(}\OtherTok{TRUE}\NormalTok{, }\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{, }\OtherTok{TRUE}\NormalTok{, }\OtherTok{TRUE}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2 3 6 7
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x >}\StringTok{ }\DecValTok{3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE FALSE  TRUE  TRUE  TRUE  TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# This is called a logical indexing, which is a very powerful tool.}
+\CommentTok{# > : greater than (Logical Operators)}
+\NormalTok{x[x >}\StringTok{ }\DecValTok{3}\NormalTok{]   }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4 5 6 7
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x[x >}\StringTok{ }\DecValTok{3} \NormalTok{&}\StringTok{ }\NormalTok{x <}\StringTok{ }\DecValTok{5}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# %in% operator }
+\CommentTok{# v1 %in% v2 returns a logical vector indicating }
+\CommentTok{# whether the elements of v1 are included in v2. }
+\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{) %in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE  TRUE  TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{)}
+\NormalTok{a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2 3 4 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# we replace an element of a vector using the indexing and assignment operators. }
+\NormalTok{a[}\DecValTok{3}\NormalTok{] <-}\StringTok{ }\DecValTok{100}
+\NormalTok{a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]   1   2 100   4   5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a[}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{5}\NormalTok{)] <-}\StringTok{ }\DecValTok{100}
+\NormalTok{a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 100   2 100   4 100
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\OtherTok{NA}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\OtherTok{NA}\NormalTok{)}
+\NormalTok{a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  1  2  3 NA  5  6 NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# is.na indicates which elements are missing}
+\KeywordTok{is.na}\NormalTok{(a)  }\CommentTok{# returns TRUE when missing}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Type conversion: TRUE and FALSE will be converted into 1 and 0, respectively. }
+\CommentTok{# This expression answers the question: How many NSs are in a?}
+\KeywordTok{sum}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(a))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# !x = not x (negation)}
+\NormalTok{!}\KeywordTok{is.na}\NormalTok{(a)  }\CommentTok{# returns TRUE when not missing}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# This expression answers the question: How many non-NSs are in a?}
+\KeywordTok{sum}\NormalTok{(!}\KeywordTok{is.na}\NormalTok{(a))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# logical indexing}
+\NormalTok{a[}\KeywordTok{is.na}\NormalTok{(a)] <-}\StringTok{ }\DecValTok{999}
+\NormalTok{a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]   1   2   3 999   5   6 999
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# create a vector with names}
+\NormalTok{a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DataTypeTok{x =} \DecValTok{1}\NormalTok{, }\DataTypeTok{y =} \DecValTok{2}\NormalTok{, }\DataTypeTok{z =} \DecValTok{3}\NormalTok{)}
+\NormalTok{a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## x y z 
+## 1 2 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# named vector can be indexed using their names}
+\NormalTok{a[}\KeywordTok{c}\NormalTok{(}\StringTok{"x"}\NormalTok{, }\StringTok{"z"}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## x z 
+## 1 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# R uses a "recycling rule" by repeating the shorter vector}
+\CommentTok{# In this example, R recycled c(TRUE, FALSE) to produce c(TRUE, FALSE, TRUE, FALSE)}
+\NormalTok{i <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{)}
+\NormalTok{a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{)}
+\NormalTok{a[i]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# R uses a "recycling rule" by repeating the shorter vector}
+\NormalTok{v1 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{)}
+\NormalTok{v2 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{)}
+\NormalTok{v1+v2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 14 15 16 17
+\end{verbatim}
+
+\subsection{Arrange a vector}\label{arrange-a-vector}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# sort(x, decreasing = FALSE) }
+\CommentTok{# By default, sort() sorts ascending order.}
+\KeywordTok{sort}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4 5 6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# sorts into descending order}
+\KeywordTok{sort}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{4}\NormalTok{), }\DataTypeTok{decreasing =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6 5 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# rev() provides a reversed version of its argument}
+\KeywordTok{rev}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4 6 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# rank() returns the sample ranks of the elements in a vector}
+\KeywordTok{rank}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2 3 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# order() returns a permutation which rearranges }
+\CommentTok{# its first argument into ascending or descending order. }
+\CommentTok{# What this means is order(c(5,6,4)) }
+\CommentTok{# 1) first sorts a vector in ascending order to produce c(4,5,6)}
+\CommentTok{# 2) and returns the indices of the sorted element in the original vector. }
+\CommentTok{# e.g., we have 3 first b/c the index of 4 in the original vector is 3}
+\CommentTok{# e.g., we have 1 first b/c the index of 5 in the original vector is 1}
+\CommentTok{# e.g., we have 2 first b/c the index of 6 in the original vector is 2}
+\KeywordTok{order}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3 1 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# We use order() to sort a vector or dataframe}
+\NormalTok{a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{4}\NormalTok{)}
+\NormalTok{a[}\KeywordTok{order}\NormalTok{(a)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4 5 6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# sort a dataframe}
+\KeywordTok{head}\NormalTok{(mtcars[}\KeywordTok{order}\NormalTok{(mtcars$mpg), ])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                      mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Cadillac Fleetwood  10.4   8  472 205 2.93 5.250 17.98  0  0    3    4
+## Lincoln Continental 10.4   8  460 215 3.00 5.424 17.82  0  0    3    4
+## Camaro Z28          13.3   8  350 245 3.73 3.840 15.41  0  0    3    4
+## Duster 360          14.3   8  360 245 3.21 3.570 15.84  0  0    3    4
+## Chrysler Imperial   14.7   8  440 230 3.23 5.345 17.42  0  0    3    4
+## Maserati Bora       15.0   8  301 335 3.54 3.570 14.60  0  1    5    8
+\end{verbatim}
+
+\subsection{Vectorization of
+Functions}\label{vectorization-of-functions}
+
+\begin{itemize}
+\tightlist
+\item
+  One of the most powerful aspects of R is the vectorization of
+  functions.
+\item
+  Many R functions can be applied to a vector of values producing an
+  \textbf{equal-sized vector of results}.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{25}\NormalTok{)}
+\KeywordTok{sqrt}\NormalTok{(v)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{)}
+\NormalTok{v^}\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 4 9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v1 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{)}
+\NormalTok{v2 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{)}
+\NormalTok{v1+v2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 14  7  7  9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# R uses a "recycling rule" by repeating the shorter vector}
+\NormalTok{v1 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{)}
+\NormalTok{v2 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{2}\NormalTok{)}
+\NormalTok{v1+v2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 14  7 16  9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# mean will be subtracted from every element of v1}
+\NormalTok{v1 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{)}
+\NormalTok{v1 -}\StringTok{ }\KeywordTok{mean}\NormalTok{(v1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -1.5 -0.5  0.5  1.5
+\end{verbatim}
+
+\subsection{Some more functions}\label{some-more-functions}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# table() creates a frequency table}
+\NormalTok{a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{)}
+\KeywordTok{table}\NormalTok{(a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## a
+## 1 2 3 4 
+## 2 3 3 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# unique() returns a vector of unique elements}
+\KeywordTok{unique}\NormalTok{(a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2 3 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\OtherTok{NA}\NormalTok{,}\DecValTok{5}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{a[}\DecValTok{3}\NormalTok{]}
+\CommentTok{# By default, mean() produces NA when there's NAs in a vector}
+\KeywordTok{mean}\NormalTok{(a)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3
+## [1] NA
 \end{verbatim}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{a[}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{)]}
+\CommentTok{# na.rm = TRUE removes NAs before computation}
+\KeywordTok{mean}\NormalTok{(a, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 1 3 5
+## [1] 2.75
 \end{verbatim}
+
+\section{Exercise on vectors}\label{exercise-on-vectors}
+
+\texttt{mtcars} is a dataframe about fuel economy of various cars. In
+the dataset, \texttt{mpg} represents miles per gallon.
+\texttt{mtcars\$mpg} allows us to access the \texttt{mpg} variable in
+the \texttt{mtcars} dataframe.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# create a vector}
-\DecValTok{2}\NormalTok{:}\DecValTok{4}
+\NormalTok{a <-}\StringTok{ }\NormalTok{mtcars$mpg}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-## [1] 2 3 4
-\end{verbatim}
+\begin{itemize}
+\item
+  Calculate the length of the vector \texttt{a}.
+\item
+  Calculate the mean of \texttt{a} using \texttt{sum()} and
+  \texttt{length()} functions.
+\item
+  Calculate the mean of \texttt{a} using \texttt{mean()} function.
+\item
+  Calculate the variance of \texttt{a} using \texttt{sd()} function.
+\item
+  Calculate the variance of \texttt{a} using \texttt{var()} function.
+\item
+  Calculate the variance of \texttt{a} by directly calculating the
+  following expression:
+  \([(a_1 - \bar{a})^2 + (a_2 - \bar{a})^2 + ... (a_n - \bar{a})^2]/(n-1)\),
+  where \(a = (a_1, a_2, ... , a_n)\)
+\item
+  Standardize the vector \texttt{a}, i.e.,
+  \(z = \frac{x-\bar{x}}{sd(x)}\).
+\item
+  Use \texttt{scale()} function to standardize \texttt{a} and compare
+  the results with your manual calculation.
+\item
+  Calculate the difference between the largest and smallest numbers in
+  \texttt{a}.
+\item
+  Normalize the vector \texttt{a}, i.e.,
+  \(n = \frac{(x-min(x))}{(max(x)-min(x))}\).
+\item
+  Plot the histogram of \texttt{a} using \texttt{qplot()}.
+\item
+  How many elements in \texttt{a} are larger than 20? (use
+  \texttt{length()})
+\item
+  How many elements in \texttt{a} are larger than 20? (use
+  \texttt{sum()})
+\end{itemize}
+
+\texttt{txhousing} is a tibble in \texttt{ggplot2} containing
+information about the housing market in Texas provided by the TAMU real
+estate center. In the dataset, \texttt{median} represents median sale
+price. \texttt{txhousing\$median} allows us to access the
+\texttt{median} variable in the \texttt{txhousing} tibble (or
+dataframe).
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# same with a[c(2,3,4)]}
-\NormalTok{a[}\DecValTok{2}\NormalTok{:}\DecValTok{4}\NormalTok{]}
+\NormalTok{b <-}\StringTok{ }\NormalTok{txhousing$median}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-## [1] 2 3 4
-\end{verbatim}
+\begin{itemize}
+\item
+  Calculate the length of the vector \texttt{b}.
+\item
+  how many missing values (or NAs) are in \texttt{b}?
+\item
+  Calculate the mean of \texttt{b} using \texttt{sum()} and
+  \texttt{length()} functions.
+\item
+  Calculate the mean of \texttt{b} using \texttt{mean()} function.
+\item
+  Are the two means same? If not, Why? How do we get the same result?
+\item
+  Calculate the variance of \texttt{b} using \texttt{sd()} function.
+\item
+  Calculate the variance of \texttt{b} using \texttt{var()} function.
+\item
+  Plot the histogram of \texttt{b} using \texttt{qplot()}.
+\item
+  Create a new vector \texttt{c} by removing all missing from
+  \texttt{b}.
+\item
+  (Using \texttt{c}) What percentage of houses has median sale price
+  larger than \$200000?
+\end{itemize}
 
 \section{Factors}\label{factors}
 
@@ -2297,86 +2999,6 @@ x\&Y & x AND y\tabularnewline
 ## [1] FALSE
 \end{verbatim}
 
-\section{Subsetting a Vector}\label{subsetting-a-vector}
-
-\begin{itemize}
-\tightlist
-\item
-  Subsetting allows us to access the subset of an R object.
-\item
-  Subsetting (indexing) operator \texttt{{[}\ {]}} is used to subset a
-  vector.
-\item
-  \textbf{Positive integers} return elements at the specified positions.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{x <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{2.1}\NormalTok{, }\FloatTok{4.2}\NormalTok{, }\FloatTok{3.3}\NormalTok{, }\FloatTok{5.4}\NormalTok{)}
-\NormalTok{x[}\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{)]}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 3.3 2.1
-\end{verbatim}
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Negative integers} omit elements at the specified positions:
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{x[-}\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{)]}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 4.2 5.4
-\end{verbatim}
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Logical vectors} select elements where the corresponding
-  logical value is TRUE. This is probably the \textbf{most useful} type
-  of subsetting because you write the expression that creates the
-  logical vector.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{x[}\KeywordTok{c}\NormalTok{(}\OtherTok{TRUE}\NormalTok{, }\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{)]}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 2.1 4.2
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{x >}\StringTok{ }\DecValTok{3}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] FALSE  TRUE  TRUE  TRUE
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{# This is called a logical indexing, which is a very powerful tool.}
-\NormalTok{x[x >}\StringTok{ }\DecValTok{3}\NormalTok{]   }
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 4.2 3.3 5.4
-\end{verbatim}
-
 \section{Subsetting a List}\label{subsetting-a-list}
 
 \begin{itemize}
@@ -2763,7 +3385,7 @@ Matrices}\label{names-of-the-columns-and-rows-of-matrices}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.3727597
+## [1] 0.3878294
 \end{verbatim}
 
 \section{Exercise}\label{exercise-5}
@@ -2804,42 +3426,6 @@ Check whether your function actually work by running
   objects (returned objects) of functions, which requires knowledge
   about \textbf{data structure} (e.g., creating, subsetting).
 \end{itemize}
-
-\section{Vectorization of Functions}\label{vectorization-of-functions}
-
-\begin{itemize}
-\tightlist
-\item
-  One of the most powerful aspects of R is the vectorization of
-  functions.
-\item
-  Many R functions can be applied to a vector of values producing an
-  \textbf{equal-sized vector of results}.
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{v <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{7}\NormalTok{, }\FloatTok{23.5}\NormalTok{, }\FloatTok{76.2}\NormalTok{, }\DecValTok{80}\NormalTok{)}
-\KeywordTok{sqrt}\NormalTok{(v)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 2.000000 2.645751 4.847680 8.729261 8.944272
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{# R uses a "recycling rule" by repeating the shorter vector}
-\NormalTok{v1 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{)}
-\NormalTok{v2 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{2}\NormalTok{)}
-\NormalTok{v1+v2}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 14  7 16  9
-\end{verbatim}
 
 \section{Generating Sequences}\label{generating-sequences}
 

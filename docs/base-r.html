@@ -24,7 +24,7 @@
 <meta name="author" content="Sunbok Lee" />
 
 
-<meta name="date" content="2019-08-21" />
+<meta name="date" content="2019-08-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -150,12 +150,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.8" data-path="base-r.html"><a href="base-r.html#attributes"><i class="fa fa-check"></i><b>5.8</b> Attributes</a></li>
 <li class="chapter" data-level="5.9" data-path="base-r.html"><a href="base-r.html#type-coercion-conversion"><i class="fa fa-check"></i><b>5.9</b> Type Coercion (Conversion)</a></li>
 <li class="chapter" data-level="5.10" data-path="base-r.html"><a href="base-r.html#na-represents-missing"><i class="fa fa-check"></i><b>5.10</b> NA represents missing</a></li>
-<li class="chapter" data-level="5.11" data-path="base-r.html"><a href="base-r.html#indexing-a-vector"><i class="fa fa-check"></i><b>5.11</b> Indexing a Vector</a></li>
-<li class="chapter" data-level="5.12" data-path="base-r.html"><a href="base-r.html#factors"><i class="fa fa-check"></i><b>5.12</b> Factors</a></li>
-<li class="chapter" data-level="5.13" data-path="base-r.html"><a href="base-r.html#matrices-and-arrays"><i class="fa fa-check"></i><b>5.13</b> Matrices and Arrays</a></li>
-<li class="chapter" data-level="5.14" data-path="base-r.html"><a href="base-r.html#data-frames"><i class="fa fa-check"></i><b>5.14</b> Data Frames</a></li>
-<li class="chapter" data-level="5.15" data-path="base-r.html"><a href="base-r.html#operators"><i class="fa fa-check"></i><b>5.15</b> Operators</a></li>
-<li class="chapter" data-level="5.16" data-path="base-r.html"><a href="base-r.html#subsetting-a-vector"><i class="fa fa-check"></i><b>5.16</b> Subsetting a Vector</a></li>
+<li class="chapter" data-level="5.11" data-path="base-r.html"><a href="base-r.html#useful-functions-for-a-vector"><i class="fa fa-check"></i><b>5.11</b> Useful Functions for a vector</a><ul>
+<li class="chapter" data-level="5.11.1" data-path="base-r.html"><a href="base-r.html#generate-a-vector"><i class="fa fa-check"></i><b>5.11.1</b> Generate a vector</a></li>
+<li class="chapter" data-level="5.11.2" data-path="base-r.html"><a href="base-r.html#indexing-or-subsetting-a-vector"><i class="fa fa-check"></i><b>5.11.2</b> Indexing or subsetting a Vector</a></li>
+<li class="chapter" data-level="5.11.3" data-path="base-r.html"><a href="base-r.html#arrange-a-vector"><i class="fa fa-check"></i><b>5.11.3</b> Arrange a vector</a></li>
+<li class="chapter" data-level="5.11.4" data-path="base-r.html"><a href="base-r.html#vectorization-of-functions"><i class="fa fa-check"></i><b>5.11.4</b> Vectorization of Functions</a></li>
+<li class="chapter" data-level="5.11.5" data-path="base-r.html"><a href="base-r.html#some-more-functions"><i class="fa fa-check"></i><b>5.11.5</b> Some more functions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.12" data-path="base-r.html"><a href="base-r.html#exercise-on-vectors"><i class="fa fa-check"></i><b>5.12</b> Exercise on vectors</a></li>
+<li class="chapter" data-level="5.13" data-path="base-r.html"><a href="base-r.html#factors"><i class="fa fa-check"></i><b>5.13</b> Factors</a></li>
+<li class="chapter" data-level="5.14" data-path="base-r.html"><a href="base-r.html#matrices-and-arrays"><i class="fa fa-check"></i><b>5.14</b> Matrices and Arrays</a></li>
+<li class="chapter" data-level="5.15" data-path="base-r.html"><a href="base-r.html#data-frames"><i class="fa fa-check"></i><b>5.15</b> Data Frames</a></li>
+<li class="chapter" data-level="5.16" data-path="base-r.html"><a href="base-r.html#operators"><i class="fa fa-check"></i><b>5.16</b> Operators</a></li>
 <li class="chapter" data-level="5.17" data-path="base-r.html"><a href="base-r.html#subsetting-a-list"><i class="fa fa-check"></i><b>5.17</b> Subsetting a List</a></li>
 <li class="chapter" data-level="5.18" data-path="base-r.html"><a href="base-r.html#subsetting-a-matrix-and-array"><i class="fa fa-check"></i><b>5.18</b> Subsetting a Matrix and Array</a></li>
 <li class="chapter" data-level="5.19" data-path="base-r.html"><a href="base-r.html#exercise-4"><i class="fa fa-check"></i><b>5.19</b> Exercise</a></li>
@@ -166,11 +172,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.24" data-path="base-r.html"><a href="base-r.html#user-defined-functions"><i class="fa fa-check"></i><b>5.24</b> User-Defined Functions</a></li>
 <li class="chapter" data-level="5.25" data-path="base-r.html"><a href="base-r.html#exercise-5"><i class="fa fa-check"></i><b>5.25</b> Exercise</a></li>
 <li class="chapter" data-level="5.26" data-path="base-r.html"><a href="base-r.html#some-comments-on-functions"><i class="fa fa-check"></i><b>5.26</b> Some Comments on Functions</a></li>
-<li class="chapter" data-level="5.27" data-path="base-r.html"><a href="base-r.html#vectorization-of-functions"><i class="fa fa-check"></i><b>5.27</b> Vectorization of Functions</a></li>
-<li class="chapter" data-level="5.28" data-path="base-r.html"><a href="base-r.html#generating-sequences"><i class="fa fa-check"></i><b>5.28</b> Generating Sequences</a></li>
-<li class="chapter" data-level="5.29" data-path="base-r.html"><a href="base-r.html#control-flow-if-else"><i class="fa fa-check"></i><b>5.29</b> Control Flow (if-else)</a></li>
-<li class="chapter" data-level="5.30" data-path="base-r.html"><a href="base-r.html#control-flow-for"><i class="fa fa-check"></i><b>5.30</b> Control Flow (for)</a></li>
-<li class="chapter" data-level="5.31" data-path="base-r.html"><a href="base-r.html#control-flow-for-1"><i class="fa fa-check"></i><b>5.31</b> Control Flow (for)</a></li>
+<li class="chapter" data-level="5.27" data-path="base-r.html"><a href="base-r.html#generating-sequences"><i class="fa fa-check"></i><b>5.27</b> Generating Sequences</a></li>
+<li class="chapter" data-level="5.28" data-path="base-r.html"><a href="base-r.html#control-flow-if-else"><i class="fa fa-check"></i><b>5.28</b> Control Flow (if-else)</a></li>
+<li class="chapter" data-level="5.29" data-path="base-r.html"><a href="base-r.html#control-flow-for"><i class="fa fa-check"></i><b>5.29</b> Control Flow (for)</a></li>
+<li class="chapter" data-level="5.30" data-path="base-r.html"><a href="base-r.html#control-flow-for-1"><i class="fa fa-check"></i><b>5.30</b> Control Flow (for)</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -194,6 +199,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="base-r" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> Base R</h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">suppressMessages</span>(<span class="kw">library</span>(tidyverse))</code></pre></div>
 <div id="topics" class="section level2">
 <h2><span class="header-section-number">5.1</span> Topics</h2>
 <ul>
@@ -402,25 +408,295 @@ u</code></pre></div>
 k</code></pre></div>
 <pre><code>## [1]  TRUE FALSE FALSE    NA  TRUE</code></pre>
 </div>
-<div id="indexing-a-vector" class="section level2">
-<h2><span class="header-section-number">5.11</span> Indexing a Vector</h2>
+<div id="useful-functions-for-a-vector" class="section level2">
+<h2><span class="header-section-number">5.11</span> Useful Functions for a vector</h2>
+<div id="generate-a-vector" class="section level3">
+<h3><span class="header-section-number">5.11.1</span> Generate a vector</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># we can manually type the element of a vector using c()</span>
+a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)
+a</code></pre></div>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># c() also combine vectors</span>
+a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)
+b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>)
+c &lt;-<span class="st"> </span><span class="kw">c</span>(a, b)
+c</code></pre></div>
+<pre><code>## [1] 1 2 3 4 5 6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># k:n generates a vector whose elements are the sequence of numbers from k to n</span>
+<span class="dv">1</span>:<span class="dv">10</span></code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># seq() generates regular sequence</span>
+<span class="co"># seq(from, to)</span>
+<span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>)</code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># seq(from, to, by)</span>
+<span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">2</span>)</code></pre></div>
+<pre><code>## [1] 1 3 5 7 9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># rep(x, times) replicates the values in x multiple times</span>
+<span class="co"># x can be a number or vector</span>
+<span class="co"># replicates 1 5 times</span>
+<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">5</span>)</code></pre></div>
+<pre><code>## [1] 1 1 1 1 1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># replicates c(1, 2) 5 times</span>
+<span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="dv">5</span>)</code></pre></div>
+<pre><code>##  [1] 1 2 1 2 1 2 1 2 1 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># each element of c(1,2) is repeated 5 times</span>
+<span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="dt">each =</span> <span class="dv">5</span>)</code></pre></div>
+<pre><code>##  [1] 1 1 1 1 1 2 2 2 2 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># rnorm(n, mean = 0, sd = 1) generates a vector of n random samples </span>
+<span class="co"># from a normal distribution with specific mean and sd. </span>
+<span class="kw">rnorm</span>(<span class="dv">100</span>)</code></pre></div>
+<pre><code>##   [1]  0.33760059 -0.14142030 -0.28558706 -1.83422531  0.04678454
+##   [6] -0.42237832  0.09092671  0.54076673  0.49414132  0.19433004
+##  [11] -0.26195963 -2.33148419  0.12895836 -1.71154304 -2.29815270
+##  [16] -0.02852800 -1.21885843 -1.47633677  1.41816731 -0.10594578
+##  [21] -1.68756770 -0.52725647 -1.50245612  1.13555234  0.70478160
+##  [26]  0.98916347 -0.10350017 -1.29603259  2.33289364 -0.78226345
+##  [31] -0.63788315  0.67217885 -0.87275706  0.20242142 -1.62530909
+##  [36] -1.86551435  1.45843565 -0.63219407  0.22574265 -1.90748147
+##  [41] -0.67185477 -0.11029494  0.47198369  0.51643723 -0.07301675
+##  [46]  0.97435074 -0.80539272 -0.68013727 -0.75932833  1.66637329
+##  [51]  0.20808594 -0.06865262  0.61764124 -0.45868094 -1.33652922
+##  [56] -1.02537210 -0.22605688 -0.94734502 -0.51656126 -1.27492667
+##  [61]  1.66370581 -1.06722775  0.90205905  1.32163320  0.50488881
+##  [66] -1.10860112 -1.12790663  0.50577976  0.18419761 -0.46981381
+##  [71] -1.36772752 -1.12947463  0.55911093 -1.32498246 -1.58267856
+##  [76] -0.61232570  1.39227675 -0.47520206  0.22966300  0.01437993
+##  [81] -1.22349949  0.88920245 -1.23937202  1.33903702  0.02146513
+##  [86]  0.46736175 -0.28020695  0.81612818  0.33200716 -0.65299857
+##  [91] -0.22163817  0.82639776 -0.14529059  0.07640067  0.22024541
+##  [96] -0.01919679  1.55752527  0.50379213 -0.53782513 -1.30565310</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(<span class="kw">rnorm</span>(<span class="dv">10000</span>))</code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-102-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># runif(n, min, max) generates a vector of n random samples </span>
+<span class="co"># from a uniform distribution whose limits are min and max. </span>
+<span class="kw">runif</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">1</span>)</code></pre></div>
+<pre><code>##   [1] 0.18909512 0.73306539 0.19890507 0.56334534 0.23996343 0.87857517
+##   [7] 0.59990317 0.28542410 0.48295437 0.72976725 0.21096852 0.48505685
+##  [13] 0.36306219 0.73728268 0.33868366 0.60690616 0.93819962 0.36978780
+##  [19] 0.93974560 0.14310909 0.10156290 0.59160644 0.14500985 0.44913154
+##  [25] 0.26193867 0.16227114 0.09257387 0.93796116 0.92165081 0.84001355
+##  [31] 0.05403981 0.90099734 0.41245713 0.63325263 0.31027484 0.15661161
+##  [37] 0.79565650 0.56414653 0.72195515 0.31975878 0.82893770 0.10827721
+##  [43] 0.94538222 0.02732790 0.28698416 0.90493729 0.74813311 0.68221999
+##  [49] 0.20462378 0.14863127 0.61003688 0.23636594 0.63373243 0.66649399
+##  [55] 0.33923452 0.31454352 0.88796554 0.12959418 0.25146632 0.15653286
+##  [61] 0.00284600 0.32594992 0.24794767 0.74266185 0.09320303 0.76426763
+##  [67] 0.05087525 0.23419436 0.61021027 0.75944898 0.84149282 0.30997512
+##  [73] 0.57519302 0.30298492 0.46484665 0.88623652 0.31559121 0.14429948
+##  [79] 0.03141769 0.81646037 0.95845745 0.57764526 0.76095144 0.04319775
+##  [85] 0.21476310 0.79867118 0.41556040 0.74546414 0.47011463 0.96656700
+##  [91] 0.15360554 0.06099842 0.70662881 0.64232145 0.39671330 0.99534023
+##  [97] 0.77881918 0.37381385 0.32967677 0.23608483</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(<span class="kw">runif</span>(<span class="dv">10000</span>, <span class="dv">0</span>, <span class="dv">1</span>))</code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-104-1.png" width="672" /></p>
+</div>
+<div id="indexing-or-subsetting-a-vector" class="section level3">
+<h3><span class="header-section-number">5.11.2</span> Indexing or subsetting a Vector</h3>
 <ul>
-<li>You can access a particular element of a vector through an <strong>index</strong> between <strong>square brackets</strong> or <strong>indexing (subsetting) operator</strong>.</li>
+<li><p>You can access a particular element of a vector through an <strong>index</strong> between <strong>square brackets</strong> or <strong>indexing (subsetting) operator</strong>.</p></li>
+<li><p><strong>Positive integers</strong> return elements at the specified positions.</p></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a[<span class="dv">3</span>]</code></pre></div>
-<pre><code>## [1] 3</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>)]</code></pre></div>
-<pre><code>## [1] 1 3 5</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># create a vector</span>
-<span class="dv">2</span>:<span class="dv">4</span></code></pre></div>
-<pre><code>## [1] 2 3 4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># same with a[c(2,3,4)]</span>
-a[<span class="dv">2</span>:<span class="dv">4</span>]</code></pre></div>
-<pre><code>## [1] 2 3 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)
+x[<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">1</span>)]</code></pre></div>
+<pre><code>## [1] 4 2</code></pre>
+<ul>
+<li><strong>Negative integers</strong> omit elements at the specified positions:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[-<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">1</span>)]</code></pre></div>
+<pre><code>## [1] 3 5 6 7</code></pre>
+<ul>
+<li><strong>Logical vectors</strong> select elements where the corresponding logical value is TRUE. This <strong>logical indexing</strong> is very useful because we can subset a vector or dataframe based on conditions.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>)]</code></pre></div>
+<pre><code>## [1] 2 3 6 7</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &gt;<span class="st"> </span><span class="dv">3</span></code></pre></div>
+<pre><code>## [1] FALSE FALSE  TRUE  TRUE  TRUE  TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># This is called a logical indexing, which is a very powerful tool.</span>
+<span class="co"># &gt; : greater than (Logical Operators)</span>
+x[x &gt;<span class="st"> </span><span class="dv">3</span>]   </code></pre></div>
+<pre><code>## [1] 4 5 6 7</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[x &gt;<span class="st"> </span><span class="dv">3</span> &amp;<span class="st"> </span>x &lt;<span class="st"> </span><span class="dv">5</span>]</code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># %in% operator </span>
+<span class="co"># v1 %in% v2 returns a logical vector indicating </span>
+<span class="co"># whether the elements of v1 are included in v2. </span>
+<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) %in%<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>)</code></pre></div>
+<pre><code>## [1] FALSE  TRUE  TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)
+a</code></pre></div>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># we replace an element of a vector using the indexing and assignment operators. </span>
+a[<span class="dv">3</span>] &lt;-<span class="st"> </span><span class="dv">100</span>
+a</code></pre></div>
+<pre><code>## [1]   1   2 100   4   5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">5</span>)] &lt;-<span class="st"> </span><span class="dv">100</span>
+a</code></pre></div>
+<pre><code>## [1] 100   2 100   4 100</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="ot">NA</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="ot">NA</span>)
+a</code></pre></div>
+<pre><code>## [1]  1  2  3 NA  5  6 NA</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># is.na indicates which elements are missing</span>
+<span class="kw">is.na</span>(a)  <span class="co"># returns TRUE when missing</span></code></pre></div>
+<pre><code>## [1] FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Type conversion: TRUE and FALSE will be converted into 1 and 0, respectively. </span>
+<span class="co"># This expression answers the question: How many NSs are in a?</span>
+<span class="kw">sum</span>(<span class="kw">is.na</span>(a))</code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># !x = not x (negation)</span>
+!<span class="kw">is.na</span>(a)  <span class="co"># returns TRUE when not missing</span></code></pre></div>
+<pre><code>## [1]  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># This expression answers the question: How many non-NSs are in a?</span>
+<span class="kw">sum</span>(!<span class="kw">is.na</span>(a))</code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># logical indexing</span>
+a[<span class="kw">is.na</span>(a)] &lt;-<span class="st"> </span><span class="dv">999</span>
+a</code></pre></div>
+<pre><code>## [1]   1   2   3 999   5   6 999</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># create a vector with names</span>
+a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dt">x =</span> <span class="dv">1</span>, <span class="dt">y =</span> <span class="dv">2</span>, <span class="dt">z =</span> <span class="dv">3</span>)
+a</code></pre></div>
+<pre><code>## x y z 
+## 1 2 3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># named vector can be indexed using their names</span>
+a[<span class="kw">c</span>(<span class="st">&quot;x&quot;</span>, <span class="st">&quot;z&quot;</span>)]</code></pre></div>
+<pre><code>## x z 
+## 1 3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># R uses a &quot;recycling rule&quot; by repeating the shorter vector</span>
+<span class="co"># In this example, R recycled c(TRUE, FALSE) to produce c(TRUE, FALSE, TRUE, FALSE)</span>
+i &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>)
+a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)
+a[i]</code></pre></div>
+<pre><code>## [1] 1 3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># R uses a &quot;recycling rule&quot; by repeating the shorter vector</span>
+v1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)
+v2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">10</span>)
+v1+v2</code></pre></div>
+<pre><code>## [1] 14 15 16 17</code></pre>
+</div>
+<div id="arrange-a-vector" class="section level3">
+<h3><span class="header-section-number">5.11.3</span> Arrange a vector</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># sort(x, decreasing = FALSE) </span>
+<span class="co"># By default, sort() sorts ascending order.</span>
+<span class="kw">sort</span>(<span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">4</span>))</code></pre></div>
+<pre><code>## [1] 4 5 6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># sorts into descending order</span>
+<span class="kw">sort</span>(<span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">4</span>), <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## [1] 6 5 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># rev() provides a reversed version of its argument</span>
+<span class="kw">rev</span>(<span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">4</span>))</code></pre></div>
+<pre><code>## [1] 4 6 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># rank() returns the sample ranks of the elements in a vector</span>
+<span class="kw">rank</span>(<span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">4</span>))</code></pre></div>
+<pre><code>## [1] 2 3 1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># order() returns a permutation which rearranges </span>
+<span class="co"># its first argument into ascending or descending order. </span>
+<span class="co"># What this means is order(c(5,6,4)) </span>
+<span class="co"># 1) first sorts a vector in ascending order to produce c(4,5,6)</span>
+<span class="co"># 2) and returns the indices of the sorted element in the original vector. </span>
+<span class="co"># e.g., we have 3 first b/c the index of 4 in the original vector is 3</span>
+<span class="co"># e.g., we have 1 first b/c the index of 5 in the original vector is 1</span>
+<span class="co"># e.g., we have 2 first b/c the index of 6 in the original vector is 2</span>
+<span class="kw">order</span>(<span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">4</span>))</code></pre></div>
+<pre><code>## [1] 3 1 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># We use order() to sort a vector or dataframe</span>
+a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">4</span>)
+a[<span class="kw">order</span>(a)]</code></pre></div>
+<pre><code>## [1] 4 5 6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># sort a dataframe</span>
+<span class="kw">head</span>(mtcars[<span class="kw">order</span>(mtcars$mpg), ])</code></pre></div>
+<pre><code>##                      mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Cadillac Fleetwood  10.4   8  472 205 2.93 5.250 17.98  0  0    3    4
+## Lincoln Continental 10.4   8  460 215 3.00 5.424 17.82  0  0    3    4
+## Camaro Z28          13.3   8  350 245 3.73 3.840 15.41  0  0    3    4
+## Duster 360          14.3   8  360 245 3.21 3.570 15.84  0  0    3    4
+## Chrysler Imperial   14.7   8  440 230 3.23 5.345 17.42  0  0    3    4
+## Maserati Bora       15.0   8  301 335 3.54 3.570 14.60  0  1    5    8</code></pre>
+</div>
+<div id="vectorization-of-functions" class="section level3">
+<h3><span class="header-section-number">5.11.4</span> Vectorization of Functions</h3>
+<ul>
+<li>One of the most powerful aspects of R is the vectorization of functions.</li>
+<li>Many R functions can be applied to a vector of values producing an <strong>equal-sized vector of results</strong>.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">v &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">25</span>)
+<span class="kw">sqrt</span>(v)</code></pre></div>
+<pre><code>## [1] 1 2 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">v &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)
+v^<span class="dv">2</span></code></pre></div>
+<pre><code>## [1] 1 4 9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">v1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)
+v2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>)
+v1+v2</code></pre></div>
+<pre><code>## [1] 14  7  7  9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># R uses a &quot;recycling rule&quot; by repeating the shorter vector</span>
+v1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)
+v2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">2</span>)
+v1+v2</code></pre></div>
+<pre><code>## [1] 14  7 16  9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># mean will be subtracted from every element of v1</span>
+v1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)
+v1 -<span class="st"> </span><span class="kw">mean</span>(v1)</code></pre></div>
+<pre><code>## [1] -1.5 -0.5  0.5  1.5</code></pre>
+</div>
+<div id="some-more-functions" class="section level3">
+<h3><span class="header-section-number">5.11.5</span> Some more functions</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># table() creates a frequency table</span>
+a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>)
+<span class="kw">table</span>(a)</code></pre></div>
+<pre><code>## a
+## 1 2 3 4 
+## 2 3 3 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># unique() returns a vector of unique elements</span>
+<span class="kw">unique</span>(a)</code></pre></div>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="ot">NA</span>,<span class="dv">5</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># By default, mean() produces NA when there&#39;s NAs in a vector</span>
+<span class="kw">mean</span>(a)</code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># na.rm = TRUE removes NAs before computation</span>
+<span class="kw">mean</span>(a, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## [1] 2.75</code></pre>
+</div>
+</div>
+<div id="exercise-on-vectors" class="section level2">
+<h2><span class="header-section-number">5.12</span> Exercise on vectors</h2>
+<p><code>mtcars</code> is a dataframe about fuel economy of various cars. In the dataset, <code>mpg</code> represents miles per gallon. <code>mtcars$mpg</code> allows us to access the <code>mpg</code> variable in the <code>mtcars</code> dataframe.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span>mtcars$mpg</code></pre></div>
+<ul>
+<li><p>Calculate the length of the vector <code>a</code>.</p></li>
+<li><p>Calculate the mean of <code>a</code> using <code>sum()</code> and <code>length()</code> functions.</p></li>
+<li><p>Calculate the mean of <code>a</code> using <code>mean()</code> function.</p></li>
+<li><p>Calculate the variance of <code>a</code> using <code>sd()</code> function.</p></li>
+<li><p>Calculate the variance of <code>a</code> using <code>var()</code> function.</p></li>
+<li><p>Calculate the variance of <code>a</code> by directly calculating the following expression: <span class="math inline">\([(a_1 - \bar{a})^2 + (a_2 - \bar{a})^2 + ... (a_n - \bar{a})^2]/(n-1)\)</span>, where <span class="math inline">\(a = (a_1, a_2, ... , a_n)\)</span></p></li>
+<li><p>Standardize the vector <code>a</code>, i.e., <span class="math inline">\(z = \frac{x-\bar{x}}{sd(x)}\)</span>.</p></li>
+<li><p>Use <code>scale()</code> function to standardize <code>a</code> and compare the results with your manual calculation.</p></li>
+<li><p>Calculate the difference between the largest and smallest numbers in <code>a</code>.</p></li>
+<li><p>Normalize the vector <code>a</code>, i.e., <span class="math inline">\(n = \frac{(x-min(x))}{(max(x)-min(x))}\)</span>.</p></li>
+<li><p>Plot the histogram of <code>a</code> using <code>qplot()</code>.</p></li>
+<li><p>How many elements in <code>a</code> are larger than 20? (use <code>length()</code>)</p></li>
+<li><p>How many elements in <code>a</code> are larger than 20? (use <code>sum()</code>)</p></li>
+</ul>
+<p><code>txhousing</code> is a tibble in <code>ggplot2</code> containing information about the housing market in Texas provided by the TAMU real estate center. In the dataset, <code>median</code> represents median sale price. <code>txhousing$median</code> allows us to access the <code>median</code> variable in the <code>txhousing</code> tibble (or dataframe).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b &lt;-<span class="st"> </span>txhousing$median</code></pre></div>
+<ul>
+<li><p>Calculate the length of the vector <code>b</code>.</p></li>
+<li><p>how many missing values (or NAs) are in <code>b</code>?</p></li>
+<li><p>Calculate the mean of <code>b</code> using <code>sum()</code> and <code>length()</code> functions.</p></li>
+<li><p>Calculate the mean of <code>b</code> using <code>mean()</code> function.</p></li>
+<li><p>Are the two means same? If not, Why? How do we get the same result?</p></li>
+<li><p>Calculate the variance of <code>b</code> using <code>sd()</code> function.</p></li>
+<li><p>Calculate the variance of <code>b</code> using <code>var()</code> function.</p></li>
+<li><p>Plot the histogram of <code>b</code> using <code>qplot()</code>.</p></li>
+<li><p>Create a new vector <code>c</code> by removing all missing from <code>b</code>.</p></li>
+<li><p>(Using <code>c</code>) What percentage of houses has median sale price larger than $200000?</p></li>
+</ul>
 </div>
 <div id="factors" class="section level2">
-<h2><span class="header-section-number">5.12</span> Factors</h2>
+<h2><span class="header-section-number">5.13</span> Factors</h2>
 <ul>
 <li>A factor is <strong>a vector</strong> that can contain <strong>only predefined values</strong>, and is used to store <strong>categorical data</strong>.</li>
 <li>Factors are built on <strong>integer vectors</strong> using two attributes
@@ -452,7 +728,7 @@ x[<span class="dv">1</span>] &lt;-<span class="st"> &quot;female&quot;</span></c
 ## Levels: male female</code></pre>
 </div>
 <div id="matrices-and-arrays" class="section level2">
-<h2><span class="header-section-number">5.13</span> Matrices and Arrays</h2>
+<h2><span class="header-section-number">5.14</span> Matrices and Arrays</h2>
 <ul>
 <li>matrices and arrays are <strong>implemented as vectors</strong> with special attributes</li>
 <li>Adding a <strong><code>dim()</code> attribute</strong> to an atomic vector allows it to behave like a multi-dimensional array.</li>
@@ -517,7 +793,7 @@ results</code></pre></div>
 ## store2   43   56   21   30</code></pre>
 </div>
 <div id="data-frames" class="section level2">
-<h2><span class="header-section-number">5.14</span> Data Frames</h2>
+<h2><span class="header-section-number">5.15</span> Data Frames</h2>
 <ul>
 <li>A data frame is a <strong>list</strong> of <strong>equal-length vectors</strong>.</li>
 <li>A data frame is the <strong>most common way</strong> of storing data in R.</li>
@@ -548,7 +824,7 @@ df</code></pre></div>
 ##  $ y: chr  &quot;a&quot; &quot;b&quot; &quot;c&quot;</code></pre>
 </div>
 <div id="operators" class="section level2">
-<h2><span class="header-section-number">5.15</span> Operators</h2>
+<h2><span class="header-section-number">5.16</span> Operators</h2>
 <ul>
 <li>Arithmetic Operators</li>
 </ul>
@@ -639,32 +915,6 @@ df</code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">1</span> ==<span class="st"> </span><span class="dv">2</span>) &amp;<span class="st"> </span>(<span class="st">&quot;a&quot;</span> !=<span class="st"> &quot;b&quot;</span>)</code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-</div>
-<div id="subsetting-a-vector" class="section level2">
-<h2><span class="header-section-number">5.16</span> Subsetting a Vector</h2>
-<ul>
-<li>Subsetting allows us to access the subset of an R object.</li>
-<li>Subsetting (indexing) operator <code>[ ]</code> is used to subset a vector.</li>
-<li><strong>Positive integers</strong> return elements at the specified positions.</li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">2.1</span>, <span class="fl">4.2</span>, <span class="fl">3.3</span>, <span class="fl">5.4</span>)
-x[<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">1</span>)]</code></pre></div>
-<pre><code>## [1] 3.3 2.1</code></pre>
-<ul>
-<li><strong>Negative integers</strong> omit elements at the specified positions:</li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[-<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">1</span>)]</code></pre></div>
-<pre><code>## [1] 4.2 5.4</code></pre>
-<ul>
-<li><strong>Logical vectors</strong> select elements where the corresponding logical value is TRUE. This is probably the <strong>most useful</strong> type of subsetting because you write the expression that creates the logical vector.</li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>)]</code></pre></div>
-<pre><code>## [1] 2.1 4.2</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &gt;<span class="st"> </span><span class="dv">3</span></code></pre></div>
-<pre><code>## [1] FALSE  TRUE  TRUE  TRUE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># This is called a logical indexing, which is a very powerful tool.</span>
-x[x &gt;<span class="st"> </span><span class="dv">3</span>]   </code></pre></div>
-<pre><code>## [1] 4.2 3.3 5.4</code></pre>
 </div>
 <div id="subsetting-a-list" class="section level2">
 <h2><span class="header-section-number">5.17</span> Subsetting a List</h2>
@@ -815,7 +1065,7 @@ se &lt;-<span class="st"> </span>function(x) {
 }</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mySample &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n=</span><span class="dv">100</span>, <span class="dt">mean=</span><span class="dv">20</span>, <span class="dt">sd=</span><span class="dv">4</span>)
 <span class="kw">se</span>(mySample)</code></pre></div>
-<pre><code>## [1] 0.3962536</code></pre>
+<pre><code>## [1] 0.4150195</code></pre>
 </div>
 <div id="exercise-5" class="section level2">
 <h2><span class="header-section-number">5.25</span> Exercise</h2>
@@ -834,23 +1084,8 @@ x2 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">
 <li>To do that, we have to handle the input objects (argument) and output objects (returned objects) of functions, which requires knowledge about <strong>data structure</strong> (e.g., creating, subsetting).</li>
 </ul>
 </div>
-<div id="vectorization-of-functions" class="section level2">
-<h2><span class="header-section-number">5.27</span> Vectorization of Functions</h2>
-<ul>
-<li>One of the most powerful aspects of R is the vectorization of functions.</li>
-<li>Many R functions can be applied to a vector of values producing an <strong>equal-sized vector of results</strong>.</li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">v &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">7</span>, <span class="fl">23.5</span>, <span class="fl">76.2</span>, <span class="dv">80</span>)
-<span class="kw">sqrt</span>(v)</code></pre></div>
-<pre><code>## [1] 2.000000 2.645751 4.847680 8.729261 8.944272</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># R uses a &quot;recycling rule&quot; by repeating the shorter vector</span>
-v1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)
-v2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">2</span>)
-v1+v2</code></pre></div>
-<pre><code>## [1] 14  7 16  9</code></pre>
-</div>
 <div id="generating-sequences" class="section level2">
-<h2><span class="header-section-number">5.28</span> Generating Sequences</h2>
+<h2><span class="header-section-number">5.27</span> Generating Sequences</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># creating a vector containing integers between 1 and 10</span>
 <span class="dv">1</span>:<span class="dv">10</span> </code></pre></div>
 <pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
@@ -873,7 +1108,7 @@ v1+v2</code></pre></div>
 ## Levels: 1 2 3 4 5</code></pre>
 </div>
 <div id="control-flow-if-else" class="section level2">
-<h2><span class="header-section-number">5.29</span> Control Flow (if-else)</h2>
+<h2><span class="header-section-number">5.28</span> Control Flow (if-else)</h2>
 <ul>
 <li>Control flow = the order in which individual statement are executed (or evaluated)</li>
 <li>Selection
@@ -891,7 +1126,7 @@ if (x&gt;<span class="dv">0</span>) {
 <pre><code>## [1] &quot;Negative number&quot;</code></pre>
 </div>
 <div id="control-flow-for" class="section level2">
-<h2><span class="header-section-number">5.30</span> Control Flow (for)</h2>
+<h2><span class="header-section-number">5.29</span> Control Flow (for)</h2>
 <ul>
 <li><strong>for (value in sequence) {statements}</strong></li>
 <li><code>for loop</code> allows us to <strong>repeat (loop)</strong> through the elements in a vector and run the code inside the block within curly brackets.</li>
@@ -904,7 +1139,7 @@ if (x&gt;<span class="dv">0</span>) {
 ## [1] 9</code></pre>
 </div>
 <div id="control-flow-for-1" class="section level2">
-<h2><span class="header-section-number">5.31</span> Control Flow (for)</h2>
+<h2><span class="header-section-number">5.30</span> Control Flow (for)</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># count the number of even numbers</span>
 x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">11</span>,<span class="dv">6</span>)
 count &lt;-<span class="st"> </span><span class="dv">0</span>

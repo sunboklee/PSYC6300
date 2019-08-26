@@ -1,5 +1,10 @@
 # Base R
 
+```{r}
+suppressMessages(library(tidyverse))
+```
+
+
 ## Topics
 
 * R Objects and Variables
@@ -169,30 +174,388 @@ k <- c(TRUE, FALSE, FALSE, NA, TRUE)
 k
 ```
 
-## Indexing a Vector
+
+
+## Useful Functions for a vector 
+
+### Generate a vector 
+```{r}
+# we can manually type the element of a vector using c()
+a <- c(1,2,3,4,5)
+a
+```
+
+```{r}
+# c() also combine vectors
+a <- c(1,2,3)
+b <- c(4,5,6)
+c <- c(a, b)
+c
+```
+
+
+```{r}
+# k:n generates a vector whose elements are the sequence of numbers from k to n
+1:10
+```
+
+```{r}
+# seq() generates regular sequence
+# seq(from, to)
+seq(1, 10)
+```
+```{r}
+# seq(from, to, by)
+seq(1, 10, 2)
+```
+
+```{r}
+# rep(x, times) replicates the values in x multiple times
+# x can be a number or vector
+# replicates 1 5 times
+rep(1, 5)
+```
+
+```{r}
+# replicates c(1, 2) 5 times
+rep(c(1,2), 5)
+```
+
+```{r}
+# each element of c(1,2) is repeated 5 times
+rep(c(1,2), each = 5)
+```
+
+```{r}
+# rnorm(n, mean = 0, sd = 1) generates a vector of n random samples 
+# from a normal distribution with specific mean and sd. 
+rnorm(100)
+```
+
+```{r}
+qplot(rnorm(10000))
+```
+
+
+```{r}
+# runif(n, min, max) generates a vector of n random samples 
+# from a uniform distribution whose limits are min and max. 
+runif(100, 0, 1)
+```
+
+```{r}
+qplot(runif(10000, 0, 1))
+```
+
+
+### Indexing or subsetting a Vector
 
 - You can access a particular element of a vector through an **index** between **square brackets** or **indexing (subsetting) operator**.
 
-```{r}
-a <- c(1,2,3,4,5,6,7)
+- **Positive integers** return elements at the specified positions. 
+
+```{r, echo=TRUE}
+x <- c(2,3,4,5,6,7)
+x[c(3,1)]
+```
+
+- **Negative integers** omit elements at the specified positions:
+
+```{r, echo=TRUE}
+x[-c(3,1)]
+```
+
+
+- **Logical vectors** select elements where the corresponding logical value is TRUE. This **logical indexing** is very useful because we can subset a vector or dataframe based on conditions. 
+
+```{r, echo=TRUE}
+x[c(TRUE, TRUE, FALSE, FALSE, TRUE, TRUE)]
+```
+
+```{r, echo=TRUE}
+x > 3
+```
+
+```{r, echo=TRUE}
+# This is called a logical indexing, which is a very powerful tool.
+# > : greater than (Logical Operators)
+x[x > 3]   
 ```
 
 ```{r}
-a[3]
+x[x > 3 & x < 5]
 ```
 
 ```{r}
-a[c(1,3,5)]
+# %in% operator 
+# v1 %in% v2 returns a logical vector indicating 
+# whether the elements of v1 are included in v2. 
+c(1,2,3) %in% c(2,3,4,5,6)
+```
+
+
+```{r}
+a <- c(1,2,3,4,5)
+a
 ```
 
 ```{r}
-# create a vector
-2:4
+# we replace an element of a vector using the indexing and assignment operators. 
+a[3] <- 100
+a
 ```
+
 ```{r}
-# same with a[c(2,3,4)]
-a[2:4]
+a[c(1,5)] <- 100
+a
 ```
+
+```{r}
+a <- c(1,2,3,NA,5,6,NA)
+a
+```
+
+```{r}
+# is.na indicates which elements are missing
+is.na(a)  # returns TRUE when missing
+```
+
+```{r}
+# Type conversion: TRUE and FALSE will be converted into 1 and 0, respectively. 
+# This expression answers the question: How many NSs are in a?
+sum(is.na(a))
+```
+
+
+```{r}
+# !x = not x (negation)
+!is.na(a)  # returns TRUE when not missing
+```
+
+```{r}
+# This expression answers the question: How many non-NSs are in a?
+sum(!is.na(a))
+```
+
+
+```{r}
+# logical indexing
+a[is.na(a)] <- 999
+a
+```
+
+
+```{r}
+# create a vector with names
+a <- c(x = 1, y = 2, z = 3)
+a
+```
+
+```{r}
+# named vector can be indexed using their names
+a[c("x", "z")]
+```
+
+
+```{r, echo=TRUE}
+# R uses a "recycling rule" by repeating the shorter vector
+# In this example, R recycled c(TRUE, FALSE) to produce c(TRUE, FALSE, TRUE, FALSE)
+i <- c(TRUE, FALSE)
+a <- c(1,2,3,4)
+a[i]
+```
+
+
+```{r, echo=TRUE}
+# R uses a "recycling rule" by repeating the shorter vector
+v1 <- c(4,5,6,7)
+v2 <- c(10,10)
+v1+v2
+```
+
+
+### Arrange a vector
+
+```{r}
+# sort(x, decreasing = FALSE) 
+# By default, sort() sorts ascending order.
+sort(c(5,6,4))
+```
+
+```{r}
+# sorts into descending order
+sort(c(5,6,4), decreasing = TRUE)
+```
+
+```{r}
+# rev() provides a reversed version of its argument
+rev(c(5,6,4))
+```
+
+
+```{r}
+# rank() returns the sample ranks of the elements in a vector
+rank(c(5,6,4))
+```
+
+```{r}
+# order() returns a permutation which rearranges 
+# its first argument into ascending or descending order. 
+# What this means is order(c(5,6,4)) 
+# 1) first sorts a vector in ascending order to produce c(4,5,6)
+# 2) and returns the indices of the sorted element in the original vector. 
+# e.g., we have 3 first b/c the index of 4 in the original vector is 3
+# e.g., we have 1 first b/c the index of 5 in the original vector is 1
+# e.g., we have 2 first b/c the index of 6 in the original vector is 2
+order(c(5,6,4))
+```
+
+
+```{r}
+# We use order() to sort a vector or dataframe
+a <- c(5,6,4)
+a[order(a)]
+```
+
+```{r}
+# sort a dataframe
+head(mtcars[order(mtcars$mpg), ])
+```
+
+### Vectorization of Functions
+
+- One of the most powerful aspects of R is the vectorization of functions. 
+- Many R functions can be applied to a vector of values producing an **equal-sized vector of results**. 
+
+```{r, echo=TRUE}
+v <- c(1,4,25)
+sqrt(v)
+```
+
+
+```{r}
+v <- c(1,2,3)
+v^2
+```
+
+
+```{r}
+v1 <- c(4,5,6,7)
+v2 <- c(10,2,1,2)
+v1+v2
+```
+
+```{r, echo=TRUE}
+# R uses a "recycling rule" by repeating the shorter vector
+v1 <- c(4,5,6,7)
+v2 <- c(10,2)
+v1+v2
+```
+
+
+```{r}
+# mean will be subtracted from every element of v1
+v1 <- c(1,2,3,4)
+v1 - mean(v1)
+```
+
+
+### Some more functions
+
+```{r}
+# table() creates a frequency table
+a <- c(1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4)
+table(a)
+```
+
+```{r}
+# unique() returns a vector of unique elements
+unique(a)
+```
+
+```{r}
+a <- c(1,2,3,NA,5)
+```
+
+```{r}
+# By default, mean() produces NA when there's NAs in a vector
+mean(a)
+```
+
+```{r}
+# na.rm = TRUE removes NAs before computation
+mean(a, na.rm = TRUE)
+```
+
+
+
+## Exercise on vectors
+
+`mtcars` is a dataframe about fuel economy of various cars. In the dataset, `mpg` represents miles per gallon. `mtcars$mpg` allows us to access the `mpg` variable in the `mtcars` dataframe. 
+
+```{r}
+a <- mtcars$mpg
+```
+
+* Calculate the length of the vector `a`.
+
+* Calculate the mean of `a` using `sum()` and `length()` functions. 
+
+* Calculate the mean of `a` using `mean()` function. 
+
+* Calculate the variance of `a` using `sd()` function. 
+
+* Calculate the variance of `a` using `var()` function. 
+
+* Calculate the variance of `a` by directly calculating the following expression: $[(a_1 - \bar{a})^2 + (a_2 - \bar{a})^2 + ... (a_n - \bar{a})^2]/(n-1)$, where $a = (a_1, a_2, ... , a_n)$
+
+* Standardize the vector `a`, i.e., $z = \frac{x-\bar{x}}{sd(x)}$. 
+
+* Use `scale()` function to standardize `a` and compare the results with your manual calculation. 
+
+* Calculate the difference between the largest and smallest numbers in `a`.
+
+* Normalize the vector `a`, i.e., $n = \frac{(x-min(x))}{(max(x)-min(x))}$. 
+
+* Plot the histogram of `a` using `qplot()`. 
+
+* How many elements in `a` are larger than 20? (use `length()`)
+
+* How many elements in `a` are larger than 20? (use `sum()`)
+
+
+`txhousing` is a tibble in `ggplot2` containing information about the housing market in Texas provided by the TAMU real estate center. In the dataset, `median` represents median sale price. `txhousing$median` allows us to access the `median` variable in the `txhousing` tibble (or dataframe). 
+
+```{r}
+b <- txhousing$median
+```
+
+* Calculate the length of the vector `b`.
+
+* how many missing values (or NAs) are in `b`? 
+
+* Calculate the mean of `b` using `sum()` and `length()` functions. 
+
+* Calculate the mean of `b` using `mean()` function. 
+
+* Are the two means same? If not, Why? How do we get the same result? 
+
+* Calculate the variance of `b` using `sd()` function. 
+
+* Calculate the variance of `b` using `var()` function. 
+
+* Plot the histogram of `b` using `qplot()`. 
+
+* Create a new vector `c` by removing all missing from `b`. 
+
+* (Using `c`) What percentage of houses has median sale price larger than $200000? 
+
+
+
+
+
+
+
 
 ## Factors
 - A factor is **a vector** that can contain **only predefined values**, and is used to store **categorical data**.
@@ -374,38 +737,6 @@ str(df) # display the internal structure of an R object
 ```
 
 
-## Subsetting a Vector
-
-- Subsetting allows us to access the subset of an R object. 
-- Subsetting (indexing) operator `[ ]` is used to subset a vector. 
-- **Positive integers** return elements at the specified positions. 
-
-```{r, echo=TRUE}
-x <- c(2.1, 4.2, 3.3, 5.4)
-x[c(3,1)]
-```
-
-- **Negative integers** omit elements at the specified positions:
-
-```{r, echo=TRUE}
-x[-c(3,1)]
-```
-
-
-- **Logical vectors** select elements where the corresponding logical value is TRUE. This is probably the **most useful** type of subsetting because you write the expression that creates the logical vector. 
-
-```{r, echo=TRUE}
-x[c(TRUE, TRUE, FALSE, FALSE)]
-```
-
-
-```{r, echo=TRUE}
-x > 3
-```
-```{r, echo=TRUE}
-# This is called a logical indexing, which is a very powerful tool.
-x[x > 3]   
-```
 
 
 ## Subsetting a List
@@ -600,22 +931,7 @@ Write your own function that returns (simplified) Cohen's d = $\frac{mean(x_2)-m
 - In many cases, our job is to build a **pipeline** of data flow by connecting many available functions. 
 - To do that, we have to handle the input objects (argument) and output objects (returned objects) of functions, which requires knowledge about **data structure** (e.g., creating, subsetting). 
 
-## Vectorization of Functions
 
-- One of the most powerful aspects of R is the vectorization of functions. 
-- Many R functions can be applied to a vector of values producing an **equal-sized vector of results**. 
-
-```{r, echo=TRUE}
-v <- c(4, 7, 23.5, 76.2, 80)
-sqrt(v)
-```
-
-```{r, echo=TRUE}
-# R uses a "recycling rule" by repeating the shorter vector
-v1 <- c(4,5,6,7)
-v2 <- c(10,2)
-v1+v2
-```
 
 ## Generating Sequences
 
