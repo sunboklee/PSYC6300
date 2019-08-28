@@ -24,7 +24,7 @@
 <meta name="author" content="Sunbok Lee" />
 
 
-<meta name="date" content="2019-08-26" />
+<meta name="date" content="2019-08-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="exercise-3.html">
-
+<link rel="next" href="base-r-quiz.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -176,6 +176,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.28" data-path="base-r.html"><a href="base-r.html#control-flow-if-else"><i class="fa fa-check"></i><b>5.28</b> Control Flow (if-else)</a></li>
 <li class="chapter" data-level="5.29" data-path="base-r.html"><a href="base-r.html#control-flow-for"><i class="fa fa-check"></i><b>5.29</b> Control Flow (for)</a></li>
 <li class="chapter" data-level="5.30" data-path="base-r.html"><a href="base-r.html#control-flow-for-1"><i class="fa fa-check"></i><b>5.30</b> Control Flow (for)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="base-r-quiz.html"><a href="base-r-quiz.html"><i class="fa fa-check"></i><b>6</b> Base R Quiz</a><ul>
+<li class="chapter" data-level="6.0.1" data-path="base-r-quiz.html"><a href="base-r-quiz.html#dataset1-diamonds-is-a-dataset-in-ggplot2-containing-the-prices-and-other-attributes-of-almost-54000-diamonds.-in-the-dataset-price-is-the-price-of-diamonds-in-us-dollars-and-carat-is-the-weight-of-the-diamonds-0.2-5.01."><i class="fa fa-check"></i><b>6.0.1</b> Dataset1: <code>diamonds</code> is a dataset in <code>ggplot2</code> containing the prices and other attributes of almost 54,000 diamonds. In the dataset, <code>price</code> is the price of diamonds in US dollars, and <code>carat</code> is the weight of the diamonds (0.2-5.01).</a></li>
+<li class="chapter" data-level="6.0.2" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-1"><i class="fa fa-check"></i><b>6.0.2</b> Quiz problem 1</a></li>
+<li class="chapter" data-level="6.0.3" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-2"><i class="fa fa-check"></i><b>6.0.3</b> Quiz problem 2</a></li>
+<li class="chapter" data-level="6.0.4" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-3"><i class="fa fa-check"></i><b>6.0.4</b> Quiz problem 3</a></li>
+<li class="chapter" data-level="6.0.5" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-4"><i class="fa fa-check"></i><b>6.0.5</b> Quiz problem 4</a></li>
+<li class="chapter" data-level="6.0.6" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-5"><i class="fa fa-check"></i><b>6.0.6</b> Quiz problem 5</a></li>
+<li class="chapter" data-level="6.0.7" data-path="base-r-quiz.html"><a href="base-r-quiz.html#dataset2-bfi-is-a-dataset-in-the-psych-package-containing-25-personality-self-report-items-taken-from-the-international-personality-item-pool.-in-the-dataset"><i class="fa fa-check"></i><b>6.0.7</b> Dataset2: <code>bfi</code> is a dataset in the <code>psych</code> package containing 25 personality self report items taken from the International Personality Item Pool. In the dataset,</a></li>
+<li class="chapter" data-level="6.0.8" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-6"><i class="fa fa-check"></i><b>6.0.8</b> Quiz problem 6</a></li>
+<li class="chapter" data-level="6.0.9" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-7"><i class="fa fa-check"></i><b>6.0.9</b> Quiz problem 7</a></li>
+<li class="chapter" data-level="6.0.10" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-8"><i class="fa fa-check"></i><b>6.0.10</b> Quiz problem 8</a></li>
+<li class="chapter" data-level="6.0.11" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-9"><i class="fa fa-check"></i><b>6.0.11</b> Quiz problem 9</a></li>
+<li class="chapter" data-level="6.0.12" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-10"><i class="fa fa-check"></i><b>6.0.12</b> Quiz problem 10</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -446,49 +460,49 @@ c</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># rnorm(n, mean = 0, sd = 1) generates a vector of n random samples </span>
 <span class="co"># from a normal distribution with specific mean and sd. </span>
 <span class="kw">rnorm</span>(<span class="dv">100</span>)</code></pre></div>
-<pre><code>##   [1] -1.236606176  0.037816745  0.194213637  0.838607652  0.028325243
-##   [6] -1.057223557 -1.137432519  0.829176268 -0.586868632  1.062023248
-##  [11]  0.934470520  0.959821547  1.539183757 -0.980135013  0.424079554
-##  [16] -0.457395750  1.327253814 -0.327786845  0.632630894 -1.011224265
-##  [21]  0.544187375  0.824258056  0.168463961 -0.193665500 -0.425847223
-##  [26]  1.689400071  2.183600762  0.320247693  1.385075509 -0.158358441
-##  [31] -1.060563475 -0.877348803  1.882048720  2.924492267  0.644429410
-##  [36] -0.636967145 -0.216119611  0.157610194 -1.415891021 -0.574407894
-##  [41] -1.925240342  1.162530824  2.017726401  1.529266595 -0.152780600
-##  [46]  1.042233429  1.585344746  0.384974043 -0.980683087 -1.177640411
-##  [51]  1.066264945  1.025830769  0.163152012  0.952333466  1.272402354
-##  [56]  2.504030596 -0.040429268  1.171324383 -2.312930325 -1.059010412
-##  [61]  1.045388027  1.478095894 -2.479280535 -0.007460936 -0.896522792
-##  [66]  0.518552069 -0.191962624  0.636873898  0.687595815 -0.586855821
-##  [71]  0.771436718  0.819033969 -0.784207088 -1.648586946  0.450696787
-##  [76] -2.766693951  1.167090433  0.575362432  0.494811054  0.906500974
-##  [81]  1.167417015 -0.080126576 -0.292802010  0.192085703 -0.089444890
-##  [86]  2.008180078  0.576261558 -0.620339455  1.178042937 -1.904432066
-##  [91] -1.696103724  0.047718057  0.016596422 -0.998370251  0.917019417
-##  [96]  2.505391063  0.501554677  2.153044850 -0.584157091  1.050636374</code></pre>
+<pre><code>##   [1] -1.40553800  1.27858098  1.11945502 -0.27065154 -0.51699458
+##   [6]  0.38097726  0.77743712  0.13671519  0.84824572 -0.60431106
+##  [11] -0.32849687 -1.27732221  0.47937954 -1.10583498 -0.57660274
+##  [16]  0.26026523 -0.90696931 -0.35392806  1.39830524 -1.16128461
+##  [21] -0.35755479 -1.15327089  0.34364987  0.45290628  0.57240024
+##  [26] -1.69957820 -0.50406466  0.70436512  0.80540149 -0.61910796
+##  [31]  2.39201369 -1.47051665  0.64089788  0.17838645 -0.15452223
+##  [36] -1.27530896 -0.31429213  0.91058493  0.16362790  0.91499457
+##  [41]  1.05359158 -0.87098532 -0.98214097  0.09257115  0.33785588
+##  [46]  1.28351995 -1.06176896 -1.65377664 -1.64064584 -0.62135895
+##  [51] -0.89017230 -0.19107931 -0.81810005  0.17643189 -1.22567154
+##  [56] -1.28792710 -0.19552208 -1.16337280 -0.79409712  0.17945954
+##  [61] -1.35361408  1.55246393  1.42775367  0.93080596  2.05385509
+##  [66]  1.08033635 -0.99045639 -0.96931019 -0.19675996 -1.09578544
+##  [71]  0.67532342  0.95524119  0.19698129 -1.02612539  1.56032210
+##  [76]  0.34002363 -2.63467040  0.07968107  1.58049832  1.06888791
+##  [81] -0.47744971 -1.64561490 -0.23192749  0.78023451 -1.66542914
+##  [86]  1.86249615  0.92835697  0.24401573 -0.88083494 -0.24894650
+##  [91] -0.19791164 -0.14178756  0.56032625  0.35354571 -1.06398841
+##  [96]  0.21351443  0.12058899  0.47551161  0.01112149  0.49408700</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(<span class="kw">rnorm</span>(<span class="dv">10000</span>))</code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-102-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># runif(n, min, max) generates a vector of n random samples </span>
 <span class="co"># from a uniform distribution whose limits are min and max. </span>
 <span class="kw">runif</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">1</span>)</code></pre></div>
-<pre><code>##   [1] 0.13091916 0.83274564 0.32054851 0.40495342 0.63254620 0.82439617
-##   [7] 0.56596398 0.75134969 0.23156106 0.76955052 0.95238384 0.71718746
-##  [13] 0.44828815 0.62424699 0.49335183 0.13219966 0.13310372 0.07856665
-##  [19] 0.10033817 0.63028873 0.67146657 0.92942527 0.29953860 0.70919049
-##  [25] 0.71301824 0.25809145 0.72975450 0.20216349 0.42054374 0.13786687
-##  [31] 0.20537653 0.22759601 0.51598140 0.90987104 0.22415111 0.90628753
-##  [37] 0.12052989 0.03300982 0.87857273 0.06002110 0.30476010 0.11813998
-##  [43] 0.27891703 0.65053753 0.61467353 0.18094044 0.08371387 0.59742892
-##  [49] 0.36890026 0.02884705 0.99452785 0.16329273 0.50297698 0.30214224
-##  [55] 0.13695804 0.69936590 0.57538206 0.78671541 0.67142991 0.62049811
-##  [61] 0.54741939 0.78230797 0.09431528 0.89592208 0.71988589 0.71096348
-##  [67] 0.64251919 0.46598324 0.20884243 0.07030863 0.75723885 0.68925175
-##  [73] 0.40891608 0.45556623 0.06724023 0.75990350 0.52331339 0.42819664
-##  [79] 0.31470033 0.02556703 0.10062181 0.21492346 0.73369009 0.57579734
-##  [85] 0.23915758 0.28616510 0.97427967 0.61820759 0.79435342 0.97203822
-##  [91] 0.29003657 0.74806576 0.16673075 0.98415805 0.17847971 0.09149876
-##  [97] 0.20882785 0.66764480 0.91958921 0.70155522</code></pre>
+<pre><code>##   [1] 0.03699511 0.49780905 0.62518400 0.42367100 0.58759600 0.49970179
+##   [7] 0.84498208 0.39086909 0.65951926 0.27776002 0.68874348 0.40671070
+##  [13] 0.75682748 0.04186700 0.44672543 0.58693009 0.89474397 0.09969989
+##  [19] 0.38770747 0.21726827 0.84768465 0.44693816 0.32999601 0.21867277
+##  [25] 0.64138370 0.23766843 0.98539203 0.91986325 0.89469961 0.56128701
+##  [31] 0.15229142 0.78632294 0.80094986 0.56387327 0.86200291 0.59452893
+##  [37] 0.40712838 0.46912485 0.97318418 0.44801104 0.58237493 0.05556502
+##  [43] 0.66566147 0.41768812 0.56169408 0.62232996 0.63866120 0.61211072
+##  [49] 0.15785996 0.52337720 0.61531999 0.06515410 0.77378024 0.44426558
+##  [55] 0.64486075 0.15521574 0.14050165 0.08920322 0.46551565 0.11879716
+##  [61] 0.74961785 0.19235389 0.70557264 0.11276105 0.93096422 0.28725155
+##  [67] 0.89462338 0.02221298 0.40731678 0.11978744 0.99876069 0.48353977
+##  [73] 0.53274356 0.23177044 0.19505599 0.58244003 0.69648588 0.44739484
+##  [79] 0.58109630 0.91931556 0.94263146 0.98868863 0.46077751 0.44576045
+##  [85] 0.03194134 0.50317008 0.92807802 0.46191154 0.92975122 0.41451580
+##  [91] 0.85637160 0.79532962 0.22426459 0.71920426 0.55477256 0.29585739
+##  [97] 0.91088621 0.21573555 0.91062886 0.14292637</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qplot</span>(<span class="kw">runif</span>(<span class="dv">10000</span>, <span class="dv">0</span>, <span class="dv">1</span>))</code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-104-1.png" width="672" /></p>
@@ -1182,7 +1196,7 @@ se &lt;-<span class="st"> </span>function(x) {
 }</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mySample &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n=</span><span class="dv">100</span>, <span class="dt">mean=</span><span class="dv">20</span>, <span class="dt">sd=</span><span class="dv">4</span>)
 <span class="kw">se</span>(mySample)</code></pre></div>
-<pre><code>## [1] 0.4142183</code></pre>
+<pre><code>## [1] 0.4033483</code></pre>
 </div>
 <div id="exercise-5" class="section level2">
 <h2><span class="header-section-number">5.25</span> Exercise</h2>
@@ -1266,14 +1280,6 @@ for (val in x) {
 <span class="kw">print</span>(count)</code></pre></div>
 <pre><code>## [1] 3</code></pre>
 
-<div id="refs" class="references">
-<div>
-<p>Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York.</p>
-</div>
-<div>
-<p>Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. 1st ed. O’Reilly Media, Inc.</p>
-</div>
-</div>
 </div>
 </div>
             </section>
@@ -1281,8 +1287,8 @@ for (val in x) {
           </div>
         </div>
       </div>
-<a href="exercise-3.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="exercise-3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="base-r-quiz.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
