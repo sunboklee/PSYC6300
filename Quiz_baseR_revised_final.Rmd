@@ -1,0 +1,205 @@
+---
+title: "Quiz for base R"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+### Dataset1: `diamonds` is a dataset in `ggplot2` containing the prices and other attributes of almost 54,000 diamonds. In the dataset, `price` is the price of diamonds in US dollars, and `carat` is the weight of the diamonds (0.2-5.01). 
+
+```{r}
+library(ggplot2)
+```
+
+```{r}
+diamonds
+```
+
+Let's create three vectors for `price`, `carat`, and `depth` variables in the `diamonds` dataset. 
+```{r}
+price <- diamonds$price
+carat <- diamonds$carat
+depth <- diamonds$depth
+```
+
+Now, we have a quite long vector. 
+```{r}
+# carat and depth should have the same length b/c they came from the same dataset. 
+length(price)
+```
+
+Some quiz problems need the `round()` function, which will return the integer part of the provided number. **For quiz responses, please round your answers to the third decimal place.**
+
+```{r}
+# round to the zero digit (which is integer)
+round(3.141592)
+```
+```{r}
+# round to the first digit
+round(3.141592, digits = 3)
+```
+
+
+### Quiz problem 1
+
+Do we have any missing value in `price`? (Yes, or No)
+
+```{r}
+sum(is.na(price))
+```
+
+```{r}
+sum(is.na(carat))
+```
+
+```{r}
+sum(is.na(depth))
+```
+
+### Quiz problem 2
+
+What is the sum of deviations of `price` from the mean?  
+
+A deviation is computed by subtracting the mean of $X$ from a given score. $d_i=X_i- mean(X)$.
+
+In other words, calculate $d_i = \sum_{i=1}^{n}[x_i-mean(x)]$, where $x$ is `price`. 
+
+Report the integer part of the answer.  Use `round(x)` which returns $x$ without any decimals. 
+
+```{r}
+round(sum(price - mean(price)))
+```
+
+
+### Quiz problem 3
+
+Variance is defined as average squared devaiton. 
+
+$$Var(X)=\frac{\sum_{i=1}^n d_i^2}{n-1} =\frac{\sum_{i=1}^n (X-\bar{X})^2}{n-1}$$.
+
+Numerator is the sum of squared deviations computed in the previous problem. The denominator equals ($n-1$). What is the variance of the `price` variable? 
+
+
+```{r}
+sum((price-mean(price))^2)/(length(price)-1)
+```
+
+```{r}
+var(price)
+```
+
+
+
+### Quiz problem 4
+
+You want to buy one of the diamonds in the `diamonds` dataset. However, you only(?) have $5,000. What is the largest size (in carat) of diamonds you can buy. 
+
+```{r}
+max(carat[price<=5000])
+```
+
+
+### Quiz problem 5
+
+Conglaturation !!! You won Mega Millions (happy). Now, you don't have any budget limit. However, you have a strong belief that 7 is a lucky number. So you want to buy 7th, 77th, and 777th expensive diamonds. What is the total price of the three diamonds?   
+
+```{r}
+sum(sort(price, decreasing = TRUE)[c(7, 77, 777)])
+```
+
+
+### Dataset2: `bfi` is a dataset in the `psych` package containing 25 personality self report items taken from the International Personality Item Pool. In the dataset, 
+
+  1. `gender` represents gender (Males = 1, Females = 2), 
+  2. `education` represent educational attainment (1 = HS, 2 = finished HS, 3 = some college, 4 = college graduate 5 = graduate degree), 
+  3. `age` represents age in years, and 
+  4. `E3` is one of the five items that measures extraversion ("Know how to captivate people"). 
+
+  
+
+```{r}
+## This is great- requires them to load and access data from a package.
+# You need to install and load the `psych` package to use the `bfi` dataset.
+library(psych)
+```
+
+Let's create three vectors for `gender`, `education`, and `age` variables in the `diamonds` dataset. 
+
+```{r}
+gender <- bfi$gender
+education <- bfi$education
+age <- bfi$age
+E3 <- bfi$E3
+```
+
+### Quiz problem 6
+
+What is the type of each of these vectors (chracter, integer, double, factor)?
+
+```{r}
+typeof(gender)
+```
+
+```{r}
+typeof(education)
+```
+
+```{r}
+typeof(age)
+```
+
+```{r}
+typeof(E3)
+```
+
+
+
+### Quiz problem 7
+
+What proportion of the sample is females?
+
+
+```{r}
+sum(gender == 2)
+```
+
+```{r}
+sum(gender == 2)/length(gender)
+```
+
+```{r}
+table(gender)
+```
+
+```{r}
+prop.table(table(gender))
+```
+
+
+### Quiz problem 8
+
+What is the sample mean difference in `E3` between males (gender = 1) younger than (<) 26 and females (gender = 2) younger than (<) 26? That is, mean of `E3` for males younger than 26 - mean of `E3` for females younger than 26. 
+
+```{r}
+mean(E3[gender==1 & age < 26], na.rm = TRUE) - mean(E3[gender==2 & age < 26], na.rm = TRUE)
+```
+
+### Quiz problem 9
+
+In the `bfi` dataset, how many males with age 16 and highschool degree are there? 
+
+```{r}
+sum((gender == 1) & (education == 1) & (age == 16), na.rm = TRUE)
+```
+
+
+### Quiz problem 10
+
+
+Using the `bfi` data set, what is the count of 42 year old females?
+  
+  
+
+
+
+

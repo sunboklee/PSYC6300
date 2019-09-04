@@ -1,0 +1,185 @@
+---
+title: "Quiz for base R"
+output: html_document
+---
+
+`diamonds` is a dataset in `ggplot2` containing the prices and other attributes of almost 54,000 diamonds. In the dataset, `price` is the price of diamonds in US dollars, and `carat` is the weight of the diamonds (0.2-5.01). 
+
+```{r}
+library(ggplot2)
+```
+
+
+```{r}
+diamonds
+```
+
+Let's create two vectors for `price` and `carat`. 
+```{r}
+price <- diamonds$price
+carat <- diamonds$carat
+```
+
+We can easily see that the length of those variables are 53940. 
+```{r}
+length(price)
+```
+```{r}
+length(carat)
+```
+
+
+### Quiz problem 1
+
+Calculate the variance of `price` by directly calculating the following expression:  \frac{\sum_{i=1}^{n}(price_i-\bar{price})^2}{n-1}$, where $price = (price_1, price_2, ... , price_n)$ and $\bar{price} = mean(price)$. 
+
+
+
+
+## Exercise on vectors
+
+`mtcars` is a dataframe about fuel economy of various cars. In the dataset, `mpg` represents miles per gallon. `mtcars$mpg` allows us to access the `mpg` variable in the `mtcars` dataframe. 
+
+```{r}
+a <- mtcars$mpg
+```
+
+* Calculate the length of the vector `a`.
+
+```{r}
+length(a)
+```
+
+* Calculate the mean of `a` using `sum()` and `length()` functions. 
+
+```{r}
+sum(a)/length(a)
+```
+
+* Calculate the mean of `a` using `mean()` function. 
+
+```{r}
+mean(a)
+```
+
+
+* Calculate the variance of `a` using `sd()` function. 
+
+```{r}
+sd(a)^2
+```
+
+
+* Calculate the variance of `a` using `var()` function. 
+
+```{r}
+var(a)
+```
+
+
+* Calculate the variance of `a` by directly calculating the following expression: $[(a_1 - \bar{a})^2 + (a_2 - \bar{a})^2 + ... (a_n - \bar{a})^2]/(n-1) = \frac{\sum_{i=1}^{n}(a_i-\bar{a})^2}{n-1}$, where $a = (a_1, a_2, ... , a_n)$ and $\bar{a} = mean(a)$
+
+```{r}
+sum((a-mean(a))^2)/(length(a)-1)
+```
+
+
+* Standardize the vector `a`, i.e., $z = \frac{a-\bar{a}}{sd(a)}$. 
+
+```{r}
+(a-mean(a))/sd(a)
+```
+
+
+* Use `scale()` function to standardize `a` and compare the results with your manual calculation.
+
+```{r}
+# check the help document of scale() by typing ?scale for more details
+scale(a)
+```
+
+
+* Calculate the difference between the largest and smallest numbers in `a`.
+
+```{r}
+max(a)-min(a)
+```
+
+```{r}
+# another solution
+diff(range(a))
+```
+
+
+* Normalize the vector `a`, i.e., $n = \frac{(x-min(x))}{(max(x)-min(x))}$. 
+
+```{r}
+# your maximum value will be 1, and minimum value will be 0. 
+(a-min(a))/(max(a)-min(a))
+```
+
+
+* Plot the histogram of `a` using `qplot()`. 
+
+```{r}
+qplot(a)
+```
+
+```{r}
+# To set aesthetics, wrap in I()
+qplot(a, color = I("red"), fill = I("blue"))
+```
+
+
+* How many elements in `a` are larger than 20? (use `length()`)
+
+```{r}
+# creates a logical vector in which TRUE indicates the element that is larger than 20
+a>20
+```
+```{r}
+# This is a logical indexing where the logical vector 
+# within the subsetting operator (i.e., []) will create a vector with elements larger than 20. 
+a[a>20]
+```
+
+```{r}
+length(a[a>20])
+```
+
+
+* How many elements in `a` are larger than 20? (use `sum()`)
+
+```{r}
+# same result
+# this happens because of "vectorization" and "type conversion"
+sum(a>20)
+```
+
+
+`txhousing` is a tibble in `ggplot2` containing information about the housing market in Texas provided by the TAMU real estate center. In the dataset, `median` represents median sale price. `txhousing$median` allows us to access the `median` variable in the `txhousing` tibble (or dataframe). 
+
+```{r}
+b <- txhousing$median
+```
+
+* Calculate the length of the vector `b`.
+
+* how many missing values (or NAs) are in `b`? 
+
+* Calculate the mean of `b` using `sum()` and `length()` functions. 
+
+* Calculate the mean of `b` using `mean()` function. 
+
+* Are the two means same? If not, Why? How do we get the same result? 
+
+* Calculate the variance of `b` using `sd()` function. 
+
+* Calculate the variance of `b` using `var()` function. 
+
+* Plot the histogram of `b` using `qplot()`. 
+
+* Create a new vector `c` by removing all missing from `b`. 
+
+* (Using `c`) What percentage of houses has median sale price larger than $200000? 
+

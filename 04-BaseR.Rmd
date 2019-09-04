@@ -644,39 +644,336 @@ b <- txhousing$median
 
 
 ## Factors
-- A factor is **a vector** that can contain **only predefined values**, and is used to store **categorical data**.
-- Factors are built on **integer vectors** using two attributes
+
+### What is a factor? 
+- Factors are used to represent **categorical data** (e.g., gender, states).
+- Factors are stored as **a vector of integer values** associated with **a set of character values** (`levels`) to use when the factor is displayed. 
+- Factor have two attributes
     + the **`class()`**, "factor", which make factors behave differently from regular integer vectors, and 
-    + the **`levels()`**, which set the set of predefined values that x might have taken. 
+    + the **`levels()`**, which defines the set of allowed values. 
+    
+### Creating a factor
+- The function `factor()` is used to encode a numeric or character vector as a factor.  
+```{r}
+# levels are the set of allowed values
+f1 <- factor(c(2,1,1,3,2,1,1))
+f1
+```
 
-```{r, echo=TRUE}
-x <- factor(c(1,2,2,1,1,2), levels = c(1,2), labels = c("male", "female"))
+- Factors are built on top of **integers**, and have a **levels** attribute
+
+```{r}
+typeof(f1)
 ```
 
 ```{r}
+attributes(f1)
+```
+
+- `levels()` displays the levels of a factor
+```{r}
+levels(f1)
+```
+
+- The factor's level is **a character vector**.
+```{r}
+# test for objects of type "character"
+is.character(levels(f1))
+```
+
+- More test functions in R
+    * https://r4ds.had.co.nz/vectors.html
+
+
+- We can change levels
+
+```{r}
+levels(f1) <- c("one", "two", "three")
+f1
+```
+
+
+
+- By default, the level of a factor will be displayed in alphabetical order. 
+```{r}
+f2 <- factor(c("Dec", "Apr", "Jan", "Mar"))
+f2
+```
+
+```{r}
+sort(f2)
+```
+
+- `levels` option can be used to change the order in which the levels will be displayed from their default sorted order
+
+```{r}
+month_levels <- c(
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+)
+f3 <- factor(c("Dec", "Apr", "Jan", "Mar"), levels = month_levels)
+f3
+```
+
+```{r}
+# In many cases, this is the result that we expect. 
+sort(f3)
+```
+
+```{r}
+table(f3)
+```
+
+```{r}
+table(f2)
+```
+
+
+### unordered vs ordered factor
+
+- Although the levels of a factor created by the `factor()` function has an order for displaying, the factor created by the `factor()` is called **an unordered factor** in the sense that the factor does not have any meaningful ordering structure. Comparison operators will not work with the unordered factor. Sometimes, we want to specify the meaningful order of a factor by creating **an ordered factor**. 
+
+```{r}
+# the default level is in alphabetical order 
+f4 <- factor(c("high", "low", "medium", "medium", "high"))
+f4
+```
+
+```{r}
+sort(f4)
+```
+
+```{r}
+f5 <- factor(c("high", "low", "medium", "medium", "high"), levels = c("low", "medium", "high"))
+f5
+```
+
+```{r}
+sort(f5)
+```
+
+- `min(f5)` and `f[1] < f[3]` will produce error. 
+
+- With `ordered = TRUE` option, the levels should be regarded as ordered. 
+```{r}
+f6 <- factor(c("high", "low", "medium", "medium", "high"), levels = c("low", "medium", "high"), ordered = TRUE)
+f6
+```
+
+```{r}
+min(f6)
+```
+
+```{r}
+f6[1] > f6[2]
+```
+
+- `ordered()` function also creates **an ordered factor**.
+
+```{r}
+f7 <- ordered(c("high", "low", "medium", "medium", "high"), levels = c("low", "medium", "high"))
+f7
+```
+
+
+### Why factors? 
+
+- Factors are an **efficient way** to store character values, because each unique character value is stored only once, and the factor itself is stored as an integer vector. 
+- Factors prevent **typo** because they only allow us to input the pre-defined values. 
+- Factors allow us to encode **ordering structure**. 
+
+### Some more comments
+- Be careful. Many base R functions **automatically convert** character vectors into factors. To suppress this default behavior, use `stringsAsFactors = FALSE` option within a function. You can explicitly convert data type with `as.character()`, `as.double()`, `as.integer()`, and `as.logical()`. 
+
+### Exercise
+
+- You have the following responses of a five-point likert scale survey item: `x <- c("Agree", "Disagree", "Neutral", "Agree" ,"Agree", "Strongly disagree", "Neutral")`. Create an ordered factor for the **five** point likert scale responses (Notice that you don't have "Strongly agree" in `x`, but include "Strongly agree" in your factor level). 
+
+- Using the following character vector `x = c("male", "male", "female", "male", "female")`, create a factor with levels reversed from its default levels order. 
+
+- Run the following code and explain what the code is doing. 
+
+```{r}
+set.seed(7)
+x <- rnorm(100)
+cut(x, breaks = quantile(x))
+```
+
+
+## Lists
+
+### What is a list? 
+- A list is a **one-dimensional heterogeneou**s data structure. 
+    _ Because a list is a one-dimensional data structure, we can index the element of a list using a single number. 
+    - Unlike a vector, a list is a heterogeneous data structure, meaning that the element of a list can be any object in R. 
+    
+### Creating a list
+- `list()` is used to create a list. 
+
+```{r}
+x <- list(1:6, "a", c(TRUE, TRUE, FALSE), c(1.2, 3.3, 4.6, 6.6))
 x
 ```
 
-```{r, echo=TRUE}
-class(x)
-```
-```{r, echo=TRUE}
-levels(x)
-```
-```{r, echo=TRUE}
-# access an object's attributes.
-attributes(x)
+```{r}
+# str() display the internal structure of an R object
+str(x)
 ```
 
 ```{r}
-# the factor x can only take a pre-defined value (or level): male or female
-# You can't assign values that are not in the levels
-x[1] <- "female"
+typeof(x)
+```
+
+
+### Why lists? 
+- Because of its flexible structure, many R functions store their outputs as a list, and return the list. 
+    
+```{r}
+# In R, lm() is a function that fits a regression model to data.
+# In the following R expression, 'mpg' is a dependent variable
+# and `disp` and `cyl` are independent variable. 
+fit <- lm(mpg ~ disp + cyl, data = mtcars)
+fit
 ```
 
 ```{r}
-x
+typeof(fit)
 ```
+
+```{r}
+str(fit)
+```
+
+
+
+### Subsetting a List
+
+- Subsetting a list works in the same way as subsetting an atomic vector. Using `[ ]` will always return a list; `[[ ]]` and `$` let you pull out the components of the list.
+
+```{r, echo=TRUE}
+my.lst <- list(stud.id=34453,      # creat a list
+               stud.name="John", 
+               stud.marks=c(14.3,12,15,19))
+```
+
+```{r, echo=TRUE}
+my.lst
+```
+
+```{r, echo=TRUE}
+# [ ] extracts a sub-list 
+my.lst[1]
+```
+
+```{r, echo=TRUE}
+typeof(my.lst[1])
+```
+
+```{r, echo=TRUE}
+# [[ ]] extracts the value of an individual element 
+my.lst[[1]]
+```
+
+```{r, echo=TRUE}
+typeof(my.lst[[1]])
+```
+
+```{r}
+# my.lst[[3]] will index the third element of a list, which is a numeric vector
+# my.lst[[3]][2] will index the second element of the numeric vector
+my.lst[[3]][2]
+```
+
+```{r, echo=TRUE}
+# In the case of lists with named elements
+# $ extracts the value of an individual element 
+my.lst$stud.id
+```
+
+```{r}
+typeof(my.lst$stud.id)
+```
+
+
+### Exercise
+
+`fit` is a list that contains the outputs of the `lm()` function for linear regression. Explore the structure of the `fit` object using `str()`. 
+```{r}
+fit <- lm(mpg ~ disp + cyl, data = mtcars)
+fit
+```
+
+- Extract the coefficient of "Intercept" with indexing using a positive integer. 
+- Extract the coefficient of "Intercept" with indexing using a name. 
+
+### Data frames
+
+- A data frame is a **list** of **equal-length vectors**. 
+
+```{r}
+head(iris)
+```
+
+```{r}
+typeof(iris)
+```
+
+```{r}
+str(iris)
+```
+
+### The apply family of functions
+-  The `apply()` family of functions refers to `apply()`, `lapply()`, `sapply()`, `vapply()`, `mapply()`, `rapply()`, and `tapply()`.
+- Why do we need them? 
+    - They will make your code much **shorter** by replacing your own copy and paste
+          
+```{r}
+# A motivating example: check the number of missing values in each column of the following data frame 'm'
+m <- data.frame(matrix(c(1,2,3,4,NA,6,7,NA,NA,NA,NA,NA), ncol = 4))
+m
+```
+
+```{r}
+sum(is.na(m$X1))
+sum(is.na(m$X2))
+sum(is.na(m$X3))
+sum(is.na(m$X4))
+```
+
+- `lapply(X, FUN)`
+    - X = a list object in R
+    - FUN = a function in R
+- `lapply()` 
+    - takes a function (FUN)
+    - applies it to each element of a list (X)
+    - and returns the results in the form of a list
+
+```{r}
+# This one line of code will still work even when the number of columns are 1000 or more. 
+lapply(m, function(x) sum(is.na(x)))
+```
+
+```{r}
+# lapply() returns a list, whereas sapply() returns a vector, matrix, or array. 
+sapply(m, function(x) sum(is.na(x)))
+```
+
+### Exercise
+
+- How many columns in the `bfi` dataset have missing values more than 20? 
+
+```{r}
+library(psych)
+```
+
+```{r}
+head(bfi)
+```
+
+### More resources
+- For more details about a vector, factor, and list, see Ch20 in R for Data Science (https://r4ds.had.co.nz/vectors.html). 
+- For more details about the apply family of functions, see a nice introduction in Data Camp (https://www.datacamp.com/community/tutorials/r-tutorial-apply-family). 
+
 
 
 ## Matrices and Arrays
@@ -825,48 +1122,6 @@ str(df) # display the internal structure of an R object
 
 
 
-## Subsetting a List
-
-- Subsetting a list works in the same way as subsetting an atomic vector. Using `[ ]` will always return a list; `[[ ]]` and `$` let you pull out the components of the list.
-
-```{r, echo=TRUE}
-my.lst <- list(stud.id=34453,      # creat a list
-               stud.name="John", 
-               stud.marks=c(14.3,12,15,19))
-```
-
-```{r, echo=TRUE}
-my.lst
-```
-
-```{r, echo=TRUE}
-# [ ] extracts a sub-list 
-my.lst[1]
-```
-
-```{r, echo=TRUE}
-typeof(my.lst[1])
-```
-
-```{r, echo=TRUE}
-# [[ ]] extracts the value of an individual element 
-my.lst[[1]]
-```
-
-```{r, echo=TRUE}
-typeof(my.lst[[1]])
-```
-
-
-```{r, echo=TRUE}
-# In the case of lists with named elements
-# $ extracts the value of an individual element 
-my.lst$stud.id
-```
-
-```{r}
-typeof(my.lst$stud.id)
-```
 
 ## Subsetting a Matrix and Array
 

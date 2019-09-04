@@ -1,0 +1,2626 @@
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.5.23)  3 SEP 2019 21:46
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Introduction-to-R,-Rstudio,-and-ggplot2.tex
+(./Introduction-to-R,-Rstudio,-and-ggplot2.tex
+LaTeX2e <2017-04-15>
+Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/bk10.clo
+File: bk10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks14
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/11/05 v2.16a AMS math features
+\@mathmargin=\skip43
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks15
+\ex@=\dimen103
+)) (/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen104
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks16
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks17
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks18
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+) (/usr/local/texlive/2017/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/base/fixltx2e.sty
+Package: fixltx2e 2016/12/29 v2.1a fixes to LaTeX (obsolete)
+Applying: [2015/01/01] Old fixltx2e package on input line 46.
+
+Package fixltx2e Warning: fixltx2e is not required with releases after 2015
+(fixltx2e)                All fixes are now in the LaTeX kernel.
+(fixltx2e)                See the latexrelease package for details.
+
+Already applied: [0000/00/00] Old fixltx2e package on input line 53.
+) (/usr/local/texlive/2017/texmf-dist/tex/xelatex/mathspec/mathspec.sty
+Package: mathspec 2016/12/22 v0.2b LaTeX Package (Mathematics font selection fo
+r XeLaTeX)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count100
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/fontspec/fontspec.sty (/usr/loc
+al/texlive/2017/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2017/05/13 L3 programming layer (loader) 
+(/usr/local/texlive/2017/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2017/05/13 L3 programming layer (code)
+\c_max_int=\count101
+\l_tmpa_int=\count102
+\l_tmpb_int=\count103
+\g_tmpa_int=\count104
+\g_tmpb_int=\count105
+\g__prg_map_int=\count106
+\c_log_iow=\count107
+\l_iow_line_count_int=\count108
+\l__iow_line_target_int=\count109
+\l__iow_one_indent_int=\count110
+\l__iow_indent_int=\count111
+\c_zero_dim=\dimen112
+\c_max_dim=\dimen113
+\l_tmpa_dim=\dimen114
+\l_tmpb_dim=\dimen115
+\g_tmpa_dim=\dimen116
+\g_tmpb_dim=\dimen117
+\c_zero_skip=\skip46
+\c_max_skip=\skip47
+\l_tmpa_skip=\skip48
+\l_tmpb_skip=\skip49
+\g_tmpa_skip=\skip50
+\g_tmpb_skip=\skip51
+\c_zero_muskip=\muskip11
+\c_max_muskip=\muskip12
+\l_tmpa_muskip=\muskip13
+\l_tmpb_muskip=\muskip14
+\g_tmpa_muskip=\muskip15
+\g_tmpb_muskip=\muskip16
+\l_keys_choice_int=\count112
+\c__fp_leading_shift_int=\count113
+\c__fp_middle_shift_int=\count114
+\c__fp_trailing_shift_int=\count115
+\c__fp_big_leading_shift_int=\count116
+\c__fp_big_middle_shift_int=\count117
+\c__fp_big_trailing_shift_int=\count118
+\c__fp_Bigg_leading_shift_int=\count119
+\c__fp_Bigg_middle_shift_int=\count120
+\c__fp_Bigg_trailing_shift_int=\count121
+\l__sort_length_int=\count122
+\l__sort_min_int=\count123
+\l__sort_top_int=\count124
+\l__sort_max_int=\count125
+\l__sort_true_max_int=\count126
+\l__sort_block_int=\count127
+\l__sort_begin_int=\count128
+\l__sort_end_int=\count129
+\l__sort_A_int=\count130
+\l__sort_B_int=\count131
+\l__sort_C_int=\count132
+\c_empty_box=\box28
+\l_tmpa_box=\box29
+\l_tmpb_box=\box30
+\g_tmpa_box=\box31
+\g_tmpb_box=\box32
+\l__box_top_dim=\dimen118
+\l__box_bottom_dim=\dimen119
+\l__box_left_dim=\dimen120
+\l__box_right_dim=\dimen121
+\l__box_top_new_dim=\dimen122
+\l__box_bottom_new_dim=\dimen123
+\l__box_left_new_dim=\dimen124
+\l__box_right_new_dim=\dimen125
+\l__box_internal_box=\box33
+\l__coffin_internal_box=\box34
+\l__coffin_internal_dim=\dimen126
+\l__coffin_offset_x_dim=\dimen127
+\l__coffin_offset_y_dim=\dimen128
+\l__coffin_x_dim=\dimen129
+\l__coffin_y_dim=\dimen130
+\l__coffin_x_prime_dim=\dimen131
+\l__coffin_y_prime_dim=\dimen132
+\c_empty_coffin=\box35
+\l__coffin_aligned_coffin=\box36
+\l__coffin_aligned_internal_coffin=\box37
+\l_tmpa_coffin=\box38
+\l_tmpb_coffin=\box39
+\l__coffin_display_coffin=\box40
+\l__coffin_display_coord_coffin=\box41
+\l__coffin_display_pole_coffin=\box42
+\l__coffin_display_offset_dim=\dimen133
+\l__coffin_display_x_dim=\dimen134
+\l__coffin_display_y_dim=\dimen135
+\l__coffin_bounding_shift_dim=\dimen136
+\l__coffin_left_corner_dim=\dimen137
+\l__coffin_right_corner_dim=\dimen138
+\l__coffin_bottom_corner_dim=\dimen139
+\l__coffin_top_corner_dim=\dimen140
+\l__coffin_scaled_total_height_dim=\dimen141
+\l__coffin_scaled_width_dim=\dimen142
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.def
+File: l3xdvidpfmx.def 2017/03/18 v L3 Experimental driver: xdvipdfmx
+\l__driver_tmp_box=\box43
+)) (/usr/local/texlive/2017/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2017/05/13 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count133
+\g__xparse_grabber_int=\count134
+\l__xparse_m_args_int=\count135
+\l__xparse_mandatory_args_int=\count136
+\l__xparse_v_nesting_int=\count137
+)
+Package: fontspec 2017/03/31 v2.6a Font selection for XeLaTeX and LuaLaTeX
+(/usr/local/texlive/2017/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2017/03/31 v2.6a Font selection for XeLaTeX and LuaLaTe
+X
+\l__fontspec_script_int=\count138
+\l__fontspec_language_int=\count139
+\l__fontspec_strnum_int=\count140
+\l__fontspec_tmp_int=\count141
+\l__fontspec_em_int=\count142
+\l__fontspec_emdef_int=\count143
+\l__fontspec_strong_int=\count144
+\l__fontspec_strongdef_int=\count145
+\l__fontspec_tmpa_dim=\dimen143
+\l__fontspec_tmpb_dim=\dimen144
+\l__fontspec_tmpc_dim=\dimen145
+\g__file_internal_ior=\read1
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/tuenc.def
+File: tuenc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TU on input line 82.
+))
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \fontspec with sig. 'O{}mO{}' on line 472.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmainfont with sig. 'O{}mO{}' on line 483.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setsansfont with sig. 'O{}mO{}' on line 503.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmonofont with sig. 'O{}mO{}' on line 523.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setromanfont with sig. 'O{}mO{}' on line 543.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathrm with sig. 'O{}mO{}' on line 547.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setboldmathrm with sig. 'O{}mO{}' on line 555.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathsf with sig. 'O{}mO{}' on line 563.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathtt with sig. 'O{}mO{}' on line 571.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfamily with sig. 'mO{}mO{}' on line 586.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontface with sig. 'mO{}mO{}' on line 603.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \defaultfontfeatures with sig. 't+om' on line 614.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addfontfeatures with sig. 'm' on line 645.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfeature with sig. 'mm' on line 672.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newAATfeature with sig. 'mmmm' on line 686.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newopentypefeature with sig. 'mmm' on line 700.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newICUfeature with sig. 'mmm' on line 720.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeature with sig. 'mm' on line 724.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeatureoption with sig. 'mmm' on line 745.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontscript with sig. 'mm' on line 778.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontlanguage with sig. 'mm' on line 782.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareFontsExtensions with sig. 'm' on line 786.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \IfFontFeatureActiveTF with sig. 'mmm' on line 797.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingCommand with sig. 'mO{}m' on line 3438.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingAccent with sig. 'mm' on line 3444.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingSymbol with sig. 'mm' on line 3450.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingComposite with sig. 'mmm' on line 3456.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingCompositeCommand with sig. 'mmm' on line 3462.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUnicodeEncoding with sig. 'mm' on line 3487.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \UndeclareSymbol with sig. 'm' on line 3493.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \UndeclareComposite with sig. 'mm' on line 3501.
+.................................................
+(/usr/local/texlive/2017/texmf-dist/tex/latex/fontspec/fontspec.cfg)
+LaTeX Info: Redefining \itshape on input line 3686.
+LaTeX Info: Redefining \slshape on input line 3691.
+LaTeX Info: Redefining \scshape on input line 3696.
+LaTeX Info: Redefining \upshape on input line 3701.
+LaTeX Info: Redefining \em on input line 3731.
+LaTeX Info: Redefining \emph on input line 3756.
+LaTeX Info: Redefining \- on input line 3807.
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \oldstylenums with sig. 'm' on line 3902.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \liningnums with sig. 'm' on line 3906.
+.................................................
+)) (/usr/local/texlive/2017/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local
+/texlive/2017/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks20
+\XKV@tempa@toks=\toks21
+(/usr/local/texlive/2017/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count146
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\c@eu@=\count147
+\c@eu@i=\count148
+\c@mkern=\count149
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+)) (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2016/05/14 v2.6a Micro-typographical refinements (RS)
+\MT@toks=\toks22
+\MT@count=\count150
+LaTeX Info: Redefining \textls on input line 774.
+\MT@outer@kern=\dimen146
+LaTeX Info: Redefining \textmicrotypecontext on input line 1310.
+\MT@listname@count=\count151
+(/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/microtype-xetex.def
+File: microtype-xetex.def 2016/05/14 v2.6a Definitions specific to xetex (RS)
+LaTeX Info: Redefining \lsstyle on input line 255.
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2016/05/14 v2.6a microtype main configuration file (RS)
+)) (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2017/03/14 v6.85a Hypertext links for LaTeX
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen147
+\Hy@linkcounter=\count152
+\Hy@pagecounter=\count153
+(/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2017/03/14 v6.85a Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count154
+(/usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4498.
+Package hyperref Info: Link nesting OFF on input line 4503.
+Package hyperref Info: Hyper index ON on input line 4506.
+Package hyperref Info: Plain pages OFF on input line 4513.
+Package hyperref Info: Backreferencing OFF on input line 4518.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4751.
+\c@Hy@tempcnt=\count155
+(/usr/local/texlive/2017/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5104.
+\XeTeXLinkMargin=\dimen148
+\Fld@menulength=\count156
+\Field@Width=\dimen149
+\Fld@charsize=\dimen150
+Package hyperref Info: Hyper figures OFF on input line 6358.
+Package hyperref Info: Link nesting OFF on input line 6363.
+Package hyperref Info: Hyper index ON on input line 6366.
+Package hyperref Info: backreferencing OFF on input line 6373.
+Package hyperref Info: Link coloring OFF on input line 6378.
+Package hyperref Info: Link coloring with OCG OFF on input line 6383.
+Package hyperref Info: PDF/A mode OFF on input line 6388.
+LaTeX Info: Redefining \ref on input line 6428.
+LaTeX Info: Redefining \pageref on input line 6432.
+\Hy@abspage=\count157
+\c@Item=\count158
+\c@Hfootnote=\count159
+)
+
+Package hyperref Message: Driver (autodetected): hxetex.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/hxetex.def
+File: hxetex.def 2017/03/14 v6.85a Hyperref driver for XeTeX
+(/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2017/03/14 v6.85a Hyperref: PDF Unicode definition (HO)
+) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/stringenc.sty
+Package: stringenc 2016/05/16 v1.11 Convert strings between diff. encodings (HO
+)
+)
+\pdfm@box=\box44
+\c@Hy@AnnotLevel=\count160
+\HyField@AnnotCount=\count161
+\Fld@listcount=\count162
+\c@bookmark@seq@number=\count163
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package rerunfilecheck Info: Feature \pdfmdfivesum is not available
+(rerunfilecheck)             (e.g. pdfTeX or LuaTeX with package `pdftexcmds').
+
+(rerunfilecheck)             Therefore file contents cannot be checked efficien
+tly
+(rerunfilecheck)             and the loading of the package is aborted.
+)
+\Hy@SectionHShift=\skip52
+)
+Package hyperref Info: Option `unicode' set `true' on input line 29.
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
+File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
+
+)
+Package hyperref Info: Option `breaklinks' set `true' on input line 29.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip53
+\bibsep=\skip54
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count164
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: xetex.def on input line 147.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2016/07/11 v4.10 LaTeX color/graphics driver for XeTeX (L3/RRM/
+JK)
+)) (/usr/local/texlive/2017/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count165
+\FV@InFile=\read2
+\FV@TabBox=\box45
+\c@FancyVerbLine=\count166
+\FV@StepNumber=\count167
+\FV@OutFile=\write3
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip55
+\fb@frw=\dimen151
+\fb@frh=\dimen152
+\FrameRule=\dimen153
+\FrameSep=\dimen154
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip56
+\LTright=\skip57
+\LTpre=\skip58
+\LTpost=\skip59
+\LTchunksize=\count168
+\LTcapwidth=\dimen155
+\LT@head=\box46
+\LT@firsthead=\box47
+\LT@foot=\box48
+\LT@lastfoot=\box49
+\LT@cols=\count169
+\LT@rows=\count170
+\c@LT@tables=\count171
+\c@LT@chunks=\count172
+\LT@p@ftn=\toks23
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen156
+\lightrulewidth=\dimen157
+\cmidrulewidth=\dimen158
+\belowrulesep=\dimen159
+\belowbottomsep=\dimen160
+\aboverulesep=\dimen161
+\abovetopsep=\dimen162
+\cmidrulesep=\dimen163
+\cmidrulekern=\dimen164
+\defaultaddspace=\dimen165
+\@cmidla=\count173
+\@cmidlb=\count174
+\@aboverulesep=\dimen166
+\@belowrulesep=\dimen167
+\@thisruleclass=\count175
+\@lastruleclass=\count176
+\@thisrulewidth=\dimen168
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 99.
+)
+\Gin@req@height=\dimen169
+\Gin@req@width=\dimen170
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/grffile.sty
+Package: grffile 2016/05/16 v1.17 Extended file name support for graphics (HO)
+Package grffile Info: \Gread@QTm patched on input line 253.
+Package grffile Info: \Gread@eps patched on input line 303.
+Package grffile Info: Option `multidot' is set to `true'.
+Package grffile Info: Option `extendedchars' is set to `false'.
+Package grffile Info: Option `space' is set to `true'.
+Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 486.
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2001/04/09 non-zero parskip adjustments
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/titling/titling.sty
+Package: titling 2009/09/04 v2.1d maketitle typesetting
+\thanksmarkwidth=\skip60
+\thanksmargin=\skip61
+\droptitle=\skip62
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks24
+\thm@bodyfont=\toks25
+\thm@headfont=\toks26
+\thm@notefont=\toks27
+\thm@headpunct=\toks28
+\thm@preskip=\skip63
+\thm@postskip=\skip64
+\thm@headsep=\skip65
+\dth@everypar=\toks29
+)
+No file Introduction-to-R,-Rstudio,-and-ggplot2.aux.
+\openout1 = `Introduction-to-R,-Rstudio,-and-ggplot2.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 138.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 138.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Info: Redefining \microtypecontext on input line 138.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using protrusion set `basicmath'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of spacing.
+Package microtype Info: No adjustment of kerning.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-LatinModernRoman.cfg
+File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
+ern Roman (RS)
+)
+\AtBeginShipoutBox=\box50
+Package hyperref Info: Link coloring OFF on input line 138.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count177
+)
+LaTeX Info: Redefining \ref on input line 138.
+LaTeX Info: Redefining \pageref on input line 138.
+LaTeX Info: Redefining \nameref on input line 138.
+\@outlinefile=\write4
+\openout4 = `Introduction-to-R,-Rstudio,-and-ggplot2.out'.
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
+[1
+
+
+] [2
+
+]
+\tf@toc=\write5
+\openout5 = `Introduction-to-R,-Rstudio,-and-ggplot2.toc'.
+
+[3] [4
+
+]
+Chapter 1.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 169.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic settings for font family
+(microtype)             `lmr' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 169.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 169
+.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 169
+.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 169.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 169.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 169.
+LaTeX Font Info:    Try loading font information for U+msa on input line 169.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 169.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+Underfull \vbox (badness 1057) has occurred while \output is active []
+
+[5]
+
+Package natbib Warning: Citation `Wickham' on page 6 undefined on input line 24
+2.
+
+[6]
+Chapter 2.
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <24.88> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 248.
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 251.
+
+Package natbib Warning: Citation `ggplot2' on page 7 undefined on input line 25
+6.
+
+
+Package natbib Warning: Citation `ggplot2' on page 7 undefined on input line 27
+7.
+
+[7
+
+]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 316.
+
+Package natbib Warning: Citation `ggplot2' on page 8 undefined on input line 34
+1.
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 368--368
+[]\TU/lmtt/m/n/10 ##    carat cut       color clarity depth table price     x  
+   y     z[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 368--368
+[]\TU/lmtt/m/n/10 ##    <dbl> <ord>     <ord> <ord>   <dbl> <dbl> <int> <dbl> <
+dbl> <dbl>[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 368--368
+[]\TU/lmtt/m/n/10 ##  1 0.23  Ideal     E     SI2      61.5    55   326  3.95  
+3.98  2.43[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 368--368
+[]\TU/lmtt/m/n/10 ##  2 0.21  Premium   E     SI1      59.8    61   326  3.89  
+3.84  2.31[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 368--368
+[]\TU/lmtt/m/n/10 ##  3 0.23  Good      E     VS1      56.9    65   327  4.05  
+4.07  2.31[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 368--368
+[]\TU/lmtt/m/n/10 ##  4 0.290 Premium   I     VS2      62.4    58   334  4.2   
+4.23  2.63[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 368--368
+[]\TU/lmtt/m/n/10 ##  5 0.31  Good      J     SI2      63.3    58   335  4.34  
+4.35  2.75[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 368--368
+[]\TU/lmtt/m/n/10 ##  6 0.24  Very Good J     VVS2     62.8    57   336  3.94  
+3.96  2.48[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 368--368
+[]\TU/lmtt/m/n/10 ##  7 0.24  Very Good I     VVS1     62.3    57   336  3.95  
+3.98  2.47[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 368--368
+[]\TU/lmtt/m/n/10 ##  8 0.26  Very Good H     SI1      61.9    55   337  4.07  
+4.11  2.53[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 368--368
+[]\TU/lmtt/m/n/10 ##  9 0.22  Fair      E     VS2      65.1    61   337  3.87  
+3.78  2.49[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 368--368
+[]\TU/lmtt/m/n/10 ## 10 0.23  Very Good H     VS1      59.4    61   338  4     
+4.05  2.39[] 
+ []
+
+
+Package natbib Warning: Citation `ggplot2' on page 8 undefined on input line 37
+8.
+
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+4-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-4-1.pdf" > [8]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+5-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-5-1.pdf" >
+Overfull \hbox (38.25pt too wide) in paragraph at lines 409--409
+[]\TU/lmtt/m/n/10 ## []geom_smooth()[] using method = []gam[] and formula []y ~
+ s(x, bs = "cs")[][] 
+ []
+
+
+Underfull \vbox (badness 3407) has occurred while \output is active []
+
+[9]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+6-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-6-1.pdf" >
+
+Package natbib Warning: Citation `ggplot2' on page 10 undefined on input line 4
+37.
+
+
+Package natbib Warning: Citation `ggplot2' on page 10 undefined on input line 4
+47.
+
+[10]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+7-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-7-1.pdf" >
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+8-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-8-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[11]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+9-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-9-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[12]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+10-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-10-1.pdf" >
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 2.1 on input line 527.
+
+[13]
+
+Package natbib Warning: Citation `ggplot2' on page 14 undefined on input line 5
+41.
+
+
+Underfull \hbox (badness 1377) in paragraph at lines 543--546
+[]\TU/lmtt/m/n/10 scale_x_continuous() \TU/lmr/m/n/10 and \TU/lmtt/m/n/10 scale
+_y_continuous() \TU/lmr/m/n/10 are the default
+ []
+
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+11-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-11-1.pdf" > [14]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+12-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-12-1.pdf" >
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+13-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-13-1.pdf" > [15]
+Overfull \hbox (6.75pt too wide) in paragraph at lines 585--585
+[]\TU/lmtt/m/n/10 ## Warning: Removed 27 rows containing missing values (geom_p
+oint).[] 
+ []
+
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+14-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-14-1.pdf" >
+Overfull \hbox (6.75pt too wide) in paragraph at lines 598--598
+[]\TU/lmtt/m/n/10 ## Warning: Removed 27 rows containing missing values (geom_p
+oint).[] 
+ []
+
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+15-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-15-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[16]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+16-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-16-1.pdf" >
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+17-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-17-1.pdf" >
+Underfull \vbox (badness 1748) has occurred while \output is active []
+
+[17]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+18-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-18-1.pdf" >
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+19-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-19-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[18]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+20-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-20-1.pdf" >
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+21-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-21-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[19]
+Underfull \hbox (badness 5475) in paragraph at lines 655--658
+[]\TU/lmr/m/n/10 For more details about scales, see []$[][][][][] [] [] [] [][]
+[][][][][] [] [][][][][][][][][] [] [][][] []
+ []
+
+
+Overfull \hbox (17.25pt too wide) in paragraph at lines 674--674
+[]\TU/lmtt/m/n/10 ## []stat_bin()[] using []bins = 30[]. Pick better value with
+ []binwidth[].[] 
+ []
+
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+22-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-22-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[20]
+
+Package natbib Warning: Citation `ggplot2' on page 21 undefined on input line 6
+84.
+
+
+Package natbib Warning: Citation `ggplot2' on page 21 undefined on input line 7
+05.
+
+
+Package natbib Warning: Citation `ggplot2' on page 21 undefined on input line 7
+14.
+
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+23-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-23-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[21]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+25-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-25-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[22]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+26-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-26-1.pdf" >
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+27-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-27-1.pdf" > [23]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+28-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-28-1.pdf" >
+
+Package natbib Warning: Citation `ggplot2' on page 24 undefined on input line 7
+90.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[24]
+
+Package natbib Warning: Citation `ggplot2' on page 25 undefined on input line 7
+96.
+
+
+Overfull \hbox (17.25pt too wide) in paragraph at lines 808--808
+[]\TU/lmtt/m/n/10 ## []stat_bin()[] using []bins = 30[]. Pick better value with
+ []binwidth[].[] 
+ []
+
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+29-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-29-1.pdf" >
+Overfull \hbox (17.25pt too wide) in paragraph at lines 821--821
+[]\TU/lmtt/m/n/10 ## []stat_bin()[] using []bins = 30[]. Pick better value with
+ []binwidth[].[] 
+ []
+
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+30-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-30-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[25]
+
+Package natbib Warning: Citation `ggplot2' on page 26 undefined on input line 8
+47.
+
+[26]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+33-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-33-1.pdf" >
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+34-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-34-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[27]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+35-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-35-1.pdf" > [28]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+36-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-36-1.pdf" >
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+37-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-37-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[29]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+38-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-38-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[30]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+39-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-39-1.pdf" >
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+40-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-40-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[31] [32]
+Chapter 3.
+[33
+
+]
+Overfull \hbox (1.5pt too wide) in paragraph at lines 1074--1074
+[]\TU/lmtt/m/n/10 ##  Min.   :43.00   Min.   :43.00   Min.   :  326   Min.   : 
+0.000[] 
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 1074--1074
+[]\TU/lmtt/m/n/10 ##  1st Qu.:61.00   1st Qu.:56.00   1st Qu.:  950   1st Qu.: 
+4.710[] 
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 1074--1074
+[]\TU/lmtt/m/n/10 ##  Median :61.80   Median :57.00   Median : 2401   Median : 
+5.700[] 
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 1074--1074
+[]\TU/lmtt/m/n/10 ##  Mean   :61.75   Mean   :57.46   Mean   : 3933   Mean   : 
+5.731[] 
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 1074--1074
+[]\TU/lmtt/m/n/10 ##  3rd Qu.:62.50   3rd Qu.:59.00   3rd Qu.: 5324   3rd Qu.: 
+6.540[] 
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 1074--1074
+[]\TU/lmtt/m/n/10 ##  Max.   :79.00   Max.   :95.00   Max.   :18823   Max.   :1
+0.740[] 
+ []
+
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+47-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-47-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[34]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+48-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-48-1.pdf" >
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+49-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-49-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[35]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+50-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-50-1.pdf" >
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+51-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-51-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[36]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+52-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-52-1.pdf" >
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+53-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-53-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[37]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+54-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-54-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[38]
+Overfull \hbox (17.25pt too wide) in paragraph at lines 1163--1163
+[]\TU/lmtt/m/n/10 ## []stat_bin()[] using []bins = 30[]. Pick better value with
+ []binwidth[].[] 
+ []
+
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+55-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-55-1.pdf" >
+Overfull \hbox (17.25pt too wide) in paragraph at lines 1175--1175
+[]\TU/lmtt/m/n/10 ## []stat_bin()[] using []bins = 30[]. Pick better value with
+ []binwidth[].[] 
+ []
+
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+56-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-56-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[39]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1187--1187
+[]\TU/lmtt/m/n/10 ## Warning: Removed 32 rows containing non-finite values (sta
+t_bin).[] 
+ []
+
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+57-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-57-1.pdf" >
+Underfull \vbox (badness 1127) has occurred while \output is active []
+
+[40]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1203--1203
+[]\TU/lmtt/m/n/10 ## Warning: Removed 32 rows containing non-finite values (sta
+t_bin).[] 
+ []
+
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+58-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-58-1.pdf" >
+Overfull \hbox (17.25pt too wide) in paragraph at lines 1219--1219
+[]\TU/lmtt/m/n/10 ## []stat_bin()[] using []bins = 30[]. Pick better value with
+ []binwidth[].[] 
+ []
+
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+59-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-59-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[41]
+Overfull \hbox (17.25pt too wide) in paragraph at lines 1231--1231
+[]\TU/lmtt/m/n/10 ## []stat_bin()[] using []bins = 30[]. Pick better value with
+ []binwidth[].[] 
+ []
+
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+60-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-60-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[42]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+61-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-61-1.pdf" >
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+62-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-62-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[43]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+63-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-63-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[44]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+64-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-64-1.pdf" >
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+65-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-65-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[45]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+66-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-66-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[46]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+67-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-67-1.pdf" >
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+68-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-68-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[47]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+69-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-69-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[48]
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+70-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-70-1.pdf" >
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+71-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-71-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[49]
+Overfull \hbox (7.00998pt too wide) in paragraph at lines 1337--1339
+[][]$[][][][][] [] [] [] [][][][] [] [][][][][][][][][][] [] [][][] [] [][][] [
+] [][][][][][][][] [] [][][][][][][][] [] [][][][][][][][][] [] [][][][][][][][
+][][][][][][][] []
+ []
+
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+73-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-73-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[50] [51] [52
+
+]
+Chapter 4.
+File: practice1.png Graphic file (type QTm)
+<use  "practice1.png" >
+File: practice2.png Graphic file (type QTm)
+<use  "practice2.png" > [53] [54]
+Chapter 5.
+[55
+
+]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 5.1 on input line 1541.
+
+File: datastructure.png Graphic file (type QTm)
+<use  "datastructure.png" > [56] [57]
+Overfull \hbox (59.25pt too wide) in paragraph at lines 1731--1731
+[]\TU/lmtt/m/n/10 ##  [1] "mpg"  "cyl"  "disp" "hp"   "drat" "wt"   "qsec" "vs"
+   "am"   "gear"[] 
+ []
+
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 1731--1731
+[]\TU/lmtt/m/n/10 ## [13] "Merc 450SL"          "Merc 450SLC"         "Cadillac
+ Fleetwood"[] 
+ []
+
+
+Overfull \hbox (6.75pt too wide) in paragraph at lines 1731--1731
+[]\TU/lmtt/m/n/10 ## [19] "Honda Civic"         "Toyota Corolla"      "Toyota C
+orona"[] 
+ []
+
+
+Overfull \hbox (6.75pt too wide) in paragraph at lines 1731--1731
+[]\TU/lmtt/m/n/10 ## [25] "Pontiac Firebird"    "Fiat X1-9"           "Porsche 
+914-2"[] 
+ []
+
+[58]
+Overfull \hbox (1.5pt too wide) in paragraph at lines 1731--1731
+[]\TU/lmtt/m/n/10 ## [28] "Lotus Europa"        "Ford Pantera L"      "Ferrari 
+Dino"[] 
+ []
+
+
+Overfull \hbox (1.812pt too wide) in paragraph at lines 1783--1786
+[]\TU/lmr/m/n/10 You can \TU/lmr/bx/n/10 explicitly \TU/lmr/m/n/10 convert data
+ type with \TU/lmtt/m/n/10 as.character()\TU/lmr/m/n/10 , \TU/lmtt/m/n/10 as.do
+uble()\TU/lmr/m/n/10 ,
+ []
+
+[59] [60]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1963--1963
+[]\TU/lmtt/m/n/10 ##   [1]  0.13088270 -1.12904595 -0.60540479 -0.05159938  0.6
+5538520[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1963--1963
+[]\TU/lmtt/m/n/10 ##   [6]  0.36696242 -0.25150872 -1.25593568  1.14438041 -0.8
+5635136[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1963--1963
+[]\TU/lmtt/m/n/10 ##  [11] -0.03613010 -0.84261254 -0.32038126 -1.40285088  1.0
+1342907[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1963--1963
+[]\TU/lmtt/m/n/10 ##  [16]  1.18226506 -0.36618180  0.05339614  0.30851806 -0.4
+4799809[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1963--1963
+[]\TU/lmtt/m/n/10 ##  [21]  1.15534931  0.12883398 -1.70725702 -0.33788238  0.9
+9650643[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1963--1963
+[]\TU/lmtt/m/n/10 ##  [26] -0.22207872  1.09339756 -1.83998663  0.84459756 -0.3
+8608093[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1963--1963
+[]\TU/lmtt/m/n/10 ##  [31] -0.43118568  2.21041175 -0.11299896 -0.37623370 -1.2
+4051884[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1963--1963
+[]\TU/lmtt/m/n/10 ##  [36]  0.41365646 -1.89512524 -1.76057391  0.66840485  0.1
+1029906[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1963--1963
+[]\TU/lmtt/m/n/10 ##  [41] -0.18188034  0.80270848  1.44780441  0.47127153 -0.0
+3589157[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1963--1963
+[]\TU/lmtt/m/n/10 ##  [46] -0.05500964  0.18395551  0.10461409  0.09650479 -0.1
+9156698[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1963--1963
+[]\TU/lmtt/m/n/10 ##  [51] -0.02482726  0.57696447 -0.49958783  1.25877655 -2.4
+4879318[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1963--1963
+[]\TU/lmtt/m/n/10 ##  [56]  1.13307479 -0.27624429  0.26874784 -1.30877498 -0.3
+2685423[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1963--1963
+[]\TU/lmtt/m/n/10 ##  [61] -0.42656531 -1.77107255 -0.74557669  0.11215175  2.1
+7178184[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1963--1963
+[]\TU/lmtt/m/n/10 ##  [66] -0.19690089 -0.42491993 -0.59041864 -0.92429945 -0.0
+4044826[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1963--1963
+[]\TU/lmtt/m/n/10 ##  [71]  1.03079691 -1.50434286 -2.47437126  0.84250790  0.9
+4129809[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1963--1963
+[]\TU/lmtt/m/n/10 ##  [76] -0.61452136 -0.05682853  0.87585860  0.85069207 -0.6
+6949328[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1963--1963
+[]\TU/lmtt/m/n/10 ##  [81]  0.18288625  0.68700873  1.20813937 -0.89648548  0.5
+1300180[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1963--1963
+[]\TU/lmtt/m/n/10 ##  [86] -1.54326904 -1.97618259  0.52233830  0.12262319 -0.5
+0067833[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1963--1963
+[]\TU/lmtt/m/n/10 ##  [91] -0.75209472 -0.70833726  0.33914637  0.89101500  2.9
+6918155[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1963--1963
+[]\TU/lmtt/m/n/10 ##  [96]  1.08773185 -0.99448238 -0.96320135  0.76638909  0.5
+8936510[] 
+ []
+
+
+Overfull \hbox (17.25pt too wide) in paragraph at lines 1973--1973
+[]\TU/lmtt/m/n/10 ## []stat_bin()[] using []bins = 30[]. Pick better value with
+ []binwidth[].[] 
+ []
+
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+102-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-102-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[61]
+Overfull \hbox (43.5pt too wide) in paragraph at lines 2003--2003
+[]\TU/lmtt/m/n/10 ##   [1] 0.30669595 0.94083741 0.27518091 0.19059884 0.343594
+11 0.94973339[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 2003--2003
+[]\TU/lmtt/m/n/10 ##   [7] 0.74131171 0.76530641 0.89905265 0.84962042 0.169255
+33 0.26973677[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 2003--2003
+[]\TU/lmtt/m/n/10 ##  [13] 0.20503750 0.49306857 0.10301790 0.38223879 0.210027
+56 0.28072937[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 2003--2003
+[]\TU/lmtt/m/n/10 ##  [19] 0.77694475 0.88472118 0.09165366 0.39618855 0.871665
+18 0.81673674[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 2003--2003
+[]\TU/lmtt/m/n/10 ##  [25] 0.23341169 0.95594021 0.50805678 0.46664517 0.578754
+55 0.95611935[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 2003--2003
+[]\TU/lmtt/m/n/10 ##  [31] 0.21508678 0.41803494 0.19984546 0.83516921 0.873333
+71 0.21709581[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 2003--2003
+[]\TU/lmtt/m/n/10 ##  [37] 0.33727945 0.83254434 0.46586964 0.57159749 0.660904
+88 0.44538199[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 2003--2003
+[]\TU/lmtt/m/n/10 ##  [43] 0.11210434 0.82135229 0.33275739 0.14263648 0.537145
+06 0.45108381[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 2003--2003
+[]\TU/lmtt/m/n/10 ##  [49] 0.36874068 0.90426308 0.54234004 0.30342822 0.464816
+84 0.29232880[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 2003--2003
+[]\TU/lmtt/m/n/10 ##  [55] 0.92341865 0.67006296 0.23160582 0.13204092 0.947004
+16 0.95528391[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 2003--2003
+[]\TU/lmtt/m/n/10 ##  [61] 0.53591069 0.78194390 0.25833866 0.97478463 0.703056
+18 0.17988131[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 2003--2003
+[]\TU/lmtt/m/n/10 ##  [67] 0.45709159 0.33666536 0.03990915 0.02083897 0.184881
+34 0.44384720[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 2003--2003
+[]\TU/lmtt/m/n/10 ##  [73] 0.47538710 0.36295057 0.70571106 0.23285594 0.929953
+31 0.39337586[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 2003--2003
+[]\TU/lmtt/m/n/10 ##  [79] 0.17357464 0.72032058 0.86902059 0.15936869 0.517041
+10 0.91180217[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 2003--2003
+[]\TU/lmtt/m/n/10 ##  [85] 0.57027884 0.40283678 0.01642359 0.60854015 0.280194
+05 0.09345389[] 
+ []
+
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 2003--2003
+[]\TU/lmtt/m/n/10 ##  [91] 0.65071816 0.83941880 0.46741645 0.77685008 0.873721
+96 0.48759179[] 
+ []
+
+
+Overfull \hbox (17.25pt too wide) in paragraph at lines 2013--2013
+[]\TU/lmtt/m/n/10 ## []stat_bin()[] using []bins = 30[]. Pick better value with
+ []binwidth[].[] 
+ []
+
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+104-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-104-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[62] [63] [64] [65]
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2365--2365
+[]\TU/lmtt/m/n/10 ##                      mpg cyl disp  hp drat    wt  qsec vs 
+am gear carb[] 
+ []
+
+
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2365--2365
+[]\TU/lmtt/m/n/10 ## Cadillac Fleetwood  10.4   8  472 205 2.93 5.250 17.98  0 
+ 0    3    4[] 
+ []
+
+
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2365--2365
+[]\TU/lmtt/m/n/10 ## Lincoln Continental 10.4   8  460 215 3.00 5.424 17.82  0 
+ 0    3    4[] 
+ []
+
+
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2365--2365
+[]\TU/lmtt/m/n/10 ## Camaro Z28          13.3   8  350 245 3.73 3.840 15.41  0 
+ 0    3    4[] 
+ []
+
+
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2365--2365
+[]\TU/lmtt/m/n/10 ## Duster 360          14.3   8  360 245 3.21 3.570 15.84  0 
+ 0    3    4[] 
+ []
+
+
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2365--2365
+[]\TU/lmtt/m/n/10 ## Chrysler Imperial   14.7   8  440 230 3.23 5.345 17.42  0 
+ 0    3    4[] 
+ []
+
+
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2365--2365
+[]\TU/lmtt/m/n/10 ## Maserati Bora       15.0   8  301 335 3.54 3.570 14.60  0 
+ 1    5    8[] 
+ []
+
+[66] [67]
+Overfull \hbox (6.75pt too wide) in paragraph at lines 2628--2628
+[]\TU/lmtt/m/n/10 ##  [1]  0.15088482  0.15088482  0.44954345  0.21725341 -0.23
+073453[] 
+ []
+
+
+Overfull \hbox (6.75pt too wide) in paragraph at lines 2628--2628
+[]\TU/lmtt/m/n/10 ##  [6] -0.33028740 -0.96078893  0.71501778  0.44954345 -0.14
+777380[] 
+ []
+
+[68]
+Overfull \hbox (6.75pt too wide) in paragraph at lines 2628--2628
+[]\TU/lmtt/m/n/10 ## [11] -0.38006384 -0.61235388 -0.46302456 -0.81145962 -1.60
+788262[] 
+ []
+
+
+Overfull \hbox (6.75pt too wide) in paragraph at lines 2628--2628
+[]\TU/lmtt/m/n/10 ## [16] -1.60788262 -0.89442035  2.04238943  1.71054652  2.29
+127162[] 
+ []
+
+
+Overfull \hbox (6.75pt too wide) in paragraph at lines 2628--2628
+[]\TU/lmtt/m/n/10 ## [21]  0.23384555 -0.76168319 -0.81145962 -1.12671039 -0.14
+777380[] 
+ []
+
+
+Overfull \hbox (6.75pt too wide) in paragraph at lines 2628--2628
+[]\TU/lmtt/m/n/10 ## [26]  1.19619000  0.98049211  1.71054652 -0.71190675 -0.06
+481307[] 
+ []
+
+[69]
+Overfull \hbox (59.25pt too wide) in paragraph at lines 2732--2732
+[]\TU/lmtt/m/n/10 ##  [1] 0.4510638 0.4510638 0.5276596 0.4680851 0.3531915 0.3
+276596 0.1659574[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 2732--2732
+[]\TU/lmtt/m/n/10 ##  [8] 0.5957447 0.5276596 0.3744681 0.3148936 0.2553191 0.2
+936170 0.2042553[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 2732--2732
+[]\TU/lmtt/m/n/10 ## [15] 0.0000000 0.0000000 0.1829787 0.9361702 0.8510638 1.0
+000000 0.4723404[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 2732--2732
+[]\TU/lmtt/m/n/10 ## [22] 0.2170213 0.2042553 0.1234043 0.3744681 0.7191489 0.6
+638298 0.8510638[] 
+ []
+
+
+Overfull \hbox (17.25pt too wide) in paragraph at lines 2748--2748
+[]\TU/lmtt/m/n/10 ## []stat_bin()[] using []bins = 30[]. Pick better value with
+ []binwidth[].[] 
+ []
+
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+154-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-154-1.pdf" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[70]
+Overfull \hbox (17.25pt too wide) in paragraph at lines 2761--2761
+[]\TU/lmtt/m/n/10 ## []stat_bin()[] using []bins = 30[]. Pick better value with
+ []binwidth[].[] 
+ []
+
+File: Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk-
+155-1.pdf Graphic file (type QTm)
+
+<use  "Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-latex/unnamed-chunk
+-155-1.pdf" > [71]
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2783--2783
+[]\TU/lmtt/m/n/10 ##  [1]  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE  TRUE  TRUE
+ FALSE FALSE[] 
+ []
+
+
+Overfull \hbox (38.25pt too wide) in paragraph at lines 2783--2783
+[]\TU/lmtt/m/n/10 ## [12] FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE
+  TRUE FALSE[] 
+ []
+
+
+Overfull \hbox (6.75pt too wide) in paragraph at lines 2783--2783
+[]\TU/lmtt/m/n/10 ## [23] FALSE FALSE FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE
+  TRUE[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 2795--2795
+[]\TU/lmtt/m/n/10 ##  [1] 21.0 21.0 22.8 21.4 24.4 22.8 32.4 30.4 33.9 21.5 27.
+3 26.0 30.4 21.4[] 
+ []
+
+[72] [73] [74] [75]
+Underfull \hbox (badness 10000) in paragraph at lines 3247--3254
+\TU/lmtt/m/n/10 x <- c("Agree", "Disagree", "Neutral", "Agree" ,"Agree",
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 3296--3296
+[]\TU/lmtt/m/n/10 ##   [1] (0.72,2.72]    (-1.79,-0.559] (-1.79,-0.559] (-0.559
+,0.106][] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 3296--3296
+[]\TU/lmtt/m/n/10 ##   [5] (-1.79,-0.559] (-1.79,-0.559] (0.72,2.72]    (-0.559
+,0.106][] 
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 3296--3296
+[]\TU/lmtt/m/n/10 ##  [13] (0.72,2.72]    (0.106,0.72]   (0.72,2.72]    (0.106,
+0.72][] 
+ []
+
+[76]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 3296--3296
+[]\TU/lmtt/m/n/10 ##  [21] (0.72,2.72]    (0.106,0.72]   (0.72,2.72]    (-1.79,
+-0.559][] 
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 3296--3296
+[]\TU/lmtt/m/n/10 ##  [25] (0.72,2.72]    (0.106,0.72]   (0.72,2.72]    (0.106,
+0.72][] 
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 3296--3296
+[]\TU/lmtt/m/n/10 ##  [29] (-1.79,-0.559] (-0.559,0.106] (-1.79,-0.559] (0.106,
+0.72][] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 3296--3296
+[]\TU/lmtt/m/n/10 ##  [33] (0.106,0.72]   (-0.559,0.106] (-0.559,0.106] (-1.79,
+-0.559][] 
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 3296--3296
+[]\TU/lmtt/m/n/10 ##  [37] (0.72,2.72]    (-1.79,-0.559] (-0.559,0.106] (0.106,
+0.72][] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 3296--3296
+[]\TU/lmtt/m/n/10 ##  [41] (0.72,2.72]    (-1.79,-0.559] (-0.559,0.106] (-1.79,
+-0.559][] 
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 3296--3296
+[]\TU/lmtt/m/n/10 ##  [45] (-0.559,0.106] (-0.559,0.106] (0.72,2.72]    (0.106,
+0.72][] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 3296--3296
+[]\TU/lmtt/m/n/10 ##  [49] (-0.559,0.106] (0.72,2.72]    (-0.559,0.106] (-0.559
+,0.106][] 
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 3296--3296
+[]\TU/lmtt/m/n/10 ##  [53] (0.106,0.72]   (0.72,2.72]    (0.72,2.72]    (0.106,
+0.72][] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 3296--3296
+[]\TU/lmtt/m/n/10 ##  [57] (-1.79,-0.559] (0.106,0.72]   (0.106,0.72]   (-1.79,
+-0.559][] 
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 3296--3296
+[]\TU/lmtt/m/n/10 ##  [61] (-0.559,0.106] (0.106,0.72]   (0.106,0.72]   (0.106,
+0.72][] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 3296--3296
+[]\TU/lmtt/m/n/10 ##  [69] (0.72,2.72]    (0.106,0.72]   (0.106,0.72]   (-1.79,
+-0.559][] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 3296--3296
+[]\TU/lmtt/m/n/10 ##  [73] (-1.79,-0.559] (-1.79,-0.559] (-1.79,-0.559] (-1.79,
+-0.559][] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 3296--3296
+[]\TU/lmtt/m/n/10 ##  [81] (0.106,0.72]   (-0.559,0.106] (-0.559,0.106] (-0.559
+,0.106][] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 3296--3296
+[]\TU/lmtt/m/n/10 ##  [85] (-1.79,-0.559] (-0.559,0.106] (-0.559,0.106] (-0.559
+,0.106][] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 3296--3296
+[]\TU/lmtt/m/n/10 ##  [89] <NA>           (0.106,0.72]   (0.72,2.72]    (-1.79,
+-0.559][] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 3296--3296
+[]\TU/lmtt/m/n/10 ##  [93] (0.106,0.72]   (0.106,0.72]   (0.72,2.72]    (-1.79,
+-0.559][] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 3296--3296
+[]\TU/lmtt/m/n/10 ##  [97] (0.72,2.72]    (-1.79,-0.559] (-0.559,0.106] (-0.559
+,0.106][] 
+ []
+
+[77]
+Overfull \hbox (43.5pt too wide) in paragraph at lines 3475--3475
+[]\TU/lmtt/m/n/10 ##  $ residuals    : Named num [1:32] -0.844 -0.844 -3.289 1.
+573 4.147 ...[] 
+ []
+
+[78]
+Overfull \hbox (174.75pt too wide) in paragraph at lines 3475--3475
+[]\TU/lmtt/m/n/10 ##   ..- attr(*, "names")= chr [1:32] "Mazda RX4" "Mazda RX4 
+Wag" "Datsun 710" "Hornet 4 Drive" ...[] 
+ []
+
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 3475--3475
+[]\TU/lmtt/m/n/10 ##  $ effects      : Named num [1:32] -113.65 -28.44 -6.81 2.
+04 4.06 ...[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3475--3475
+[]\TU/lmtt/m/n/10 ##   ..- attr(*, "names")= chr [1:32] "(Intercept)" "disp" "c
+yl" "" ...[] 
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 3475--3475
+[]\TU/lmtt/m/n/10 ##  $ fitted.values: Named num [1:32] 21.8 21.8 26.1 19.8 14.
+6 ...[] 
+ []
+
+
+Overfull \hbox (174.75pt too wide) in paragraph at lines 3475--3475
+[]\TU/lmtt/m/n/10 ##   ..- attr(*, "names")= chr [1:32] "Mazda RX4" "Mazda RX4 
+Wag" "Datsun 710" "Hornet 4 Drive" ...[] 
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 3475--3475
+[]\TU/lmtt/m/n/10 ##   ..$ qr   : num [1:32, 1:3] -5.657 0.177 0.177 0.177 0.17
+7 ...[] 
+ []
+
+
+Overfull \hbox (122.25pt too wide) in paragraph at lines 3475--3475
+[]\TU/lmtt/m/n/10 ##   .. .. ..$ : chr [1:32] "Mazda RX4" "Mazda RX4 Wag" "Dats
+un 710" "Hornet 4 Drive" ...[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 3475--3475
+[]\TU/lmtt/m/n/10 ##  $ call         : language lm(formula = mpg ~ disp + cyl, 
+data = mtcars)[] 
+ []
+
+
+Overfull \hbox (38.25pt too wide) in paragraph at lines 3475--3475
+[]\TU/lmtt/m/n/10 ##  $ terms        :Classes []terms[], []formula[]  language 
+mpg ~ disp + cyl[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 3475--3475
+[]\TU/lmtt/m/n/10 ##   .. ..- attr(*, "dataClasses")= Named chr [1:3] "numeric"
+ "numeric" "numeric"[] 
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 3475--3475
+[]\TU/lmtt/m/n/10 ##   ..$ mpg : num [1:32] 21 21 22.8 21.4 18.7 18.1 14.3 24.4
+ 22.8 19.2 ...[] 
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 3475--3475
+[]\TU/lmtt/m/n/10 ##   ..- attr(*, "terms")=Classes []terms[], []formula[]  lan
+guage mpg ~ disp + cyl[] 
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 3475--3475
+[]\TU/lmtt/m/n/10 ##   .. .. ..- attr(*, "variables")= language list(mpg, disp,
+ cyl)[] 
+ []
+
+[79]
+Overfull \hbox (96.0pt too wide) in paragraph at lines 3475--3475
+[]\TU/lmtt/m/n/10 ##   .. .. ..- attr(*, "dataClasses")= Named chr [1:3] "numer
+ic" "numeric" "numeric"[] 
+ []
+
+[80] [81]
+Overfull \hbox (1.5pt too wide) in paragraph at lines 3669--3669
+[]\TU/lmtt/m/n/10 ##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.
+1 ...[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 3669--3669
+[]\TU/lmtt/m/n/10 ##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 
+1.5 ...[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 3669--3669
+[]\TU/lmtt/m/n/10 ##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 
+0.1 ...[] 
+ []
+
+
+Overfull \hbox (117.0pt too wide) in paragraph at lines 3669--3669
+[]\TU/lmtt/m/n/10 ##  $ Species     : Factor w/ 3 levels "setosa","versicolor",
+..: 1 1 1 1 1 1 1 1 1 1 ...[] 
+ []
+
+[82]
+Overfull \hbox (59.25pt too wide) in paragraph at lines 3841--3841
+[]\TU/lmtt/m/n/10 ##       A1 A2 A3 A4 A5 C1 C2 C3 C4 C5 E1 E2 E3 E4 E5 N1 N2 N
+3 N4 N5 O1 O2 O3[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 3841--3841
+[]\TU/lmtt/m/n/10 ## 61617  2  4  3  4  4  2  3  3  4  4  3  3  3  4  4  3  4  
+2  2  3  3  6  3[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 3841--3841
+[]\TU/lmtt/m/n/10 ## 61618  2  4  5  2  5  5  4  4  3  4  1  1  6  4  3  3  3  
+3  5  5  4  2  4[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 3841--3841
+[]\TU/lmtt/m/n/10 ## 61620  5  4  5  4  4  4  5  4  2  5  2  4  4  4  5  4  5  
+4  2  3  4  2  5[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 3841--3841
+[]\TU/lmtt/m/n/10 ## 61621  4  4  6  5  5  4  4  3  5  5  5  3  4  4  4  2  5  
+2  4  1  3  3  4[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 3841--3841
+[]\TU/lmtt/m/n/10 ## 61622  2  3  3  4  5  4  4  5  3  2  2  2  5  4  5  2  3  
+4  4  3  3  3  4[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 3841--3841
+[]\TU/lmtt/m/n/10 ## 61623  6  6  5  6  5  6  6  6  1  3  2  1  6  5  6  3  5  
+2  2  3  4  3  5[] 
+ []
+
+[83] [84] [85]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 5.2 on input line 4113.
+
+[86]
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 5.3 on input line 4136.
+
+[87] [88] [89]
+Underfull \vbox (badness 1189) has occurred while \output is active []
+
+[90]
+Overfull \hbox (0.11781pt too wide) in paragraph at lines 4478--4484
+[]\TU/lmr/m/n/10 Write your own function that returns (simplified) Cohen’s d = 
+$[]$.
+ []
+
+[91] [92] [93] [94
+
+]
+Chapter 6.
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 4670.
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4699--4699
+[]\TU/lmtt/m/n/10 ##    carat cut       color clarity depth table price     x  
+   y     z[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4699--4699
+[]\TU/lmtt/m/n/10 ##    <dbl> <ord>     <ord> <ord>   <dbl> <dbl> <int> <dbl> <
+dbl> <dbl>[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4699--4699
+[]\TU/lmtt/m/n/10 ##  1 0.23  Ideal     E     SI2      61.5    55   326  3.95  
+3.98  2.43[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4699--4699
+[]\TU/lmtt/m/n/10 ##  2 0.21  Premium   E     SI1      59.8    61   326  3.89  
+3.84  2.31[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4699--4699
+[]\TU/lmtt/m/n/10 ##  3 0.23  Good      E     VS1      56.9    65   327  4.05  
+4.07  2.31[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4699--4699
+[]\TU/lmtt/m/n/10 ##  4 0.290 Premium   I     VS2      62.4    58   334  4.2   
+4.23  2.63[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4699--4699
+[]\TU/lmtt/m/n/10 ##  5 0.31  Good      J     SI2      63.3    58   335  4.34  
+4.35  2.75[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4699--4699
+[]\TU/lmtt/m/n/10 ##  6 0.24  Very Good J     VVS2     62.8    57   336  3.94  
+3.96  2.48[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4699--4699
+[]\TU/lmtt/m/n/10 ##  7 0.24  Very Good I     VVS1     62.3    57   336  3.95  
+3.98  2.47[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4699--4699
+[]\TU/lmtt/m/n/10 ##  8 0.26  Very Good H     SI1      61.9    55   337  4.07  
+4.11  2.53[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4699--4699
+[]\TU/lmtt/m/n/10 ##  9 0.22  Fair      E     VS2      65.1    61   337  3.87  
+3.78  2.49[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4699--4699
+[]\TU/lmtt/m/n/10 ## 10 0.23  Very Good H     VS1      59.4    61   338  4     
+4.05  2.39[] 
+ []
+
+
+Overfull \vbox (0.63495pt too high) detected at line 4710
+ []
+
+[95] [96] [97]
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4891--4891
+[]\TU/lmtt/m/n/10 ##    carat cut       color clarity depth table price     x  
+   y     z[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4891--4891
+[]\TU/lmtt/m/n/10 ##    <dbl> <ord>     <ord> <ord>   <dbl> <dbl> <int> <dbl> <
+dbl> <dbl>[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4891--4891
+[]\TU/lmtt/m/n/10 ##  1 0.23  Ideal     E     SI2      61.5    55   326  3.95  
+3.98  2.43[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4891--4891
+[]\TU/lmtt/m/n/10 ##  2 0.21  Premium   E     SI1      59.8    61   326  3.89  
+3.84  2.31[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4891--4891
+[]\TU/lmtt/m/n/10 ##  3 0.23  Good      E     VS1      56.9    65   327  4.05  
+4.07  2.31[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4891--4891
+[]\TU/lmtt/m/n/10 ##  4 0.290 Premium   I     VS2      62.4    58   334  4.2   
+4.23  2.63[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4891--4891
+[]\TU/lmtt/m/n/10 ##  5 0.31  Good      J     SI2      63.3    58   335  4.34  
+4.35  2.75[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4891--4891
+[]\TU/lmtt/m/n/10 ##  6 0.24  Very Good J     VVS2     62.8    57   336  3.94  
+3.96  2.48[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4891--4891
+[]\TU/lmtt/m/n/10 ##  7 0.24  Very Good I     VVS1     62.3    57   336  3.95  
+3.98  2.47[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4891--4891
+[]\TU/lmtt/m/n/10 ##  8 0.26  Very Good H     SI1      61.9    55   337  4.07  
+4.11  2.53[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4891--4891
+[]\TU/lmtt/m/n/10 ##  9 0.22  Fair      E     VS2      65.1    61   337  3.87  
+3.78  2.49[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4891--4891
+[]\TU/lmtt/m/n/10 ## 10 0.23  Very Good H     VS1      59.4    61   338  4     
+4.05  2.39[] 
+ []
+
+[98] [99] [100]
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5083--5083
+[]\TU/lmtt/m/n/10 ##    carat cut       color clarity depth table price     x  
+   y     z[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5083--5083
+[]\TU/lmtt/m/n/10 ##    <dbl> <ord>     <ord> <ord>   <dbl> <dbl> <int> <dbl> <
+dbl> <dbl>[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5083--5083
+[]\TU/lmtt/m/n/10 ##  1 0.23  Ideal     E     SI2      61.5    55   326  3.95  
+3.98  2.43[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5083--5083
+[]\TU/lmtt/m/n/10 ##  2 0.21  Premium   E     SI1      59.8    61   326  3.89  
+3.84  2.31[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5083--5083
+[]\TU/lmtt/m/n/10 ##  3 0.23  Good      E     VS1      56.9    65   327  4.05  
+4.07  2.31[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5083--5083
+[]\TU/lmtt/m/n/10 ##  4 0.290 Premium   I     VS2      62.4    58   334  4.2   
+4.23  2.63[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5083--5083
+[]\TU/lmtt/m/n/10 ##  5 0.31  Good      J     SI2      63.3    58   335  4.34  
+4.35  2.75[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5083--5083
+[]\TU/lmtt/m/n/10 ##  6 0.24  Very Good J     VVS2     62.8    57   336  3.94  
+3.96  2.48[] 
+ []
+
+[101]
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5083--5083
+[]\TU/lmtt/m/n/10 ##  7 0.24  Very Good I     VVS1     62.3    57   336  3.95  
+3.98  2.47[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5083--5083
+[]\TU/lmtt/m/n/10 ##  8 0.26  Very Good H     SI1      61.9    55   337  4.07  
+4.11  2.53[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5083--5083
+[]\TU/lmtt/m/n/10 ##  9 0.22  Fair      E     VS2      65.1    61   337  3.87  
+3.78  2.49[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5083--5083
+[]\TU/lmtt/m/n/10 ## 10 0.23  Very Good H     VS1      59.4    61   338  4     
+4.05  2.39[] 
+ []
+
+[102] [103] [104] [105]
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5458--5458
+[]\TU/lmtt/m/n/10 ##    carat cut       color clarity depth table price     x  
+   y     z[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5458--5458
+[]\TU/lmtt/m/n/10 ##    <dbl> <ord>     <ord> <ord>   <dbl> <dbl> <int> <dbl> <
+dbl> <dbl>[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5458--5458
+[]\TU/lmtt/m/n/10 ##  1 0.23  Ideal     E     SI2      61.5    55   326  3.95  
+3.98  2.43[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5458--5458
+[]\TU/lmtt/m/n/10 ##  2 0.21  Premium   E     SI1      59.8    61   326  3.89  
+3.84  2.31[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5458--5458
+[]\TU/lmtt/m/n/10 ##  3 0.23  Good      E     VS1      56.9    65   327  4.05  
+4.07  2.31[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5458--5458
+[]\TU/lmtt/m/n/10 ##  4 0.290 Premium   I     VS2      62.4    58   334  4.2   
+4.23  2.63[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5458--5458
+[]\TU/lmtt/m/n/10 ##  5 0.31  Good      J     SI2      63.3    58   335  4.34  
+4.35  2.75[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5458--5458
+[]\TU/lmtt/m/n/10 ##  6 0.24  Very Good J     VVS2     62.8    57   336  3.94  
+3.96  2.48[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5458--5458
+[]\TU/lmtt/m/n/10 ##  7 0.24  Very Good I     VVS1     62.3    57   336  3.95  
+3.98  2.47[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5458--5458
+[]\TU/lmtt/m/n/10 ##  8 0.26  Very Good H     SI1      61.9    55   337  4.07  
+4.11  2.53[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5458--5458
+[]\TU/lmtt/m/n/10 ##  9 0.22  Fair      E     VS2      65.1    61   337  3.87  
+3.78  2.49[] 
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 5458--5458
+[]\TU/lmtt/m/n/10 ## 10 0.23  Very Good H     VS1      59.4    61   338  4     
+4.05  2.39[] 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5495 ...m_{i=1}^{n}(price_i-\bar{price})^2}{n-1}
+                                                  \$, where 
+Here is how much of TeX's memory you used:
+ 21531 strings out of 493005
+ 398902 string characters out of 6134596
+ 507952 words of memory out of 5000000
+ 25210 multiletter control sequences out of 15000+600000
+ 16423 words of font info for 52 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 41i,6n,54p,10437b,456s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on Introduction-to-R,-Rstudio,-and-ggplot2.pdf (105 pages).
