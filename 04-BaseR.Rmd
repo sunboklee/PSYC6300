@@ -789,11 +789,42 @@ f7
 
 - You have the following responses of a five-point likert scale survey item: `x <- c("Agree", "Disagree", "Neutral", "Agree" ,"Agree", "Strongly disagree", "Neutral")`. Create an ordered factor for the **five** point likert scale responses (Notice that you don't have "Strongly agree" in `x`, but include "Strongly agree" in your factor level). 
 
+```{r}
+x <- c("Agree", "Disagree", "Neutral", "Agree" ,"Agree", "Strongly disagree", "Neutral")
+```
+
+```{r}
+# you may want to this
+factor(x, levels = c("Strongly disagree", "Disagree", "Neutral",  "Agree", "Strongly agree"))
+```
+
+```{r}
+# not this
+factor(x)
+```
+
+
 - Using the following character vector `x = c("male", "male", "female", "male", "female")`, create a factor with levels reversed from its default levels order. 
+
+```{r}
+x = c("male", "male", "female", "male", "female")
+```
+
+```{r}
+# by default, female become first
+factor(x)
+```
+
+```{r}
+# What I've asked you is to change the default alphabetical order using levels options. 
+factor(x, levels = c("male", "female"))
+```
+
 
 - Run the following code and explain what the code is doing. 
 
 ```{r}
+# I just wanted to introduce 'cut()` function
 set.seed(7)
 x <- rnorm(100)
 cut(x, breaks = quantile(x))
@@ -904,7 +935,24 @@ fit
 ```
 
 - Extract the coefficient of "Intercept" with indexing using a positive integer. 
+
+```{r}
+# fit$coefficient is a vector
+fit$coefficients
+```
+
+```{r}
+# So, we can subset the first element using the following expression
+fit$coefficients[1]
+```
+
+
 - Extract the coefficient of "Intercept" with indexing using a name. 
+```{r}
+# We can also use the name of element for indexing. 
+fit$coefficients["(Intercept)"]
+```
+
 
 ### Data frames
 
