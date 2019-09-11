@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Descriptive Statistics | R, Rstudio, and ggplot2</title>
+  <title>Chapter 4 Exercise | R, Rstudio, and ggplot2</title>
   <meta name="description" content="This is an introduction to R, Rstudio, and ggplot2" />
   <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Descriptive Statistics | R, Rstudio, and ggplot2" />
+  <meta property="og:title" content="Chapter 4 Exercise | R, Rstudio, and ggplot2" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Descriptive Statistics | R, Rstudio, and ggplot2" />
+  <meta name="twitter:title" content="Chapter 4 Exercise | R, Rstudio, and ggplot2" />
   
   <meta name="twitter:description" content="This is an introduction to R, Rstudio, and ggplot2" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introduction-to-ggplot2.html">
-<link rel="next" href="exercise.html">
+<link rel="prev" href="descriptive-statistics.html">
+<link rel="next" href="base-r.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -253,151 +253,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="descriptive-statistics" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Descriptive Statistics</h1>
-<div id="r-functions-for-descriptive-statistics" class="section level2">
-<h2><span class="header-section-number">3.1</span> R functions for descriptive statistics</h2>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="co"># compute mean</span></a>
-<a class="sourceLine" id="cb56-2" data-line-number="2"><span class="co"># we use $ to access `price` variable in the `diamonds` dataset </span></a>
-<a class="sourceLine" id="cb56-3" data-line-number="3"><span class="kw">mean</span>(diamonds<span class="op">$</span>price)</a></code></pre></div>
-<pre><code>## [1] 3932.8</code></pre>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="co"># compute median</span></a>
-<a class="sourceLine" id="cb58-2" data-line-number="2"><span class="kw">median</span>(diamonds<span class="op">$</span>price)</a></code></pre></div>
-<pre><code>## [1] 2401</code></pre>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1"><span class="co"># compute variance</span></a>
-<a class="sourceLine" id="cb60-2" data-line-number="2"><span class="kw">var</span>(diamonds<span class="op">$</span>price)</a></code></pre></div>
-<pre><code>## [1] 15915629</code></pre>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" data-line-number="1"><span class="co"># compute standard deviation</span></a>
-<a class="sourceLine" id="cb62-2" data-line-number="2"><span class="kw">sd</span>(diamonds<span class="op">$</span>price)</a></code></pre></div>
-<pre><code>## [1] 3989.44</code></pre>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" data-line-number="1"><span class="co"># summary of a data frame</span></a>
-<a class="sourceLine" id="cb64-2" data-line-number="2"><span class="kw">summary</span>(diamonds)</a></code></pre></div>
-<pre><code>##      carat               cut        color        clarity     
-##  Min.   :0.2000   Fair     : 1610   D: 6775   SI1    :13065  
-##  1st Qu.:0.4000   Good     : 4906   E: 9797   VS2    :12258  
-##  Median :0.7000   Very Good:12082   F: 9542   SI2    : 9194  
-##  Mean   :0.7979   Premium  :13791   G:11292   VS1    : 8171  
-##  3rd Qu.:1.0400   Ideal    :21551   H: 8304   VVS2   : 5066  
-##  Max.   :5.0100                     I: 5422   VVS1   : 3655  
-##                                     J: 2808   (Other): 2531  
-##      depth           table           price             x         
-##  Min.   :43.00   Min.   :43.00   Min.   :  326   Min.   : 0.000  
-##  1st Qu.:61.00   1st Qu.:56.00   1st Qu.:  950   1st Qu.: 4.710  
-##  Median :61.80   Median :57.00   Median : 2401   Median : 5.700  
-##  Mean   :61.75   Mean   :57.46   Mean   : 3933   Mean   : 5.731  
-##  3rd Qu.:62.50   3rd Qu.:59.00   3rd Qu.: 5324   3rd Qu.: 6.540  
-##  Max.   :79.00   Max.   :95.00   Max.   :18823   Max.   :10.740  
-##                                                                  
-##        y                z         
-##  Min.   : 0.000   Min.   : 0.000  
-##  1st Qu.: 4.720   1st Qu.: 2.910  
-##  Median : 5.710   Median : 3.530  
-##  Mean   : 5.735   Mean   : 3.539  
-##  3rd Qu.: 6.540   3rd Qu.: 4.040  
-##  Max.   :58.900   Max.   :31.800  
-## </code></pre>
-</div>
-<div id="qplot" class="section level2">
-<h2><span class="header-section-number">3.2</span> qplot()</h2>
-<p><code>qplot()</code>, short for <strong>quick plot</strong> is a function in the <code>ggplot2</code> package. qplot makes it easy to produce complex plots, often requiring several lines of code using other plotting systems, <strong>in one line</strong>.</p>
-</div>
-<div id="scatterplots" class="section level2">
-<h2><span class="header-section-number">3.3</span> Scatterplots</h2>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a></code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1"><span class="kw">qplot</span>(displ, hwy, <span class="dt">data =</span> mpg)</a></code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color =</span> class)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a></code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1"><span class="kw">qplot</span>(displ, hwy, <span class="dt">data =</span> mpg, <span class="dt">color =</span> class)</a></code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color =</span> class, <span class="dt">shape =</span> drv)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a></code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1"><span class="kw">qplot</span>(displ, hwy, <span class="dt">data =</span> mpg, <span class="dt">color =</span> class, <span class="dt">shape =</span> drv)</a></code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</a></code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1"><span class="kw">qplot</span>(displ, hwy, <span class="dt">data =</span> mpg, <span class="dt">geom =</span> <span class="kw">c</span>(<span class="st">&quot;point&quot;</span>, <span class="st">&quot;smooth&quot;</span>)) </a></code></pre></div>
-<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
-</div>
-<div id="histogram" class="section level2">
-<h2><span class="header-section-number">3.4</span> Histogram</h2>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>()</a></code></pre></div>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1"><span class="kw">qplot</span>(carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;histogram&quot;</span>)</a></code></pre></div>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">0.05</span>) <span class="op">+</span><span class="st"> </span><span class="kw">xlim</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span>))</a></code></pre></div>
-<pre><code>## Warning: Removed 32 rows containing non-finite values (stat_bin).</code></pre>
-<pre><code>## Warning: Removed 2 rows containing missing values (geom_bar).</code></pre>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1"><span class="kw">qplot</span>(carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;histogram&quot;</span>, <span class="dt">binwidth =</span> <span class="fl">0.05</span>, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">3</span>))</a></code></pre></div>
-<pre><code>## Warning: Removed 32 rows containing non-finite values (stat_bin).</code></pre>
-<pre><code>## Warning: Removed 2 rows containing missing values (geom_bar).</code></pre>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="kw">aes</span>(<span class="dt">x =</span> hwy, <span class="dt">fill =</span> drv)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>() </a></code></pre></div>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1"><span class="kw">qplot</span>(hwy, <span class="dt">data =</span> mpg, <span class="dt">geom =</span> <span class="st">&quot;histogram&quot;</span>, <span class="dt">fill =</span> drv)</a></code></pre></div>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
-</div>
-<div id="density-plots" class="section level2">
-<h2><span class="header-section-number">3.5</span> Density plots</h2>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat, <span class="dt">color =</span> color)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_density</span>() </a></code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-62-1.png" width="672" /></p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" data-line-number="1"><span class="kw">qplot</span>(carat, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;density&quot;</span>, <span class="dt">color =</span> color)</a></code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
-</div>
-<div id="barplots" class="section level2">
-<h2><span class="header-section-number">3.6</span> Barplots</h2>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> clarity)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>() </a></code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-64-1.png" width="672" /></p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" data-line-number="1"><span class="kw">qplot</span>(clarity, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;bar&quot;</span>)</a></code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> clarity, <span class="dt">fill =</span> cut)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>() </a></code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-66-1.png" width="672" /></p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb94-1" data-line-number="1"><span class="kw">qplot</span>(clarity, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;bar&quot;</span>, <span class="dt">fill =</span> cut)</a></code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
-</div>
-<div id="boxplots" class="section level2">
-<h2><span class="header-section-number">3.7</span> Boxplots</h2>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">y =</span> price)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>() </a></code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" data-line-number="1"><span class="kw">qplot</span>(<span class="dt">y =</span> price, <span class="dt">data =</span> diamonds, <span class="dt">geom =</span> <span class="st">&quot;boxplot&quot;</span>)</a></code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> cut, <span class="dt">y =</span> price)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>() </a></code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-70-1.png" width="672" /></p>
-</div>
-<div id="faceting" class="section level2">
-<h2><span class="header-section-number">3.8</span> Faceting</h2>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat, <span class="dt">y =</span> price)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">facet_grid</span>(cut <span class="op">~</span><span class="st"> </span>color)</a></code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="kw">qplot</span>(carat, price, <span class="dt">data =</span> diamonds, <span class="dt">facets =</span> cut <span class="op">~</span><span class="st"> </span>color)</a></code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-72-1.png" width="672" /></p>
-</div>
-<div id="the-corrplot-package" class="section level2">
-<h2><span class="header-section-number">3.9</span> The <code>corrplot</code> Package</h2>
+<div id="exercise" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Exercise</h1>
 <ul>
-<li><a href="https://cran.r-project.org/web/packages/corrplot/vignettes/corrplot-intro.html">https://cran.r-project.org/web/packages/corrplot/vignettes/corrplot-intro.html</a></li>
-<li>“The corrplot package is a graphical display of a <strong>correlation matrix</strong>, confidence interval. It also contains some algorithms to do matrix reordering. In addition, corrplot is good at details, including choosing color, text labels, color labels, layout, etc.”</li>
+<li>Exercise 1: <code>midwest</code> is a dataset in <code>ggplot2</code>, and contains demographic information of midwest counties. Replicate the following scatterplot as close as you can. The variable for the x-axis, y-axis, color aesthetic, size aesthetic are <code>area</code>, <code>poptotal</code>, <code>state</code>, and <code>popdensity</code>.</li>
 </ul>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" data-line-number="1"><span class="kw">library</span>(corrplot)</a></code></pre></div>
-<pre><code>## corrplot 0.84 loaded</code></pre>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" data-line-number="1"><span class="kw">corrplot.mixed</span>(<span class="kw">cor</span>(mtcars))</a></code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-74-1.png" width="672" /></p>
+<p><img src="practice1.png" /></p>
+<ul>
+<li>Excercise 2: Replicate the following barplot using the <code>mpg</code> dataset. Use <code>theme(axis.text.x = element_text(angle=65, vjust=0.6))</code>. Check why we need this theme by plotting with and without this theme. You also need <code>width = 0.5</code> option in a geom to have more space between bar.</li>
+</ul>
+<p><img src="practice2.png" /></p>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="introduction-to-ggplot2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="exercise.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="descriptive-statistics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="base-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -427,7 +301,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-DescriptiveStatistics.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-Exercises.Rmd",
 "text": "Edit"
 },
 "history": {

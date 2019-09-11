@@ -8,15 +8,6 @@
 >
 > --- @ggplot2
 
-## The components of `ggplot2`
-* Data
-* Geometric objects (**geom** for short)
-* Aesthetic mappings
-* Statistical transformations (**stats** for short)
-* Scales
-* A coordinate system (**coord** for short)
-* A faceting 
-
 ## Installing and laoding `ggplot2`
 * Install the `ggplot2` package (or any package)
     * using `install.packages()` function
@@ -34,7 +25,18 @@ library(ggplot2)
 ```
 
 
-## Data
+## Graphical components of `ggplot2`
+* Data
+* Geometric objects (**geom** for short)
+* Aesthetic mappings
+* Statistical transformations (**stats** for short)
+* Scales
+* A coordinate system (**coord** for short)
+* A faceting 
+
+
+
+### Data
 
 * "The **data** are what you want to visualise." [@ggplot2]
 * You may need **data transformation** (e.g., selecting variables and rows, creating new variables, summarizing variables) from your raw data. 
@@ -47,7 +49,7 @@ diamonds
 ```
 
 
-## Geometric objects (**geoms**)
+### Geometric objects (**geoms**)
 
 * "Geometric objects, geoms for short, represent **what you actually see** on the plot: **points**, **lines**, **polygons**, etc." [@ggplot2]
 * In `ggplot2`, we add a new layer representing a geometric object to a plot using a `geom_*()` or `stat_*()` function. 
@@ -71,7 +73,7 @@ ggplot(data = diamonds, aes(x = carat, y = price)) + geom_point() + geom_smooth(
 ```
 
 
-## Exercise 
+**Exercise** 
 
 * Create code chunks (gray area in a rmd file) using a short cut key (Mac: Command + Option + I; Windows: Ctrl + Alt + I). 
 
@@ -81,7 +83,7 @@ ggplot(data = diamonds, aes(x = carat, y = price)) + geom_point() + geom_smooth(
 
 * Using the `mtcars` data, plot the scatter plot between `mpg` (miles per gallon: y axis) and `disp` (displacement: x axis) with a smoothed line. 
 
-## Aesthetic mappings
+### Aesthetic mappings
 
 * "A set of aesthetic mappings describe how **variables in the data** are mapped to **aesthetic properties** of the layer" [@ggplot2] 
 
@@ -113,7 +115,7 @@ ggplot(data = diamonds, aes(x = carat, y = price)) + geom_point(color = "blue")
 ```
 
 
-## Exercise 
+**Exercise** 
 
 * `mpg` is similar to `mtcars` but is a built-in tibble in `ggplot2`. 1) Plot `hwy` (mile per gallon: y axis) against `displ` (engine displancement: x axis), 2) Given the plot from 1), map the `class` variable to color, shape, alpha, and size aesthetics. 
 
@@ -140,7 +142,7 @@ x    |y    |color
 2.0  |28   |4
 
 
-## Scales 
+### Scales 
 
 * "The scales map values in the data space to values in an aesthetic space, whether it be colour, or size, or shape. Scales draw a legend or axes, which provide an inverse mapping to make it possible to read the original data values from the graph." [@ggplot2]
 
@@ -229,7 +231,7 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color=cty)) + geom_point() 
 
 
 
-## Statistical transformations (**stats** for short)
+### Statistical transformations (**stats** for short)
 
 ```{r}
 # historam shows the distribution of a single variable. 
@@ -287,7 +289,7 @@ s + geom_bar(position = "dodge")
 s + geom_bar(position = "fill")
 ```
 
-## A faceting 
+### A faceting 
 
 * "A faceting specification describes how to break up the data into **subsets** and how to display those subsets as **small multiples**. This is also known as **conditioning** or latticing/trellising." [@ggplot2]
 
@@ -304,7 +306,7 @@ ggplot(data = diamonds, aes(x = carat)) + geom_histogram() + facet_grid(. ~ colo
 ```
 
 
-## Exercise
+**Exercise**
 
 * Using `mpg` data, plot `hwy` (y) vs `cty` (x). 
 
@@ -315,7 +317,7 @@ ggplot(data = diamonds, aes(x = carat)) + geom_histogram() + facet_grid(. ~ colo
 * facet into rows using `cyl` and columns using `year`
 
 
-## Grouping
+### Grouping
 
 * "In many situations, you want to **separate your data into groups**, but render them in the same way. When looking at the data in aggregate you want to be able to distinguish individual subjects, but not identify them. This is common in **longitudinal studies** with many subjects, where the plots are often descriptively called spaghetti plots." [@ggplot2]
 
@@ -353,7 +355,7 @@ ggplot(Oxboys, aes(age, height, group = Subject)) + geom_line() + geom_smooth(ae
 ggplot(Oxboys, aes(age, height)) + geom_line() + facet_wrap(~Subject)
 ```
 
-## Themes
+### Themes
 
 "Themes are a powerful way to **customize** the non-data components of your plots: i.e. titles, labels, fonts, background, gridlines, and legends." More details are available at [https://ggplot2.tidyverse.org/reference/theme.html](https://ggplot2.tidyverse.org/reference/theme.html)
 
@@ -371,7 +373,7 @@ ggplot(mpg, aes(x = hwy, y = cty)) + geom_point() + theme(panel.background = ele
 ggplot(mpg, aes(x = hwy, y = cty)) + geom_point() + theme_classic()
 ```
 
-## Save a ggplot
+## Saving a ggplot
 
 * `ggsave()` is a convenient function for saving a plot. It defaults to saving the **last plot** that you displayed. 
 
