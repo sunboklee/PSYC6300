@@ -24,7 +24,7 @@
 <meta name="author" content="Sunbok Lee" />
 
 
-<meta name="date" content="2019-09-04" />
+<meta name="date" content="2019-09-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,41 +50,66 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -112,20 +137,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#r-topics-covered-in-this-course"><i class="fa fa-check"></i><b>1.6</b> R topics covered in this course</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html"><i class="fa fa-check"></i><b>2</b> Introduction to <code>ggplot2</code></a><ul>
-<li class="chapter" data-level="2.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#what-is-ggplot2"><i class="fa fa-check"></i><b>2.1</b> What is <code>ggplot2</code></a></li>
-<li class="chapter" data-level="2.2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#data"><i class="fa fa-check"></i><b>2.2</b> Data</a></li>
-<li class="chapter" data-level="2.3" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#geometric-objects-geoms"><i class="fa fa-check"></i><b>2.3</b> Geometric objects (<strong>geoms</strong>)</a></li>
-<li class="chapter" data-level="2.4" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#exercise"><i class="fa fa-check"></i><b>2.4</b> Exercise</a></li>
-<li class="chapter" data-level="2.5" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#aesthetic-mappings"><i class="fa fa-check"></i><b>2.5</b> Aesthetic mappings</a></li>
-<li class="chapter" data-level="2.6" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#exercise-1"><i class="fa fa-check"></i><b>2.6</b> Exercise</a></li>
-<li class="chapter" data-level="2.7" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#scales"><i class="fa fa-check"></i><b>2.7</b> Scales</a></li>
-<li class="chapter" data-level="2.8" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#statistical-transformations-stats-for-short"><i class="fa fa-check"></i><b>2.8</b> Statistical transformations (<strong>stats</strong> for short)</a></li>
-<li class="chapter" data-level="2.9" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#a-faceting"><i class="fa fa-check"></i><b>2.9</b> A faceting</a></li>
-<li class="chapter" data-level="2.10" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#exercise-2"><i class="fa fa-check"></i><b>2.10</b> Exercise</a></li>
-<li class="chapter" data-level="2.11" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#grouping"><i class="fa fa-check"></i><b>2.11</b> Grouping</a></li>
-<li class="chapter" data-level="2.12" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#themes"><i class="fa fa-check"></i><b>2.12</b> Themes</a></li>
-<li class="chapter" data-level="2.13" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#save-a-ggplot"><i class="fa fa-check"></i><b>2.13</b> Save a ggplot</a></li>
-<li class="chapter" data-level="2.14" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#more-resources"><i class="fa fa-check"></i><b>2.14</b> More resources</a></li>
+<li class="chapter" data-level="2.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#what-is-ggplot2"><i class="fa fa-check"></i><b>2.1</b> What is <code>ggplot2</code>?</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#the-components-of-ggplot2"><i class="fa fa-check"></i><b>2.2</b> The components of <code>ggplot2</code></a></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#installing-and-laoding-ggplot2"><i class="fa fa-check"></i><b>2.3</b> Installing and laoding <code>ggplot2</code></a></li>
+<li class="chapter" data-level="2.4" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#data"><i class="fa fa-check"></i><b>2.4</b> Data</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#geometric-objects-geoms"><i class="fa fa-check"></i><b>2.5</b> Geometric objects (<strong>geoms</strong>)</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#exercise"><i class="fa fa-check"></i><b>2.6</b> Exercise</a></li>
+<li class="chapter" data-level="2.7" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#aesthetic-mappings"><i class="fa fa-check"></i><b>2.7</b> Aesthetic mappings</a></li>
+<li class="chapter" data-level="2.8" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#exercise-1"><i class="fa fa-check"></i><b>2.8</b> Exercise</a></li>
+<li class="chapter" data-level="2.9" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#scales"><i class="fa fa-check"></i><b>2.9</b> Scales</a></li>
+<li class="chapter" data-level="2.10" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#statistical-transformations-stats-for-short"><i class="fa fa-check"></i><b>2.10</b> Statistical transformations (<strong>stats</strong> for short)</a></li>
+<li class="chapter" data-level="2.11" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#a-faceting"><i class="fa fa-check"></i><b>2.11</b> A faceting</a></li>
+<li class="chapter" data-level="2.12" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#exercise-2"><i class="fa fa-check"></i><b>2.12</b> Exercise</a></li>
+<li class="chapter" data-level="2.13" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#grouping"><i class="fa fa-check"></i><b>2.13</b> Grouping</a></li>
+<li class="chapter" data-level="2.14" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#themes"><i class="fa fa-check"></i><b>2.14</b> Themes</a></li>
+<li class="chapter" data-level="2.15" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#save-a-ggplot"><i class="fa fa-check"></i><b>2.15</b> Save a ggplot</a></li>
+<li class="chapter" data-level="2.16" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#more-resources"><i class="fa fa-check"></i><b>2.16</b> More resources</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>3</b> Descriptive Statistics</a><ul>
 <li class="chapter" data-level="3.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#r-functions-for-descriptive-statistics"><i class="fa fa-check"></i><b>3.1</b> R functions for descriptive statistics</a></li>
@@ -231,16 +258,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="introduction-to-ggplot2" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> Introduction to <code>ggplot2</code></h1>
 <div id="what-is-ggplot2" class="section level2">
-<h2><span class="header-section-number">2.1</span> What is <code>ggplot2</code></h2>
+<h2><span class="header-section-number">2.1</span> What is <code>ggplot2</code>?</h2>
 <ul>
-<li>The <code>ggplot2</code> package <span class="citation">(Wickham <a href="#ref-ggplot2">2016</a>)</span> was developed to build a graphic from <strong>few graphical components</strong> (e.g., data, coordinate systems, geometric objects, aesthetics, facets, themes) based on the <strong>grammar of graphics</strong>.</li>
+<li>The <code>ggplot2</code> package <span class="citation">(Wickham <a href="#ref-ggplot2">2016</a>)</span> was developed to create a graphic by combining <strong>few graphical components</strong> (e.g., data, coordinate systems, geometric objects, aesthetics, facets, themes) based on the <strong>grammar of graphics</strong>.</li>
 </ul>
 <blockquote>
 <p>“Wilkinson (2005) created the <strong>grammar of graphics</strong> to describe the deep features that underlie all statistical graphics. The grammar of graphics is an answer to a question: <strong>what is a statistical graphic?</strong> The <strong>layered grammar of graphics</strong> (Wickham, 2009) builds on Wilkinson’s grammar, focussing on the primacy of <strong>layers</strong> and adapting it for embedding within R. In brief, the grammar tells us that a statistical graphic is a <strong>mapping</strong> from <strong>data</strong> to <strong>aesthetic attributes (colour, shape, size) of geometric objects (points, lines, bars)</strong>. The plot may also contain <strong>statistical transformations</strong> of the data and is drawn on a specific <strong>coordinate system</strong>. <strong>Faceting</strong> can be used to generate the same plot for different subsets of the dataset. It is the combination of these independent components that make up a graphic.”</p>
 <p>— <span class="citation">Wickham (<a href="#ref-ggplot2">2016</a>)</span></p>
 </blockquote>
-<ul>
-<li>The components of <code>ggplot2</code>
+</div>
+<div id="the-components-of-ggplot2" class="section level2">
+<h2><span class="header-section-number">2.2</span> The components of <code>ggplot2</code></h2>
 <ul>
 <li>Data</li>
 <li>Geometric objects (<strong>geom</strong> for short)</li>
@@ -249,29 +277,34 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Scales</li>
 <li>A coordinate system (<strong>coord</strong> for short)</li>
 <li>A faceting</li>
-</ul></li>
-<li>Install the <code>tidyverse</code> package (or any package)
+</ul>
+</div>
+<div id="installing-and-laoding-ggplot2" class="section level2">
+<h2><span class="header-section-number">2.3</span> Installing and laoding <code>ggplot2</code></h2>
+<ul>
+<li>Install the <code>ggplot2</code> package (or any package)
 <ul>
 <li>using <code>install.packages()</code> function</li>
 <li>using the <code>Packages</code> pane</li>
 </ul></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</a></code></pre></div>
 <ul>
 <li>Load the <code>tidyverse</code> package onto memory</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># We need to load a package whenever we use it</span>
-<span class="kw">suppressMessages</span>(<span class="kw">library</span>(tidyverse)) </code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># We need to load a package whenever we use it</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">library</span>(ggplot2)</a></code></pre></div>
 </div>
 <div id="data" class="section level2">
-<h2><span class="header-section-number">2.2</span> Data</h2>
+<h2><span class="header-section-number">2.4</span> Data</h2>
 <ul>
-<li>“The <strong>data</strong> are what you want to visualise and a set of <strong>aesthetic mappings</strong> describe how <strong>variables in the data</strong> are mapped to <strong>aesthetic attributes</strong> that you can perceive.” <span class="citation">(Wickham <a href="#ref-ggplot2">2016</a>)</span></li>
+<li>“The <strong>data</strong> are what you want to visualise.” <span class="citation">(Wickham <a href="#ref-ggplot2">2016</a>)</span></li>
+<li>You may need <strong>data transformation</strong> (e.g., selecting variables and rows, creating new variables, summarizing variables) from your raw data.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># diamonds is a built-in data in ggplot2</span>
-<span class="co"># ?diamonds display the help document for data </span>
-<span class="co"># tibble is a datastructure in tidyverse </span>
-diamonds</code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co"># diamonds is a built-in data in ggplot2</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co"># ?diamonds display the help document for data </span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co"># tibble is a datastructure in tidyverse </span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">diamonds</a></code></pre></div>
 <pre><code>## # A tibble: 53,940 x 10
 ##    carat cut       color clarity depth table price     x     y     z
 ##    &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -288,57 +321,71 @@ diamonds</code></pre></div>
 ## # … with 53,930 more rows</code></pre>
 </div>
 <div id="geometric-objects-geoms" class="section level2">
-<h2><span class="header-section-number">2.3</span> Geometric objects (<strong>geoms</strong>)</h2>
+<h2><span class="header-section-number">2.5</span> Geometric objects (<strong>geoms</strong>)</h2>
 <ul>
 <li>“Geometric objects, geoms for short, represent <strong>what you actually see</strong> on the plot: <strong>points</strong>, <strong>lines</strong>, <strong>polygons</strong>, etc.” <span class="citation">(Wickham <a href="#ref-ggplot2">2016</a>)</span></li>
+<li>In <code>ggplot2</code>, we add a new layer representing a geometric object to a plot using a <code>geom_*()</code> or <code>stat_*()</code> function.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ggplot() initializes a ggplot object.</span>
-<span class="co"># it can be used to specify 1) a dataset, and 2) aesthetic mapping</span>
-<span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat, <span class="dt">y =</span> price))</code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co"># ggplot() initializes a ggplot object.</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co"># In ggplot(), you need to specify 1) a dataset, and 2) aesthetic mapping. </span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co"># No geometric object yet. </span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat, <span class="dt">y =</span> price))</a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># geom_points() adds a new layer to a plot by drawing points to produce a scatter plot </span>
-<span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat, <span class="dt">y =</span> price)) +<span class="st"> </span><span class="kw">geom_point</span>()</code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co"># geom_points() adds a new layer to a plot by drawing points to produce a scatter plot </span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat, <span class="dt">y =</span> price)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># geom_smooth() adds an additional layer to the plot by drawing a smoothed line to capture the trend in the scatterplot</span>
-<span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat, <span class="dt">y =</span> price)) +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_smooth</span>()</code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># geom_smooth() adds an additional layer to the plot by drawing a smoothed line to capture the trend in the scatterplot</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat, <span class="dt">y =</span> price)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>()</a></code></pre></div>
 <pre><code>## `geom_smooth()` using method = &#39;gam&#39; and formula &#39;y ~ s(x, bs = &quot;cs&quot;)&#39;</code></pre>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 <div id="exercise" class="section level2">
-<h2><span class="header-section-number">2.4</span> Exercise</h2>
+<h2><span class="header-section-number">2.6</span> Exercise</h2>
 <ul>
-<li><p>typing <code>mtcars</code> in your console will display the content of the <code>mtcars</code> dataset. How can we display the help document for the <code>mtcars</code> data?</p></li>
-<li><p>type <code>head(mtcars)</code>. What did <code>head()</code> do? Check the help document of <code>head()</code> (<code>mtcar</code> is a dataframe in base R, whereas the <code>diamonds</code> is a tibble in <code>tidyverse</code>).</p></li>
+<li><p>Create code chunks (gray area in a rmd file) using a short cut key (Mac: Command + Option + I; Windows: Ctrl + Alt + I).</p></li>
+<li><p>Typing <code>mtcars</code> in your code chunks will display the content of the <code>mtcars</code> dataset. How can we display the help document for the <code>mtcars</code> data?</p></li>
+<li><p>Type <code>head(mtcars)</code>. What did <code>head()</code> do? Check the help document of <code>head()</code> (<code>mtcar</code> is a dataframe in base R, whereas the <code>diamonds</code> is a tibble in <code>tidyverse</code>).</p></li>
 <li><p>Using the <code>mtcars</code> data, plot the scatter plot between <code>mpg</code> (miles per gallon: y axis) and <code>disp</code> (displacement: x axis) with a smoothed line.</p></li>
 </ul>
 </div>
 <div id="aesthetic-mappings" class="section level2">
-<h2><span class="header-section-number">2.5</span> Aesthetic mappings</h2>
+<h2><span class="header-section-number">2.7</span> Aesthetic mappings</h2>
 <ul>
 <li><p>“A set of aesthetic mappings describe how <strong>variables in the data</strong> are mapped to <strong>aesthetic properties</strong> of the layer” <span class="citation">(Wickham <a href="#ref-ggplot2">2016</a>)</span></p></li>
-<li><p>“To describe the way that <strong>variables in the data</strong> are mapped to <strong>things that we can perceive on the plot (the “aesthetics”)</strong>, we use the <code>aes</code> function. The <code>aes</code> function takes a list of aesthetic-variable pairs like these: <code>aes(x = weight, y = height, colour = age)</code>. Here we are mapping x-position to <code>weight</code>, y-position to <code>height</code> and colour to <code>age</code>. The first two arguments can be left without names, in which case they correspond to the x and y variables.” <span class="citation">(Wickham <a href="#ref-ggplot2">2016</a>)</span></p></li>
+<li><p>“To describe the way that <strong>variables in the data</strong> are mapped to <strong>things that we can perceive on the plot (the &quot;aesthetics&quot;)</strong>, we use the <code>aes</code> function. The <code>aes</code> function takes a list of <strong>aesthetic-variable pairs</strong> like these: <code>aes(x = weight, y = height, colour = age)</code>. Here we are mapping x-position to <code>weight</code>, y-position to <code>height</code> and colour to <code>age</code>. The first two arguments can be left without names, in which case they correspond to the x and y variables.” <span class="citation">(Wickham <a href="#ref-ggplot2">2016</a>)</span></p></li>
+<li>Aesthetic properties include
+<ul>
+<li><code>position</code> (e.g., x and y coordinates)</li>
+<li><code>color</code> (outside color)</li>
+<li><code>fill</code> (inside color)</li>
+<li><code>shape</code> (of points; e.g., circle, triangle)</li>
+<li><code>linetype</code> (e.g., solid line, dotted line)</li>
+<li><code>size</code></li>
+<li><code>alpha</code> (transparency)</li>
+</ul></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># color = color maps the variable &#39;color` in the dataset to the color aesthetics of points to encode further information in the graphic. </span>
-<span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat, <span class="dt">y =</span> price, <span class="dt">color =</span> color)) +<span class="st"> </span><span class="kw">geom_point</span>()</code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="co"># `color = color` maps the variable `color` in the dataset to the `color` aesthetics of points to encode further information in the graphic. </span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat, <span class="dt">y =</span> price, <span class="dt">color =</span> color)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># shape = cut maps the variable &#39;cut` in the dataset to the shape aesthetics of points to encode further information in the graphic. </span>
-<span class="co"># the graphic is not so informative because points are overplotted. Sometimes, facetting may handle overplotting </span>
-<span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat, <span class="dt">y =</span> price, <span class="dt">shape =</span> cut)) +<span class="st"> </span><span class="kw">geom_point</span>()</code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># `shape = cut` maps the `shape` aesthetics of points to the variable `cut` in the dataset to encode further information in the graphic. </span></a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="co"># Note that the graphic is not so informative because points are overplotted. Sometimes, facetting may handle overplotting.  </span></a>
+<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat, <span class="dt">y =</span> price, <span class="dt">shape =</span> cut)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a></code></pre></div>
 <pre><code>## Warning: Using shapes for an ordinal variable is not advised</code></pre>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat, <span class="dt">y =</span> price)) +<span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="co"># We can set aesthetic properties to a constant outside aes() function. </span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat, <span class="dt">y =</span> price)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>)</a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 </div>
 <div id="exercise-1" class="section level2">
-<h2><span class="header-section-number">2.6</span> Exercise</h2>
+<h2><span class="header-section-number">2.8</span> Exercise</h2>
 <ul>
 <li><p><code>mpg</code> is similar to <code>mtcars</code> but is a built-in tibble in <code>ggplot2</code>. 1) Plot <code>hwy</code> (mile per gallon: y axis) against <code>displ</code> (engine displancement: x axis), 2) Given the plot from 1), map the <code>class</code> variable to color, shape, alpha, and size aesthetics.</p></li>
 <li><p>Explain what happens.</p></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color=</span>drv)) +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color=</span>drv)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>)</a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <ul>
-<li>This is what happens when mapping <code>hyw</code>, <code>displ</code>, and <code>cyl</code> to <code>x</code>, <code>y</code>, and <code>color</code> aesthetics. R creates a new dataset that contains all the data to be displayed on the plot.</li>
+<li>This is what happens when mapping <code>x</code>, <code>y</code>, and <code>color</code> aesthetics to <code>hyw</code>, <code>displ</code>, and <code>cyl</code> variables: R creates a new dataset that contains all the data to be displayed on the plot.</li>
 </ul>
 <table>
 <thead>
@@ -403,111 +450,182 @@ diamonds</code></pre></div>
 </table>
 </div>
 <div id="scales" class="section level2">
-<h2><span class="header-section-number">2.7</span> Scales</h2>
+<h2><span class="header-section-number">2.9</span> Scales</h2>
 <ul>
-<li><p>In the previous table, computers don’t know how to display colors based on 4, 6, … Computers need a a hexadecimal code for colors such as <code>FF6C91</code>. The mapping from the data to the final values that computers can use to display aesthetics is called a scale.</p></li>
 <li><p>“The scales map values in the data space to values in an aesthetic space, whether it be colour, or size, or shape. Scales draw a legend or axes, which provide an inverse mapping to make it possible to read the original data values from the graph.” <span class="citation">(Wickham <a href="#ref-ggplot2">2016</a>)</span></p></li>
-<li><p><code>scale_x_continuous()</code> and <code>scale_y_continuous()</code> are the default scales for continuous x and y aesthetics: <a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="uri">https://ggplot2.tidyverse.org/reference/scale_continuous.html</a>.</p></li>
+<li><p>In the previous table, computers don’t know how to display colors based on 4, 6, … Computers need a hexadecimal code for colors such as <code>FF6C91</code>. The mapping from the data to the final values that computers can use to display aesthetics is called <strong>a scale</strong>. In this sense, <strong>a scale controls aesthetic mapping</strong> from data to aesthetics. To control the mapping, use a custom scale using <code>scale_*()</code> functions.</p></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(displ, hwy)) +<span class="st"> </span><span class="kw">geom_point</span>()
-p1</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th>x</th>
+<th>y</th>
+<th>color</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1.8</td>
+<td>29</td>
+<td>#FF6C91</td>
+</tr>
+<tr class="even">
+<td>1.8</td>
+<td>29</td>
+<td>#FF6C91</td>
+</tr>
+<tr class="odd">
+<td>2.0</td>
+<td>31</td>
+<td>#FF6C91</td>
+</tr>
+<tr class="even">
+<td>2.0</td>
+<td>30</td>
+<td>#FF6C91</td>
+</tr>
+<tr class="odd">
+<td>2.8</td>
+<td>26</td>
+<td>#00C1A9</td>
+</tr>
+<tr class="even">
+<td>2.8</td>
+<td>26</td>
+<td>#00C1A9</td>
+</tr>
+<tr class="odd">
+<td>3.1</td>
+<td>27</td>
+<td>#00C1A9</td>
+</tr>
+<tr class="even">
+<td>1.8</td>
+<td>26</td>
+<td>#FF6C91</td>
+</tr>
+<tr class="odd">
+<td>1.8</td>
+<td>25</td>
+<td>#FF6C91</td>
+</tr>
+<tr class="even">
+<td>2.0</td>
+<td>28</td>
+<td>#FF6C91</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>e.g., <code>scale_x_continuous()</code> and <code>scale_y_continuous()</code> allow us to change the default scales for continuous <code>x</code> and <code>y</code> aesthetics: <a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">https://ggplot2.tidyverse.org/reference/scale_continuous.html</a>.</li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">p1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(displ, hwy)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">p1</a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># change the axis labels</span>
-p1 +<span class="st"> </span><span class="kw">scale_x_continuous</span>(<span class="st">&quot;Engine displacement (L)&quot;</span>) +
-<span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="st">&quot;Highway MPG&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="co"># change the axis labels</span></a>
+<a class="sourceLine" id="cb15-2" data-line-number="2">p1 <span class="op">+</span><span class="st"> </span><span class="kw">scale_x_continuous</span>(<span class="st">&quot;Engine displacement (L)&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="st">&quot;Highway MPG&quot;</span>)</a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># also use the short-cut labs()</span>
-p1 +<span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Engine displacement (L)&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Highway MPG&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="co"># also use the short-cut labs()</span></a>
+<a class="sourceLine" id="cb16-2" data-line-number="2">p1 <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Engine displacement (L)&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Highway MPG&quot;</span>)</a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># modify the axis limits</span>
-p1 +<span class="st"> </span><span class="kw">scale_x_continuous</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">6</span>))</code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="co"># modify the axis limits</span></a>
+<a class="sourceLine" id="cb17-2" data-line-number="2">p1 <span class="op">+</span><span class="st"> </span><span class="kw">scale_x_continuous</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">6</span>))</a></code></pre></div>
 <pre><code>## Warning: Removed 27 rows containing missing values (geom_point).</code></pre>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># use the short hand functions `xlim()` and `ylim()`</span>
-p1 +<span class="st"> </span><span class="kw">xlim</span>(<span class="dv">2</span>, <span class="dv">6</span>)</code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="co"># use the short hand functions `xlim()` and `ylim()`</span></a>
+<a class="sourceLine" id="cb19-2" data-line-number="2">p1 <span class="op">+</span><span class="st"> </span><span class="kw">xlim</span>(<span class="dv">2</span>, <span class="dv">6</span>)</a></code></pre></div>
 <pre><code>## Warning: Removed 27 rows containing missing values (geom_point).</code></pre>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#  choose where the ticks appear</span>
-p1 +<span class="st"> </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>))</code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="co">#  choose where the ticks appear</span></a>
+<a class="sourceLine" id="cb21-2" data-line-number="2">p1 <span class="op">+</span><span class="st"> </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>))</a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#  choose your own labels</span>
-p1 +<span class="st"> </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>), <span class="dt">label =</span> <span class="kw">c</span>(<span class="st">&quot;two&quot;</span>, <span class="st">&quot;four&quot;</span>, <span class="st">&quot;six&quot;</span>))</code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="co">#  choose your own labels</span></a>
+<a class="sourceLine" id="cb22-2" data-line-number="2">p1 <span class="op">+</span><span class="st"> </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>), <span class="dt">label =</span> <span class="kw">c</span>(<span class="st">&quot;two&quot;</span>, <span class="st">&quot;four&quot;</span>, <span class="st">&quot;six&quot;</span>))</a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color=</span>drv)) +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>) +<span class="st"> </span><span class="kw">labs</span>(<span class="dt">title =</span><span class="st">&quot;MPG vs Engine size&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Engine size&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;MPG&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color=</span>drv)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">title =</span><span class="st">&quot;MPG vs Engine size&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Engine size&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;MPG&quot;</span>)</a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create your own discrete scale</span>
-<span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color=</span>drv)) +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>) +<span class="st"> </span><span class="kw">labs</span>(<span class="dt">title =</span><span class="st">&quot;MPG vs Engine size&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Engine size&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;MPG&quot;</span>) +<span class="st"> </span><span class="kw">scale_colour_manual</span>(<span class="dt">name =</span> <span class="st">&quot;Drive&quot;</span>, <span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;lightpink&quot;</span>, <span class="st">&quot;darkseagreen&quot;</span>, <span class="st">&quot;lightblue&quot;</span>))</code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="co"># Create your own discrete scale</span></a>
+<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color=</span>drv)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">title =</span><span class="st">&quot;MPG vs Engine size&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Engine size&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;MPG&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">scale_colour_manual</span>(<span class="dt">name =</span> <span class="st">&quot;Drive&quot;</span>, <span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;lightpink&quot;</span>, <span class="st">&quot;darkseagreen&quot;</span>, <span class="st">&quot;lightblue&quot;</span>))</a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color=</span>cty)) +<span class="st"> </span><span class="kw">geom_point</span>() </code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color=</span>cty)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() </a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color=</span>cty)) +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">scale_colour_gradient</span>(<span class="dt">name =</span> <span class="st">&quot;City MPG&quot;</span>, <span class="dt">low =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">high =</span> <span class="st">&quot;blue&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color=</span>cty)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">scale_colour_gradient</span>(<span class="dt">name =</span> <span class="st">&quot;City MPG&quot;</span>, <span class="dt">low =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">high =</span> <span class="st">&quot;blue&quot;</span>)</a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 <ul>
-<li><p>For more details about scales, see <a href="https://ggplot2.tidyverse.org/reference/" class="uri">https://ggplot2.tidyverse.org/reference/</a>.</p></li>
-<li><p>Colors in R: <a href="http://www.sthda.com/english/wiki/colors-in-r" class="uri">http://www.sthda.com/english/wiki/colors-in-r</a></p></li>
+<li><p>For more details about scales, see <a href="https://ggplot2.tidyverse.org/reference/">https://ggplot2.tidyverse.org/reference/</a>.</p></li>
+<li><p>Colors in R: <a href="http://www.sthda.com/english/wiki/colors-in-r">http://www.sthda.com/english/wiki/colors-in-r</a></p></li>
 </ul>
 </div>
 <div id="statistical-transformations-stats-for-short" class="section level2">
-<h2><span class="header-section-number">2.8</span> Statistical transformations (<strong>stats</strong> for short)</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># historam shows the distribution of a single variable. </span>
-<span class="co"># where does count come from? </span>
-<span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat)) +<span class="st"> </span><span class="kw">geom_histogram</span>()</code></pre></div>
+<h2><span class="header-section-number">2.10</span> Statistical transformations (<strong>stats</strong> for short)</h2>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="co"># historam shows the distribution of a single variable. </span></a>
+<a class="sourceLine" id="cb27-2" data-line-number="2"><span class="co"># where does the `count` in the plot come from? </span></a>
+<a class="sourceLine" id="cb27-3" data-line-number="3"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>()</a></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 <ul>
 <li><p>“Statistical transformations, <strong>stats</strong> for short, summarise data in many useful ways. For example, binning and counting observations to create a histogram, or summarising a 2d relationship with a linear model. Stats are optional, but very useful.” <span class="citation">(Wickham <a href="#ref-ggplot2">2016</a>)</span></p></li>
 <li>How <code>geom_histogram()</code> works?
 <ul>
-<li>“A stat takes a dataset as input and returns a dataset as output, and so a stat can add new variables to the original dataset. It is possible to map aesthetics to these new variables. For example, <code>stat_bin</code>, the statistic used to make histograms, produces the following variables:
+<li>&quot;A stat takes a dataset as input and returns a dataset as output, and so a stat can add new variables to the original dataset. It is possible to map aesthetics to these new variables. For example, <code>stat_bin</code>, the statistic used to make histograms, produces the following variables:
 <ul>
 <li><code>count</code>, the number of observations in each bin</li>
-<li><code>density</code>, the density of observations in each bin (percentage of total / bar width)</li>
+<li><code>density</code>, the density of observations in each bin (percentage of total / bar
+width)</li>
 <li><code>x</code>, the centre of the bin&quot; <span class="citation">(Wickham <a href="#ref-ggplot2">2016</a>)</span></li>
 </ul></li>
-<li>“These generated variables can be used instead of the variables present in the original dataset. For example, the default histogram geom assigns the height of the bars to the number of observations (<code>count</code>), but if you’d prefer a more traditional histogram, you can use the density (<code>density</code>). The following example shows a density histogram of carat from the diamonds dataset.” <span class="citation">(Wickham <a href="#ref-ggplot2">2016</a>)</span></li>
+<li>“These generated variables can be used instead of the variables present in
+the original dataset. For example, the default histogram geom assigns the height of the bars to the number of observations (<code>count</code>), but if you’d prefer a more traditional histogram, you can use the density (<code>density</code>). The following example shows a density histogram of carat from the diamonds dataset.” <span class="citation">(Wickham <a href="#ref-ggplot2">2016</a>)</span></li>
 </ul></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># The names of generated variables must be surrounded with ..</span>
- <span class="kw">ggplot</span>(diamonds, <span class="kw">aes</span>(carat)) +<span class="st"> </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">y =</span> ..density..), <span class="dt">binwidth =</span> <span class="fl">0.1</span>)</code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="co"># The names of generated variables must be surrounded with ..</span></a>
+<a class="sourceLine" id="cb29-2" data-line-number="2"> <span class="kw">ggplot</span>(diamonds, <span class="kw">aes</span>(carat)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">y =</span> ..density..), <span class="dt">binwidth =</span> <span class="fl">0.1</span>)</a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 <ul>
-<li><p>Every <strong>geom</strong> has a default <strong>stats</strong>.</p></li>
+<li>Every <strong>geom</strong> has a default <strong>stats</strong>.</li>
+</ul>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="co"># An alternative way to build a layer</span></a>
+<a class="sourceLine" id="cb30-2" data-line-number="2"> <span class="kw">ggplot</span>(diamonds, <span class="kw">aes</span>(carat)) <span class="op">+</span><span class="st"> </span><span class="kw">stat_bin</span>()</a></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<ul>
 <li>Position adjustments
 <ul>
 <li>Position adjustments determine how to arrange <strong>geoms</strong> that would otherwise occupy the same space.</li>
 </ul></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># The discrete analogue of histogram is the bar plot</span>
-s &lt;-<span class="st"> </span><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(fl, <span class="dt">fill =</span> drv))</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">s +<span class="st"> </span><span class="kw">geom_bar</span>()</code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Stack elements on top of one another</span>
-s +<span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;stack&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="co"># The discrete analogue of histogram is the bar plot</span></a>
+<a class="sourceLine" id="cb32-2" data-line-number="2">s &lt;-<span class="st"> </span><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(fl, <span class="dt">fill =</span> drv))</a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">s <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>()</a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Arrange elements side by side</span>
-s +<span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="co"># Stack elements on top of one another</span></a>
+<a class="sourceLine" id="cb34-2" data-line-number="2">s <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;stack&quot;</span>)</a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Stack elements on top of one another,normalize height</span>
-s +<span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;fill&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="co"># Arrange elements side by side</span></a>
+<a class="sourceLine" id="cb35-2" data-line-number="2">s <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>)</a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="co"># Stack elements on top of one another,normalize height</span></a>
+<a class="sourceLine" id="cb36-2" data-line-number="2">s <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;fill&quot;</span>)</a></code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
 </div>
 <div id="a-faceting" class="section level2">
-<h2><span class="header-section-number">2.9</span> A faceting</h2>
+<h2><span class="header-section-number">2.11</span> A faceting</h2>
 <ul>
 <li><p>“A faceting specification describes how to break up the data into <strong>subsets</strong> and how to display those subsets as <strong>small multiples</strong>. This is also known as <strong>conditioning</strong> or latticing/trellising.” <span class="citation">(Wickham <a href="#ref-ggplot2">2016</a>)</span></p></li>
 <li><p>“There are two types of faceting provided by ggplot2: <code>facet_grid</code> and <code>facet_wrap</code>. Facet grid produces a 2d grid of panels defined by variables which form the rows and columns, while facet wrap produces a 1d ribbon of panels that is wrapped into 2d” <span class="citation">(Wickham <a href="#ref-ggplot2">2016</a>)</span></p></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># facet into rows</span>
-<span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat)) +<span class="st"> </span><span class="kw">geom_histogram</span>() +<span class="st"> </span><span class="kw">facet_grid</span>(color ~<span class="st"> </span>.)</code></pre></div>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># facet into columns</span>
-<span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat)) +<span class="st"> </span><span class="kw">geom_histogram</span>() +<span class="st"> </span><span class="kw">facet_grid</span>(. ~<span class="st"> </span>color)</code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="co"># facet into rows</span></a>
+<a class="sourceLine" id="cb37-2" data-line-number="2"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>() <span class="op">+</span><span class="st"> </span><span class="kw">facet_grid</span>(color <span class="op">~</span><span class="st"> </span>.)</a></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="co"># facet into columns</span></a>
+<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds, <span class="kw">aes</span>(<span class="dt">x =</span> carat)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>() <span class="op">+</span><span class="st"> </span><span class="kw">facet_grid</span>(. <span class="op">~</span><span class="st"> </span>color)</a></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
 </div>
 <div id="exercise-2" class="section level2">
-<h2><span class="header-section-number">2.10</span> Exercise</h2>
+<h2><span class="header-section-number">2.12</span> Exercise</h2>
 <ul>
 <li><p>Using <code>mpg</code> data, plot <code>hwy</code> (y) vs <code>cty</code> (x).</p></li>
 <li><p>facet into rows using <code>cyl</code>.</p></li>
@@ -516,19 +634,14 @@ s +<span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">po
 </ul>
 </div>
 <div id="grouping" class="section level2">
-<h2><span class="header-section-number">2.11</span> Grouping</h2>
+<h2><span class="header-section-number">2.13</span> Grouping</h2>
 <ul>
 <li><p>“In many situations, you want to <strong>separate your data into groups</strong>, but render them in the same way. When looking at the data in aggregate you want to be able to distinguish individual subjects, but not identify them. This is common in <strong>longitudinal studies</strong> with many subjects, where the plots are often descriptively called spaghetti plots.” <span class="citation">(Wickham <a href="#ref-ggplot2">2016</a>)</span></p></li>
 <li><p><code>Oxboys</code> is a dataset in the <code>nlme</code> package. <code>Oxboys</code> includes the height of a selection of boys from Oxford, England versus a standardized age.</p></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(nlme)</code></pre></div>
-<pre><code>## 
-## Attaching package: &#39;nlme&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
-## 
-##     collapse</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># age = a numeric vector giving the standardized age </span>
-<span class="kw">head</span>(Oxboys)</code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="kw">library</span>(nlme)</a></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="co"># age = a numeric vector giving the standardized age </span></a>
+<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="kw">head</span>(Oxboys)</a></code></pre></div>
 <pre><code>## Grouped Data: height ~ age | Subject
 ##   Subject     age height Occasion
 ## 1       1 -1.0000  140.5        1
@@ -537,45 +650,45 @@ s +<span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">po
 ## 4       1 -0.1643  147.1        4
 ## 5       1 -0.0027  147.7        5
 ## 6       1  0.2466  150.2        6</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(Oxboys, <span class="kw">aes</span>(age, height)) +<span class="st"> </span><span class="kw">geom_line</span>()</code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(Oxboys, <span class="kw">aes</span>(age, height, <span class="dt">group =</span> Subject)) +<span class="st"> </span><span class="kw">geom_line</span>()</code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="kw">ggplot</span>(Oxboys, <span class="kw">aes</span>(age, height)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>()</a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># In many cases, this is not what we want</span>
-<span class="kw">ggplot</span>(Oxboys, <span class="kw">aes</span>(age, height, <span class="dt">group =</span> Subject)) +<span class="st"> </span><span class="kw">geom_line</span>() +<span class="st"> </span><span class="kw">geom_smooth</span>()</code></pre></div>
-<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="kw">ggplot</span>(Oxboys, <span class="kw">aes</span>(age, height, <span class="dt">group =</span> Subject)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>()</a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># group = 1 override the default grouping </span>
-<span class="kw">ggplot</span>(Oxboys, <span class="kw">aes</span>(age, height, <span class="dt">group =</span> Subject)) +<span class="st"> </span><span class="kw">geom_line</span>() +<span class="st"> </span><span class="kw">geom_smooth</span>(<span class="kw">aes</span>(<span class="dt">group =</span> <span class="dv">1</span>))</code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="co"># In many cases, this is not what we want</span></a>
+<a class="sourceLine" id="cb46-2" data-line-number="2"><span class="kw">ggplot</span>(Oxboys, <span class="kw">aes</span>(age, height, <span class="dt">group =</span> Subject)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>()</a></code></pre></div>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># facet is also useful for visualizing longitudinal data</span>
-<span class="kw">ggplot</span>(Oxboys, <span class="kw">aes</span>(age, height)) +<span class="st"> </span><span class="kw">geom_line</span>() +<span class="st"> </span><span class="kw">facet_wrap</span>(~Subject)</code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="co"># group = 1 override the default grouping </span></a>
+<a class="sourceLine" id="cb48-2" data-line-number="2"><span class="kw">ggplot</span>(Oxboys, <span class="kw">aes</span>(age, height, <span class="dt">group =</span> Subject)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="kw">aes</span>(<span class="dt">group =</span> <span class="dv">1</span>))</a></code></pre></div>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="co"># facet is also useful for visualizing longitudinal data</span></a>
+<a class="sourceLine" id="cb50-2" data-line-number="2"><span class="kw">ggplot</span>(Oxboys, <span class="kw">aes</span>(age, height)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="op">~</span>Subject)</a></code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
 </div>
 <div id="themes" class="section level2">
-<h2><span class="header-section-number">2.12</span> Themes</h2>
-<p>“Themes are a powerful way to <strong>customize</strong> the non-data components of your plots: i.e. titles, labels, fonts, background, gridlines, and legends.” More details are available at <a href="https://ggplot2.tidyverse.org/reference/theme.html" class="uri">https://ggplot2.tidyverse.org/reference/theme.html</a></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(<span class="dt">x =</span> hwy, <span class="dt">y =</span> cty)) +<span class="st"> </span><span class="kw">geom_point</span>() </code></pre></div>
-<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(<span class="dt">x =</span> hwy, <span class="dt">y =</span> cty)) +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">theme</span>(<span class="dt">panel.background =</span> <span class="kw">element_rect</span>(<span class="dt">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">colour =</span> <span class="st">&quot;grey50&quot;</span>))</code></pre></div>
+<h2><span class="header-section-number">2.14</span> Themes</h2>
+<p>“Themes are a powerful way to <strong>customize</strong> the non-data components of your plots: i.e. titles, labels, fonts, background, gridlines, and legends.” More details are available at <a href="https://ggplot2.tidyverse.org/reference/theme.html">https://ggplot2.tidyverse.org/reference/theme.html</a></p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(<span class="dt">x =</span> hwy, <span class="dt">y =</span> cty)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() </a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(<span class="dt">x =</span> hwy, <span class="dt">y =</span> cty)) +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">theme_classic</span>()</code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(<span class="dt">x =</span> hwy, <span class="dt">y =</span> cty)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">panel.background =</span> <span class="kw">element_rect</span>(<span class="dt">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">colour =</span> <span class="st">&quot;grey50&quot;</span>))</a></code></pre></div>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1"><span class="kw">ggplot</span>(mpg, <span class="kw">aes</span>(<span class="dt">x =</span> hwy, <span class="dt">y =</span> cty)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">theme_classic</span>()</a></code></pre></div>
+<p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
 </div>
 <div id="save-a-ggplot" class="section level2">
-<h2><span class="header-section-number">2.13</span> Save a ggplot</h2>
+<h2><span class="header-section-number">2.15</span> Save a ggplot</h2>
 <ul>
 <li><code>ggsave()</code> is a convenient function for saving a plot. It defaults to saving the <strong>last plot</strong> that you displayed.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggsave</span>(<span class="st">&quot;mtcars.pdf&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="kw">ggsave</span>(<span class="st">&quot;mtcars.pdf&quot;</span>)</a></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
 </div>
 <div id="more-resources" class="section level2">
-<h2><span class="header-section-number">2.14</span> More resources</h2>
+<h2><span class="header-section-number">2.16</span> More resources</h2>
 <ul>
-<li><code>ggplot2</code> Reference: <a href="https://ggplot2.tidyverse.org/reference/index.html" class="uri">https://ggplot2.tidyverse.org/reference/index.html</a></li>
-<li>Many R galleries (e.g., <a href="https://www.r-graph-gallery.com" class="uri">https://www.r-graph-gallery.com</a>)</li>
+<li><code>ggplot2</code> Reference: <a href="https://ggplot2.tidyverse.org/reference/index.html">https://ggplot2.tidyverse.org/reference/index.html</a></li>
+<li>Many R galleries (e.g., <a href="https://www.r-graph-gallery.com">https://www.r-graph-gallery.com</a>)</li>
 <li>Google</li>
 </ul>
 
@@ -643,7 +756,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
