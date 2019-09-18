@@ -1,0 +1,151 @@
+# Base R Practice
+
+# Set 1
+
+1. Calculate the sum of square of all the observations in the vector `a` from their mean. 
+
+```{r}
+# the original vector 
+a <- c(1,2,3)
+```
+
+```{r}
+# deviations from the mean
+# a is a vector and mean(a) is a sinlge number
+# notice R used recycling rule to match different lengths
+a-mean(a)
+```
+```{r}
+# square of deviations
+(a-mean(a))^2
+```
+
+```{r}
+# sum of square 
+sum((a-mean(a))^2)
+```
+
+
+2. Without using R, calculate the variance of `a`.
+
+```{r}
+# variance = SS/(n-1), where SS = sum of square
+# for a, n = 3
+2/2
+```
+
+```{r}
+# we can directly calculate variance using var()
+var(a)
+```
+
+3. Without using R, what would be the fourth element of `v1+v2`?
+
+```{r}
+# 9 since R recycled the shorter vector v2 
+# This is what happened: c(4,5,6,7) + c(10,2,10,2)
+v1 <- c(4,5,6,7)
+v2 <- c(10,2)
+v1 + v2
+```
+
+4. Without using R, what would be the result?
+```{r}
+# sum() requires a numeric vector
+# for that, TRUE is converted into 1, and FALSE is converted into 0
+# essentially, this expression count "the number of TRUEs'
+sum(c(TRUE, TRUE, FALSE, TRUE, FALSE))
+```
+
+
+5. In `mtcars` data, what is the mean (rounded to 2 decimal) of `mpg` for cars with 6 cylinders? 
+
+```{r}
+# $ is used to access a variable within a data.frame (or a list)
+mpg <- mtcars$mpg
+mpg
+```
+```{r}
+cyl <- mtcars$cyl
+cyl
+```
+
+```{r}
+# this comparison operation produces a logical vector
+cyl==6
+```
+```{r}
+# logical indexing: only element corresponding to TRUE will be extracted
+mpg[cyl==6]
+```
+
+```{r}
+mean(mpg[cyl==6])
+```
+
+```{r}
+# if you become familiar with R, then you can do this with oneline
+mean(mtcars$mpg[mtcars$cyl==6])
+```
+
+6. Given the 1000000 random numbers from a standard normal distribution (a normal distribution with mean = 0 and sd = 1), what would be the proportion of random numbers greater than 0?
+
+
+```{r}
+# have you seen 1.96 before?
+set.seed(777)
+a <- rnorm(1000000) # equivalent to rnorm(1000, 0, 1)
+length(a[a>0])/length(a)
+```
+
+```{r}
+# alternative way to do the same thing
+sum(a>0)/length(a)
+```
+
+7. Given the 1000000 random numbers from a standard normal distribution (a normal distribution with mean = 0 and sd = 1), what would be the proportion of random numbers greater than 1.96? 
+
+```{r}
+# have you seen 1.96 before?
+set.seed(777)
+a <- rnorm(1000000) # equivalent to rnorm(1000, 0, 1)
+length(a[a>1.96])/length(a)
+```
+
+```{r}
+# alternative way to do the same thing
+sum(a>1.96)/length(a)
+```
+
+
+8. Without using R, what would be the first element of the following expression?
+
+```{r}
+# %in% operator 
+# v1 %in% v2 returns a logical vector indicating 
+# whether the elements of v1 are included in v2. 
+c(1,2,3) %in% c(2,3,4,5,6)
+```
+
+
+9. Without using R, which element would be displayed first when displaying the level of the following factor?
+
+```{r}
+# "medium" will be displayed first according to alphabetical order
+# notice this order does not represent intrinsic order in factor
+# this order only applies to display or sort
+# we use ordered() to create ordered factor
+a <- factor(c("high", "high", "medium", "low"))
+a
+```
+
+10. The following code will produce error (TRUE or FALSE)?
+
+```{r eval=FALSE, include=FALSE}
+# this code will produce error because a factor only allow some pre-specified values (i.e., levels)
+a[1] <- "very high"
+```
+
+
+
+

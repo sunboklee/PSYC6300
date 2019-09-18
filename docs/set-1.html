@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Set 1 | R, Rstudio, and ggplot2</title>
+  <meta name="description" content="This is an introduction to R, Rstudio, and ggplot2" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Set 1 | R, Rstudio, and ggplot2" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is an introduction to R, Rstudio, and ggplot2" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Set 1 | R, Rstudio, and ggplot2" />
+  
+  <meta name="twitter:description" content="This is an introduction to R, Rstudio, and ggplot2" />
+  
+
+<meta name="author" content="Sunbok Lee" />
+
+
+<meta name="date" content="2019-09-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="base-r-practice.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> R</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#why-r"><i class="fa fa-check"></i><b>1.1</b> Why R?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#installing-r"><i class="fa fa-check"></i><b>1.2</b> Installing R</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#installing-rstudio"><i class="fa fa-check"></i><b>1.3</b> Installing RStudio</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#cheat-sheets-for-r"><i class="fa fa-check"></i><b>1.4</b> Cheat Sheets for R</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#rmarkdown-files"><i class="fa fa-check"></i><b>1.5</b> Rmarkdown files</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#r-topics-covered-in-this-course"><i class="fa fa-check"></i><b>1.6</b> R topics covered in this course</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html"><i class="fa fa-check"></i><b>2</b> Introduction to <code>ggplot2</code></a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#what-is-ggplot2"><i class="fa fa-check"></i><b>2.1</b> What is <code>ggplot2</code>?</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#installing-and-laoding-ggplot2"><i class="fa fa-check"></i><b>2.2</b> Installing and laoding <code>ggplot2</code></a></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#graphical-components-of-ggplot2"><i class="fa fa-check"></i><b>2.3</b> Graphical components of <code>ggplot2</code></a><ul>
+<li class="chapter" data-level="2.3.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#data"><i class="fa fa-check"></i><b>2.3.1</b> Data</a></li>
+<li class="chapter" data-level="2.3.2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#geometric-objects-geoms"><i class="fa fa-check"></i><b>2.3.2</b> Geometric objects (<strong>geoms</strong>)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#aesthetic-mappings"><i class="fa fa-check"></i><b>2.3.3</b> Aesthetic mappings</a></li>
+<li class="chapter" data-level="2.3.4" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#scales"><i class="fa fa-check"></i><b>2.3.4</b> Scales</a></li>
+<li class="chapter" data-level="2.3.5" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#statistical-transformations-stats-for-short"><i class="fa fa-check"></i><b>2.3.5</b> Statistical transformations (<strong>stats</strong> for short)</a></li>
+<li class="chapter" data-level="2.3.6" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#a-faceting"><i class="fa fa-check"></i><b>2.3.6</b> A faceting</a></li>
+<li class="chapter" data-level="2.3.7" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#grouping"><i class="fa fa-check"></i><b>2.3.7</b> Grouping</a></li>
+<li class="chapter" data-level="2.3.8" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#themes"><i class="fa fa-check"></i><b>2.3.8</b> Themes</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#saving-a-ggplot"><i class="fa fa-check"></i><b>2.4</b> Saving a ggplot</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#more-resources"><i class="fa fa-check"></i><b>2.5</b> More resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>3</b> Descriptive Statistics</a><ul>
+<li class="chapter" data-level="3.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#r-functions-for-descriptive-statistics"><i class="fa fa-check"></i><b>3.1</b> R functions for descriptive statistics</a></li>
+<li class="chapter" data-level="3.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#qplot"><i class="fa fa-check"></i><b>3.2</b> qplot()</a></li>
+<li class="chapter" data-level="3.3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#scatterplots"><i class="fa fa-check"></i><b>3.3</b> Scatterplots</a></li>
+<li class="chapter" data-level="3.4" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#histogram"><i class="fa fa-check"></i><b>3.4</b> Histogram</a></li>
+<li class="chapter" data-level="3.5" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#density-plots"><i class="fa fa-check"></i><b>3.5</b> Density plots</a></li>
+<li class="chapter" data-level="3.6" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#barplots"><i class="fa fa-check"></i><b>3.6</b> Barplots</a></li>
+<li class="chapter" data-level="3.7" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#boxplots"><i class="fa fa-check"></i><b>3.7</b> Boxplots</a></li>
+<li class="chapter" data-level="3.8" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#faceting"><i class="fa fa-check"></i><b>3.8</b> Faceting</a></li>
+<li class="chapter" data-level="3.9" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#the-corrplot-package"><i class="fa fa-check"></i><b>3.9</b> The <code>corrplot</code> Package</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="exercise.html"><a href="exercise.html"><i class="fa fa-check"></i><b>4</b> Exercise</a></li>
+<li class="chapter" data-level="5" data-path="base-r.html"><a href="base-r.html"><i class="fa fa-check"></i><b>5</b> Base R</a><ul>
+<li class="chapter" data-level="5.1" data-path="base-r.html"><a href="base-r.html#topics"><i class="fa fa-check"></i><b>5.1</b> Topics</a></li>
+<li class="chapter" data-level="5.2" data-path="base-r.html"><a href="base-r.html#further-reading"><i class="fa fa-check"></i><b>5.2</b> Further reading</a></li>
+<li class="chapter" data-level="5.3" data-path="base-r.html"><a href="base-r.html#interaction-with-r"><i class="fa fa-check"></i><b>5.3</b> Interaction with R</a></li>
+<li class="chapter" data-level="5.4" data-path="base-r.html"><a href="base-r.html#r-objects-and-variables"><i class="fa fa-check"></i><b>5.4</b> R Objects and Variables</a></li>
+<li class="chapter" data-level="5.5" data-path="base-r.html"><a href="base-r.html#data-structure"><i class="fa fa-check"></i><b>5.5</b> Data Structure</a></li>
+<li class="chapter" data-level="5.6" data-path="base-r.html"><a href="base-r.html#vectors-come-in-two-flavours"><i class="fa fa-check"></i><b>5.6</b> Vectors Come in Two Flavours</a></li>
+<li class="chapter" data-level="5.7" data-path="base-r.html"><a href="base-r.html#a-vector-has-three-properties"><i class="fa fa-check"></i><b>5.7</b> A Vector Has Three Properties</a></li>
+<li class="chapter" data-level="5.8" data-path="base-r.html"><a href="base-r.html#attributes"><i class="fa fa-check"></i><b>5.8</b> Attributes</a></li>
+<li class="chapter" data-level="5.9" data-path="base-r.html"><a href="base-r.html#type-coercion-conversion"><i class="fa fa-check"></i><b>5.9</b> Type Coercion (Conversion)</a></li>
+<li class="chapter" data-level="5.10" data-path="base-r.html"><a href="base-r.html#na-represents-missing"><i class="fa fa-check"></i><b>5.10</b> NA represents missing</a></li>
+<li class="chapter" data-level="5.11" data-path="base-r.html"><a href="base-r.html#useful-functions-for-a-vector"><i class="fa fa-check"></i><b>5.11</b> Useful Functions for a vector</a><ul>
+<li class="chapter" data-level="5.11.1" data-path="base-r.html"><a href="base-r.html#generate-a-vector"><i class="fa fa-check"></i><b>5.11.1</b> Generate a vector</a></li>
+<li class="chapter" data-level="5.11.2" data-path="base-r.html"><a href="base-r.html#indexing-or-subsetting-a-vector"><i class="fa fa-check"></i><b>5.11.2</b> Indexing or subsetting a Vector</a></li>
+<li class="chapter" data-level="5.11.3" data-path="base-r.html"><a href="base-r.html#arrange-a-vector"><i class="fa fa-check"></i><b>5.11.3</b> Arrange a vector</a></li>
+<li class="chapter" data-level="5.11.4" data-path="base-r.html"><a href="base-r.html#vectorization-of-functions"><i class="fa fa-check"></i><b>5.11.4</b> Vectorization of Functions</a></li>
+<li class="chapter" data-level="5.11.5" data-path="base-r.html"><a href="base-r.html#some-more-functions"><i class="fa fa-check"></i><b>5.11.5</b> Some more functions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.12" data-path="base-r.html"><a href="base-r.html#exercise-on-vectors"><i class="fa fa-check"></i><b>5.12</b> Exercise on vectors</a></li>
+<li class="chapter" data-level="5.13" data-path="base-r.html"><a href="base-r.html#factors"><i class="fa fa-check"></i><b>5.13</b> Factors</a><ul>
+<li class="chapter" data-level="5.13.1" data-path="base-r.html"><a href="base-r.html#what-is-a-factor"><i class="fa fa-check"></i><b>5.13.1</b> What is a factor?</a></li>
+<li class="chapter" data-level="5.13.2" data-path="base-r.html"><a href="base-r.html#creating-a-factor"><i class="fa fa-check"></i><b>5.13.2</b> Creating a factor</a></li>
+<li class="chapter" data-level="5.13.3" data-path="base-r.html"><a href="base-r.html#unordered-vs-ordered-factor"><i class="fa fa-check"></i><b>5.13.3</b> unordered vs ordered factor</a></li>
+<li class="chapter" data-level="5.13.4" data-path="base-r.html"><a href="base-r.html#why-factors"><i class="fa fa-check"></i><b>5.13.4</b> Why factors?</a></li>
+<li class="chapter" data-level="5.13.5" data-path="base-r.html"><a href="base-r.html#some-more-comments"><i class="fa fa-check"></i><b>5.13.5</b> Some more comments</a></li>
+<li class="chapter" data-level="5.13.6" data-path="base-r.html"><a href="base-r.html#exercise-1"><i class="fa fa-check"></i><b>5.13.6</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="5.14" data-path="base-r.html"><a href="base-r.html#lists"><i class="fa fa-check"></i><b>5.14</b> Lists</a><ul>
+<li class="chapter" data-level="5.14.1" data-path="base-r.html"><a href="base-r.html#what-is-a-list"><i class="fa fa-check"></i><b>5.14.1</b> What is a list?</a></li>
+<li class="chapter" data-level="5.14.2" data-path="base-r.html"><a href="base-r.html#creating-a-list"><i class="fa fa-check"></i><b>5.14.2</b> Creating a list</a></li>
+<li class="chapter" data-level="5.14.3" data-path="base-r.html"><a href="base-r.html#why-lists"><i class="fa fa-check"></i><b>5.14.3</b> Why lists?</a></li>
+<li class="chapter" data-level="5.14.4" data-path="base-r.html"><a href="base-r.html#subsetting-a-list"><i class="fa fa-check"></i><b>5.14.4</b> Subsetting a List</a></li>
+<li class="chapter" data-level="5.14.5" data-path="base-r.html"><a href="base-r.html#exercise-2"><i class="fa fa-check"></i><b>5.14.5</b> Exercise</a></li>
+<li class="chapter" data-level="5.14.6" data-path="base-r.html"><a href="base-r.html#data-frames"><i class="fa fa-check"></i><b>5.14.6</b> Data frames</a></li>
+<li class="chapter" data-level="5.14.7" data-path="base-r.html"><a href="base-r.html#the-apply-family-of-functions"><i class="fa fa-check"></i><b>5.14.7</b> The apply family of functions</a></li>
+<li class="chapter" data-level="5.14.8" data-path="base-r.html"><a href="base-r.html#exercise-3"><i class="fa fa-check"></i><b>5.14.8</b> Exercise</a></li>
+<li class="chapter" data-level="5.14.9" data-path="base-r.html"><a href="base-r.html#more-resources-1"><i class="fa fa-check"></i><b>5.14.9</b> More resources</a></li>
+</ul></li>
+<li class="chapter" data-level="5.15" data-path="base-r.html"><a href="base-r.html#matrices-and-arrays"><i class="fa fa-check"></i><b>5.15</b> Matrices and Arrays</a></li>
+<li class="chapter" data-level="5.16" data-path="base-r.html"><a href="base-r.html#data-frames-1"><i class="fa fa-check"></i><b>5.16</b> Data Frames</a></li>
+<li class="chapter" data-level="5.17" data-path="base-r.html"><a href="base-r.html#operators"><i class="fa fa-check"></i><b>5.17</b> Operators</a></li>
+<li class="chapter" data-level="5.18" data-path="base-r.html"><a href="base-r.html#subsetting-a-matrix-and-array"><i class="fa fa-check"></i><b>5.18</b> Subsetting a Matrix and Array</a></li>
+<li class="chapter" data-level="5.19" data-path="base-r.html"><a href="base-r.html#exercise-4"><i class="fa fa-check"></i><b>5.19</b> Exercise</a></li>
+<li class="chapter" data-level="5.20" data-path="base-r.html"><a href="base-r.html#combine-matrices-by-columns-or-rows"><i class="fa fa-check"></i><b>5.20</b> Combine Matrices by Columns or Rows</a></li>
+<li class="chapter" data-level="5.21" data-path="base-r.html"><a href="base-r.html#names-of-the-columns-and-rows-of-matrices"><i class="fa fa-check"></i><b>5.21</b> Names of the Columns and Rows of Matrices</a></li>
+<li class="chapter" data-level="5.22" data-path="base-r.html"><a href="base-r.html#functions"><i class="fa fa-check"></i><b>5.22</b> Functions</a></li>
+<li class="chapter" data-level="5.23" data-path="base-r.html"><a href="base-r.html#an-example-of-functions"><i class="fa fa-check"></i><b>5.23</b> An Example of Functions</a></li>
+<li class="chapter" data-level="5.24" data-path="base-r.html"><a href="base-r.html#user-defined-functions"><i class="fa fa-check"></i><b>5.24</b> User-Defined Functions</a></li>
+<li class="chapter" data-level="5.25" data-path="base-r.html"><a href="base-r.html#exercise-5"><i class="fa fa-check"></i><b>5.25</b> Exercise</a></li>
+<li class="chapter" data-level="5.26" data-path="base-r.html"><a href="base-r.html#some-comments-on-functions"><i class="fa fa-check"></i><b>5.26</b> Some Comments on Functions</a></li>
+<li class="chapter" data-level="5.27" data-path="base-r.html"><a href="base-r.html#generating-sequences"><i class="fa fa-check"></i><b>5.27</b> Generating Sequences</a></li>
+<li class="chapter" data-level="5.28" data-path="base-r.html"><a href="base-r.html#control-flow-if-else"><i class="fa fa-check"></i><b>5.28</b> Control Flow (if-else)</a></li>
+<li class="chapter" data-level="5.29" data-path="base-r.html"><a href="base-r.html#control-flow-for"><i class="fa fa-check"></i><b>5.29</b> Control Flow (for)</a></li>
+<li class="chapter" data-level="5.30" data-path="base-r.html"><a href="base-r.html#control-flow-for-1"><i class="fa fa-check"></i><b>5.30</b> Control Flow (for)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="base-r-quiz.html"><a href="base-r-quiz.html"><i class="fa fa-check"></i><b>6</b> Base R Quiz</a><ul>
+<li class="chapter" data-level="6.0.1" data-path="base-r-quiz.html"><a href="base-r-quiz.html#dataset1-diamonds-is-a-dataset-in-ggplot2-containing-the-prices-and-other-attributes-of-almost-54000-diamonds.-in-the-dataset-price-is-the-price-of-diamonds-in-us-dollars-and-carat-is-the-weight-of-the-diamonds-0.2-5.01."><i class="fa fa-check"></i><b>6.0.1</b> Dataset1: <code>diamonds</code> is a dataset in <code>ggplot2</code> containing the prices and other attributes of almost 54,000 diamonds. In the dataset, <code>price</code> is the price of diamonds in US dollars, and <code>carat</code> is the weight of the diamonds (0.2-5.01).</a></li>
+<li class="chapter" data-level="6.0.2" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-1"><i class="fa fa-check"></i><b>6.0.2</b> Quiz problem 1</a></li>
+<li class="chapter" data-level="6.0.3" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-2"><i class="fa fa-check"></i><b>6.0.3</b> Quiz problem 2</a></li>
+<li class="chapter" data-level="6.0.4" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-3"><i class="fa fa-check"></i><b>6.0.4</b> Quiz problem 3</a></li>
+<li class="chapter" data-level="6.0.5" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-4"><i class="fa fa-check"></i><b>6.0.5</b> Quiz problem 4</a></li>
+<li class="chapter" data-level="6.0.6" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-5"><i class="fa fa-check"></i><b>6.0.6</b> Quiz problem 5</a></li>
+<li class="chapter" data-level="6.0.7" data-path="base-r-quiz.html"><a href="base-r-quiz.html#dataset2-bfi-is-a-dataset-in-the-psych-package-containing-25-personality-self-report-items-taken-from-the-international-personality-item-pool.-in-the-dataset"><i class="fa fa-check"></i><b>6.0.7</b> Dataset2: <code>bfi</code> is a dataset in the <code>psych</code> package containing 25 personality self report items taken from the International Personality Item Pool. In the dataset,</a></li>
+<li class="chapter" data-level="6.0.8" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-6"><i class="fa fa-check"></i><b>6.0.8</b> Quiz problem 6</a></li>
+<li class="chapter" data-level="6.0.9" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-7"><i class="fa fa-check"></i><b>6.0.9</b> Quiz problem 7</a></li>
+<li class="chapter" data-level="6.0.10" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-8"><i class="fa fa-check"></i><b>6.0.10</b> Quiz problem 8</a></li>
+<li class="chapter" data-level="6.0.11" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-9"><i class="fa fa-check"></i><b>6.0.11</b> Quiz problem 9</a></li>
+<li class="chapter" data-level="6.0.12" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-10"><i class="fa fa-check"></i><b>6.0.12</b> Quiz problem 10</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="base-r-practice.html"><a href="base-r-practice.html"><i class="fa fa-check"></i><b>7</b> Base R Practice</a></li>
+<li class="chapter" data-level="8" data-path="set-1.html"><a href="set-1.html"><i class="fa fa-check"></i><b>8</b> Set 1</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R, Rstudio, and ggplot2</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="set-1" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Set 1</h1>
+<ol style="list-style-type: decimal">
+<li>Calculate the sum of square of all the observations in the vector <code>a</code> from their mean.</li>
+</ol>
+<div class="sourceCode" id="cb530"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb530-1" data-line-number="1"><span class="co"># the original vector </span></a>
+<a class="sourceLine" id="cb530-2" data-line-number="2">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb531"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb531-1" data-line-number="1"><span class="co"># deviations from the mean</span></a>
+<a class="sourceLine" id="cb531-2" data-line-number="2"><span class="co"># a is a vector and mean(a) is a sinlge number</span></a>
+<a class="sourceLine" id="cb531-3" data-line-number="3"><span class="co"># notice R used recycling rule to match different lengths</span></a>
+<a class="sourceLine" id="cb531-4" data-line-number="4">a<span class="op">-</span><span class="kw">mean</span>(a)</a></code></pre></div>
+<pre><code>## [1] -1  0  1</code></pre>
+<div class="sourceCode" id="cb533"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb533-1" data-line-number="1"><span class="co"># square of deviations</span></a>
+<a class="sourceLine" id="cb533-2" data-line-number="2">(a<span class="op">-</span><span class="kw">mean</span>(a))<span class="op">^</span><span class="dv">2</span></a></code></pre></div>
+<pre><code>## [1] 1 0 1</code></pre>
+<div class="sourceCode" id="cb535"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb535-1" data-line-number="1"><span class="co"># sum of square </span></a>
+<a class="sourceLine" id="cb535-2" data-line-number="2"><span class="kw">sum</span>((a<span class="op">-</span><span class="kw">mean</span>(a))<span class="op">^</span><span class="dv">2</span>)</a></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Without using R, calculate the variance of <code>a</code>.</li>
+</ol>
+<div class="sourceCode" id="cb537"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb537-1" data-line-number="1"><span class="co"># variance = SS/(n-1), where SS = sum of square</span></a>
+<a class="sourceLine" id="cb537-2" data-line-number="2"><span class="co"># for a, n = 3</span></a>
+<a class="sourceLine" id="cb537-3" data-line-number="3"><span class="dv">2</span><span class="op">/</span><span class="dv">2</span></a></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode" id="cb539"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb539-1" data-line-number="1"><span class="co"># we can directly calculate variance using var()</span></a>
+<a class="sourceLine" id="cb539-2" data-line-number="2"><span class="kw">var</span>(a)</a></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Without using R, what would be the fourth element of <code>v1+v2</code>?</li>
+</ol>
+<div class="sourceCode" id="cb541"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb541-1" data-line-number="1"><span class="co"># 9 since R recycled the shorter vector v2 </span></a>
+<a class="sourceLine" id="cb541-2" data-line-number="2"><span class="co"># This is what happened: c(4,5,6,7) + c(10,2,10,2)</span></a>
+<a class="sourceLine" id="cb541-3" data-line-number="3">v1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)</a>
+<a class="sourceLine" id="cb541-4" data-line-number="4">v2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb541-5" data-line-number="5">v1 <span class="op">+</span><span class="st"> </span>v2</a></code></pre></div>
+<pre><code>## [1] 14  7 16  9</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Without using R, what would be the result?</li>
+</ol>
+<div class="sourceCode" id="cb543"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb543-1" data-line-number="1"><span class="co"># sum() requires a numeric vector</span></a>
+<a class="sourceLine" id="cb543-2" data-line-number="2"><span class="co"># for that, TRUE is converted into 1, and FALSE is converted into 0</span></a>
+<a class="sourceLine" id="cb543-3" data-line-number="3"><span class="co"># essentially, this expression count &quot;the number of TRUEs&#39;</span></a>
+<a class="sourceLine" id="cb543-4" data-line-number="4"><span class="kw">sum</span>(<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>))</a></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>In <code>mtcars</code> data, what is the mean (rounded to 2 decimal) of <code>mpg</code> for cars with 6 cylinders?</li>
+</ol>
+<div class="sourceCode" id="cb545"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb545-1" data-line-number="1"><span class="co"># $ is used to access a variable within a data.frame (or a list)</span></a>
+<a class="sourceLine" id="cb545-2" data-line-number="2">mpg &lt;-<span class="st"> </span>mtcars<span class="op">$</span>mpg</a>
+<a class="sourceLine" id="cb545-3" data-line-number="3">mpg</a></code></pre></div>
+<pre><code>##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2
+## [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4
+## [29] 15.8 19.7 15.0 21.4</code></pre>
+<div class="sourceCode" id="cb547"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb547-1" data-line-number="1">cyl &lt;-<span class="st"> </span>mtcars<span class="op">$</span>cyl</a>
+<a class="sourceLine" id="cb547-2" data-line-number="2">cyl</a></code></pre></div>
+<pre><code>##  [1] 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4 4 4 8 6 8 4</code></pre>
+<div class="sourceCode" id="cb549"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb549-1" data-line-number="1"><span class="co"># this comparison operation produces a logical vector</span></a>
+<a class="sourceLine" id="cb549-2" data-line-number="2">cyl<span class="op">==</span><span class="dv">6</span></a></code></pre></div>
+<pre><code>##  [1]  TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE  TRUE
+## [12] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [23] FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE</code></pre>
+<div class="sourceCode" id="cb551"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb551-1" data-line-number="1"><span class="co"># logical indexing: only element corresponding to TRUE will be extracted</span></a>
+<a class="sourceLine" id="cb551-2" data-line-number="2">mpg[cyl<span class="op">==</span><span class="dv">6</span>]</a></code></pre></div>
+<pre><code>## [1] 21.0 21.0 21.4 18.1 19.2 17.8 19.7</code></pre>
+<div class="sourceCode" id="cb553"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb553-1" data-line-number="1"><span class="kw">mean</span>(mpg[cyl<span class="op">==</span><span class="dv">6</span>])</a></code></pre></div>
+<pre><code>## [1] 19.74286</code></pre>
+<div class="sourceCode" id="cb555"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb555-1" data-line-number="1"><span class="co"># if you become familiar with R, then you can do this with oneline</span></a>
+<a class="sourceLine" id="cb555-2" data-line-number="2"><span class="kw">mean</span>(mtcars<span class="op">$</span>mpg[mtcars<span class="op">$</span>cyl<span class="op">==</span><span class="dv">6</span>])</a></code></pre></div>
+<pre><code>## [1] 19.74286</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Given the 1000000 random numbers from a standard normal distribution (a normal distribution with mean = 0 and sd = 1), what would be the proportion of random numbers greater than 0?</li>
+</ol>
+<div class="sourceCode" id="cb557"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb557-1" data-line-number="1"><span class="co"># have you seen 1.96 before?</span></a>
+<a class="sourceLine" id="cb557-2" data-line-number="2"><span class="kw">set.seed</span>(<span class="dv">777</span>)</a>
+<a class="sourceLine" id="cb557-3" data-line-number="3">a &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1000000</span>) <span class="co"># equivalent to rnorm(1000, 0, 1)</span></a>
+<a class="sourceLine" id="cb557-4" data-line-number="4"><span class="kw">length</span>(a[a<span class="op">&gt;</span><span class="dv">0</span>])<span class="op">/</span><span class="kw">length</span>(a)</a></code></pre></div>
+<pre><code>## [1] 0.500623</code></pre>
+<div class="sourceCode" id="cb559"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb559-1" data-line-number="1"><span class="co"># alternative way to do the same thing</span></a>
+<a class="sourceLine" id="cb559-2" data-line-number="2"><span class="kw">sum</span>(a<span class="op">&gt;</span><span class="dv">0</span>)<span class="op">/</span><span class="kw">length</span>(a)</a></code></pre></div>
+<pre><code>## [1] 0.500623</code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li>Given the 1000000 random numbers from a standard normal distribution (a normal distribution with mean = 0 and sd = 1), what would be the proportion of random numbers greater than 1.96?</li>
+</ol>
+<div class="sourceCode" id="cb561"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb561-1" data-line-number="1"><span class="co"># have you seen 1.96 before?</span></a>
+<a class="sourceLine" id="cb561-2" data-line-number="2"><span class="kw">set.seed</span>(<span class="dv">777</span>)</a>
+<a class="sourceLine" id="cb561-3" data-line-number="3">a &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1000000</span>) <span class="co"># equivalent to rnorm(1000, 0, 1)</span></a>
+<a class="sourceLine" id="cb561-4" data-line-number="4"><span class="kw">length</span>(a[a<span class="op">&gt;</span><span class="fl">1.96</span>])<span class="op">/</span><span class="kw">length</span>(a)</a></code></pre></div>
+<pre><code>## [1] 0.025198</code></pre>
+<div class="sourceCode" id="cb563"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb563-1" data-line-number="1"><span class="co"># alternative way to do the same thing</span></a>
+<a class="sourceLine" id="cb563-2" data-line-number="2"><span class="kw">sum</span>(a<span class="op">&gt;</span><span class="fl">1.96</span>)<span class="op">/</span><span class="kw">length</span>(a)</a></code></pre></div>
+<pre><code>## [1] 0.025198</code></pre>
+<ol start="8" style="list-style-type: decimal">
+<li>Without using R, what would be the first element of the following expression?</li>
+</ol>
+<div class="sourceCode" id="cb565"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb565-1" data-line-number="1"><span class="co"># %in% operator </span></a>
+<a class="sourceLine" id="cb565-2" data-line-number="2"><span class="co"># v1 %in% v2 returns a logical vector indicating </span></a>
+<a class="sourceLine" id="cb565-3" data-line-number="3"><span class="co"># whether the elements of v1 are included in v2. </span></a>
+<a class="sourceLine" id="cb565-4" data-line-number="4"><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>)</a></code></pre></div>
+<pre><code>## [1] FALSE  TRUE  TRUE</code></pre>
+<ol start="9" style="list-style-type: decimal">
+<li>Without using R, which element would be displayed first when displaying the level of the following factor?</li>
+</ol>
+<div class="sourceCode" id="cb567"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb567-1" data-line-number="1"><span class="co"># &quot;medium&quot; will be displayed first according to alphabetical order</span></a>
+<a class="sourceLine" id="cb567-2" data-line-number="2"><span class="co"># notice this order does not represent intrinsic order in factor</span></a>
+<a class="sourceLine" id="cb567-3" data-line-number="3"><span class="co"># this order only applies to display or sort</span></a>
+<a class="sourceLine" id="cb567-4" data-line-number="4"><span class="co"># we use ordered() to create ordered factor</span></a>
+<a class="sourceLine" id="cb567-5" data-line-number="5">a &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;high&quot;</span>, <span class="st">&quot;high&quot;</span>, <span class="st">&quot;medium&quot;</span>, <span class="st">&quot;low&quot;</span>))</a>
+<a class="sourceLine" id="cb567-6" data-line-number="6">a</a></code></pre></div>
+<pre><code>## [1] high   high   medium low   
+## Levels: high low medium</code></pre>
+<ol start="10" style="list-style-type: decimal">
+<li>The following code will produce error (TRUE or FALSE)?</li>
+</ol>
+
+<div id="refs" class="references">
+<div>
+<p>Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York.</p>
+</div>
+<div>
+<p>Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. 1st ed. O’Reilly Media, Inc.</p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="base-r-practice.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/06-BaseRPractice.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Introduction to R, Rstudio, and ggplot2.pdf", "Introduction to R, Rstudio, and ggplot2.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
