@@ -1,6 +1,6 @@
 # Base R Practice
 
-# Set 1
+## Set 1
 
 1. Calculate the sum of square of all the observations in the vector `a` from their mean. 
 
@@ -141,7 +141,7 @@ a
 
 10. The following code will produce error (TRUE or FALSE)?
 
-```{r eval=FALSE, include=FALSE}
+```{r eval=FALSE}
 # this code will produce error because a factor only allow some pre-specified values (i.e., levels)
 a[1] <- "very high"
 ```

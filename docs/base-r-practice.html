@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="base-r-quiz.html"/>
-<link rel="next" href="set-1.html"/>
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -233,8 +233,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.0.11" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-9"><i class="fa fa-check"></i><b>6.0.11</b> Quiz problem 9</a></li>
 <li class="chapter" data-level="6.0.12" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-10"><i class="fa fa-check"></i><b>6.0.12</b> Quiz problem 10</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="base-r-practice.html"><a href="base-r-practice.html"><i class="fa fa-check"></i><b>7</b> Base R Practice</a></li>
-<li class="chapter" data-level="8" data-path="set-1.html"><a href="set-1.html"><i class="fa fa-check"></i><b>8</b> Set 1</a></li>
+<li class="chapter" data-level="7" data-path="base-r-practice.html"><a href="base-r-practice.html"><i class="fa fa-check"></i><b>7</b> Base R Practice</a><ul>
+<li class="chapter" data-level="7.1" data-path="base-r-practice.html"><a href="base-r-practice.html#set-1"><i class="fa fa-check"></i><b>7.1</b> Set 1</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -257,14 +258,140 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="base-r-practice" class="section level1">
 <h1><span class="header-section-number">Chapter 7</span> Base R Practice</h1>
+<div id="set-1" class="section level2">
+<h2><span class="header-section-number">7.1</span> Set 1</h2>
+<ol style="list-style-type: decimal">
+<li>Calculate the sum of square of all the observations in the vector <code>a</code> from their mean.</li>
+</ol>
+<div class="sourceCode" id="cb530"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb530-1" data-line-number="1"><span class="co"># the original vector </span></a>
+<a class="sourceLine" id="cb530-2" data-line-number="2">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb531"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb531-1" data-line-number="1"><span class="co"># deviations from the mean</span></a>
+<a class="sourceLine" id="cb531-2" data-line-number="2"><span class="co"># a is a vector and mean(a) is a sinlge number</span></a>
+<a class="sourceLine" id="cb531-3" data-line-number="3"><span class="co"># notice R used recycling rule to match different lengths</span></a>
+<a class="sourceLine" id="cb531-4" data-line-number="4">a<span class="op">-</span><span class="kw">mean</span>(a)</a></code></pre></div>
+<pre><code>## [1] -1  0  1</code></pre>
+<div class="sourceCode" id="cb533"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb533-1" data-line-number="1"><span class="co"># square of deviations</span></a>
+<a class="sourceLine" id="cb533-2" data-line-number="2">(a<span class="op">-</span><span class="kw">mean</span>(a))<span class="op">^</span><span class="dv">2</span></a></code></pre></div>
+<pre><code>## [1] 1 0 1</code></pre>
+<div class="sourceCode" id="cb535"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb535-1" data-line-number="1"><span class="co"># sum of square </span></a>
+<a class="sourceLine" id="cb535-2" data-line-number="2"><span class="kw">sum</span>((a<span class="op">-</span><span class="kw">mean</span>(a))<span class="op">^</span><span class="dv">2</span>)</a></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Without using R, calculate the variance of <code>a</code>.</li>
+</ol>
+<div class="sourceCode" id="cb537"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb537-1" data-line-number="1"><span class="co"># variance = SS/(n-1), where SS = sum of square</span></a>
+<a class="sourceLine" id="cb537-2" data-line-number="2"><span class="co"># for a, n = 3</span></a>
+<a class="sourceLine" id="cb537-3" data-line-number="3"><span class="dv">2</span><span class="op">/</span><span class="dv">2</span></a></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode" id="cb539"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb539-1" data-line-number="1"><span class="co"># we can directly calculate variance using var()</span></a>
+<a class="sourceLine" id="cb539-2" data-line-number="2"><span class="kw">var</span>(a)</a></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Without using R, what would be the fourth element of <code>v1+v2</code>?</li>
+</ol>
+<div class="sourceCode" id="cb541"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb541-1" data-line-number="1"><span class="co"># 9 since R recycled the shorter vector v2 </span></a>
+<a class="sourceLine" id="cb541-2" data-line-number="2"><span class="co"># This is what happened: c(4,5,6,7) + c(10,2,10,2)</span></a>
+<a class="sourceLine" id="cb541-3" data-line-number="3">v1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)</a>
+<a class="sourceLine" id="cb541-4" data-line-number="4">v2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb541-5" data-line-number="5">v1 <span class="op">+</span><span class="st"> </span>v2</a></code></pre></div>
+<pre><code>## [1] 14  7 16  9</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Without using R, what would be the result?</li>
+</ol>
+<div class="sourceCode" id="cb543"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb543-1" data-line-number="1"><span class="co"># sum() requires a numeric vector</span></a>
+<a class="sourceLine" id="cb543-2" data-line-number="2"><span class="co"># for that, TRUE is converted into 1, and FALSE is converted into 0</span></a>
+<a class="sourceLine" id="cb543-3" data-line-number="3"><span class="co"># essentially, this expression count &quot;the number of TRUEs&#39;</span></a>
+<a class="sourceLine" id="cb543-4" data-line-number="4"><span class="kw">sum</span>(<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>))</a></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>In <code>mtcars</code> data, what is the mean (rounded to 2 decimal) of <code>mpg</code> for cars with 6 cylinders?</li>
+</ol>
+<div class="sourceCode" id="cb545"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb545-1" data-line-number="1"><span class="co"># $ is used to access a variable within a data.frame (or a list)</span></a>
+<a class="sourceLine" id="cb545-2" data-line-number="2">mpg &lt;-<span class="st"> </span>mtcars<span class="op">$</span>mpg</a>
+<a class="sourceLine" id="cb545-3" data-line-number="3">mpg</a></code></pre></div>
+<pre><code>##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2
+## [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4
+## [29] 15.8 19.7 15.0 21.4</code></pre>
+<div class="sourceCode" id="cb547"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb547-1" data-line-number="1">cyl &lt;-<span class="st"> </span>mtcars<span class="op">$</span>cyl</a>
+<a class="sourceLine" id="cb547-2" data-line-number="2">cyl</a></code></pre></div>
+<pre><code>##  [1] 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4 4 4 8 6 8 4</code></pre>
+<div class="sourceCode" id="cb549"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb549-1" data-line-number="1"><span class="co"># this comparison operation produces a logical vector</span></a>
+<a class="sourceLine" id="cb549-2" data-line-number="2">cyl<span class="op">==</span><span class="dv">6</span></a></code></pre></div>
+<pre><code>##  [1]  TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE  TRUE
+## [12] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [23] FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE</code></pre>
+<div class="sourceCode" id="cb551"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb551-1" data-line-number="1"><span class="co"># logical indexing: only element corresponding to TRUE will be extracted</span></a>
+<a class="sourceLine" id="cb551-2" data-line-number="2">mpg[cyl<span class="op">==</span><span class="dv">6</span>]</a></code></pre></div>
+<pre><code>## [1] 21.0 21.0 21.4 18.1 19.2 17.8 19.7</code></pre>
+<div class="sourceCode" id="cb553"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb553-1" data-line-number="1"><span class="kw">mean</span>(mpg[cyl<span class="op">==</span><span class="dv">6</span>])</a></code></pre></div>
+<pre><code>## [1] 19.74286</code></pre>
+<div class="sourceCode" id="cb555"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb555-1" data-line-number="1"><span class="co"># if you become familiar with R, then you can do this with oneline</span></a>
+<a class="sourceLine" id="cb555-2" data-line-number="2"><span class="kw">mean</span>(mtcars<span class="op">$</span>mpg[mtcars<span class="op">$</span>cyl<span class="op">==</span><span class="dv">6</span>])</a></code></pre></div>
+<pre><code>## [1] 19.74286</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Given the 1000000 random numbers from a standard normal distribution (a normal distribution with mean = 0 and sd = 1), what would be the proportion of random numbers greater than 0?</li>
+</ol>
+<div class="sourceCode" id="cb557"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb557-1" data-line-number="1"><span class="co"># have you seen 1.96 before?</span></a>
+<a class="sourceLine" id="cb557-2" data-line-number="2"><span class="kw">set.seed</span>(<span class="dv">777</span>)</a>
+<a class="sourceLine" id="cb557-3" data-line-number="3">a &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1000000</span>) <span class="co"># equivalent to rnorm(1000, 0, 1)</span></a>
+<a class="sourceLine" id="cb557-4" data-line-number="4"><span class="kw">length</span>(a[a<span class="op">&gt;</span><span class="dv">0</span>])<span class="op">/</span><span class="kw">length</span>(a)</a></code></pre></div>
+<pre><code>## [1] 0.500623</code></pre>
+<div class="sourceCode" id="cb559"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb559-1" data-line-number="1"><span class="co"># alternative way to do the same thing</span></a>
+<a class="sourceLine" id="cb559-2" data-line-number="2"><span class="kw">sum</span>(a<span class="op">&gt;</span><span class="dv">0</span>)<span class="op">/</span><span class="kw">length</span>(a)</a></code></pre></div>
+<pre><code>## [1] 0.500623</code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li>Given the 1000000 random numbers from a standard normal distribution (a normal distribution with mean = 0 and sd = 1), what would be the proportion of random numbers greater than 1.96?</li>
+</ol>
+<div class="sourceCode" id="cb561"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb561-1" data-line-number="1"><span class="co"># have you seen 1.96 before?</span></a>
+<a class="sourceLine" id="cb561-2" data-line-number="2"><span class="kw">set.seed</span>(<span class="dv">777</span>)</a>
+<a class="sourceLine" id="cb561-3" data-line-number="3">a &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1000000</span>) <span class="co"># equivalent to rnorm(1000, 0, 1)</span></a>
+<a class="sourceLine" id="cb561-4" data-line-number="4"><span class="kw">length</span>(a[a<span class="op">&gt;</span><span class="fl">1.96</span>])<span class="op">/</span><span class="kw">length</span>(a)</a></code></pre></div>
+<pre><code>## [1] 0.025198</code></pre>
+<div class="sourceCode" id="cb563"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb563-1" data-line-number="1"><span class="co"># alternative way to do the same thing</span></a>
+<a class="sourceLine" id="cb563-2" data-line-number="2"><span class="kw">sum</span>(a<span class="op">&gt;</span><span class="fl">1.96</span>)<span class="op">/</span><span class="kw">length</span>(a)</a></code></pre></div>
+<pre><code>## [1] 0.025198</code></pre>
+<ol start="8" style="list-style-type: decimal">
+<li>Without using R, what would be the first element of the following expression?</li>
+</ol>
+<div class="sourceCode" id="cb565"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb565-1" data-line-number="1"><span class="co"># %in% operator </span></a>
+<a class="sourceLine" id="cb565-2" data-line-number="2"><span class="co"># v1 %in% v2 returns a logical vector indicating </span></a>
+<a class="sourceLine" id="cb565-3" data-line-number="3"><span class="co"># whether the elements of v1 are included in v2. </span></a>
+<a class="sourceLine" id="cb565-4" data-line-number="4"><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>)</a></code></pre></div>
+<pre><code>## [1] FALSE  TRUE  TRUE</code></pre>
+<ol start="9" style="list-style-type: decimal">
+<li>Without using R, which element would be displayed first when displaying the level of the following factor?</li>
+</ol>
+<div class="sourceCode" id="cb567"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb567-1" data-line-number="1"><span class="co"># &quot;medium&quot; will be displayed first according to alphabetical order</span></a>
+<a class="sourceLine" id="cb567-2" data-line-number="2"><span class="co"># notice this order does not represent intrinsic order in factor</span></a>
+<a class="sourceLine" id="cb567-3" data-line-number="3"><span class="co"># this order only applies to display or sort</span></a>
+<a class="sourceLine" id="cb567-4" data-line-number="4"><span class="co"># we use ordered() to create ordered factor</span></a>
+<a class="sourceLine" id="cb567-5" data-line-number="5">a &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;high&quot;</span>, <span class="st">&quot;high&quot;</span>, <span class="st">&quot;medium&quot;</span>, <span class="st">&quot;low&quot;</span>))</a>
+<a class="sourceLine" id="cb567-6" data-line-number="6">a</a></code></pre></div>
+<pre><code>## [1] high   high   medium low   
+## Levels: high low medium</code></pre>
+<ol start="10" style="list-style-type: decimal">
+<li>The following code will produce error (TRUE or FALSE)?</li>
+</ol>
+<div class="sourceCode" id="cb569"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb569-1" data-line-number="1"><span class="co"># this code will produce error because a factor only allow some pre-specified values (i.e., levels)</span></a>
+<a class="sourceLine" id="cb569-2" data-line-number="2">a[<span class="dv">1</span>] &lt;-<span class="st"> &quot;very high&quot;</span></a></code></pre></div>
+
+<div id="refs" class="references">
+<div>
+<p>Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York.</p>
+</div>
+<div>
+<p>Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. 1st ed. O’Reilly Media, Inc.</p>
+</div>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="base-r-quiz.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="set-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="base-r-quiz.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
