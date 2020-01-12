@@ -24,7 +24,7 @@
 <meta name="author" content="Sunbok Lee" />
 
 
-<meta name="date" content="2019-09-17" />
+<meta name="date" content="2019-09-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -235,6 +235,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7" data-path="base-r-practice.html"><a href="base-r-practice.html"><i class="fa fa-check"></i><b>7</b> Base R Practice</a><ul>
 <li class="chapter" data-level="7.1" data-path="base-r-practice.html"><a href="base-r-practice.html#set-1"><i class="fa fa-check"></i><b>7.1</b> Set 1</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html"><i class="fa fa-check"></i><b>8</b> Base R 2D Data Structure</a><ul>
+<li class="chapter" data-level="8.1" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#matrices"><i class="fa fa-check"></i><b>8.1</b> Matrices</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#what-is-a-matrix"><i class="fa fa-check"></i><b>8.1.1</b> What is a matrix?</a></li>
+<li class="chapter" data-level="8.1.2" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#create-a-matrix"><i class="fa fa-check"></i><b>8.1.2</b> Create a matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#data-frames-2"><i class="fa fa-check"></i><b>8.2</b> Data Frames</a></li>
+<li class="chapter" data-level="8.3" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#operators-1"><i class="fa fa-check"></i><b>8.3</b> Operators</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#quiz-problem-1-1"><i class="fa fa-check"></i><b>8.3.1</b> Quiz problem 1</a></li>
+<li class="chapter" data-level="8.3.2" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#quiz-problem-2-1"><i class="fa fa-check"></i><b>8.3.2</b> Quiz problem 2</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#subsetting-a-matrix-and-dataframe"><i class="fa fa-check"></i><b>8.4</b> Subsetting a Matrix and Dataframe</a></li>
+<li class="chapter" data-level="8.5" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#diamonds-dataset"><i class="fa fa-check"></i><b>8.5</b> <code>diamonds</code> dataset</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#quiz-problem-3-1"><i class="fa fa-check"></i><b>8.5.1</b> Quiz problem 3</a></li>
+<li class="chapter" data-level="8.5.2" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#quiz-problem-4-1"><i class="fa fa-check"></i><b>8.5.2</b> Quiz problem 4</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#bfi-dataset"><i class="fa fa-check"></i><b>8.6</b> <code>bfi</code> dataset</a><ul>
+<li class="chapter" data-level="8.6.1" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#quiz-problem-5-1"><i class="fa fa-check"></i><b>8.6.1</b> Quiz problem 5</a></li>
+<li class="chapter" data-level="8.6.2" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#quiz-problem-6-1"><i class="fa fa-check"></i><b>8.6.2</b> Quiz problem 6</a></li>
+<li class="chapter" data-level="8.6.3" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#quiz-problem-7-1"><i class="fa fa-check"></i><b>8.6.3</b> Quiz problem 7</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -502,52 +523,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" data-line-number="1"><span class="co"># rnorm(n, mean = 0, sd = 1) generates a vector of n random samples </span></a>
 <a class="sourceLine" id="cb156-2" data-line-number="2"><span class="co"># from a normal distribution with specific mean and sd. </span></a>
 <a class="sourceLine" id="cb156-3" data-line-number="3"><span class="kw">rnorm</span>(<span class="dv">100</span>)</a></code></pre></div>
-<pre><code>##   [1]  0.681224667 -0.558922960 -1.190870140 -0.308586644 -2.368825668
-##   [6] -0.436760333  0.629793573  2.224981578 -0.759159442  0.814613570
-##  [11]  0.071597194  1.080134777 -0.767712938 -2.193837764  1.118891576
-##  [16] -1.098713805  2.347968870 -2.008020454 -2.024521270  0.220608800
-##  [21]  1.329420853 -1.101563640 -0.202776220  0.194366720  0.908250841
-##  [26] -1.656031295 -0.179060447  0.109541793  0.055353789 -0.680215416
-##  [31]  0.142358669  0.832553826 -1.510801952  0.088936977 -1.048070834
-##  [36]  0.828812128  1.398042025  0.670865089 -0.247933606  0.322964251
-##  [41] -1.280758242  0.793516711 -0.881490875  0.769080294  1.069167406
-##  [46]  0.849731629  1.388264180  1.581661604 -0.722024865  0.153786577
-##  [51]  0.503535629  1.090295387  0.423473886 -1.272523207 -0.792982721
-##  [56]  1.025187314  1.004693849  0.686413153 -0.359229272  0.501573053
-##  [61]  0.080971220  0.679114567  0.349345764 -1.029809876  0.026853935
-##  [66] -0.162740029  0.044807565  1.133119755 -0.912652538  0.430526419
-##  [71] -2.053159467 -0.188232604  0.001548390 -0.117089508  0.363448510
-##  [76]  0.149425205  0.599762343  0.363337041 -0.630354791  1.632072443
-##  [81]  1.062614636  0.930490689  0.312784728 -0.076749608 -0.220865771
-##  [86]  0.788105884 -0.779645567 -0.621644122  0.411841012 -0.556273691
-##  [91]  0.001932574  0.124391667  1.494983945 -0.720549869  0.866567470
-##  [96] -0.966158582 -0.706960856  0.931210036  1.311525536  0.971454835</code></pre>
+<pre><code>##   [1] -0.46318039 -1.92207370  0.48981541  0.58320740 -0.58185272
+##   [6]  0.98317102  0.08219147  0.25794319  1.07476777  0.89351029
+##  [11] -0.73920408  1.66496571  0.24778637  0.63400977  2.49348027
+##  [16]  1.21220642 -0.63466100 -1.01083683  0.26832713  0.37634420
+##  [21]  1.04310888  1.88504561  2.49685629  0.56816149  0.14799791
+##  [26] -0.47859770  0.62765657  1.94492494 -0.49738247  0.85219098
+##  [31]  1.65287606  1.80447357 -0.47766019 -2.15720708  0.64518986
+##  [36]  1.30516466  1.94885138 -0.19080086  0.68236477  0.83597453
+##  [41]  0.40205447  1.19372485 -1.53595670  1.16544319 -2.12780997
+##  [46]  0.61870624 -0.27223004 -0.35129380 -0.65514422 -0.69857348
+##  [51] -1.77302900 -0.07981702 -1.58836324  0.76133133  2.27375357
+##  [56]  0.10292370 -0.40806345 -0.07425536  1.48025925  0.63257357
+##  [61]  2.30595918  1.10460889 -0.06466990 -0.29140430  0.05334496
+##  [66] -1.35941568 -1.26654228 -0.41485409  1.16909362 -0.40901886
+##  [71]  0.27099446  0.63794461  0.40907405  0.82732147 -0.45654389
+##  [76] -2.32003712 -1.40331948  0.27966391 -0.32802311 -0.84994005
+##  [81]  1.75844203  1.01992218 -0.52370735  0.72449359  0.50686251
+##  [86]  0.76129250 -0.56609279  1.04194252 -0.04617136  1.06497084
+##  [91]  0.38450446 -0.54078424  0.83799561  0.71361614  0.95773168
+##  [96]  1.13602602 -0.51846416 -0.31191227 -1.20133821 -1.11446282</code></pre>
 <div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" data-line-number="1"><span class="kw">qplot</span>(<span class="kw">rnorm</span>(<span class="dv">10000</span>))</a></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-103-1.png" width="672" /></p>
 <div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb160-1" data-line-number="1"><span class="co"># runif(n, min, max) generates a vector of n random samples </span></a>
 <a class="sourceLine" id="cb160-2" data-line-number="2"><span class="co"># from a uniform distribution whose limits are min and max. </span></a>
 <a class="sourceLine" id="cb160-3" data-line-number="3"><span class="kw">runif</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">1</span>)</a></code></pre></div>
-<pre><code>##   [1] 0.892571512 0.160943539 0.787784501 0.913959214 0.265779114
-##   [6] 0.664047493 0.489941882 0.687431308 0.072834924 0.267453526
-##  [11] 0.861321074 0.883132451 0.647861349 0.608634531 0.328620502
-##  [16] 0.435118901 0.857664408 0.719999514 0.498940131 0.257802608
-##  [21] 0.998171296 0.788388125 0.583149293 0.746267442 0.101133847
-##  [26] 0.852298593 0.950222516 0.877108478 0.566369660 0.069925431
-##  [31] 0.994202007 0.642402214 0.141289287 0.320228446 0.028837298
-##  [36] 0.540288547 0.173719269 0.275371982 0.641923836 0.109955081
-##  [41] 0.182672614 0.284844451 0.169977462 0.024592037 0.696582897
-##  [46] 0.776061597 0.425063081 0.712479715 0.896820768 0.685517521
-##  [51] 0.749827187 0.453586916 0.794574408 0.875435886 0.460412397
-##  [56] 0.577638209 0.304749249 0.716982131 0.570843645 0.854116647
-##  [61] 0.306208066 0.453800969 0.347864222 0.081376296 0.980640088
-##  [66] 0.949820907 0.837784171 0.614885285 0.445962850 0.416880209
-##  [71] 0.007194338 0.408041721 0.497832892 0.878068006 0.953404384
-##  [76] 0.962536862 0.025650257 0.009023902 0.375818009 0.164851252
-##  [81] 0.477520572 0.454137505 0.458094390 0.340771132 0.691041623
-##  [86] 0.278023828 0.888090497 0.897355278 0.350437589 0.991375627
-##  [91] 0.163345445 0.167283652 0.170788303 0.940901658 0.728611967
-##  [96] 0.226188548 0.977290594 0.845606587 0.207367603 0.350903326</code></pre>
+<pre><code>##   [1] 0.200493981 0.913890022 0.925284872 0.939938464 0.488030063
+##   [6] 0.958758111 0.070488840 0.241445342 0.606639218 0.301767220
+##  [11] 0.807673427 0.265096208 0.381117339 0.581714580 0.402669361
+##  [16] 0.376236026 0.915022072 0.322494356 0.444555146 0.301303051
+##  [21] 0.989716308 0.442888687 0.368775870 0.887373975 0.541956016
+##  [26] 0.828093648 0.856681735 0.998672985 0.336316905 0.618682664
+##  [31] 0.878514838 0.674630305 0.004536106 0.767555786 0.499567524
+##  [36] 0.332343363 0.720597610 0.580872959 0.074813569 0.613581373
+##  [41] 0.100109954 0.910043166 0.722691817 0.582860281 0.457972167
+##  [46] 0.330155948 0.846842775 0.804651237 0.226410153 0.797534185
+##  [51] 0.079433011 0.223361511 0.008048742 0.137800451 0.797093029
+##  [56] 0.936086149 0.687958405 0.230822997 0.061348812 0.903451300
+##  [61] 0.617411222 0.289156596 0.467452560 0.843612333 0.391771050
+##  [66] 0.845670325 0.529390964 0.110443351 0.181535779 0.969218678
+##  [71] 0.609455312 0.215397993 0.628922175 0.208972377 0.645849121
+##  [76] 0.289624811 0.988953752 0.449271011 0.036308090 0.984438413
+##  [81] 0.840788793 0.205129691 0.613168146 0.354040594 0.268558787
+##  [86] 0.362846389 0.794573026 0.526651117 0.280184834 0.321087977
+##  [91] 0.729209536 0.166070890 0.762573755 0.147359042 0.433322630
+##  [96] 0.796644406 0.049564433 0.513328888 0.427195282 0.080089115</code></pre>
 <div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb162-1" data-line-number="1"><span class="kw">qplot</span>(<span class="kw">runif</span>(<span class="dv">10000</span>, <span class="dv">0</span>, <span class="dv">1</span>))</a></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="Introduction-to-R,-Rstudio,-and-ggplot2_files/figure-html/unnamed-chunk-105-1.png" width="672" /></p>

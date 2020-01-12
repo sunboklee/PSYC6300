@@ -1,0 +1,402 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+
+# Base R 2D Data Structure
+
+```{r, include=FALSE}
+tutorial::go_interactive()
+```
+
+## Matrices 
+
+### What is a matrix? 
+- A matrix is a two dimensional array of elements with rows and columns. 
+- A matrix is **implemented as a vector** with special attributes
+- Adding a **`dim()` attribute** to an atomic vector allows it to behave like a multi-dimensional array. 
+
+```{r}
+# create a vector a
+a <- 1:6 
+# attr() = get or set specific attributes of an object.
+attr(a, "dim") <- c(3,2)
+a
+```
+
+```{r}
+a <- 1:6 
+attr(a, "dim") <- c(3,2)
+a
+attributes(a)
+```
+
+```{r}
+a <- 1:6 
+attr(a, "dim") <- c(3,2)
+a
+dim(a)
+```
+
+
+### Create a matrix
+- `matrix()` creates a matrix from the given set of values
+
+```{r, echo=TRUE}
+# by default, a matrix is filled by column
+a <- matrix(1:6, ncol=3, nrow=2)
+a
+```
+
+```{r}
+# R will calculate nrow
+a <- matrix(1:6, ncol=3)
+a
+```
+
+```{r}
+# a matrix can be filled by row using `byrow = TRUE`
+a <- matrix(1:6, ncol=3, nrow=2, byrow = TRUE)
+a
+```
+
+```{r, echo=TRUE}
+# create an array of dimensions 
+b <- array(1:12, c(2,3,2))
+b
+```
+
+```{r, echo=TRUE}
+b <- array(1:12, c(2,3,2))
+b
+dim(b)
+```
+
+-	`length()` generalises to `nrow()` and `ncol()` for matrices, and `dim()` for arrays.
+-	`names()` generalises to `rownames()` and `colnames()` for matrices, and `dimnames()`, a list of character vectors, for arrays.
+
+```{r, echo=TRUE}
+results <- matrix(c(10, 30, 40, 50, 43, 56, 21, 30), 2, 4, byrow = TRUE)
+colnames(results) <- c("1qrt", "2qrt", "3qrt", "4qrt")
+rownames(results) <- c("store1", "store2")
+results
+```
+
+
+## Data Frames
+
+- A data frame is a **list** of **equal-length vectors**. 
+- Since a list is a heterogeneous data structure, each element of a data frame can have different data types.  
+- `data.frame()` creates a data frame. 
+
+```{r, echo=TRUE}
+# x = integer vector
+# y = character vector
+df <- data.frame(x=1:3, y=c("a", "b", "c"))
+df
+```
+
+```{r, echo=TRUE}
+# str() displays the internal structure of an R object
+df <- data.frame(x=1:3, y=c("a", "b", "c"))
+str(df) 
+```
+
+- `data.frame()` converts strings into factors by default. 
+    - This default setting can cause serious problems in some cases. 
+    - `stringAsFactors = FALSE` suppresses this default setting. 
+    - Using `str()` to check data types is always a good practice. 
+
+
+```{r, echo=TRUE}
+df <- data.frame(x=1:3, y=c("a", "b", "c"), stringsAsFactors = FALSE)
+str(df) 
+```
+
+```{r}
+# a data frame is a list of equal-lengthed vectors
+df <- data.frame(x=1:3, y=c("a", "b", "c"), stringsAsFactors = FALSE)
+typeof(df)
+```
+
+## Operators
+
+* Arithmetic Operators
+
+|Operator	|Description |
+|---------|------------|
+|+        |addition    |
+|-        |subtraction |
+|*        |multiplication|
+|/        |division|
+|^ or **  |exponentiation|
+
+
+* Logical Operators
+
+|Operator	|Description |
+|---------|------------|
+| <       |less than    |
+| <=       |less than or equal to |
+|>        |greater than|
+|>=       |greater than equal to|
+|==  |exactly equal to|
+|!=  |not equal to|
+|!x  |Not x|
+|x\|y  |x OR y|
+|x&Y  |x AND y|
+
+
+```{r}
+1L == 2L
+```
+
+```{r}
+"a" != "b"
+```
+
+### Quiz problem 1
+
+(Without using R) What is the value of the following expression? 
+
+`(1L == 2L) | ("a" != "b")`
+
+A. TRUE
+
+B. FALSE
+
+### Quiz problem 2
+
+(Without using R) What is the value of the following expression? 
+
+`(1 == 2) & ("a" != "b")`
+
+A. TRUE
+
+B. FALSE
+
+
+## Subsetting a Matrix and Dataframe
+
+- **Positive integers** return elements at the specified positions.
+- **Negative integers** omit elements at the specified positions
+- **Logical vectors** select elements where the corresponding logical value is TRUE. 
+- **Character vectors** return elements with matching names.
+- **Nothing** returns the original vector. 
+
+```{r, echo=TRUE}
+# create a 3 x 3 matrix
+a <- matrix(1:9, nrow = 3)
+colnames(a) <- c("A", "B", "C")
+a
+```
+
+```{r, echo=TRUE}
+a <- matrix(1:9, nrow = 3)
+colnames(a) <- c("A", "B", "C")
+
+# If you omit any dimension, you obtain full columns or rows
+# this is equivalent to `filter()` in tidyverse
+a[2,]
+```
+
+```{r, echo=TRUE}
+a <- matrix(1:9, nrow = 3)
+colnames(a) <- c("A", "B", "C")
+
+# If you omit any dimension, you obtain full columns or rows
+# this is equivalent to `filter()` in tidyverse
+a[c(1,2),]
+```
+
+
+```{r, echo=TRUE}
+a <- matrix(1:9, nrow = 3)
+colnames(a) <- c("A", "B", "C")
+
+# this is equivalent to `select()` in tidyverse
+a[,3]
+```
+
+
+```{r, echo=TRUE}
+a <- matrix(1:9, nrow = 3)
+colnames(a) <- c("A", "B", "C")
+
+# this is equivalent to `select()` in tidyverse
+a[,c("A", "B")]
+```
+
+```{r, echo=TRUE}
+a <- matrix(1:9, nrow = 3)
+colnames(a) <- c("A", "B", "C")
+
+a[c(TRUE, FALSE, TRUE), c("B", "A")]
+```
+
+```{r}
+a <- matrix(1:9, nrow = 3)
+colnames(a) <- c("A", "B", "C")
+
+a > 3
+```
+
+
+```{r, echo=TRUE}
+a <- matrix(1:9, nrow = 3)
+colnames(a) <- c("A", "B", "C")
+
+a[a>3] <- NA
+a
+```
+
+```{r}
+# mtcars is a dataframe, and a dataframe is a list. 
+# we use $ to access the element of a list. 
+# therefore, we can use $ to access the column of a dataframe
+str(mtcars)
+```
+
+```{r}
+# accessing `mpg` variable in the `mtcars` dataset. 
+mtcars$mpg
+```
+
+```{r}
+# mpgb = a binary variable, 1 when mpg > 19, 0 otherwise
+# This code creates a new binary variable `mpgb`. 
+# This is equivalent to `mutate()` in tidyverse
+mtcars$mpgb <- ifelse(mtcars$mpg > 19, 1, 0)
+```
+
+
+
+## `diamonds` dataset
+- `diamonds` is a tibble, which is a tidyverse alternative to dataframe.
+- We often subset the original dataset, and work on it. 
+
+```{r}
+library(ggplot2)
+# subset only ideal cut diamonds
+diamonds_ideal <- diamonds[diamonds$cut == "Ideal",]
+# average price of ideal cut diamonds
+mean(diamonds_ideal$price)
+```
+
+### Quiz problem 3
+
+What is the average carat of "Premium" cut diamonds with "E" color? (2 decimal)
+
+A. 0.52
+
+B. 0.62
+
+C. 0.72
+
+D. 0.82
+
+```{r}
+library(ggplot2)
+diamonds
+
+# subset only premium cut diamonds with E color
+diamonds_premium_e <- diamonds[diamonds$cut == "Premium" & diamonds$color == "E",]
+# average price of ideal diamonds
+mean(diamonds_premium_e$carat)
+```
+
+
+### Quiz problem 4
+
+How many "Good" cut diamonds larger than 0.7 carat have "VS1" clarity?
+What is the average carat of "Premium" diamonds with "E" color? (2 decimal)
+
+A. 305
+
+B. 587
+
+C. 124
+
+D. 987
+
+```{r}
+library(ggplot2)
+diamonds
+
+# subset only good cut diamonds larger than 0.7 carat
+diamonds_good_0.7 <- diamonds[diamonds$cut == "Good" & diamonds$carat > 0.7,]
+# average price of ideal diamonds
+table(diamonds_good_0.7$clarity)
+```
+
+
+```{r}
+library(psych)
+bfi
+```
+
+## `bfi` dataset
+- `bfi` is a dataframe in the `psych` package that contains 25 Personality items, sex, education, and age. 
+
+### Quiz problem 5
+
+How many missing values are in `education` in `bfi`? 
+
+A. 123
+
+B. 223
+
+C. 323
+
+D. 423
+
+```{r}
+library(psych)
+sum(is.na(bfi$education))
+```
+
+### Quiz problem 6
+
+Subset (i.e., filter()) `bfi` such that only `education` has no missing, and then calculate the frequency of male (coded as 1) using `table()`. 
+
+A. 783
+
+B. 694
+
+C. 790
+
+D. 838
+
+```{r}
+library(psych)
+bfi
+bfi_new <- bfi[!is.na(bfi$education), ]
+table(bfi_new$gender)
+```
+
+
+### Quiz problem 7
+
+Subset (i.e., filter()) `bfi` such that only males (coded as 1) are contained in the dataset, and then calculate the proportion of age 16 (round to 3 decimal). 
+
+A. 0.013
+
+B. 0.027
+
+C. 0.033
+
+D. 0.021
+
+```{r}
+library(psych)
+bfi
+bfi_male <- bfi[bfi$gender == 1, ]
+table(bfi_male$age)/sum(table(bfi_male$age))
+```
+
+
+
+
+
+

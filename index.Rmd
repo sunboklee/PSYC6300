@@ -15,7 +15,7 @@ description: "This is an introduction to R, Rstudio, and ggplot2"
 # R 
 
 ## Why R? 
-* R is a **free** open source software.
+* R is a **free** open source software..
 * R is a language designed especially for **statistical analysis**. Many statistical methods are first implemented in R. 
 * R provides many tools for publication-quality **data visualization** (e.g., `ggplot2`).
 * R provides many tools for **data processing (or data wrangling)** (e.g., `dplyr`, `tidyr`). Data come from diverse sources these days (e.g., microarray, EEG, fMRI, eyetrackers, facebook, twitter, many sensors, ... ).

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Base R 2D Data Structure | R, Rstudio, and ggplot2</title>
+  <meta name="description" content="This is an introduction to R, Rstudio, and ggplot2" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Base R 2D Data Structure | R, Rstudio, and ggplot2" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is an introduction to R, Rstudio, and ggplot2" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Base R 2D Data Structure | R, Rstudio, and ggplot2" />
+  
+  <meta name="twitter:description" content="This is an introduction to R, Rstudio, and ggplot2" />
+  
+
+<meta name="author" content="Sunbok Lee" />
+
+
+<meta name="date" content="2019-09-30" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="base-r-practice.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> R</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#why-r"><i class="fa fa-check"></i><b>1.1</b> Why R?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#installing-r"><i class="fa fa-check"></i><b>1.2</b> Installing R</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#installing-rstudio"><i class="fa fa-check"></i><b>1.3</b> Installing RStudio</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#cheat-sheets-for-r"><i class="fa fa-check"></i><b>1.4</b> Cheat Sheets for R</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#rmarkdown-files"><i class="fa fa-check"></i><b>1.5</b> Rmarkdown files</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#r-topics-covered-in-this-course"><i class="fa fa-check"></i><b>1.6</b> R topics covered in this course</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html"><i class="fa fa-check"></i><b>2</b> Introduction to <code>ggplot2</code></a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#what-is-ggplot2"><i class="fa fa-check"></i><b>2.1</b> What is <code>ggplot2</code>?</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#installing-and-laoding-ggplot2"><i class="fa fa-check"></i><b>2.2</b> Installing and laoding <code>ggplot2</code></a></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#graphical-components-of-ggplot2"><i class="fa fa-check"></i><b>2.3</b> Graphical components of <code>ggplot2</code></a><ul>
+<li class="chapter" data-level="2.3.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#data"><i class="fa fa-check"></i><b>2.3.1</b> Data</a></li>
+<li class="chapter" data-level="2.3.2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#geometric-objects-geoms"><i class="fa fa-check"></i><b>2.3.2</b> Geometric objects (<strong>geoms</strong>)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#aesthetic-mappings"><i class="fa fa-check"></i><b>2.3.3</b> Aesthetic mappings</a></li>
+<li class="chapter" data-level="2.3.4" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#scales"><i class="fa fa-check"></i><b>2.3.4</b> Scales</a></li>
+<li class="chapter" data-level="2.3.5" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#statistical-transformations-stats-for-short"><i class="fa fa-check"></i><b>2.3.5</b> Statistical transformations (<strong>stats</strong> for short)</a></li>
+<li class="chapter" data-level="2.3.6" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#a-faceting"><i class="fa fa-check"></i><b>2.3.6</b> A faceting</a></li>
+<li class="chapter" data-level="2.3.7" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#grouping"><i class="fa fa-check"></i><b>2.3.7</b> Grouping</a></li>
+<li class="chapter" data-level="2.3.8" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#themes"><i class="fa fa-check"></i><b>2.3.8</b> Themes</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#saving-a-ggplot"><i class="fa fa-check"></i><b>2.4</b> Saving a ggplot</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#more-resources"><i class="fa fa-check"></i><b>2.5</b> More resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>3</b> Descriptive Statistics</a><ul>
+<li class="chapter" data-level="3.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#r-functions-for-descriptive-statistics"><i class="fa fa-check"></i><b>3.1</b> R functions for descriptive statistics</a></li>
+<li class="chapter" data-level="3.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#qplot"><i class="fa fa-check"></i><b>3.2</b> qplot()</a></li>
+<li class="chapter" data-level="3.3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#scatterplots"><i class="fa fa-check"></i><b>3.3</b> Scatterplots</a></li>
+<li class="chapter" data-level="3.4" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#histogram"><i class="fa fa-check"></i><b>3.4</b> Histogram</a></li>
+<li class="chapter" data-level="3.5" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#density-plots"><i class="fa fa-check"></i><b>3.5</b> Density plots</a></li>
+<li class="chapter" data-level="3.6" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#barplots"><i class="fa fa-check"></i><b>3.6</b> Barplots</a></li>
+<li class="chapter" data-level="3.7" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#boxplots"><i class="fa fa-check"></i><b>3.7</b> Boxplots</a></li>
+<li class="chapter" data-level="3.8" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#faceting"><i class="fa fa-check"></i><b>3.8</b> Faceting</a></li>
+<li class="chapter" data-level="3.9" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#the-corrplot-package"><i class="fa fa-check"></i><b>3.9</b> The <code>corrplot</code> Package</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="exercise.html"><a href="exercise.html"><i class="fa fa-check"></i><b>4</b> Exercise</a></li>
+<li class="chapter" data-level="5" data-path="base-r.html"><a href="base-r.html"><i class="fa fa-check"></i><b>5</b> Base R</a><ul>
+<li class="chapter" data-level="5.1" data-path="base-r.html"><a href="base-r.html#topics"><i class="fa fa-check"></i><b>5.1</b> Topics</a></li>
+<li class="chapter" data-level="5.2" data-path="base-r.html"><a href="base-r.html#further-reading"><i class="fa fa-check"></i><b>5.2</b> Further reading</a></li>
+<li class="chapter" data-level="5.3" data-path="base-r.html"><a href="base-r.html#interaction-with-r"><i class="fa fa-check"></i><b>5.3</b> Interaction with R</a></li>
+<li class="chapter" data-level="5.4" data-path="base-r.html"><a href="base-r.html#r-objects-and-variables"><i class="fa fa-check"></i><b>5.4</b> R Objects and Variables</a></li>
+<li class="chapter" data-level="5.5" data-path="base-r.html"><a href="base-r.html#data-structure"><i class="fa fa-check"></i><b>5.5</b> Data Structure</a></li>
+<li class="chapter" data-level="5.6" data-path="base-r.html"><a href="base-r.html#vectors-come-in-two-flavours"><i class="fa fa-check"></i><b>5.6</b> Vectors Come in Two Flavours</a></li>
+<li class="chapter" data-level="5.7" data-path="base-r.html"><a href="base-r.html#a-vector-has-three-properties"><i class="fa fa-check"></i><b>5.7</b> A Vector Has Three Properties</a></li>
+<li class="chapter" data-level="5.8" data-path="base-r.html"><a href="base-r.html#attributes"><i class="fa fa-check"></i><b>5.8</b> Attributes</a></li>
+<li class="chapter" data-level="5.9" data-path="base-r.html"><a href="base-r.html#type-coercion-conversion"><i class="fa fa-check"></i><b>5.9</b> Type Coercion (Conversion)</a></li>
+<li class="chapter" data-level="5.10" data-path="base-r.html"><a href="base-r.html#na-represents-missing"><i class="fa fa-check"></i><b>5.10</b> NA represents missing</a></li>
+<li class="chapter" data-level="5.11" data-path="base-r.html"><a href="base-r.html#useful-functions-for-a-vector"><i class="fa fa-check"></i><b>5.11</b> Useful Functions for a vector</a><ul>
+<li class="chapter" data-level="5.11.1" data-path="base-r.html"><a href="base-r.html#generate-a-vector"><i class="fa fa-check"></i><b>5.11.1</b> Generate a vector</a></li>
+<li class="chapter" data-level="5.11.2" data-path="base-r.html"><a href="base-r.html#indexing-or-subsetting-a-vector"><i class="fa fa-check"></i><b>5.11.2</b> Indexing or subsetting a Vector</a></li>
+<li class="chapter" data-level="5.11.3" data-path="base-r.html"><a href="base-r.html#arrange-a-vector"><i class="fa fa-check"></i><b>5.11.3</b> Arrange a vector</a></li>
+<li class="chapter" data-level="5.11.4" data-path="base-r.html"><a href="base-r.html#vectorization-of-functions"><i class="fa fa-check"></i><b>5.11.4</b> Vectorization of Functions</a></li>
+<li class="chapter" data-level="5.11.5" data-path="base-r.html"><a href="base-r.html#some-more-functions"><i class="fa fa-check"></i><b>5.11.5</b> Some more functions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.12" data-path="base-r.html"><a href="base-r.html#exercise-on-vectors"><i class="fa fa-check"></i><b>5.12</b> Exercise on vectors</a></li>
+<li class="chapter" data-level="5.13" data-path="base-r.html"><a href="base-r.html#factors"><i class="fa fa-check"></i><b>5.13</b> Factors</a><ul>
+<li class="chapter" data-level="5.13.1" data-path="base-r.html"><a href="base-r.html#what-is-a-factor"><i class="fa fa-check"></i><b>5.13.1</b> What is a factor?</a></li>
+<li class="chapter" data-level="5.13.2" data-path="base-r.html"><a href="base-r.html#creating-a-factor"><i class="fa fa-check"></i><b>5.13.2</b> Creating a factor</a></li>
+<li class="chapter" data-level="5.13.3" data-path="base-r.html"><a href="base-r.html#unordered-vs-ordered-factor"><i class="fa fa-check"></i><b>5.13.3</b> unordered vs ordered factor</a></li>
+<li class="chapter" data-level="5.13.4" data-path="base-r.html"><a href="base-r.html#why-factors"><i class="fa fa-check"></i><b>5.13.4</b> Why factors?</a></li>
+<li class="chapter" data-level="5.13.5" data-path="base-r.html"><a href="base-r.html#some-more-comments"><i class="fa fa-check"></i><b>5.13.5</b> Some more comments</a></li>
+<li class="chapter" data-level="5.13.6" data-path="base-r.html"><a href="base-r.html#exercise-1"><i class="fa fa-check"></i><b>5.13.6</b> Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="5.14" data-path="base-r.html"><a href="base-r.html#lists"><i class="fa fa-check"></i><b>5.14</b> Lists</a><ul>
+<li class="chapter" data-level="5.14.1" data-path="base-r.html"><a href="base-r.html#what-is-a-list"><i class="fa fa-check"></i><b>5.14.1</b> What is a list?</a></li>
+<li class="chapter" data-level="5.14.2" data-path="base-r.html"><a href="base-r.html#creating-a-list"><i class="fa fa-check"></i><b>5.14.2</b> Creating a list</a></li>
+<li class="chapter" data-level="5.14.3" data-path="base-r.html"><a href="base-r.html#why-lists"><i class="fa fa-check"></i><b>5.14.3</b> Why lists?</a></li>
+<li class="chapter" data-level="5.14.4" data-path="base-r.html"><a href="base-r.html#subsetting-a-list"><i class="fa fa-check"></i><b>5.14.4</b> Subsetting a List</a></li>
+<li class="chapter" data-level="5.14.5" data-path="base-r.html"><a href="base-r.html#exercise-2"><i class="fa fa-check"></i><b>5.14.5</b> Exercise</a></li>
+<li class="chapter" data-level="5.14.6" data-path="base-r.html"><a href="base-r.html#data-frames"><i class="fa fa-check"></i><b>5.14.6</b> Data frames</a></li>
+<li class="chapter" data-level="5.14.7" data-path="base-r.html"><a href="base-r.html#the-apply-family-of-functions"><i class="fa fa-check"></i><b>5.14.7</b> The apply family of functions</a></li>
+<li class="chapter" data-level="5.14.8" data-path="base-r.html"><a href="base-r.html#exercise-3"><i class="fa fa-check"></i><b>5.14.8</b> Exercise</a></li>
+<li class="chapter" data-level="5.14.9" data-path="base-r.html"><a href="base-r.html#more-resources-1"><i class="fa fa-check"></i><b>5.14.9</b> More resources</a></li>
+</ul></li>
+<li class="chapter" data-level="5.15" data-path="base-r.html"><a href="base-r.html#matrices-and-arrays"><i class="fa fa-check"></i><b>5.15</b> Matrices and Arrays</a></li>
+<li class="chapter" data-level="5.16" data-path="base-r.html"><a href="base-r.html#data-frames-1"><i class="fa fa-check"></i><b>5.16</b> Data Frames</a></li>
+<li class="chapter" data-level="5.17" data-path="base-r.html"><a href="base-r.html#operators"><i class="fa fa-check"></i><b>5.17</b> Operators</a></li>
+<li class="chapter" data-level="5.18" data-path="base-r.html"><a href="base-r.html#subsetting-a-matrix-and-array"><i class="fa fa-check"></i><b>5.18</b> Subsetting a Matrix and Array</a></li>
+<li class="chapter" data-level="5.19" data-path="base-r.html"><a href="base-r.html#exercise-4"><i class="fa fa-check"></i><b>5.19</b> Exercise</a></li>
+<li class="chapter" data-level="5.20" data-path="base-r.html"><a href="base-r.html#combine-matrices-by-columns-or-rows"><i class="fa fa-check"></i><b>5.20</b> Combine Matrices by Columns or Rows</a></li>
+<li class="chapter" data-level="5.21" data-path="base-r.html"><a href="base-r.html#names-of-the-columns-and-rows-of-matrices"><i class="fa fa-check"></i><b>5.21</b> Names of the Columns and Rows of Matrices</a></li>
+<li class="chapter" data-level="5.22" data-path="base-r.html"><a href="base-r.html#functions"><i class="fa fa-check"></i><b>5.22</b> Functions</a></li>
+<li class="chapter" data-level="5.23" data-path="base-r.html"><a href="base-r.html#an-example-of-functions"><i class="fa fa-check"></i><b>5.23</b> An Example of Functions</a></li>
+<li class="chapter" data-level="5.24" data-path="base-r.html"><a href="base-r.html#user-defined-functions"><i class="fa fa-check"></i><b>5.24</b> User-Defined Functions</a></li>
+<li class="chapter" data-level="5.25" data-path="base-r.html"><a href="base-r.html#exercise-5"><i class="fa fa-check"></i><b>5.25</b> Exercise</a></li>
+<li class="chapter" data-level="5.26" data-path="base-r.html"><a href="base-r.html#some-comments-on-functions"><i class="fa fa-check"></i><b>5.26</b> Some Comments on Functions</a></li>
+<li class="chapter" data-level="5.27" data-path="base-r.html"><a href="base-r.html#generating-sequences"><i class="fa fa-check"></i><b>5.27</b> Generating Sequences</a></li>
+<li class="chapter" data-level="5.28" data-path="base-r.html"><a href="base-r.html#control-flow-if-else"><i class="fa fa-check"></i><b>5.28</b> Control Flow (if-else)</a></li>
+<li class="chapter" data-level="5.29" data-path="base-r.html"><a href="base-r.html#control-flow-for"><i class="fa fa-check"></i><b>5.29</b> Control Flow (for)</a></li>
+<li class="chapter" data-level="5.30" data-path="base-r.html"><a href="base-r.html#control-flow-for-1"><i class="fa fa-check"></i><b>5.30</b> Control Flow (for)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="base-r-quiz.html"><a href="base-r-quiz.html"><i class="fa fa-check"></i><b>6</b> Base R Quiz</a><ul>
+<li class="chapter" data-level="6.0.1" data-path="base-r-quiz.html"><a href="base-r-quiz.html#dataset1-diamonds-is-a-dataset-in-ggplot2-containing-the-prices-and-other-attributes-of-almost-54000-diamonds.-in-the-dataset-price-is-the-price-of-diamonds-in-us-dollars-and-carat-is-the-weight-of-the-diamonds-0.2-5.01."><i class="fa fa-check"></i><b>6.0.1</b> Dataset1: <code>diamonds</code> is a dataset in <code>ggplot2</code> containing the prices and other attributes of almost 54,000 diamonds. In the dataset, <code>price</code> is the price of diamonds in US dollars, and <code>carat</code> is the weight of the diamonds (0.2-5.01).</a></li>
+<li class="chapter" data-level="6.0.2" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-1"><i class="fa fa-check"></i><b>6.0.2</b> Quiz problem 1</a></li>
+<li class="chapter" data-level="6.0.3" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-2"><i class="fa fa-check"></i><b>6.0.3</b> Quiz problem 2</a></li>
+<li class="chapter" data-level="6.0.4" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-3"><i class="fa fa-check"></i><b>6.0.4</b> Quiz problem 3</a></li>
+<li class="chapter" data-level="6.0.5" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-4"><i class="fa fa-check"></i><b>6.0.5</b> Quiz problem 4</a></li>
+<li class="chapter" data-level="6.0.6" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-5"><i class="fa fa-check"></i><b>6.0.6</b> Quiz problem 5</a></li>
+<li class="chapter" data-level="6.0.7" data-path="base-r-quiz.html"><a href="base-r-quiz.html#dataset2-bfi-is-a-dataset-in-the-psych-package-containing-25-personality-self-report-items-taken-from-the-international-personality-item-pool.-in-the-dataset"><i class="fa fa-check"></i><b>6.0.7</b> Dataset2: <code>bfi</code> is a dataset in the <code>psych</code> package containing 25 personality self report items taken from the International Personality Item Pool. In the dataset,</a></li>
+<li class="chapter" data-level="6.0.8" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-6"><i class="fa fa-check"></i><b>6.0.8</b> Quiz problem 6</a></li>
+<li class="chapter" data-level="6.0.9" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-7"><i class="fa fa-check"></i><b>6.0.9</b> Quiz problem 7</a></li>
+<li class="chapter" data-level="6.0.10" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-8"><i class="fa fa-check"></i><b>6.0.10</b> Quiz problem 8</a></li>
+<li class="chapter" data-level="6.0.11" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-9"><i class="fa fa-check"></i><b>6.0.11</b> Quiz problem 9</a></li>
+<li class="chapter" data-level="6.0.12" data-path="base-r-quiz.html"><a href="base-r-quiz.html#quiz-problem-10"><i class="fa fa-check"></i><b>6.0.12</b> Quiz problem 10</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="base-r-practice.html"><a href="base-r-practice.html"><i class="fa fa-check"></i><b>7</b> Base R Practice</a><ul>
+<li class="chapter" data-level="7.1" data-path="base-r-practice.html"><a href="base-r-practice.html#set-1"><i class="fa fa-check"></i><b>7.1</b> Set 1</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html"><i class="fa fa-check"></i><b>8</b> Base R 2D Data Structure</a><ul>
+<li class="chapter" data-level="8.1" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#matrices"><i class="fa fa-check"></i><b>8.1</b> Matrices</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#what-is-a-matrix"><i class="fa fa-check"></i><b>8.1.1</b> What is a matrix?</a></li>
+<li class="chapter" data-level="8.1.2" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#create-a-matrix"><i class="fa fa-check"></i><b>8.1.2</b> Create a matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#data-frames-2"><i class="fa fa-check"></i><b>8.2</b> Data Frames</a></li>
+<li class="chapter" data-level="8.3" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#operators-1"><i class="fa fa-check"></i><b>8.3</b> Operators</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#quiz-problem-1-1"><i class="fa fa-check"></i><b>8.3.1</b> Quiz problem 1</a></li>
+<li class="chapter" data-level="8.3.2" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#quiz-problem-2-1"><i class="fa fa-check"></i><b>8.3.2</b> Quiz problem 2</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#subsetting-a-matrix-and-dataframe"><i class="fa fa-check"></i><b>8.4</b> Subsetting a Matrix and Dataframe</a></li>
+<li class="chapter" data-level="8.5" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#diamonds-dataset"><i class="fa fa-check"></i><b>8.5</b> <code>diamonds</code> dataset</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#quiz-problem-3-1"><i class="fa fa-check"></i><b>8.5.1</b> Quiz problem 3</a></li>
+<li class="chapter" data-level="8.5.2" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#quiz-problem-4-1"><i class="fa fa-check"></i><b>8.5.2</b> Quiz problem 4</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#bfi-dataset"><i class="fa fa-check"></i><b>8.6</b> <code>bfi</code> dataset</a><ul>
+<li class="chapter" data-level="8.6.1" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#quiz-problem-5-1"><i class="fa fa-check"></i><b>8.6.1</b> Quiz problem 5</a></li>
+<li class="chapter" data-level="8.6.2" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#quiz-problem-6-1"><i class="fa fa-check"></i><b>8.6.2</b> Quiz problem 6</a></li>
+<li class="chapter" data-level="8.6.3" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#quiz-problem-7-1"><i class="fa fa-check"></i><b>8.6.3</b> Quiz problem 7</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R, Rstudio, and ggplot2</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="base-r-2d-data-structure" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Base R 2D Data Structure</h1>
+<div id="matrices" class="section level2">
+<h2><span class="header-section-number">8.1</span> Matrices</h2>
+<div id="what-is-a-matrix" class="section level3">
+<h3><span class="header-section-number">8.1.1</span> What is a matrix?</h3>
+<ul>
+<li>A matrix is a two dimensional array of elements with rows and columns.</li>
+<li>A matrix is <strong>implemented as a vector</strong> with special attributes</li>
+<li>Adding a <strong><code>dim()</code> attribute</strong> to an atomic vector allows it to behave like a multi-dimensional array.</li>
+</ul>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIGNyZWF0ZSBhIHZlY3RvciBhXG5hIDwtIDE6NiBcbiMgYXR0cigpID0gZ2V0IG9yIHNldCBzcGVjaWZpYyBhdHRyaWJ1dGVzIG9mIGFuIG9iamVjdC5cbmF0dHIoYSwgXCJkaW1cIikgPC0gYygzLDIpXG5hIn0=
+</div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJhIDwtIDE6NiBcbmF0dHIoYSwgXCJkaW1cIikgPC0gYygzLDIpXG5hXG5hdHRyaWJ1dGVzKGEpIn0=
+</div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJhIDwtIDE6NiBcbmF0dHIoYSwgXCJkaW1cIikgPC0gYygzLDIpXG5hXG5kaW0oYSkifQ==
+</div>
+</div>
+<div id="create-a-matrix" class="section level3">
+<h3><span class="header-section-number">8.1.2</span> Create a matrix</h3>
+<ul>
+<li><code>matrix()</code> creates a matrix from the given set of values</li>
+</ul>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIGJ5IGRlZmF1bHQsIGEgbWF0cml4IGlzIGZpbGxlZCBieSBjb2x1bW5cbmEgPC0gbWF0cml4KDE6NiwgbmNvbD0zLCBucm93PTIpXG5hIn0=
+</div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIFIgd2lsbCBjYWxjdWxhdGUgbnJvd1xuYSA8LSBtYXRyaXgoMTo2LCBuY29sPTMpXG5hIn0=
+</div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIGEgbWF0cml4IGNhbiBiZSBmaWxsZWQgYnkgcm93IHVzaW5nIGBieXJvdyA9IFRSVUVgXG5hIDwtIG1hdHJpeCgxOjYsIG5jb2w9MywgbnJvdz0yLCBieXJvdyA9IFRSVUUpXG5hIn0=
+</div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIGNyZWF0ZSBhbiBhcnJheSBvZiBkaW1lbnNpb25zIFxuYiA8LSBhcnJheSgxOjEyLCBjKDIsMywyKSlcbmIifQ==
+</div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJiIDwtIGFycmF5KDE6MTIsIGMoMiwzLDIpKVxuYlxuZGltKGIpIn0=
+</div>
+<ul>
+<li><code>length()</code> generalises to <code>nrow()</code> and <code>ncol()</code> for matrices, and <code>dim()</code> for arrays.</li>
+<li><code>names()</code> generalises to <code>rownames()</code> and <code>colnames()</code> for matrices, and <code>dimnames()</code>, a list of character vectors, for arrays.</li>
+</ul>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJyZXN1bHRzIDwtIG1hdHJpeChjKDEwLCAzMCwgNDAsIDUwLCA0MywgNTYsIDIxLCAzMCksIDIsIDQsIGJ5cm93ID0gVFJVRSlcbmNvbG5hbWVzKHJlc3VsdHMpIDwtIGMoXCIxcXJ0XCIsIFwiMnFydFwiLCBcIjNxcnRcIiwgXCI0cXJ0XCIpXG5yb3duYW1lcyhyZXN1bHRzKSA8LSBjKFwic3RvcmUxXCIsIFwic3RvcmUyXCIpXG5yZXN1bHRzIn0=
+</div>
+</div>
+</div>
+<div id="data-frames-2" class="section level2">
+<h2><span class="header-section-number">8.2</span> Data Frames</h2>
+<ul>
+<li>A data frame is a <strong>list</strong> of <strong>equal-length vectors</strong>.</li>
+<li>Since a list is a heterogeneous data structure, each element of a data frame can have different data types.<br />
+</li>
+<li><code>data.frame()</code> creates a data frame.</li>
+</ul>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIHggPSBpbnRlZ2VyIHZlY3RvclxuIyB5ID0gY2hhcmFjdGVyIHZlY3RvclxuZGYgPC0gZGF0YS5mcmFtZSh4PTE6MywgeT1jKFwiYVwiLCBcImJcIiwgXCJjXCIpKVxuZGYifQ==
+</div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIHN0cigpIGRpc3BsYXlzIHRoZSBpbnRlcm5hbCBzdHJ1Y3R1cmUgb2YgYW4gUiBvYmplY3RcbmRmIDwtIGRhdGEuZnJhbWUoeD0xOjMsIHk9YyhcImFcIiwgXCJiXCIsIFwiY1wiKSlcbnN0cihkZikgIn0=
+</div>
+<ul>
+<li><code>data.frame()</code> converts strings into factors by default.
+<ul>
+<li>This default setting can cause serious problems in some cases.</li>
+<li><code>stringAsFactors = FALSE</code> suppresses this default setting.</li>
+<li>Using <code>str()</code> to check data types is always a good practice.</li>
+</ul></li>
+</ul>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJkZiA8LSBkYXRhLmZyYW1lKHg9MTozLCB5PWMoXCJhXCIsIFwiYlwiLCBcImNcIiksIHN0cmluZ3NBc0ZhY3RvcnMgPSBGQUxTRSlcbnN0cihkZikgIn0=
+</div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIGEgZGF0YSBmcmFtZSBpcyBhIGxpc3Qgb2YgZXF1YWwtbGVuZ3RoZWQgdmVjdG9yc1xuZGYgPC0gZGF0YS5mcmFtZSh4PTE6MywgeT1jKFwiYVwiLCBcImJcIiwgXCJjXCIpLCBzdHJpbmdzQXNGYWN0b3JzID0gRkFMU0UpXG50eXBlb2YoZGYpIn0=
+</div>
+</div>
+<div id="operators-1" class="section level2">
+<h2><span class="header-section-number">8.3</span> Operators</h2>
+<ul>
+<li>Arithmetic Operators</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>+</td>
+<td>addition</td>
+</tr>
+<tr class="even">
+<td>-</td>
+<td>subtraction</td>
+</tr>
+<tr class="odd">
+<td>*</td>
+<td>multiplication</td>
+</tr>
+<tr class="even">
+<td>/</td>
+<td>division</td>
+</tr>
+<tr class="odd">
+<td>^ or **</td>
+<td>exponentiation</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Logical Operators</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;</td>
+<td>less than</td>
+</tr>
+<tr class="even">
+<td>&lt;=</td>
+<td>less than or equal to</td>
+</tr>
+<tr class="odd">
+<td>&gt;</td>
+<td>greater than</td>
+</tr>
+<tr class="even">
+<td>&gt;=</td>
+<td>greater than equal to</td>
+</tr>
+<tr class="odd">
+<td>==</td>
+<td>exactly equal to</td>
+</tr>
+<tr class="even">
+<td>!=</td>
+<td>not equal to</td>
+</tr>
+<tr class="odd">
+<td>!x</td>
+<td>Not x</td>
+</tr>
+<tr class="even">
+<td>x|y</td>
+<td>x OR y</td>
+</tr>
+<tr class="odd">
+<td>x&amp;Y</td>
+<td>x AND y</td>
+</tr>
+</tbody>
+</table>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIxTCA9PSAyTCJ9
+</div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJcImFcIiAhPSBcImJcIiJ9
+</div>
+<div id="quiz-problem-1-1" class="section level3">
+<h3><span class="header-section-number">8.3.1</span> Quiz problem 1</h3>
+<p>(Without using R) What is the value of the following expression?</p>
+<p><code>(1L == 2L) | (&quot;a&quot; != &quot;b&quot;)</code></p>
+<p>A. TRUE</p>
+<p>B. FALSE</p>
+</div>
+<div id="quiz-problem-2-1" class="section level3">
+<h3><span class="header-section-number">8.3.2</span> Quiz problem 2</h3>
+<p>(Without using R) What is the value of the following expression?</p>
+<p><code>(1 == 2) &amp; (&quot;a&quot; != &quot;b&quot;)</code></p>
+<p>A. TRUE</p>
+<p>B. FALSE</p>
+</div>
+</div>
+<div id="subsetting-a-matrix-and-dataframe" class="section level2">
+<h2><span class="header-section-number">8.4</span> Subsetting a Matrix and Dataframe</h2>
+<ul>
+<li><strong>Positive integers</strong> return elements at the specified positions.</li>
+<li><strong>Negative integers</strong> omit elements at the specified positions</li>
+<li><strong>Logical vectors</strong> select elements where the corresponding logical value is TRUE.</li>
+<li><strong>Character vectors</strong> return elements with matching names.</li>
+<li><strong>Nothing</strong> returns the original vector.</li>
+</ul>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIGNyZWF0ZSBhIDMgeCAzIG1hdHJpeFxuYSA8LSBtYXRyaXgoMTo5LCBucm93ID0gMylcbmNvbG5hbWVzKGEpIDwtIGMoXCJBXCIsIFwiQlwiLCBcIkNcIilcbmEifQ==
+</div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJhIDwtIG1hdHJpeCgxOjksIG5yb3cgPSAzKVxuY29sbmFtZXMoYSkgPC0gYyhcIkFcIiwgXCJCXCIsIFwiQ1wiKVxuXG4jIElmIHlvdSBvbWl0IGFueSBkaW1lbnNpb24sIHlvdSBvYnRhaW4gZnVsbCBjb2x1bW5zIG9yIHJvd3NcbiMgdGhpcyBpcyBlcXVpdmFsZW50IHRvIGBmaWx0ZXIoKWAgaW4gdGlkeXZlcnNlXG5hWzIsXSJ9
+</div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJhIDwtIG1hdHJpeCgxOjksIG5yb3cgPSAzKVxuY29sbmFtZXMoYSkgPC0gYyhcIkFcIiwgXCJCXCIsIFwiQ1wiKVxuXG4jIElmIHlvdSBvbWl0IGFueSBkaW1lbnNpb24sIHlvdSBvYnRhaW4gZnVsbCBjb2x1bW5zIG9yIHJvd3NcbiMgdGhpcyBpcyBlcXVpdmFsZW50IHRvIGBmaWx0ZXIoKWAgaW4gdGlkeXZlcnNlXG5hW2MoMSwyKSxdIn0=
+</div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJhIDwtIG1hdHJpeCgxOjksIG5yb3cgPSAzKVxuY29sbmFtZXMoYSkgPC0gYyhcIkFcIiwgXCJCXCIsIFwiQ1wiKVxuXG4jIHRoaXMgaXMgZXF1aXZhbGVudCB0byBgc2VsZWN0KClgIGluIHRpZHl2ZXJzZVxuYVssM10ifQ==
+</div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJhIDwtIG1hdHJpeCgxOjksIG5yb3cgPSAzKVxuY29sbmFtZXMoYSkgPC0gYyhcIkFcIiwgXCJCXCIsIFwiQ1wiKVxuXG4jIHRoaXMgaXMgZXF1aXZhbGVudCB0byBgc2VsZWN0KClgIGluIHRpZHl2ZXJzZVxuYVssYyhcIkFcIiwgXCJCXCIpXSJ9
+</div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJhIDwtIG1hdHJpeCgxOjksIG5yb3cgPSAzKVxuY29sbmFtZXMoYSkgPC0gYyhcIkFcIiwgXCJCXCIsIFwiQ1wiKVxuXG5hW2MoVFJVRSwgRkFMU0UsIFRSVUUpLCBjKFwiQlwiLCBcIkFcIildIn0=
+</div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJhIDwtIG1hdHJpeCgxOjksIG5yb3cgPSAzKVxuY29sbmFtZXMoYSkgPC0gYyhcIkFcIiwgXCJCXCIsIFwiQ1wiKVxuXG5hID4gMyJ9
+</div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJhIDwtIG1hdHJpeCgxOjksIG5yb3cgPSAzKVxuY29sbmFtZXMoYSkgPC0gYyhcIkFcIiwgXCJCXCIsIFwiQ1wiKVxuXG5hW2E+M10gPC0gTkFcbmEifQ==
+</div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIG10Y2FycyBpcyBhIGRhdGFmcmFtZSwgYW5kIGEgZGF0YWZyYW1lIGlzIGEgbGlzdC4gXG4jIHdlIHVzZSAkIHRvIGFjY2VzcyB0aGUgZWxlbWVudCBvZiBhIGxpc3QuIFxuIyB0aGVyZWZvcmUsIHdlIGNhbiB1c2UgJCB0byBhY2Nlc3MgdGhlIGNvbHVtbiBvZiBhIGRhdGFmcmFtZVxuc3RyKG10Y2FycykifQ==
+</div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIGFjY2Vzc2luZyBgbXBnYCB2YXJpYWJsZSBpbiB0aGUgYG10Y2Fyc2AgZGF0YXNldC4gXG5tdGNhcnMkbXBnIn0=
+</div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIG1wZ2IgPSBhIGJpbmFyeSB2YXJpYWJsZSwgMSB3aGVuIG1wZyA+IDE5LCAwIG90aGVyd2lzZVxuIyBUaGlzIGNvZGUgY3JlYXRlcyBhIG5ldyBiaW5hcnkgdmFyaWFibGUgYG1wZ2JgLiBcbiMgVGhpcyBpcyBlcXVpdmFsZW50IHRvIGBtdXRhdGUoKWAgaW4gdGlkeXZlcnNlXG5tdGNhcnMkbXBnYiA8LSBpZmVsc2UobXRjYXJzJG1wZyA+IDE5LCAxLCAwKSJ9
+</div>
+</div>
+<div id="diamonds-dataset" class="section level2">
+<h2><span class="header-section-number">8.5</span> <code>diamonds</code> dataset</h2>
+<ul>
+<li><code>diamonds</code> is a tibble, which is a tidyverse alternative to dataframe.</li>
+<li>We often subset the original dataset, and work on it.</li>
+</ul>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJsaWJyYXJ5KGdncGxvdDIpXG4jIHN1YnNldCBvbmx5IGlkZWFsIGN1dCBkaWFtb25kc1xuZGlhbW9uZHNfaWRlYWwgPC0gZGlhbW9uZHNbZGlhbW9uZHMkY3V0ID09IFwiSWRlYWxcIixdXG4jIGF2ZXJhZ2UgcHJpY2Ugb2YgaWRlYWwgY3V0IGRpYW1vbmRzXG5tZWFuKGRpYW1vbmRzX2lkZWFsJHByaWNlKSJ9
+</div>
+<div id="quiz-problem-3-1" class="section level3">
+<h3><span class="header-section-number">8.5.1</span> Quiz problem 3</h3>
+<p>What is the average carat of “Premium” cut diamonds with “E” color? (2 decimal)</p>
+<p>A. 0.52</p>
+<p>B. 0.62</p>
+<p>C. 0.72</p>
+<p>D. 0.82</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJsaWJyYXJ5KGdncGxvdDIpXG5kaWFtb25kc1xuXG4jIHN1YnNldCBvbmx5IHByZW1pdW0gY3V0IGRpYW1vbmRzIHdpdGggRSBjb2xvclxuZGlhbW9uZHNfcHJlbWl1bV9lIDwtIGRpYW1vbmRzW2RpYW1vbmRzJGN1dCA9PSBcIlByZW1pdW1cIiAmIGRpYW1vbmRzJGNvbG9yID09IFwiRVwiLF1cbiMgYXZlcmFnZSBwcmljZSBvZiBpZGVhbCBkaWFtb25kc1xubWVhbihkaWFtb25kc19wcmVtaXVtX2UkY2FyYXQpIn0=
+</div>
+</div>
+<div id="quiz-problem-4-1" class="section level3">
+<h3><span class="header-section-number">8.5.2</span> Quiz problem 4</h3>
+<p>How many “Good” cut diamonds larger than 0.7 carat have “VS1” clarity?
+What is the average carat of “Premium” diamonds with “E” color? (2 decimal)</p>
+<p>A. 305</p>
+<p>B. 587</p>
+<p>C. 124</p>
+<p>D. 987</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJsaWJyYXJ5KGdncGxvdDIpXG5kaWFtb25kc1xuXG4jIHN1YnNldCBvbmx5IGdvb2QgY3V0IGRpYW1vbmRzIGxhcmdlciB0aGFuIDAuNyBjYXJhdFxuZGlhbW9uZHNfZ29vZF8wLjcgPC0gZGlhbW9uZHNbZGlhbW9uZHMkY3V0ID09IFwiR29vZFwiICYgZGlhbW9uZHMkY2FyYXQgPiAwLjcsXVxuIyBhdmVyYWdlIHByaWNlIG9mIGlkZWFsIGRpYW1vbmRzXG50YWJsZShkaWFtb25kc19nb29kXzAuNyRjbGFyaXR5KSJ9
+</div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJsaWJyYXJ5KHBzeWNoKVxuYmZpIn0=
+</div>
+</div>
+</div>
+<div id="bfi-dataset" class="section level2">
+<h2><span class="header-section-number">8.6</span> <code>bfi</code> dataset</h2>
+<ul>
+<li><code>bfi</code> is a dataframe in the <code>psych</code> package that contains 25 Personality items, sex, education, and age.</li>
+</ul>
+<div id="quiz-problem-5-1" class="section level3">
+<h3><span class="header-section-number">8.6.1</span> Quiz problem 5</h3>
+<p>How many missing values are in <code>education</code> in <code>bfi</code>?</p>
+<p>A. 123</p>
+<p>B. 223</p>
+<p>C. 323</p>
+<p>D. 423</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJsaWJyYXJ5KHBzeWNoKVxuc3VtKGlzLm5hKGJmaSRlZHVjYXRpb24pKSJ9
+</div>
+</div>
+<div id="quiz-problem-6-1" class="section level3">
+<h3><span class="header-section-number">8.6.2</span> Quiz problem 6</h3>
+<p>Subset (i.e., filter()) <code>bfi</code> such that only <code>education</code> has no missing, and then calculate the frequency of male (coded as 1) using <code>table()</code>.</p>
+<p>A. 783</p>
+<p>B. 694</p>
+<p>C. 790</p>
+<p>D. 838</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJsaWJyYXJ5KHBzeWNoKVxuYmZpXG5iZmlfbmV3IDwtIGJmaVshaXMubmEoYmZpJGVkdWNhdGlvbiksIF1cbnRhYmxlKGJmaV9uZXckZ2VuZGVyKSJ9
+</div>
+</div>
+<div id="quiz-problem-7-1" class="section level3">
+<h3><span class="header-section-number">8.6.3</span> Quiz problem 7</h3>
+<p>Subset (i.e., filter()) <code>bfi</code> such that only males (coded as 1) are contained in the dataset, and then calculate the proportion of age 16 (round to 3 decimal).</p>
+<p>A. 0.013</p>
+<p>B. 0.027</p>
+<p>C. 0.033</p>
+<p>D. 0.021</p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJsaWJyYXJ5KHBzeWNoKVxuYmZpXG5iZmlfbWFsZSA8LSBiZmlbYmZpJGdlbmRlciA9PSAxLCBdXG50YWJsZShiZmlfbWFsZSRhZ2UpL3N1bSh0YWJsZShiZmlfbWFsZSRhZ2UpKSJ9
+</div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="base-r-practice.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/07-2DStructure.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["Introduction to R, Rstudio, and ggplot2.pdf", "Introduction to R, Rstudio, and ggplot2.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

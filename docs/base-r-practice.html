@@ -24,7 +24,7 @@
 <meta name="author" content="Sunbok Lee" />
 
 
-<meta name="date" content="2019-09-17" />
+<meta name="date" content="2019-09-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="base-r-quiz.html"/>
-
+<link rel="next" href="base-r-2d-data-structure.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -236,6 +236,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7" data-path="base-r-practice.html"><a href="base-r-practice.html"><i class="fa fa-check"></i><b>7</b> Base R Practice</a><ul>
 <li class="chapter" data-level="7.1" data-path="base-r-practice.html"><a href="base-r-practice.html#set-1"><i class="fa fa-check"></i><b>7.1</b> Set 1</a></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html"><i class="fa fa-check"></i><b>8</b> Base R 2D Data Structure</a><ul>
+<li class="chapter" data-level="8.1" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#matrices"><i class="fa fa-check"></i><b>8.1</b> Matrices</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#what-is-a-matrix"><i class="fa fa-check"></i><b>8.1.1</b> What is a matrix?</a></li>
+<li class="chapter" data-level="8.1.2" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#create-a-matrix"><i class="fa fa-check"></i><b>8.1.2</b> Create a matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#data-frames-2"><i class="fa fa-check"></i><b>8.2</b> Data Frames</a></li>
+<li class="chapter" data-level="8.3" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#operators-1"><i class="fa fa-check"></i><b>8.3</b> Operators</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#quiz-problem-1-1"><i class="fa fa-check"></i><b>8.3.1</b> Quiz problem 1</a></li>
+<li class="chapter" data-level="8.3.2" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#quiz-problem-2-1"><i class="fa fa-check"></i><b>8.3.2</b> Quiz problem 2</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#subsetting-a-matrix-and-dataframe"><i class="fa fa-check"></i><b>8.4</b> Subsetting a Matrix and Dataframe</a></li>
+<li class="chapter" data-level="8.5" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#diamonds-dataset"><i class="fa fa-check"></i><b>8.5</b> <code>diamonds</code> dataset</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#quiz-problem-3-1"><i class="fa fa-check"></i><b>8.5.1</b> Quiz problem 3</a></li>
+<li class="chapter" data-level="8.5.2" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#quiz-problem-4-1"><i class="fa fa-check"></i><b>8.5.2</b> Quiz problem 4</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#bfi-dataset"><i class="fa fa-check"></i><b>8.6</b> <code>bfi</code> dataset</a><ul>
+<li class="chapter" data-level="8.6.1" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#quiz-problem-5-1"><i class="fa fa-check"></i><b>8.6.1</b> Quiz problem 5</a></li>
+<li class="chapter" data-level="8.6.2" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#quiz-problem-6-1"><i class="fa fa-check"></i><b>8.6.2</b> Quiz problem 6</a></li>
+<li class="chapter" data-level="8.6.3" data-path="base-r-2d-data-structure.html"><a href="base-r-2d-data-structure.html#quiz-problem-7-1"><i class="fa fa-check"></i><b>8.6.3</b> Quiz problem 7</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -375,14 +396,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb569"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb569-1" data-line-number="1"><span class="co"># this code will produce error because a factor only allow some pre-specified values (i.e., levels)</span></a>
 <a class="sourceLine" id="cb569-2" data-line-number="2">a[<span class="dv">1</span>] &lt;-<span class="st"> &quot;very high&quot;</span></a></code></pre></div>
 
-<div id="refs" class="references">
-<div>
-<p>Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York.</p>
-</div>
-<div>
-<p>Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. 1st ed. O’Reilly Media, Inc.</p>
-</div>
-</div>
 </div>
 </div>
             </section>
@@ -390,8 +403,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="base-r-quiz.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="base-r-quiz.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="base-r-2d-data-structure.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
